@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Giong;
+use App\Models\GiaTriDoTrongNha;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -23,9 +24,9 @@ class ChiTieuTrongNha extends Model
         'chitieutrongnha_danhgia'
     ];
 
-    // public function GiaTriDoTrongNha(){
-    //     return $this->hasMany(GiaTriDoTrongNha::class, 'chitieutrongnha_id', 'id');
-    // }
+    public function GiaTriDoTrongNha(){
+        return $this->hasMany(GiaTriDoTrongNha::class, 'chitieutrongnha_id', 'id');
+    }
 
     public function Giong(){
         return $this->belongsTo(Giong::class, 'giong_id');

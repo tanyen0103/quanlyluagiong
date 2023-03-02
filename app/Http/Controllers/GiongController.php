@@ -151,14 +151,14 @@ class GiongController extends Controller
      */
     public function destroy(Giong $giong)
     {
-         // Delete the record from the database
-    $giong->delete();
+        // Delete the record from the database
+        $giong->delete();
 
-    // Delete the associated image file from the disk
-    Storage::delete($giong->giong_hinhanh);
+        // Delete the associated image file from the disk
+        Storage::delete($giong->giong_hinhanh);
 
-    // Redirect the user back to the index page with a success message
-    return redirect()->route('giongs.index')->with('success','Nhóm giống xoá thành công');
+        // Redirect the user back to the index page with a success message
+        return redirect()->route('giongs.index')->with('success','Giống xoá thành công');
 
     }
 }

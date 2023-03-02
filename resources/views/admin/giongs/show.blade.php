@@ -47,7 +47,7 @@
             <div class="form-group">
                 <strong>Hình ảnh:</strong>
                 <div>
-                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="100%">
+                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="100">
                 </div>
             </div>
         </div>

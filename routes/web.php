@@ -6,12 +6,16 @@ use App\Http\Controllers\GiongController;
 use App\Http\Controllers\MaPTNController;
 use App\Http\Controllers\KieuHinhController;
 use App\Http\Controllers\NhomGiongController;
+use App\Http\Controllers\LoaiSauBenhController;
 use App\Http\Controllers\MaNgoaiDongController;
 use App\Http\Controllers\LoaiGiaTriDoController;
+use App\Http\Controllers\ChiTieuSauBenhController;
 use App\Http\Controllers\ChiTieuTrongNhaController;
+use App\Http\Controllers\GiaTriDoSauBenhController;
 use App\Http\Controllers\GiaTriTinhTrangController;
 use App\Http\Controllers\ChiTieuNgoaiDongController;
 use App\Http\Controllers\DacDiemTinhTrangController;
+use App\Http\Controllers\GiaTriDoTrongNhaController;
 use App\Http\Controllers\DoiTuongTinhTrangController;
 use App\Http\Controllers\GiaTriDoNgoaiDongController;
 use App\Http\Controllers\GiaiDoanTruongThanhController;
@@ -62,4 +66,10 @@ Route::resource('giatridongoaidongs', GiaTriDoNgoaiDongController::class);
 
 Route::resource('chitieutrongnhas', ChiTieuTrongNhaController::class);
 
-// Route::resource('giatridotrongnhas', GiaTriDoTrongNhaController::class);
+Route::resource('giatridotrongnhas', GiaTriDoTrongNhaController::class);
+
+Route::resource('chitieusaubenhs', ChiTieuSauBenhController::class);
+
+Route::resource('loaisaubenhs', LoaiSauBenhController::class);
+
+Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);

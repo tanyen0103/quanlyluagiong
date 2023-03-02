@@ -28,7 +28,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Code:</strong>
+                    <strong>Đơn vị:</strong>
                     <input type="text" value="{{ $loaigiatrido->loaigiatrido_donvi }}" @error('loaigiatrido_donvi') is-invalid @enderror name="loaigiatrido_donvi" class="form-control" placeholder="Code nhóm giống">
                     @error('loaigiatrido_donvi')
                         <strong class="text-danger">{{ $message }}</strong>

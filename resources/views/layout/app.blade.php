@@ -70,9 +70,18 @@
                             <a href="{{ route('chitieutrongnhas.index') }}" class="list-group-item list-group-item-action">
                                 <i class="fa-solid fa-circle-nodes"></i><span>chỉ tiêu trong nhà</span>
                             </a>
-                            {{-- <a href="{{ route('giatridongoaidongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo ngoài đồng</span>
-                            </a> --}}
+                            <a href="{{ route('giatridotrongnhas.index') }}" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo trong nhà</span>
+                            </a>
+                            <a href="{{ route('chitieusaubenhs.index') }}" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-circle-nodes"></i><span>chỉ tiêu sâu bệnh</span>
+                            </a>
+                            <a href="{{ route('loaisaubenhs.index') }}" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-circle-nodes"></i><span>loại sâu bệnh</span>
+                            </a>
+                            <a href="{{ route('giatridosaubenhs.index') }}" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo sâu bệnh</span>
+                            </a>
 
                             <hr>
 

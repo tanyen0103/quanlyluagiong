@@ -41,6 +41,10 @@ class LoaiGiaTriDoController extends Controller
         $request->validate([
             'loaigiatrido_ten' => ['required','unique:loaigiatrido','max:100'],
             'loaigiatrido_donvi' => ['required','max:100'],
+            'loaisaubenh_ten' => ['required','unique:loaisaubenh','max:100'],
+            'loaisaubenh_donvi',
+            'loaisaubenh_hinhanh',
+            'loaisaubenh_mota'
 
         ]);
 
