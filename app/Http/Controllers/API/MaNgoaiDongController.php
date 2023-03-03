@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\KieuHinh;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\KieuHinh as ResourcesKieuHinh;
+use App\Http\Resources\MaNgoaiDong as ResourcesMaNgoaiDong;
+use App\Models\MaNgoaiDong;
+use Illuminate\Http\Request;
 
-class KieuHinhController extends Controller
+class MaNgoaiDongController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class KieuHinhController extends Controller
      */
     public function index()
     {
-        $kieuhinh = KieuHinh::all();
+        $mangoaidong = MaNgoaiDong::all();
         $arr = [
-            'status' => true,
-            'message' => "Danh sách kiểu hình",
-            'data'=>ResourcesKieuHinh::collection($kieuhinh)
+        'status' => true,
+        'message' => "Danh sách mã ngoài đồng",
+        'data'=>ResourcesMaNgoaiDong::collection($mangoaidong)
         ];
         return response()->json($arr, 200);
     }
@@ -54,19 +54,19 @@ class KieuHinhController extends Controller
      */
     public function show($id)
     {
-        $kieuhinh = KieuHinh::find($id);
-        if(is_null($kieuhinh)){
+        $mangoaidong = MaNgoaiDong::find($id);
+        if(is_null($mangoaidong)){
             $arr = [
                 'success' => false,
-                'message' => 'Không có kiểu hình này',
+                'message' => 'Không có  mã ngoài đồng này',
                 'data' => []
             ];
             return response()->json($arr, 200);
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết kiểu hình',
-            'data' => new ResourcesKieuHinh($kieuhinh)
+            'message' => 'Chi tiết mã ngoài đồng',
+            'data' => new ResourcesMaNgoaiDong($mangoaidong)
         ];
         return response()->json($arr, 201);
     }

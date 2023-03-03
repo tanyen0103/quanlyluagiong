@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\KieuHinh;
+use App\Models\Giong;
 use Illuminate\Http\Request;
+use App\Http\Resources\Giong as ResourcesGiong;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\KieuHinh as ResourcesKieuHinh;
 
-class KieuHinhController extends Controller
+class GiongController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class KieuHinhController extends Controller
      */
     public function index()
     {
-        $kieuhinh = KieuHinh::all();
+        $giong = Giong::all();
         $arr = [
             'status' => true,
-            'message' => "Danh sách kiểu hình",
-            'data'=>ResourcesKieuHinh::collection($kieuhinh)
+            'message' => "Danh sách giống",
+            'data'=>ResourcesGiong::collection($giong)
         ];
         return response()->json($arr, 200);
     }
@@ -54,19 +54,19 @@ class KieuHinhController extends Controller
      */
     public function show($id)
     {
-        $kieuhinh = KieuHinh::find($id);
-        if(is_null($kieuhinh)){
+        $giong = Giong::find($id);
+        if(is_null($giong)){
             $arr = [
                 'success' => false,
-                'message' => 'Không có kiểu hình này',
+                'message' => 'Không có giống này',
                 'data' => []
             ];
             return response()->json($arr, 200);
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết kiểu hình',
-            'data' => new ResourcesKieuHinh($kieuhinh)
+            'message' => 'Chi tiết giống',
+            'data' => new ResourcesGiong($giong)
         ];
         return response()->json($arr, 201);
     }

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\KieuHinh;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\KieuHinh as ResourcesKieuHinh;
+use App\Http\Resources\MaPTN as ResourcesMaPTN;
+use App\Models\MaPTN;
+use Illuminate\Http\Request;
 
-class KieuHinhController extends Controller
+class MaPTNController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class KieuHinhController extends Controller
      */
     public function index()
     {
-        $kieuhinh = KieuHinh::all();
+        $maptn = MaPTN::all();
         $arr = [
-            'status' => true,
-            'message' => "Danh sách kiểu hình",
-            'data'=>ResourcesKieuHinh::collection($kieuhinh)
+        'status' => true,
+        'message' => "Danh sách mã phòng thí nghiệm",
+        'data'=>ResourcesMaPTN::collection($maptn)
         ];
         return response()->json($arr, 200);
     }
@@ -54,19 +54,19 @@ class KieuHinhController extends Controller
      */
     public function show($id)
     {
-        $kieuhinh = KieuHinh::find($id);
-        if(is_null($kieuhinh)){
+        $maptn = MaPTN::find($id);
+        if(is_null($maptn)){
             $arr = [
                 'success' => false,
-                'message' => 'Không có kiểu hình này',
+                'message' => 'Không có mã phòng thí nghiệm này',
                 'data' => []
             ];
             return response()->json($arr, 200);
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết kiểu hình',
-            'data' => new ResourcesKieuHinh($kieuhinh)
+            'message' => 'Chi tiết mã phòng thí nghiệm',
+            'data' => new ResourcesMaPTN($maptn)
         ];
         return response()->json($arr, 201);
     }

@@ -54,7 +54,21 @@ class NhomGiongController extends Controller
      */
     public function show($id)
     {
-        //
+        $nhomgiong = NhomGiong::find($id);
+        if(is_null($nhomgiong)){
+            $arr = [
+                'success' => false,
+                'message' => 'Không có nhóm giống này',
+                'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => true,
+            'message' => 'Chi tiết nhóm giống',
+            'data' => new ResourcesNhomGiong($nhomgiong)
+        ];
+        return response()->json($arr, 201);
     }
 
     /**
