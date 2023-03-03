@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GiongController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\API\KieuHinhController;
 use App\Http\Controllers\API\NhomGiongController;
 use App\Http\Controllers\API\MaNgoaiDongController;
 use App\Http\Controllers\API\GiaiDoanTruongThanhController;
+use App\Http\Controllers\API\DoiTuongTinhTrangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +37,6 @@ Route::resource('mangoaidongs', MaNgoaiDongController::class);
 Route::resource('maptns', MaPTNController::class);
 
 Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
+
+Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
 
