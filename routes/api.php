@@ -1,15 +1,24 @@
 <?php
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GiongController;
 use App\Http\Controllers\API\MaPTNController;
 use App\Http\Controllers\API\KieuHinhController;
 use App\Http\Controllers\API\NhomGiongController;
+use App\Http\Controllers\API\LoaiSauBenhController;
 use App\Http\Controllers\API\MaNgoaiDongController;
-use App\Http\Controllers\API\GiaiDoanTruongThanhController;
+use App\Http\Controllers\API\LoaiGiaTriDoController;
+use App\Http\Controllers\API\ChiTieuSauBenhController;
+use App\Http\Controllers\API\ChiTieuTrongNhaController;
+use App\Http\Controllers\API\GiaTriDoSauBenhController;
+use App\Http\Controllers\API\GiaTriTinhTrangController;
+use App\Http\Controllers\API\ChiTieuNgoaiDongController;
+use App\Http\Controllers\API\DacDiemTinhTrangController;
+use App\Http\Controllers\API\GiaTriDoTrongNhaController;
 use App\Http\Controllers\API\DoiTuongTinhTrangController;
+use App\Http\Controllers\API\GiaTriDoNgoaiDongController;
+use App\Http\Controllers\API\GiaiDoanTruongThanhController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +48,24 @@ Route::resource('maptns', MaPTNController::class);
 Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
 
 Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
+
+Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
+
+Route::resource('giatritinhtrangs', GiaTriTinhTrangController::class);
+
+Route::resource('loaigiatridos', LoaiGiaTriDoController::class);
+
+Route::resource('chitieungoaidongs', ChiTieuNgoaiDongController::class);
+
+Route::resource('giatridongoaidongs', GiaTriDoNgoaiDongController::class);
+
+Route::resource('chitieutrongnhas', ChiTieuTrongNhaController::class);
+
+Route::resource('giatridotrongnhas', GiaTriDoTrongNhaController::class);
+
+Route::resource('chitieusaubenhs', ChiTieuSauBenhController::class);
+
+Route::resource('loaisaubenhs', LoaiSauBenhController::class);
+
+Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);
 

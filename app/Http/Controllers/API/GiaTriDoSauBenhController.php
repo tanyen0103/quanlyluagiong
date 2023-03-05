@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Models\DoiTuongTinhTrang;
+use App\Models\GiaTriDoSauBenh;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Resources\DoiTuongTinhTrang as ResourcesDoiTuongTinhTrang;
+use App\Http\Resources\GiaTriDoSauBenh as ResourcesGiaTriDoSauBenh;
 
-class DoiTuongTinhTrangController extends Controller
+class GiaTriDoSauBenhController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,11 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function index()
     {
-        $doituongtinhtrang = DoiTuongTinhTrang::all();
+        $giatridosaubenh = GiaTriDoSauBenh::all();
         $arr = [
         'status' => true,
-        'message' => "Danh sách đối tượng tính trạng",
-        'data'=>ResourcesDoiTuongTinhTrang::collection($doituongtinhtrang)
+        'message' => "Danh sách giá trị đo sâu bệnh",
+        'data'=>ResourcesGiaTriDoSauBenh::collection($giatridosaubenh)
         ];
         return response()->json($arr, 200);
     }
@@ -46,9 +46,10 @@ class DoiTuongTinhTrangController extends Controller
     {
         $input = $request->all();
         $validator = Validator::make($input,[
-            'giaidoantruongthanh_id' => 'required',
-            'doituongtt_ten' =>'required|max:255',
-            'doituongtt_mota' => ''
+            'giatridosaubenh_giatri' => ['required','numeric'],
+            'loaisaubenh_id' => ['required'],
+            'chitieusaubenh_id' => ['required'],
+
         ]);
         if ($validator->fails()) {
             $arr = [
@@ -58,16 +59,16 @@ class DoiTuongTinhTrangController extends Controller
             ];
             return response()->json($arr, 200);
         }
-        $doituongtinhtrang = new DoiTuongTinhTrang();
-        $doituongtinhtrang->doituongtt_ten = $request->doituongtt_ten;
-        $doituongtinhtrang->giaidoantruongthanh_id = $request->giaidoantruongthanh_id;
-        $doituongtinhtrang->doituongtt_mota = $request->doituongtt_mota;
+        $giatridosaubenh = new GiaTriDoSauBenh();
+        $giatridosaubenh->giatridosaubenh_giatri = $request->giatridosaubenh_giatri;
+        $giatridosaubenh->loaisaubenh_id = $request->loaisaubenh_id;
+        $giatridosaubenh->chitieusaubenh_id = $request->chitieusaubenh_id;
 
-        $doituongtinhtrang->save($input);
+        $giatridosaubenh->save($input);
         $arr = [
             'status' => true,
-            'message' => "Đối tượng tính trạng đã lưu thành công",
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => "Giá trị đo sâu bệnh đã lưu thành công",
+            'data' => new ResourcesGiaTriDosaubenh($giatridosaubenh)
         ];
         return response()->json($arr, 201);
     }
@@ -80,19 +81,19 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function show($id)
     {
-        $doituongtinhtrang = DoiTuongTinhTrang::find($id);
-        if(is_null($doituongtinhtrang)){
+        $giatridosaubenh = GiaTriDoSauBenh::find($id);
+        if(is_null($giatridosaubenh)){
             $arr = [
                 'success' => false,
-                'message' => 'Không có đối tượng tính trạng này',
+                'message' => 'Không có giá trị đo sâu bệnh này',
                 'data' => []
             ];
             return response()->json($arr, 200);
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết đối tượng tính trạng',
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => 'Chi tiết giá trị đo sâu bệnh',
+            'data' => new ResourcesGiaTriDoSauBenh($giatridosaubenh)
         ];
         return response()->json($arr, 201);
     }
@@ -115,31 +116,35 @@ class DoiTuongTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DoiTuongTinhTrang $doituongtinhtrang)
+    public function update(Request $request, GiaTriDoSauBenh $giatridosaubenh)
     {
         $input = $request->all();
         $validator = Validator::make($input,[
-            'giaidoantruongthanh_id' => 'required',
-            'doituongtt_ten' =>'required|max:255',
-            'doituongtt_mota' => ''
+            'giatridosaubenh_giatri' => ['required','numeric'],
+            'loaisaubenh_id' => ['required'],
+            'chitieusaubenh_id' => ['required'],
+
         ]);
         if ($validator->fails()) {
             $arr = [
-                'success' =>false,
+                'success' => false,
                 'message' => 'Lỗi kiểm tra dữ liệu',
                 'data' => $validator->errors()
             ];
             return response()->json($arr, 200);
         }
-        $doituongtinhtrang->doituongtt_ten = $input['doituongtt_ten'];
-        $doituongtinhtrang->doituongtt_mota = $input['doituongtt_mota'];
-        $doituongtinhtrang->save();
+
+        $giatridosaubenh->giatridosaubenh_giatri = $request->giatridosaubenh_giatri;
+        $giatridosaubenh->loaisaubenh_id = $request->loaisaubenh_id;
+        $giatridosaubenh->chitieusaubenh_id = $request->chitieusaubenh_id;
+
+        $giatridosaubenh->save();
         $arr = [
             'status' => true,
-            'message' => 'Đối tượng tính trạng đã cập nhật thành công',
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => "Giá trị đo sâu bệnh đã lưu thành công",
+            'data' => new ResourcesGiaTriDosaubenh($giatridosaubenh)
         ];
-        return response() ->json($arr, 200);
+        return response()->json($arr, 201);
     }
 
     /**
@@ -148,12 +153,12 @@ class DoiTuongTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DoiTuongTinhTrang $doituongtinhtrang)
+    public function destroy(GiaTriDoSauBenh $giatridosaubenh)
     {
-        $doituongtinhtrang->delete();
+        $giatridosaubenh->delete();
         $arr = [
             'status' => true,
-            'message' =>'Đối tượng tính trạng đã được xoá',
+            'message' =>'Giá trị đo sâu bệnh đã được xoá',
             'data' => [],
         ];
         return response()->json($arr, 200);

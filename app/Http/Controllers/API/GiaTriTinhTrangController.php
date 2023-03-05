@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Models\DoiTuongTinhTrang;
+use App\Models\GiaTriTinhTrang;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Resources\DoiTuongTinhTrang as ResourcesDoiTuongTinhTrang;
+use App\Http\Resources\GiaTriTinhTrang as ResourcesGiaTriTinhTrang;
 
-class DoiTuongTinhTrangController extends Controller
+class GiaTriTinhTrangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,11 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function index()
     {
-        $doituongtinhtrang = DoiTuongTinhTrang::all();
+        $giatritinhtrang = GiaTriTinhTrang::all();
         $arr = [
         'status' => true,
-        'message' => "Danh sách đối tượng tính trạng",
-        'data'=>ResourcesDoiTuongTinhTrang::collection($doituongtinhtrang)
+        'message' => "Danh sách giá trị tính trạng",
+        'data'=>ResourcesGiaTriTinhTrang::collection($giatritinhtrang)
         ];
         return response()->json($arr, 200);
     }
@@ -46,9 +46,8 @@ class DoiTuongTinhTrangController extends Controller
     {
         $input = $request->all();
         $validator = Validator::make($input,[
-            'giaidoantruongthanh_id' => 'required',
-            'doituongtt_ten' =>'required|max:255',
-            'doituongtt_mota' => ''
+            'dacdiemtinhtrang_id' => 'required',
+            'giatritt_diem' =>'required|max:10',
         ]);
         if ($validator->fails()) {
             $arr = [
@@ -58,16 +57,15 @@ class DoiTuongTinhTrangController extends Controller
             ];
             return response()->json($arr, 200);
         }
-        $doituongtinhtrang = new DoiTuongTinhTrang();
-        $doituongtinhtrang->doituongtt_ten = $request->doituongtt_ten;
-        $doituongtinhtrang->giaidoantruongthanh_id = $request->giaidoantruongthanh_id;
-        $doituongtinhtrang->doituongtt_mota = $request->doituongtt_mota;
+        $giatritinhtrang = new GiaTriTinhTrang();
+        $giatritinhtrang->giatritt_diem = $request->giatritt_diem;
+        $giatritinhtrang->dacdiemtinhtrang_id = $request->dacdiemtinhtrang_id;
 
-        $doituongtinhtrang->save($input);
+        $giatritinhtrang->save($input);
         $arr = [
             'status' => true,
-            'message' => "Đối tượng tính trạng đã lưu thành công",
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => "Giá trị tính trạng đã lưu thành công",
+            'data' => new ResourcesGiaTriTinhTrang($giatritinhtrang)
         ];
         return response()->json($arr, 201);
     }
@@ -80,19 +78,19 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function show($id)
     {
-        $doituongtinhtrang = DoiTuongTinhTrang::find($id);
-        if(is_null($doituongtinhtrang)){
+        $giatritinhtrang = GiaTriTinhTrang::find($id);
+        if(is_null($giatritinhtrang)){
             $arr = [
                 'success' => false,
-                'message' => 'Không có đối tượng tính trạng này',
+                'message' => 'Không có giá trị tính trạng này',
                 'data' => []
             ];
             return response()->json($arr, 200);
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết đối tượng tính trạng',
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => 'Chi tiết giá trị tính trạng',
+            'data' => new ResourcesGiaTriTinhTrang($giatritinhtrang)
         ];
         return response()->json($arr, 201);
     }
@@ -115,31 +113,32 @@ class DoiTuongTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DoiTuongTinhTrang $doituongtinhtrang)
+    public function update(Request $request, GiaTriTinhTrang $giatritinhtrang)
     {
         $input = $request->all();
         $validator = Validator::make($input,[
-            'giaidoantruongthanh_id' => 'required',
-            'doituongtt_ten' =>'required|max:255',
-            'doituongtt_mota' => ''
+            'dacdiemtinhtrang_id' => 'required',
+            'giatritt_diem' =>'required|max:10',
         ]);
         if ($validator->fails()) {
             $arr = [
-                'success' =>false,
+                'success' => false,
                 'message' => 'Lỗi kiểm tra dữ liệu',
                 'data' => $validator->errors()
             ];
             return response()->json($arr, 200);
         }
-        $doituongtinhtrang->doituongtt_ten = $input['doituongtt_ten'];
-        $doituongtinhtrang->doituongtt_mota = $input['doituongtt_mota'];
-        $doituongtinhtrang->save();
+
+        $giatritinhtrang->giatritt_diem = $request->giatritt_diem;
+        $giatritinhtrang->dacdiemtinhtrang_id = $request->dacdiemtinhtrang_id;
+
+        $giatritinhtrang->save();
         $arr = [
             'status' => true,
-            'message' => 'Đối tượng tính trạng đã cập nhật thành công',
-            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+            'message' => "Giá trị tính trạng đã cập nhật thành công",
+            'data' => new ResourcesGiaTriTinhTrang($giatritinhtrang)
         ];
-        return response() ->json($arr, 200);
+        return response()->json($arr, 201);
     }
 
     /**
@@ -148,12 +147,12 @@ class DoiTuongTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DoiTuongTinhTrang $doituongtinhtrang)
+    public function destroy(GiaTriTinhTrang $giatritinhtrang)
     {
-        $doituongtinhtrang->delete();
+        $giatritinhtrang->delete();
         $arr = [
             'status' => true,
-            'message' =>'Đối tượng tính trạng đã được xoá',
+            'message' =>'Giá trị tính trạng đã được xoá',
             'data' => [],
         ];
         return response()->json($arr, 200);
