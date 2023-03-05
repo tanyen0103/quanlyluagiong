@@ -138,14 +138,18 @@
             <a href="{{ route('giongs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Giống</a>
             <a href="{{ route('mangoaidongs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Mã Ngoài Đồng</a>
             <a href="{{ route('maptns.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Mã PHÒNG THÍ NGHIỆM</a>
+            <hr>
             <a href="{{ route('loaigiatridos.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">loại giá trị đo</a>
             <a href="{{ route('chitieungoaidongs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">chỉ tiêu ngoài đồng</a>
             <a href="{{ route('giatridongoaidongs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">giá trị đo ngoài đồng</a>
+            <hr>
             <a href="{{ route('chitieutrongnhas.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">chỉ tiêu trong nhà</a>
             <a href="{{ route('giatridotrongnhas.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">giá trị đo trong nhà</a>
+            <hr>
             <a href="{{ route('chitieusaubenhs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">chỉ tiêu sâu bệnh</a>
             <a href="{{ route('loaisaubenhs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">loại sâu bệnh</a>
             <a href="{{ route('giatridosaubenhs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">giá trị đo sâu bệnh</a>
+            <hr>
             <a href="{{ route('giaidoantruongthanhs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">GIAI ĐOẠN TRƯỞNG THÀNH</a>
             <a href="{{ route('doituongtinhtrangs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">đối tượng tính trạng</a>
             <a href="{{ route('dacdiemtinhtrangs.index') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">đặc điểm tính trạng</a>
