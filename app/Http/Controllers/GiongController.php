@@ -52,17 +52,25 @@ class GiongController extends Controller
             'kieuhinh_id' => ['required'],
             'giong_nguongoc' => [''],
             'giong_mota' => [''],
-            'giong_hinhanh' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048']
+            'giong_hinhanh' => ['mimes:jpeg,png,jpg,gif,svg','max:2048']
         ]);
 
-        // Upload tập tin
-        if ($request->hasFile('giong_hinhanh')) {
-            $file = $request->file('giong_hinhanh');
-		    $path = $request->giong_hinhanh->storeAs('images', Str::slug($request->giong_ten) . '.' . $request->giong_hinhanh->extension());
+        $g = new Giong();
 
+        // Xóa ảnh cũ (nếu có)
+        if ($g->giong_hinhanh) {
+            Storage::delete($g->giong_hinhanh);
         }
 
-        $g = new Giong();
+        // Tải ảnh mới lên
+        $originalName = $request->file('giong_hinhanh')->getClientOriginalName();
+        $extension = $request->file('giong_hinhanh')->getClientOriginalExtension();
+        $fileName = Str::slug($request->giong_ten) . '.' . $extension;
+        $path = $request->file('giong_hinhanh')->storeAs('images', $fileName);
+
+
+
+
         $g->giong_ten = $request->giong_ten;
         $g->giong_ten_slug = Str::slug($request->giong_ten);
         $g->nhomgiong_id = $request->nhomgiong_id;
@@ -120,13 +128,18 @@ class GiongController extends Controller
             'giong_hinhanh' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048']
         ]);
 
+
         // Upload tập tin nếu có
 		if($request->hasFile('giong_hinhanh'))
 		{
-			$file = $request->file('giong_hinhanh');
-			$path = $request->giong_hinhanh->storeAs('images', Str::slug($request->giong_ten) . '.' . $request->giong_hinhanh->extension());
-
+            // Xóa tệp ảnh cũ
             Storage::delete($giong->giong_hinhanh);
+
+            $extension = $request->file('giong_hinhanh')->extension();
+            $newfilename = Str::slug($request->giong_ten, '-') . '.' . $extension;
+
+            $path = Storage::putFileAs($giong->giong_ten_slug, $request->file('giong_hinhanh'), $newfilename);
+
 		}
 
         $giong->giong_ten = $request->giong_ten;
@@ -140,7 +153,7 @@ class GiongController extends Controller
         $giong->save();
 
         return redirect()->route('giongs.index')
-                        ->with('success','Giống được tạo thành công.');
+                        ->with('success','Giống được cập nhật thành công.');
     }
 
     /**

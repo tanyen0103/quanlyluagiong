@@ -68,7 +68,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <label class="form-label" for="giong_hinhanh">Hình ảnh giống</label>
+                <label class="form-label" for="giong_hinhanh">Hình ảnh giống (chú ý: Ảnh không chứa ký tự đặc biệt, size không quá 2M)</label>
                 <input id="giong_hinhanh" type="file" class="form-control @error('giong_hinhanh') is-invalid @enderror" name="giong_hinhanh" value="{{ old('giong_hinhanh') }}" required autocomplete="giong_hinhanh" />
                 @error('giong_hinhanh')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>

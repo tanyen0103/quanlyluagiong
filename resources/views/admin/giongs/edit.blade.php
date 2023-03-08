@@ -73,11 +73,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
 					<label for="giong_hinhanh">Hình ảnh giống</label>
-					<img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="100%">
-					<input id="giong_hinhanh" type="file" class="form-control @error('giong_hinhanh') is-invalid @enderror" name="giong_hinhanh" value="{{ $giong->giong_hinhanh }}" autocomplete="giong_hinhanh" />
-					@error('giong_hinhanh')
-						<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-					@enderror
+                    @if(!empty($giong->giong_hinhanh))
+                        <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" width="100" />
+                        <span class="d-block small text-danger">Bỏ trống nếu muốn giữ nguyên ảnh cũ.</span>
+                    @endif
+                    <input type="file" class="form-control @error('giong_hinhanh') is-invalid @enderror" id="giong_hinhanh" name="giong_hinhanh" value="{{ $giong->giong_hinhanh }}" />
+                    @error('giong_hinhanh')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror
 				</div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center m-2">

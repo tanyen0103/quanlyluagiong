@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <form action="{{ route('loaisaubenhs.update',$loaisaubenh->id) }}" method="POST">
+    <form action="{{ route('loaisaubenhs.update',$loaisaubenh->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row mt-1 border border-3 border-success">
@@ -44,11 +44,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
 					<label for="loaisaubenh_hinhanh">Hình ảnh sâu bệnh</label>
-					<img class="d-block rounded" src="{{ env('STORAGE_URL') . $loaisaubenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100%">
-					<input id="loaisaubenh_hinhanh" type="file" class="form-control @error('loaisaubenh_hinhanh') is-invalid @enderror" name="loaisaubenh_hinhanh" value="{{ $loaisaubenh->loaisaubenh_hinhanh }}" autocomplete="loaisaubenh_hinhanh" />
-					@error('loaisaubenh_hinhanh')
-						<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-					@enderror
+                    @if(!empty($loaisaubenh->loaisaubenh_hinhanh))
+                        <img class="d-block rounded" src="{{ env('STORAGE_URL') . $loaisaubenh->loaisaubenh_hinhanh }}" width="100" />
+                        <span class="d-block small text-danger">Bỏ trống nếu muốn giữ nguyên ảnh cũ.</span>
+                    @endif
+                    <input type="file" class="form-control @error('loaisaubenh_hinhanh') is-invalid @enderror" id="loaisaubenh_hinhanh" name="loaisaubenh_hinhanh" value="{{ $loaisaubenh->loaisaubenh_hinhanh }}" />
+                    @error('loaisaubenh_hinhanh')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror
 				</div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center m-2">

@@ -47,15 +47,20 @@ class LoaiSauBenhController extends Controller
             'loaisaubenh_hinhanh' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048']
 
         ]);
+        $loaisaubenh = new LoaiSauBenh();
 
-        // Upload tập tin
-        if ($request->hasFile('loaisaubenh_hinhanh')) {
-            $file = $request->file('loaisaubenh_hinhanh');
-		    $path = $request->loaisaubenh_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) . '.' . $request->loaisaubenh_hinhanh->extension());
-
+        // Xóa ảnh cũ (nếu có)
+        if ($loaisaubenh->loaisaubenh_hinhanh) {
+            Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
         }
 
-        $loaisaubenh = new LoaiSauBenh();
+         // Upload tập tin
+        $originalName = $request->file('loaisaubenh_hinhanh')->getClientOriginalName();
+        $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
+        $fileName = Str::slug($request->loaisaubenh_ten) . '.' . $extension;
+        $path = $request->file('loaisaubenh_hinhanh')->storeAs('images', $fileName);
+
+
         $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
         $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);
         $loaisaubenh->loaisaubenh_mota = $request->loaisaubenh_mota;
@@ -108,13 +113,19 @@ class LoaiSauBenhController extends Controller
 
         ]);
 
-        // Upload tập tin
-        if ($request->hasFile('loaisaubenh_hinhanh')) {
-            $file = $request->file('loaisaubenh_hinhanh');
-		    $path = $request->loaisaubenh_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) . '.' . $request->loaisaubenh_hinhanh->extension());
 
+        // Upload tập tin nếu có
+		if($request->hasFile('loaisaubenh_hinhanh'))
+		{
+            // Xóa tệp ảnh cũ
             Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
-        }
+
+            $extension = $request->file('loaisaubenh_hinhanh')->extension();
+            $newfilename = Str::slug($request->loaisaubenh_ten, '-') . '.' . $extension;
+
+            $path = Storage::putFileAs($loaisaubenh->loaisaubenh_ten_slug, $request->file('loaisaubenh_hinhanh'), $newfilename);
+
+		}
 
         $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
         $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);

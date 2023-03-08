@@ -33,95 +33,7 @@
     </style>
 
     </head>
-    {{-- <body>
-        {{-- <div>
-            <nav class="navbar navbar-default bg-success">
-                <div class="container">
-                  <div class="navbar-header">
-                    <a class="navbar-brand text-white" href="{{ url('/') }}">QuanLyLuaGiong-APP</a>
-                  </div>
-                  <ul class="nav navbar-nav d-flex justify-content ">
-                    <li class="active text-white">
-                        <a href="{{ url('/') }}" class="text-white">
-                            <i class="fas fa-house"></i>
-                         </a>
-                    </li>
-                  </ul>
-                </div>
-            </nav>
-        </div> --}}
-        {{-- <div class="container">
-            <div class="row">
-                <div class="col-3 p-0  border border-3 border-top-0 border-success text-uppercase">
-                    <!-- Sidebar -->
-                    <nav id="sidebarMenu" class="collapse d-lg-block sidebar">
-                        <div class="list-group list-group-flush">
-                            <a href="{{ route('nhomgiongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>Nhóm Giống</span>
-                            </a>
-                            <a href="{{ route('kieuhinhs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>Kiểu hình</span>
-                            </a>
-                            <a href="{{ route('giongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>Giống</span>
-                            </a>
-                            <a href="{{ route('mangoaidongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>Mã Ngoài Đồng</span>
-                            </a>
-                            <a href="{{ route('maptns.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>Mã PHÒNG THÍ NGHIỆM</span>
-                            </a>
-                            <a href="{{ route('loaigiatridos.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>loại giá trị đo</span>
-                            </a>
-                            <a href="{{ route('chitieungoaidongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>chỉ tiêu ngoài đồng</span>
-                            </a>
-                            <a href="{{ route('giatridongoaidongs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo ngoài đồng</span>
-                            </a>
-                            <a href="{{ route('chitieutrongnhas.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>chỉ tiêu trong nhà</span>
-                            </a>
-                            <a href="{{ route('giatridotrongnhas.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo trong nhà</span>
-                            </a>
-                            <a href="{{ route('chitieusaubenhs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>chỉ tiêu sâu bệnh</span>
-                            </a>
-                            <a href="{{ route('loaisaubenhs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>loại sâu bệnh</span>
-                            </a>
-                            <a href="{{ route('giatridosaubenhs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị đo sâu bệnh</span>
-                            </a>
 
-                            <hr>
-
-                            <a href="{{ route('giaidoantruongthanhs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>GIAI ĐOẠN TRƯỞNG THÀNH</span>
-                            </a>
-                            <a href="{{ route('doituongtinhtrangs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>đối tượng tính trạng</span>
-                            </a>
-                            <a href="{{ route('dacdiemtinhtrangs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>đặc điểm tính trạng</span>
-                            </a>
-                            <a href="{{ route('giatritinhtrangs.index') }}" class="list-group-item list-group-item-action">
-                                <i class="fa-solid fa-circle-nodes"></i><span>giá trị tính trạng</span>
-                            </a>
-                        </div>
-                    </nav>
-                    <!-- Sidebar -->
-                </div>
-                <div class="col-9 p-0 overflow-auto">
-                    {{-- <h3 class="text-uppercase mt-1 text-center bg-warning p-1" style="font-family: 'Roboto', sans-serif;">{{ $title }}</h3> --}}
-                    {{-- @yield('content') --}}
-                {{-- </div> --}}
-            {{-- </div>  --}}
-        <!-- Sidebar/menu -->
-
-    {{-- </body> --}}
 
     <body>
 
@@ -129,7 +41,8 @@
         <nav class="w3-sidebar w3-green w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
           <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
           <div class="w3-container">
-            <h3 class=""><img src="{{ asset('home/logo/AGU.png') }}" alt="logoAGU" style="width:100%"></h3>
+            {{-- <img src="{{ asset('home/logo/AGU.png') }}" alt="logoAGU" style="width: 100%"> --}}
+            <img src="{{ asset('home/logo/AGU.png') }}" alt="logoAGU" style="width: 100%">
           </div>
           <div class="w3-bar-block nav-upper">
             <a href="{{ url('/') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
