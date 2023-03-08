@@ -18,19 +18,19 @@
     <!-- Header -->
     <div class="w3-container" style="margin-top:80px" id="showcase">
         <h1 class="w3-jumbo"><b>Web-APP QuanLiLuaGiong</b></h1>
-        <hr style="width:50px;border:5px solid red" class="w3-round">
+        <hr style="width:200px; height:10px; color:green;" class="w3-round">
     </div>
 
     <!-- Photo grid (modal) -->
     <div class="w3-row-padding">
         <div class="w3-half">
-        <img src="{{ asset('home/images/home2.jpg') }}" style="width:100%" onclick="onClick(this)" alt="QuanLyLuaGiong Group">
-        <img src="{{ asset('home/images/home1.jpg') }}" style="width:100%" onclick="onClick(this)" alt="QuanLyLuaGiong Group">
+            <img src="{{url('public/home/images/home2.jpg')}}" alt="QuanLyLuaGiong Group" style="width: 100%" onclick="onClick(this)">
+            <img src="{{url('public/home/images/home.jpg')}}" alt="QuanLyLuaGiong Group" style="width: 100%" onclick="onClick(this)">
     </div>
 
         <div class="w3-half">
-            <img src="{{ asset('home/images/home.jpg') }}" style="width:100%" onclick="onClick(this)" alt="QuanLyLuaGiong Group">
-            <img src="{{ asset('home/images/home2.jpg') }}" style="width:100%" onclick="onClick(this)" alt="QuanLyLuaGiong Group">
+            <img src="{{url('public/home/images/home1.jpg')}}" alt="QuanLyLuaGiong Group" style="width: 100%" onclick="onClick(this)">
+            <img src="{{url('public/home/images/home2.jpg')}}" alt="QuanLyLuaGiong Group" style="width: 100%" onclick="onClick(this)">
         </div>
     </div>
     <!-- Modal for full size images on click-->
@@ -44,7 +44,7 @@
     <!-- Services -->
     <div class="w3-container" id="services" style="margin-top:75px">
         <h1 class="w3-xxxlarge w3-text-green"><b>Viện biến đổi khí hậu.</b></h1>
-
+        <hr style="width:200px; height:10px; color:green;" class="w3-round">
         <p>Nghiên cứu, bảo tồn và phất triển các giống lúa mùa cho vùng lũ đồng bằng Sông Cửu Long</p>
         <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor

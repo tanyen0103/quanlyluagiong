@@ -42,7 +42,8 @@
           <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
           <div class="w3-container">
             {{-- <img src="{{ asset('home/logo/AGU.png') }}" alt="logoAGU" style="width: 100%"> --}}
-            <img src="{{ asset('home/logo/AGU.png') }}" alt="logoAGU" style="width: 100%">
+            <img src="{{url('public/home/logo/AGU.png')}}" alt="logoAGU" style="width: 100%">
+
           </div>
           <div class="w3-bar-block nav-upper">
             <a href="{{ url('/') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
