@@ -12,6 +12,18 @@ class LoaiGiaTriDoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:loaigiatrido-list|loaigiatrido-create|loaigiatrido-edit|loaigiatrido-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:loaigiatrido-create', ['only' => ['create','store']]);
+         $this->middleware('permission:loaigiatrido-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:loaigiatrido-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $loaigiatridos = LoaiGiaTriDo::oldest()->paginate(10);

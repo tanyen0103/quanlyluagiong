@@ -17,6 +17,18 @@ class GiongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giong-list|giong-create|giong-edit|giong-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giong-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giong-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giong-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giongs = Giong::oldest()->paginate(5);

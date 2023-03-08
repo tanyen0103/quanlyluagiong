@@ -14,6 +14,18 @@ class GiaTriDoTrongNhaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giatridotrongnha-list|giatridotrongnha-create|giatridotrongnha-edit|giatridotrongnha-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giatridotrongnha-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giatridotrongnha-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giatridotrongnha-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(5);

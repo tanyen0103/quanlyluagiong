@@ -14,6 +14,18 @@ class GiaTriDoSauBenhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giatridosaubenh-list|giatridosaubenh-create|giatridosaubenh-edit|giatridosaubenh-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giatridosaubenh-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giatridosaubenh-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giatridosaubenh-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giatridosaubenhs = GiaTriDoSauBenh::oldest()->paginate(5);

@@ -13,6 +13,18 @@ class ChiTieuSauBenhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:chitieusaubenh-list|chitieusaubenh-create|chitieusaubenh-edit|chitieusaubenh-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:chitieusaubenh-create', ['only' => ['create','store']]);
+         $this->middleware('permission:chitieusaubenh-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:chitieusaubenh-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $chitieusaubenhs = ChiTieuSauBenh::oldest()->paginate(10);

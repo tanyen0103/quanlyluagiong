@@ -13,6 +13,18 @@ class MaNgoaiDongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:mangoaidong-list|mangoaidong-create|mangoaidong-edit|mangoaidong-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:mangoaidong-create', ['only' => ['create','store']]);
+         $this->middleware('permission:mangoaidong-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:mangoaidong-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $mangoaidongs = MaNgoaiDong::oldest()->paginate(10);

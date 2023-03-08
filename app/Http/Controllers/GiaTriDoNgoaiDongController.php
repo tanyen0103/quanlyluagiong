@@ -14,6 +14,18 @@ class GiaTriDoNgoaiDongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giatridongoaidong-list|giatridongoaidong-create|giatridongoaidong-edit|giatridongoaidong-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giatridongoaidong-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giatridongoaidong-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giatridongoaidong-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(5);

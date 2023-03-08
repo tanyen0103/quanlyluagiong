@@ -13,6 +13,18 @@ class GiaTriTinhTrangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giatritinhtrang-list|giatritinhtrang-create|giatritinhtrang-edit|giatritinhtrang-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giatritinhtrang-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giatritinhtrang-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giatritinhtrang-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);

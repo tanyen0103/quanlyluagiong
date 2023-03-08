@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="row pt-2">
@@ -56,3 +56,4 @@
     {!! $nhomgiongs->links() !!}
 
 @endsection
+

@@ -13,6 +13,18 @@ class ChiTieuTrongNhaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:chitieutrongnha-list|chitieutrongnha-create|chitieutrongnha-edit|chitieutrongnha-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:chitieutrongnha-create', ['only' => ['create','store']]);
+         $this->middleware('permission:chitieutrongnha-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:chitieutrongnha-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $chitieutrongnhas = ChiTieuTrongNha::oldest()->paginate(10);

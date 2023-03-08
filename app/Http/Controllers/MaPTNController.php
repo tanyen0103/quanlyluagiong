@@ -13,6 +13,18 @@ class MaPTNController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:maptn-list|maptn-create|maptn-edit|maptn-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:maptn-create', ['only' => ['create','store']]);
+         $this->middleware('permission:maptn-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:maptn-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $maptns = MaPTN::oldest()->paginate(10);

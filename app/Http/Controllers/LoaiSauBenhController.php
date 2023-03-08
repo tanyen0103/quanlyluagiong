@@ -14,6 +14,18 @@ class LoaiSauBenhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:loaisaubenh-list|loaisaubenh-create|loaisaubenh-edit|loaisaubenh-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:loaisaubenh-create', ['only' => ['create','store']]);
+         $this->middleware('permission:loaisaubenh-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:loaisaubenh-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $loaisaubenhs = LoaiSauBenh::oldest()->paginate(10);

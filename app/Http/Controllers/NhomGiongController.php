@@ -12,6 +12,18 @@ class NhomGiongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:nhomgiong-list|nhomgiong-create|nhomgiong-edit|nhomgiong-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:nhomgiong-create', ['only' => ['create','store']]);
+         $this->middleware('permission:nhomgiong-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:nhomgiong-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $nhomgiongs = NhomGiong::oldest()->paginate(10);

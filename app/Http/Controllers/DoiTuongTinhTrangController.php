@@ -13,6 +13,18 @@ class DoiTuongTinhTrangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:doituongtinhtrang-list|doituongtinhtrang-create|doituongtinhtrang-edit|doituongtinhtrang-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:doituongtinhtrang-create', ['only' => ['create','store']]);
+         $this->middleware('permission:doituongtinhtrang-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:doituongtinhtrang-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $doituongtinhtrangs = DoiTuongTinhTrang::oldest()->paginate(5);

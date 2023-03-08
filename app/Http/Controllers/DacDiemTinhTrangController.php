@@ -13,6 +13,18 @@ class DacDiemTinhTrangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:dacdiemtinhtrang-list|dacdiemtinhtrang-create|dacdiemtinhtrang-edit|dacdiemtinhtrang-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:dacdiemtinhtrang-create', ['only' => ['create','store']]);
+         $this->middleware('permission:dacdiemtinhtrang-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:dacdiemtinhtrang-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $dacdiemtinhtrangs = DacDiemTinhTrang::oldest()->paginate(5);

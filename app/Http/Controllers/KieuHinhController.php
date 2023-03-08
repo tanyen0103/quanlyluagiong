@@ -12,6 +12,18 @@ class KieuHinhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:kieuhinh-list|kieuhinh-create|kieuhinh-edit|kieuhinh-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:kieuhinh-create', ['only' => ['create','store']]);
+         $this->middleware('permission:kieuhinh-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:kieuhinh-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $kieuhinhs = KieuHinh::oldest()->paginate(5);

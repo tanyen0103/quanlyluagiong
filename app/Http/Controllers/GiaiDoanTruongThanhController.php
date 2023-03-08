@@ -12,6 +12,18 @@ class GiaiDoanTruongThanhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:giaidoantruongthanh-list|giaidoantruongthanh-create|giaidoantruongthanh-edit|giaidoantruongthanh-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:giaidoantruongthanh-create', ['only' => ['create','store']]);
+         $this->middleware('permission:giaidoantruongthanh-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:giaidoantruongthanh-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $giaidoantruongthanhs = GiaiDoanTruongThanh::oldest()->paginate(5);

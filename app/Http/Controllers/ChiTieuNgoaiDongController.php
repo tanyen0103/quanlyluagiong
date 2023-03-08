@@ -13,6 +13,18 @@ class ChiTieuNgoaiDongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:chitieungoaidong-list|chitieungoaidong-create|chitieungoaidong-edit|chitieungoaidong-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:chitieungoaidong-create', ['only' => ['create','store']]);
+         $this->middleware('permission:chitieungoaidong-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:chitieungoaidong-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $chitieungoaidongs = ChiTieuNgoaiDong::oldest()->paginate(10);
