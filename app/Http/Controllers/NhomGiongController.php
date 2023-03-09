@@ -19,6 +19,11 @@ class NhomGiongController extends Controller
          $this->middleware('permission:nhomgiong-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:nhomgiong-delete', ['only' => ['destroy']]);
     }
+
+    public function info()
+    {
+        return view('admin.nhomgiongs.info', ["title" => "Bảng nhóm giống"]);
+    }
     /**
      * Display a listing of the resource.
      *
