@@ -17,5 +17,25 @@
 <script src="{{ asset('public/teamplates/js/demo/chart-pie-demo.js') }}"></script>
 
 
+{{-- Model Search table --}}
+<script>
+    $(document).ready(function(){
+        $("#button-addon2").click(function(){
+            // Lấy giá trị từ ô tìm kiếm
+            var searchValue = $("#searchInput").val().toLowerCase();
+            // Lặp qua từng dòng trong bảng và ẩn những dòng không chứa từ khóa tìm kiếm
+            $("table tbody tr").each(function(){
+                var rowText = $(this).text().toLowerCase();
+                if(rowText.indexOf(searchValue) == -1){
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
+
+
 
 

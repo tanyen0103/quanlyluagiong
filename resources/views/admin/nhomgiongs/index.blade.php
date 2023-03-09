@@ -1,59 +1,140 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row pt-2">
-        <div class="col-lg-12 d-flex justify-content-between">
-            <div class="text-center text-success">
-                <h2>NHÓM GIỐNG</h2>
-            </div>
-            <div class="">
-                <a class="btn btn-warning" href="{{ route('nhomgiongs.create') }}">TẠO MỚI</a>
-            </div>
-        </div>
-    </div>
-
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr class="bg-success text-white">
-            <th>No</th>
-            <th>Mã code</th>
-            <th>Tên</th>
-            <th>Mô tả</th>
-            <th>Ngày ngâm</th>
-            <th>Ngày cấy</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($nhomgiongs as $item)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $item->nhomgiong_code }}</td>
-            <td>{{ $item->nhomgiong_ten }}</td>
-            <td>{{ $item->nhomgiong_mota }}</td>
-            <td>{{ $item->nhomgiong_ngayngam }}</td>
-            <td>{{ $item->nhomgiong_ngaycay }}</td>
-            <td>
-                <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
+    <div class="card shadow mb-5 border-bottom-primary">
+        {{-- Card header --}}
+        <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+            <div class="">
+                <h3 class="m-0 font-weight-bold text-white">Bảng nhóm giống</h3>
+            </div>
+            <div class="">
+                <a class="btn btn-light" href="{{ route('nhomgiongs.create') }}">Tạo mới</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="row d-flex justify-content-center">
+                    <div class="input-group mb-2 col-5">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                            aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="button-addon2">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                    <a class="btn btn-success" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Mã code</th>
+                            <th>Tên</th>
+                            <th>Mô tả</th>
+                            <th>Ngày ngâm</th>
+                            <th>Ngày cấy</th>
+                            <th width="280px">Action</th>
+                        </tr>
+                    </thead>
+                    @foreach ($nhomgiongs as $item)
+                    <tbody>
+                        <tr>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $item->nhomgiong_code }}</td>
+                            <td>{{ $item->nhomgiong_ten }}</td>
+                            <td>{{ $item->nhomgiong_mota }}</td>
+                            <td>{{ $item->nhomgiong_ngayngam }}</td>
+                            <td>{{ $item->nhomgiong_ngaycay }}</td>
+                            <td>
+                                <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
 
-                    <a class="btn btn-warning" href="{{ route('nhomgiongs.edit',$item->id) }}">Sửa</a>
+                                    <a class="btn btn-success" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
 
-                    @csrf
-                    @method('DELETE')
+                                    <a class="btn btn-warning" href="{{ route('nhomgiongs.edit',$item->id) }}">Sửa</a>
 
-                    <button type="submit" class="btn btn-outline-danger">Xoá</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-outline-danger">Xoá</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
 
     {!! $nhomgiongs->links() !!}
 
 @endsection
+
+{{-- <div class="card shadow mb-4">
+    <div class="card-header py-3 justify-content-around">
+        <h6 class="m-0 font-weight-bold text-primary">Bảng nhóm giống</h6>
+        <a class="btn btn-warning" href="{{ route('nhomgiongs.create') }}">Tạo mới</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Mã code</th>
+                        <th>Tên</th>
+                        <th>Mô tả</th>
+                        <th>Ngày ngâm</th>
+                        <th>Ngày cấy</th>
+                        <th width="280px">Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>No</th>
+                        <th>Mã code</th>
+                        <th>Tên</th>
+                        <th>Mô tả</th>
+                        <th>Ngày ngâm</th>
+                        <th>Ngày cấy</th>
+                        <th width="280px">Action</th>
+                    </tr>
+                </tfoot>
+                @foreach ($nhomgiongs as $item)
+                <tbody>
+                    <tr>
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $item->nhomgiong_code }}</td>
+                        <td>{{ $item->nhomgiong_ten }}</td>
+                        <td>{{ $item->nhomgiong_mota }}</td>
+                        <td>{{ $item->nhomgiong_ngayngam }}</td>
+                        <td>{{ $item->nhomgiong_ngaycay }}</td>
+                        <td>
+                            <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
+
+                                <a class="btn btn-success" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
+
+                                <a class="btn btn-warning" href="{{ route('nhomgiongs.edit',$item->id) }}">Sửa</a>
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-outline-danger">Xoá</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+        </div>
+    </div>
+</div> --}}
+
 

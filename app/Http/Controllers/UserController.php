@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         $data = User::oldest()->paginate(5);
 
-        return view('admin.users.index', ["title" => "Bảng nhóm giống"],
+        return view('admin.users.index', ["title" => "Bảng tài khoản"],
                     compact('data'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
@@ -98,7 +98,7 @@ class UserController extends Controller
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('admin.users.edit',compact('user','roles','userRole'));
     }
 
     /**

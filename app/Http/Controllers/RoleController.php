@@ -82,7 +82,7 @@ class RoleController extends Controller
             ->where("role_has_permissions.role_id",$id)
             ->get();
 
-        return view('roles.show',compact('role','rolePermissions'));
+        return view('admin.roles.show',compact('role','rolePermissions'));
     }
 
     /**
@@ -99,7 +99,7 @@ class RoleController extends Controller
             ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
             ->all();
 
-        return view('roles.edit',compact('role','permission','rolePermissions'));
+        return view('admin.roles.edit',compact('role','permission','rolePermissions'));
     }
 
     /**
