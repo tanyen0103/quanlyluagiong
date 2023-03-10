@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\GiongController;
 use App\Http\Controllers\API\MaPTNController;
 use App\Http\Controllers\API\KieuHinhController;
@@ -33,6 +35,20 @@ use App\Http\Controllers\API\GiaiDoanTruongThanhController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+// Authentication API with Passport
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
+    Route::group([
+        'middleware' => 'auth:api'
+    ], function() {
+        Route::delete('logout', [AuthController::class, 'logout']);
+        Route::get('user', [AuthController::class, 'user']);
+    });
 });
 
 Route::resource('nhomgiongs', NhomGiongController::class);
@@ -68,4 +84,8 @@ Route::resource('chitieusaubenhs', ChiTieuSauBenhController::class);
 Route::resource('loaisaubenhs', LoaiSauBenhController::class);
 
 Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);
+
+Route::resource('users', UserController::class);
+
+
 
