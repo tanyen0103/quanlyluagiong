@@ -27,10 +27,10 @@ class ChiTieuTrongNhaController extends Controller
      */
     public function index()
     {
-        $chitieutrongnhas = ChiTieuTrongNha::oldest()->paginate(10);
+        $chitieutrongnhas = ChiTieuTrongNha::oldest()->paginate(4);
 
         return view('admin.chitieutrongnhas.index', ["title" => "Bảng chỉ tiêu trong nhà"],
-                    compact('chitieutrongnhas'))->with('i', (request()->input('page', 1) - 1) * 10);
+                    compact('chitieutrongnhas'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

@@ -27,10 +27,10 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function index()
     {
-        $doituongtinhtrangs = DoiTuongTinhTrang::oldest()->paginate(5);
+        $doituongtinhtrangs = DoiTuongTinhTrang::oldest()->paginate(4);
 
         return view('admin.doituongtinhtrangs.index', ["title" => "Bảng đối tượng tính trạng"],
-                    compact('doituongtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 5);
+                    compact('doituongtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

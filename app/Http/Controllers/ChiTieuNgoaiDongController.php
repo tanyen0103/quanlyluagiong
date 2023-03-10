@@ -27,10 +27,10 @@ class ChiTieuNgoaiDongController extends Controller
      */
     public function index()
     {
-        $chitieungoaidongs = ChiTieuNgoaiDong::oldest()->paginate(10);
+        $chitieungoaidongs = ChiTieuNgoaiDong::oldest()->paginate(4);
 
         return view('admin.chitieungoaidongs.index', ["title" => "Bảng chỉ tiêu ngoài đồng"],
-                    compact('chitieungoaidongs'))->with('i', (request()->input('page', 1) - 1) * 10);
+                    compact('chitieungoaidongs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

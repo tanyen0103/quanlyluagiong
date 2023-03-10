@@ -31,10 +31,10 @@ class GiongController extends Controller
      */
     public function index()
     {
-        $giongs = Giong::oldest()->paginate(5);
+        $giongs = Giong::oldest()->paginate(4);
 
         return view('admin.giongs.index', ["title" => "Bảng giống"],
-                    compact('giongs'))->with('i', (request()->input('page', 1) - 1) * 5);
+                    compact('giongs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

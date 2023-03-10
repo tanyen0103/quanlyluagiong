@@ -28,10 +28,10 @@ class LoaiSauBenhController extends Controller
      */
     public function index()
     {
-        $loaisaubenhs = LoaiSauBenh::oldest()->paginate(10);
+        $loaisaubenhs = LoaiSauBenh::oldest()->paginate(4);
 
         return view('admin.loaisaubenhs.index', ["title" => "Bảng loại sâu bệnh"],
-                    compact('loaisaubenhs'))->with('i', (request()->input('page', 1) - 1) * 10);
+                    compact('loaisaubenhs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

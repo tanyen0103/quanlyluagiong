@@ -31,10 +31,10 @@ class NhomGiongController extends Controller
      */
     public function index()
     {
-        $nhomgiongs = NhomGiong::oldest()->paginate(5);
+        $nhomgiongs = NhomGiong::oldest()->paginate(4);
 
         return view('admin.nhomgiongs.index', ["title" => "Bảng nhóm giống"],
-                    compact('nhomgiongs'))->with('i', (request()->input('page', 1) - 1) * 5);
+                    compact('nhomgiongs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

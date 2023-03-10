@@ -27,10 +27,10 @@ class MaNgoaiDongController extends Controller
      */
     public function index()
     {
-        $mangoaidongs = MaNgoaiDong::oldest()->paginate(10);
+        $mangoaidongs = MaNgoaiDong::oldest()->paginate(4);
 
         return view('admin.mangoaidongs.index', ["title" => "Bảng mã ngoài đồng"],
-                    compact('mangoaidongs'))->with('i', (request()->input('page', 1) - 1) * 10);
+                    compact('mangoaidongs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**

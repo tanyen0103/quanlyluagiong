@@ -28,10 +28,10 @@ class GiaTriDoTrongNhaController extends Controller
      */
     public function index()
     {
-        $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(5);
+        $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(4);
 
         return view('admin.giatridotrongnhas.index', ["title" => "Bảng giá trị đo trong nhà"],
-                    compact('giatridotrongnhas'))->with('i', (request()->input('page', 1) - 1) * 5);
+                    compact('giatridotrongnhas'))->with('i', (request()->input('page', 1) - 1) * 4);
 
     }
 

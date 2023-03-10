@@ -19,10 +19,10 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                     <!-- Sidebar - Brand -->
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                        <div class="sidebar-brand-icon rotate-n-15">
+                        <div class="sidebar-brand-icon ">
                             <img src="{{ asset('public/home/logo/AGU.png') }}" alt="" width="50" srcset="">
                         </div>
-                        <div class="sidebar-brand-text mx-3">Quan Li Lua Giong</div>
+                        <div class="sidebar-brand-text mx-3">Quan Ly Lua Giong</div>
                     </a>
 
                     <!-- Divider -->
@@ -43,72 +43,73 @@
                         QUẢN LÍ
                     </div>
 
-                    <!-- Nav Item - Người quản lí -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-cog"></i>
-                            <span>Người quản lý</span>
-                        </a>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header text-danger">Bảng dành cho admin:</h6>
-                                <a class="collapse-item" href="{{ route('nhomgiongs.index') }}">Nhóm giống</a>
-                                <a class="collapse-item" href="{{ route('kieuhinhs.create') }}">Kiểu hình</a>
-                                <a class="collapse-item" href="{{ route('giongs.index') }}">Giống</a>
-                                <hr>
-                                <a class="collapse-item" href="{{ route('mangoaidongs.create') }}">Mã ngoài đồng</a>
-                                <a class="collapse-item" href="{{ route('maptns.index') }}">Mã PTN</a>
-                                <hr class="">
-                                <a class="collapse-item" href="{{ route('loaigiatridos.create') }}">Loại GTD</a>
-                                <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}">Chỉ Tiêu NĐ</a>
-                                <a class="collapse-item" href="{{ route('giatridongoaidongs.create') }}">GTĐ Ngoài đồng</a>
-                                <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}">Chỉ tiêu TN</a>
-                                <a class="collapse-item" href="{{ route('giatridotrongnhas.create') }}">GTĐ Trong nhà</a>
-                                <hr class="">
-                                <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}">Chỉ tiêu SB</a>
-                                <a class="collapse-item" href="{{ route('loaisaubenhs.create') }}">Loại SB</a>
-                                <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}">GTĐ Sâu bệnh</a>
-                                <hr>
-                                <a class="collapse-item" href="{{ route('giaidoantruongthanhs.create') }}">GĐ Trưởng thành</a>
-                                <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}">ĐT Tính trạng</a>
-                                <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.create') }}">ĐĐ Tính trạng</a>
-                                <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}">GT Tính trạng</a>
-                                <hr>
-                                <a class="collapse-item text-danger" href="">Quyền: Admin</a>
+                    @role('admin')
+                        <!-- Nav Item - Người quản lí -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-fw fa-folder"></i>
+                                <span>Người quản lý</span>
+                            </a>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <h6 class="collapse-header text-danger">Bảng dành cho admin:</h6>
+                                    <a class="collapse-item" href="{{ route('nhomgiongs.index') }}">Nhóm giống</a>
+                                    <a class="collapse-item" href="{{ route('kieuhinhs.index') }}">Kiểu hình</a>
+                                    <a class="collapse-item" href="{{ route('giongs.index') }}">Giống</a>
+                                    <hr>
+                                    <a class="collapse-item" href="{{ route('mangoaidongs.index') }}">Mã ngoài đồng</a>
+                                    <a class="collapse-item" href="{{ route('maptns.index') }}">Mã PTN</a>
+                                    <hr class="">
+                                    <a class="collapse-item" href="{{ route('loaigiatridos.index') }}">Loại GTD</a>
+                                    <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}">Chỉ Tiêu NĐ</a>
+                                    <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}">GTĐ Ngoài đồng</a>
+                                    <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}">Chỉ tiêu TN</a>
+                                    <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}">GTĐ Trong nhà</a>
+                                    <hr class="">
+                                    <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}">Chỉ tiêu SB</a>
+                                    <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}">Loại SB</a>
+                                    <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}">GTĐ Sâu bệnh</a>
+                                    <hr>
+                                    <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}">GĐ Trưởng thành</a>
+                                    <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}">ĐT Tính trạng</a>
+                                    <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}">ĐĐ Tính trạng</a>
+                                    <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}">GT Tính trạng</a>
+                                    <hr>
+                                    <a class="collapse-item text-danger" href="">Quyền: Admin</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-
-                    <!-- Nav Item - Người dùng -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                            aria-expanded="true" aria-controls="collapseUtilities">
-                            <i class="fas fa-fw fa-wrench"></i>
-                            <span>Người dùng</span>
-                        </a>
-                        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                            data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Bảng dành cho User:</h6>
-                                <a class="collapse-item" href="{{ route('loaigiatridos.create') }}">Loại GTD</a>
-                                <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}">Chỉ Tiêu NĐ</a>
-                                <a class="collapse-item" href="{{ route('giatridongoaidongs.create') }}">GTĐ Ngoài đồng</a>
-                                <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}">Chỉ tiêu TN</a>
-                                <a class="collapse-item" href="{{ route('giatridotrongnhas.create') }}">GTĐ Trong nhà</a>
-                                <hr>
-                                <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}">Chỉ tiêu SB</a>
-                                <a class="collapse-item" href="{{ route('loaisaubenhs.create') }}">Loại SB</a>
-                                <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}">GTĐ Sâu bệnh</a>
-                                <hr>
-                                <a class="collapse-item" href="{{ route('giaidoantruongthanhs.create') }}">GĐ Trưởng thành</a>
-                                <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}">ĐT Tính trạng</a>
-                                <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.create') }}">ĐĐ Tính trạng</a>
-                                <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}">GT Tính trạng</a>
+                        </li>
+                    @else
+                        <!-- Nav Item - Người dùng -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                                aria-expanded="true" aria-controls="collapseUtilities">
+                                <i class="fas fa-fw fa-folder"></i>
+                                <span>Người dùng</span>
+                            </a>
+                            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                                data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <h6 class="collapse-header">Bảng dành cho User:</h6>
+                                    <a class="collapse-item" href="{{ route('loaigiatridos.index') }}">Loại GTD</a>
+                                    <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}">Chỉ Tiêu NĐ</a>
+                                    <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}">GTĐ Ngoài đồng</a>
+                                    <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}">Chỉ tiêu TN</a>
+                                    <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}">GTĐ Trong nhà</a>
+                                    <hr>
+                                    <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}">Chỉ tiêu SB</a>
+                                    <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}">Loại SB</a>
+                                    <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}">GTĐ Sâu bệnh</a>
+                                    <hr>
+                                    <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}">GĐ Trưởng thành</a>
+                                    <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}">ĐT Tính trạng</a>
+                                    <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}">ĐĐ Tính trạng</a>
+                                    <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}">GT Tính trạng</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-
+                        </li>
+                    @endrole
                     <!-- Divider -->
                     <hr class="sidebar-divider">
 
@@ -121,7 +122,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                             aria-expanded="true" aria-controls="collapsePages">
-                            <i class="fas fa-fw fa-folder"></i>
+                            <i class="fas fa-fw fa-user"></i>
                             <span>Quản lí tài khoản</span>
                         </a>
                         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -144,9 +145,12 @@
 
                     <!-- Sidebar Message -->
                     <div class="sidebar-card d-none d-lg-flex">
-                        <i class="fa-thin fa-bookmark"></i>
-                        <p class="text-center mb-2"><strong>Web App Quan Ly Lua Giong</strong> is packed with premium features, components, and more!</p>
-                        <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Xem thêm!</a>
+                        <i class="fa-solid fa-laptop-file" style="font-size: 350%"></i>
+                        <p class="text-center m-2">
+                            <strong>Web App Quan Ly Lua Giong</strong>
+                            <br/>
+                             Phần mềm quản lý dữ liệu hình ảnh mô tả giống lúa – Phân hệ Web và Web API!</p>
+                        <a class="btn btn-success btn-sm" href="#">Xem thêm!</a>
                     </div>
                 {{-- @endguest --}}
             </ul>
@@ -166,19 +170,10 @@
                             <i class="fa fa-bars"></i>
                         </button>
 
-                        <!-- Topbar Search -->
-                        {{-- <form
-                            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                    aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form> --}}
+                        <!-- Topbar time -->
+                        <div class="text-danger mt-3 d-none d-lg-inline">
+                            <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fa-solid fa-fire"></i></p>
+                        </div>
 
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -190,29 +185,6 @@
                             @endif
 
                             @else
-                                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                                <li class="nav-item dropdown no-arrow d-sm-none">
-                                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-search fa-fw"></i>
-                                    </a>
-                                    <!-- Dropdown - Messages -->
-                                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                        aria-labelledby="searchDropdown">
-                                        <form class="form-inline mr-auto w-100 navbar-search">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control bg-light border-0 small"
-                                                    placeholder="Search for..." aria-label="Search"
-                                                    aria-describedby="basic-addon2">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">
-                                                        <i class="fas fa-search fa-sm"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </li>
 
                                 <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -249,7 +221,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white p-3" >
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Quan li lua giong 2023</span>

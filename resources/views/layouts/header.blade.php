@@ -7,3 +7,16 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('public/teamplates/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    {{-- font awsome --}}
+    <script src="https://kit.fontawesome.com/5470c24891.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        a, a:hover{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+

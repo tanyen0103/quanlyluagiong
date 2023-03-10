@@ -19,6 +19,7 @@
 
 {{-- Model Search table --}}
 <script>
+    // Function fomr search
     $(document).ready(function(){
         $("#button-addon2").click(function(){
             // Lấy giá trị từ ô tìm kiếm
@@ -34,6 +35,21 @@
             });
         });
     });
+
+    // Function auto update time
+    function updateTime() {
+        var now = new Date();
+        var options = {
+            timeZone: 'Asia/Ho_Chi_Minh',
+            year: 'numeric', month: 'numeric', day: 'numeric',
+            hour: 'numeric', minute: 'numeric', second: 'numeric',
+            hour12: true
+        };
+        var dateString = now.toLocaleDateString('vi-VN', options);
+        document.getElementById("current-time").textContent = dateString;
+    }
+    setInterval(updateTime, 1000);
+
 </script>
 
 

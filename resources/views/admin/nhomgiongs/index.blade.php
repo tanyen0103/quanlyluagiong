@@ -55,14 +55,14 @@
                             <td>
                                 <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-success" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
 
-                                    <a class="btn btn-warning" href="{{ route('nhomgiongs.edit',$item->id) }}">Sửa</a>
+                                    <a class="btn btn-primary" href="{{ route('nhomgiongs.edit',$item->id) }}">Chỉnh sửa</a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-outline-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger">Xoá</button>
                                 </form>
                             </td>
                         </tr>
@@ -76,65 +76,4 @@
     {!! $nhomgiongs->links() !!}
 
 @endsection
-
-{{-- <div class="card shadow mb-4">
-    <div class="card-header py-3 justify-content-around">
-        <h6 class="m-0 font-weight-bold text-primary">Bảng nhóm giống</h6>
-        <a class="btn btn-warning" href="{{ route('nhomgiongs.create') }}">Tạo mới</a>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Mã code</th>
-                        <th>Tên</th>
-                        <th>Mô tả</th>
-                        <th>Ngày ngâm</th>
-                        <th>Ngày cấy</th>
-                        <th width="280px">Action</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Mã code</th>
-                        <th>Tên</th>
-                        <th>Mô tả</th>
-                        <th>Ngày ngâm</th>
-                        <th>Ngày cấy</th>
-                        <th width="280px">Action</th>
-                    </tr>
-                </tfoot>
-                @foreach ($nhomgiongs as $item)
-                <tbody>
-                    <tr>
-                        <td>{{ ++$i }}</td>
-                        <td>{{ $item->nhomgiong_code }}</td>
-                        <td>{{ $item->nhomgiong_ten }}</td>
-                        <td>{{ $item->nhomgiong_mota }}</td>
-                        <td>{{ $item->nhomgiong_ngayngam }}</td>
-                        <td>{{ $item->nhomgiong_ngaycay }}</td>
-                        <td>
-                            <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
-
-                                <a class="btn btn-success" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
-
-                                <a class="btn btn-warning" href="{{ route('nhomgiongs.edit',$item->id) }}">Sửa</a>
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="btn btn-outline-danger">Xoá</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
-        </div>
-    </div>
-</div> --}}
-
 
