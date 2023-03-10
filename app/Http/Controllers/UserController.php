@@ -110,38 +110,28 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Thực hiện validate request data
-        $request->validate([
+        $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);
 
-        // Lấy tất cả các thuộc tính của request và đưa vào một mảng $input
         $input = $request->all();
-
-        // Nếu password được cung cấp, hash password
         if(!empty($input['password'])){
             $input['password'] = Hash::make($input['password']);
         }else{
-            unset($input['password']); // Xóa trường password khỏi mảng $input nếu không có password được cung cấp
+            $input = Arr::except($input,array('password'));
         }
 
-        // Lấy user từ cơ sở dữ liệu bằng ID
         $user = User::find($id);
+        $user->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
 
-        // Cập nhật thuộc tính của user với các giá trị mới
-        $user->fill($input);
-        $user->save();
+        $user->assignRole($request->input('roles'));
 
-        // Xóa tất cả các roles của user và gán roles mới
-        $user->roles()->detach();
-        $user->roles()->attach($request->input('roles'));
-
-        // Chuyển hướng người dùng đến trang danh sách user và hiển thị thông báo thành công
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','Tài khoản cập nhật thành công');
 
     }
 

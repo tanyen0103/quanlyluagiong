@@ -43,7 +43,7 @@
                         QUẢN LÍ
                     </div>
 
-                    @role('admin')
+                    @role('Admin')
                         <!-- Nav Item - Người quản lí -->
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -112,29 +112,29 @@
                     @endrole
                     <!-- Divider -->
                     <hr class="sidebar-divider">
-
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Quản lí tài khoản
-                    </div>
-
-                    <!-- Nav Item - Quản lí tài khoản -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="true" aria-controls="collapsePages">
-                            <i class="fas fa-fw fa-user"></i>
-                            <span>Quản lí tài khoản</span>
-                        </a>
-                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="{{ route('users.index') }}">Tài khoản</a>
-                                <a class="collapse-item" href="{{ route('roles.index') }}">Phân quyền</a>
-                                <hr>
-                                <a class="collapse-item text-danger" href="">Quyền: Admin</a>
-                            </div>
+                    @role('Admin')
+                        <!-- Heading -->
+                        <div class="sidebar-heading">
+                            Quản lí tài khoản
                         </div>
-                    </li>
 
+                        <!-- Nav Item - Quản lí tài khoản -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="true" aria-controls="collapsePages">
+                                <i class="fas fa-fw fa-user"></i>
+                                <span>Quản lí tài khoản</span>
+                            </a>
+                            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="{{ route('users.index') }}">Tài khoản</a>
+                                    <a class="collapse-item" href="{{ route('roles.index') }}">Phân quyền</a>
+                                    <hr>
+                                    <a class="collapse-item text-danger" href="">Quyền: Admin</a>
+                                </div>
+                            </div>
+                        </li>
+                    @endrole
                     <!-- Divider -->
                     <hr class="sidebar-divider d-none d-md-block">
 
