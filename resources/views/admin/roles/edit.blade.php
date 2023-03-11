@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="col-xs-11 col-sm-11 col-md-11 text-center m-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>
     {!! Form::close() !!}

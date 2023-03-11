@@ -45,6 +45,7 @@
                 <strong>Ngày cấy:</strong>
                 {{  $nhomgiong->nhomgiong_ngaycay }}
             </div>
+            <hr class="h-1 mt-0 bg-gradient-primary">
         </div>
     </div>
 </div>

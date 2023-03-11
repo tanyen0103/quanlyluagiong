@@ -35,6 +35,7 @@
                     @endforeach
                 @endif
             </div>
+            <hr class="h-1 mt-0 bg-gradient-primary">
         </div>
     </div>
 </div>
