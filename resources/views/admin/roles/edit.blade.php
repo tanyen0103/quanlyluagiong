@@ -29,7 +29,7 @@
     {{-- Card header --}}
     <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
         <div class="">
-            <h3 class="m-0 font-weight-bold text-white">Thêm mới</h3>
+            <h3 class="m-0 font-weight-bold text-white">Chỉnh sửa</h3>
         </div>
         <div class="">
             <a class="btn btn-light" href="{{ route('roles.index') }}">Trở về</a>

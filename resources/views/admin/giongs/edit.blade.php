@@ -1,24 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row bg-success pt-2">
-        <div class="col-lg-12 d-flex justify-content-between">
-            <div class="text-white">
-                <h2>SỬA GIỐNG</h2>
-            </div>
-            <div class="">
-                <a class="btn btn-warning" href="{{ route('giongs.index') }}">Trở về</a>
-            </div>
+<div class="card shadow mb-5 border-bottom-primary">
+    {{-- Card header --}}
+    <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+        <div class="">
+            <h3 class="m-0 font-weight-bold text-white">Chỉnh sửa</h3>
+        </div>
+        <div class="">
+            <a class="btn btn-light" href="{{ route('giongs.index') }}">Trở về</a>
         </div>
     </div>
-
     <form action="{{ route('giongs.update',$giong->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-        <div class="row mt-1 border border-3 border-success">
+        <div class="row mt-1 d-flex justify-content-center">
             <input type="hidden" id="id" name="id" value="{{ $giong->id }}" />
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
                     <label for="nhomgiong_id">Nhóm giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="nhomgiong_id" class="form-control custom-select @error('nhomgiong_id') is-invalid @enderror" name="nhomgiong_id" required autofocus>
@@ -32,7 +31,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
                     <label for="kieuhinh_id">Kiểu hình<span class="text-danger font-weight-bold">*</span></label>
                     <select id="kieuhinh_id" class="form-control custom-select @error('kieuhinh_id') is-invalid @enderror" name="kieuhinh_id" required autofocus>
@@ -46,7 +45,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
                     <label for="giong_ten">Tên giống<span class="text-danger font-weight-bold">*</span></label>
                     <input type="text" value="{{ $giong->giong_ten }}" @error('giong_ten') is-invalid @enderror name="giong_ten" class="form-control" placeholder="Tên giống">
@@ -55,7 +54,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
                     <label for="giong_nguongoc">Nguồn gốc<span class="text-danger font-weight-bold">*</span></label>
                     <input type="text" value="{{ $giong->giong_nguongoc }}" @error('giong_nguongoc') is-invalid @enderror name="giong_nguongoc" class="form-control" placeholder="Nguồn gốc">
@@ -64,13 +63,13 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
                     <strong>Mô tả giống:</strong>
                     <textarea class="form-control" style="height:150px" @error('giong_mota') is-invalid @enderror name="giong_mota" placeholder="Mô tả giống">{{ $giong->giong_mota }}</textarea>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
 					<label for="giong_hinhanh">Hình ảnh giống</label>
                     @if(!empty($giong->giong_hinhanh))
@@ -83,9 +82,12 @@
                     @enderror
 				</div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center m-2">
-                    <button type="submit" class="btn btn-warning">Cập nhật</button>
+            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>
     </form>
+</div>
+
+
 @endsection

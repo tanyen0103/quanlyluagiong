@@ -43,11 +43,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/news', function () {
+    return view('news');
+})->name('news');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
+
     Route::resource('users', UserController::class);
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
     Route::resource('nhomgiongs', NhomGiongController::class);
 
