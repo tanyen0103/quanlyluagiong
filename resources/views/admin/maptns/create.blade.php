@@ -14,7 +14,7 @@
     <form action="{{ route('maptns.store') }}" method="POST" class="needs-validation" novalidate>
         @csrf
          <div class="row mt-1 d-flex justify-content-center">
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_id">Giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="giong_id" class="form-control custom-select @error('giong_id') is-invalid @enderror" name="giong_id" required autofocus>
@@ -28,7 +28,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="ptn_code">Mã Code:<span class="text-danger font-weight-bold">*</span></label>
                     <input id="ptn_code" type="text" class="form-control @error('ptn_code') is-invalid @enderror" name="ptn_code" value="{{ old('ptn_code') }}" required autocomplete="ptn_code" />
@@ -37,7 +37,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="ptn_mota">Mô tả</label>
                     <textarea class="form-control" style="height:150px" value="{{old('ptn_mota')}}" name="ptn_mota" @error('ptn_mota') is-invalid @enderror placeholder="Mô tả"></textarea>
@@ -46,7 +46,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                 <button type="submit" class="btn btn-primary">Tạo mới</button>
             </div>
         </div>

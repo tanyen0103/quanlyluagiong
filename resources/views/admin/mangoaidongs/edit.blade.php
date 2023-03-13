@@ -16,7 +16,7 @@
         @method('PUT')
         <input type="hidden" id="id" name="id" value="{{ $mangoaidong->id }}" />
         <div class="row mt-1 d-flex justify-content-center">
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_id">Giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="giong_id" class="form-control custom-select @error('giong_id') is-invalid @enderror" name="giong_id" required autofocus>
@@ -30,7 +30,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="field_code">Mã Code<span class="text-danger font-weight-bold">*</span></label>
                     <input type="text" value="{{ $mangoaidong->field_code }}" @error('field_code') is-invalid @enderror name="field_code" class="form-control" placeholder="Code mã ngoài đồng">
@@ -39,14 +39,14 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <strong>Mô tả:</strong>
                     <textarea class="form-control" style="height:150px" @error('field_mota') is-invalid @enderror name="field_mota" placeholder="Mô tả">{{ $mangoaidong->field_mota }}</textarea>
                 </div>
             </div>
 
-            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                 <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>

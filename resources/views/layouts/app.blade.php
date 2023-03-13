@@ -22,7 +22,7 @@
                         <div class="sidebar-brand-icon ">
                             <img src="{{ asset('public/home/logo/AGU.png') }}" alt="" width="50" srcset="">
                         </div>
-                        <div class="sidebar-brand-text mx-3">Quan Ly Giong Lua</div>
+                        <div class="sidebar-brand-text mx-3">Quản Lý Giống Lúa</div>
                     </a>
 
                     <!-- Divider -->
@@ -208,10 +208,11 @@
                     <div class="sidebar-card d-none d-lg-flex">
                         <i class="fa-solid fa-laptop-file" style="font-size: 350%"></i>
                         <p class="text-center m-2">
-                            <strong>Web App Quan Ly Lua Giong</strong>
-                            <br/>
-                             Phần mềm quản lý dữ liệu hình ảnh mô tả giống lúa – Phân hệ Web và Web API!</p>
-                        <a class="btn btn-success btn-sm" href="{{ route('news') }}">Xem thêm!</a>
+                            <strong>Quan Ly Lua Giong
+                                <br> Web & Web API
+                            </strong>
+                        </p>
+                        {{-- <a class="btn btn-success btn-sm" href="{{ route('news') }}">Xem thêm!</a> --}}
                     </div>
                 {{-- @endguest --}}
             </ul>
@@ -285,7 +286,7 @@
             <footer class="sticky-footer bg-white p-3" >
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Quan li lua giong 2023</span>
+                        <span>Copyright &copy; Quan li giong lua 2023</span>
                     </div>
                 </div>
             </footer>

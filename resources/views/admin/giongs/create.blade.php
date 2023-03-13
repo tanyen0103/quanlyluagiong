@@ -14,7 +14,7 @@
     <form action="{{ route('giongs.store') }}" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
         @csrf
          <div class="row mt-1 d-flex justify-content-center">
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="nhomgiong_id">Nhóm giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="nhomgiong_id" class="form-control custom-select @error('nhomgiong_id') is-invalid @enderror" name="nhomgiong_id" required autofocus>
@@ -28,7 +28,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="kieuhinh_id">Kiểu hình <span class="text-danger font-weight-bold">*</span></label>
                     <select id="kieuhinh_id" class="form-control custom-select @error('kieuhinh_id') is-invalid @enderror" name="kieuhinh_id" required autofocus>
@@ -42,7 +42,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_ten">Tên giống <span class="text-danger font-weight-bold">*</span></label>
                     <input id="giong_ten" type="text" class="form-control @error('giong_ten') is-invalid @enderror" name="giong_ten" value="{{ old('giong_ten') }}" required autocomplete="giong_ten" />
@@ -51,7 +51,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_nguongoc">Nguồn gốc <span class="text-danger font-weight-bold">*</span></label>
                     <input id="giong_nguongoc" type="text" class="form-control @error('giong_nguongoc') is-invalid @enderror" name="giong_nguongoc" value="{{ old('giong_nguongoc') }}" required autocomplete="giong_nguongoc" />
@@ -60,7 +60,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_mota">Mô tả</label>
                     <textarea class="form-control" style="height:150px" value="{{old('giong_mota')}}" name="giong_mota" @error('giong_mota') is-invalid @enderror placeholder="Mô tả giống"></textarea>
@@ -69,7 +69,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label class="form-label" for="giong_hinhanh">Hình ảnh giống (chú ý: Ảnh không chứa ký tự đặc biệt, size không quá 2M)</label>
                     <input id="giong_hinhanh" type="file" class="form-control @error('giong_hinhanh') is-invalid @enderror" name="giong_hinhanh" value="{{ old('giong_hinhanh') }}" required autocomplete="giong_hinhanh" />
@@ -78,7 +78,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                     <button type="submit" class="btn btn-primary">Đăng ký</button>
             </div>
         </div>

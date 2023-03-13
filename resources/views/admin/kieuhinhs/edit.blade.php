@@ -15,7 +15,7 @@
         @csrf
         @method('PUT')
         <div class="row mt-1 d-flex justify-content-center">
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <strong>Tên kiểu hình:</strong>
                     <input type="text" value="{{ $kieuhinh->kieuhinh_ten }}" @error('kieuhinh_ten') is-invalid @enderror name="kieuhinh_ten" class="form-control" placeholder="Tên kiểu hình">
@@ -24,13 +24,13 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <strong>Mô tả kiểu hình:</strong>
                     <textarea class="form-control" style="height:150px" @error('kieuhinh_mota') is-invalid @enderror name="kieuhinh_mota" placeholder="Mô tả kiểu hình">{{ $kieuhinh->kieuhinh_mota }}</textarea>
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                     <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>

@@ -14,7 +14,7 @@
     <form action="{{ route('mangoaidongs.store') }}" method="POST" class="needs-validation" novalidate>
         @csrf
          <div class="row mt-1 d-flex justify-content-center">
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_id">Giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="giong_id" class="form-control custom-select @error('giong_id') is-invalid @enderror" name="giong_id" required autofocus>
@@ -28,7 +28,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="field_code">Mã Code:<span class="text-danger font-weight-bold">*</span></label>
                     <input id="field_code" type="text" class="form-control @error('field_code') is-invalid @enderror" name="field_code" value="{{ old('field_code') }}" required autocomplete="field_code" />
@@ -37,7 +37,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="field_mota">Mô tả</label>
                     <textarea class="form-control" style="height:150px" value="{{old('field_mota')}}" name="field_mota" @error('field_mota') is-invalid @enderror placeholder="Mô tả"></textarea>
@@ -46,7 +46,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 text-center m-2">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                 <button type="submit" class="btn btn-primary">Tạo mới</button>
             </div>
         </div>

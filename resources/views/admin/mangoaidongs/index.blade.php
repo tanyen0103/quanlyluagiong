@@ -53,7 +53,7 @@
 
                                         <a class="btn btn-info" href="{{ route('mangoaidongs.show',$item->id) }}">Chi tiết</a>
 
-                                        <a class="btn btn-primary" href="{{ route('mangoaidongs.edit',$item->id) }}">Sửa</a>
+                                        <a class="btn btn-primary" href="{{ route('mangoaidongs.edit',$item->id) }}">Chỉnh sửa</a>
 
                                         @csrf
                                         @method('DELETE')

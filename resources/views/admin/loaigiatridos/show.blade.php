@@ -1,30 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row bg-success pt-2">
-        <div class="col-lg-12 d-flex justify-content-between">
-            <div class="text-white">
-                <h2>LOẠI GIÁ TRỊ ĐO CHI TIẾT</h2>
+    <div class="card shadow mb-5 border-bottom-primary">
+        {{-- Card header --}}
+        <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+            <div class="">
+                <h3 class="m-0 font-weight-bold text-white">Chi tiết</h3>
             </div>
-            <div>
-                <a class="btn btn-warning" href="{{ route('loaigiatridos.index') }}">Trở về</a>
+            <div class="">
+                <a class="btn btn-light" href="{{ route('loaigiatridos.index') }}">Trở về</a>
             </div>
         </div>
-    </div>
-
-    <div class="row mt-1 border border-3 border-success">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Tên loại giá trị đo:</strong>
+        <div class="row mt-1 d-flex justify-content-center">
+            <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                <div class="form-group">
+                    <strong>Tên loại giá trị đo:</strong>
                 {{  $loaigiatrido->loaigiatrido_ten }}
+                </div>
+                <hr class="h-1 mt-0 bg-gradient-primary">
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Đơn vị:</strong>
+            <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                <div class="form-group">
+                    <strong>Đơn vị:</strong>
                 {{  $loaigiatrido->loaigiatrido_donvi }}
+                </div>
+                <hr class="h-1 mt-0 bg-gradient-primary">
             </div>
         </div>
-
     </div>
 @endsection

@@ -14,28 +14,28 @@
     <div class="row mt-1 d-flex justify-content-center">
         <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="row mt-1 d-flex justify-content-center">
-                <div class="col-xs-11 col-sm-11 col-md-11">
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
                         <strong>Kiểu hình</strong>:</strong>
                         <p>{{ $giong->kieuhinh->kieuhinh_ten }}</p>
                         <hr class="h-1 mt-0 bg-gradient-primary">
                     </div>
                 </div>
-                <div class="col-xs-11 col-sm-11 col-md-11">
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
                         <strong>Giống:</strong>
                         <p>{{ $giong->giong_ten }}</p>
                         <hr class="h-1 mt-0 bg-gradient-primary">
                     </div>
                 </div>
-                <div class="col-xs-11 col-sm-11 col-md-11">
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
                         <strong>Nguồn gốc:</strong>
                         <p>{{ $giong->giong_nguongoc }}</p>
                         <hr class="h-1 mt-0 bg-gradient-primary">
                     </div>
                 </div>
-                <div class="col-xs-11 col-sm-11 col-md-11">
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
                         <strong>Mô tả:</strong>
                         <p>{{  $giong->giong_mota }}</p>
