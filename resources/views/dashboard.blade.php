@@ -124,7 +124,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            {{-- <th>No</th> --}}
+                            <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Phiến lá</th>
                             <th>Tai lá</th>
@@ -146,7 +147,8 @@
                     @foreach ($giatridongoaidongs as $item)
                     <tbody>
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ $item->ChiTieuNgoaiDong->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->chitieungoaidong_phienla }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->chitieungoaidong_taila }}</td>
@@ -199,7 +201,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            {{-- <th>No</th> --}}
+                            <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Gié C2</th>
                             <th>Độ rụng hạt</th>
@@ -218,7 +221,8 @@
                     @foreach ($giatridotrongnhas as $item)
                     <tbody>
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ $item->ChiTieuTrongNha->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuTrongNha->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuTrongNha->chitieutrongnha_giec2 }}</td>
                             <td>{{ $item->ChiTieuTrongNha->chitieutrongnha_dorunghat }}</td>
@@ -269,7 +273,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            {{-- <th>No</th> --}}
+                            <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Chọn lọc</th>
                             <th>Đánh giá khác</th>
@@ -285,7 +290,8 @@
                     @foreach ($giatridosaubenhs as $item)
                     <tbody>
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ $item->ChiTieuSauBenh->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuSauBenh->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuSauBenh->chitieusaubenh_chonloc }}</td>
                             <td>{{ $item->ChiTieuSauBenh->chitieusaubenh_danhgia }}</td>
