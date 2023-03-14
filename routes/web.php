@@ -18,6 +18,7 @@ use App\Http\Controllers\GiaTriDoSauBenhController;
 use App\Http\Controllers\GiaTriTinhTrangController;
 use App\Http\Controllers\ChiTieuNgoaiDongController;
 use App\Http\Controllers\DacDiemTinhTrangController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GiaTriDoTrongNhaController;
 use App\Http\Controllers\DoiTuongTinhTrangController;
 use App\Http\Controllers\GiaTriDoNgoaiDongController;
@@ -44,10 +45,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
@@ -55,9 +52,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('users', UserController::class);
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('nhomgiongs', NhomGiongController::class);
 
