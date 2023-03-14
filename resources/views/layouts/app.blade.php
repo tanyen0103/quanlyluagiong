@@ -308,17 +308,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Bạn có chắc chắn muốn đăng xuất?</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    {{-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
                 </div>
                 <div class="modal-body">
                     <p>Bấm "Đăng xuất" để đăng xuất khỏi tài khoản của bạn.</p>
+                    <p>Hoặc load lại trang để huỷ</p>
                 </div>
                 <div class="modal-footer">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-primary">Đăng xuất</button>
                     </form>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+                    {{-- <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button> --}}
                 </div>
             </div>
         </div>

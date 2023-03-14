@@ -137,7 +137,7 @@
                 </div>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
-                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <button type="submit" class="btn btn-primary">Tạo mới</button>
             </div>
         </div>
     </form>

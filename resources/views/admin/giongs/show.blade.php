@@ -44,11 +44,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="col-xs-3 col-sm-3 col-md-3 mr-2 ml-2">
             <div class="form-group">
                 {{-- <strong>Hình ảnh:</strong> --}}
                 <div>
-                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="80%">
+                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="100%">
                 </div>
             </div>
         </div>

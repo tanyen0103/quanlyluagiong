@@ -38,7 +38,6 @@
                     <button type="submit" class="btn btn-primary">Tạo mới</button>
             </div>
         </div>
-
     </form>
 </div>
 

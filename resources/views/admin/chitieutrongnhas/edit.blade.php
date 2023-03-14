@@ -1,23 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row bg-success pt-2">
-        <div class="col-lg-12 d-flex justify-content-between">
-            <div class="text-white">
-                <h2>SỬA CHỈ TIÊU TRONG NHÀ</h2>
-            </div>
-            <div class="">
-                <a class="btn btn-warning" href="{{ route('chitieutrongnhas.index') }}">Trở về</a>
-            </div>
+<div class="card shadow mb-5 border-bottom-primary">
+    {{-- Card header --}}
+    <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+        <div class="">
+            <h3 class="m-0 font-weight-bold text-white">Chỉnh sửa</h3>
+        </div>
+        <div class="">
+            <a class="btn btn-light" href="{{ route('chitieutrongnhas.index') }}">Trở về</a>
         </div>
     </div>
-
     <form action="{{ route('chitieutrongnhas.update',$chitieutrongnha->id) }}" method="POST" >
         @csrf
         @method('PUT')
         <input type="hidden" id="id" name="id" value="{{ $chitieutrongnha->id }}" />
-        <div class="row mt-1 border border-3 border-success">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row mt-1 d-flex justify-content-center">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giong_id">Giống <span class="text-danger font-weight-bold">*</span></label>
                     <select id="giong_id" class="form-control custom-select @error('giong_id') is-invalid @enderror" name="giong_id" required autofocus>
@@ -31,7 +30,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_giec2">Gié C2</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_giec2 }}" @error('chitieutrongnha_giec2') is-invalid @enderror name="chitieutrongnha_giec2" class="form-control" placeholder="Gié C2">
@@ -40,7 +39,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_dorunghat">Độ rụng hạt</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_dorunghat }}" @error('chitieutrongnha_dorunghat') is-invalid @enderror name="chitieutrongnha_dorunghat" class="form-control" placeholder="Độ rụng hạt">
@@ -49,7 +48,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_msvotrau">Màu sắc vỏ trấu</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_msvotrau }}" @error('chitieutrongnha_msvotrau') is-invalid @enderror name="chitieutrongnha_msvotrau" class="form-control" placeholder="Màu sắc vỏ trấu">
@@ -58,7 +57,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_dangthoc">Dạng thóc</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_dangthoc }}" @error('chitieutrongnha_dangthoc') is-invalid @enderror name="chitieutrongnha_dangthoc" class="form-control" placeholder="Dạng thóc">
@@ -67,7 +66,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_mausacgao">Màu sắc gạo</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_mausacgao }}" @error('chitieutrongnha_mausacgao') is-invalid @enderror name="chitieutrongnha_mausacgao" class="form-control" placeholder="Màu sắc gạo">
@@ -76,7 +75,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_tl1000hat">Trọng lượng 1000 hạt</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_tl1000hat }}" @error('chitieutrongnha_tl1000hat') is-invalid @enderror name="chitieutrongnha_tl1000hat" class="form-control" placeholder="Trọng lượng 1000 hạt">
@@ -85,7 +84,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_doam">Độ ẩm</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_doam }}" @error('chitieutrongnha_doam') is-invalid @enderror name="chitieutrongnha_doam" class="form-control" placeholder="Độ ẩm">
@@ -94,7 +93,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_thom">Thơm</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_thom }}" @error('chitieutrongnha_thom') is-invalid @enderror name="chitieutrongnha_thom" class="form-control" placeholder="Thơm">
@@ -103,7 +102,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="chitieutrongnha_danhgia">Đánh giá</label>
                     <input type="text" value="{{ $chitieutrongnha->chitieutrongnha_danhgia }}" @error('chitieutrongnha_danhgia') is-invalid @enderror name="chitieutrongnha_danhgia" class="form-control" placeholder="Đánh giá">
@@ -113,9 +112,12 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center m-2">
-                    <button type="submit" class="btn btn-warning">Cập nhật</button>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>
     </form>
+</div>
+
+
 @endsection

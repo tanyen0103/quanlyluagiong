@@ -1,95 +1,79 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row bg-success pt-2">
-        <div class="col-lg-12 d-flex justify-content-between">
-            <div class="text-white">
-                <h2>GIÁ TRỊ ĐO TRONNG NHÀ CHI TIẾT</h2>
+<div class="card shadow mb-5 border-bottom-primary">
+    {{-- Card header --}}
+    <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+        <div class="">
+            <h3 class="m-0 font-weight-bold text-white">Chi tiết</h3>
+        </div>
+        <div class="">
+            <a class="btn btn-light" href="{{ route('giatridosaubenhs.index') }}">Trở về</a>
+        </div>
+    </div>
+    <div class="row mt-1 d-flex justify-content-center">
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="row mt-1 d-flex justify-content-center">
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Giống:</strong>
+				        {{ $giatridosaubenh->ChiTieuSauBenh->Giong->giong_ten }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Chọn lọc:</strong>
+                        {{ $giatridosaubenh->ChiTieuSauBenh->chitieusaubenh_chonloc }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Đánh giá khác:</strong>
+				        {{ $giatridosaubenh->ChiTieuSauBenh->chitieusaubenh_danhgia }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Tên loại:</strong>
+				        {{ $giatridosaubenh->LoaiSauBenh->loaisaubenh_ten }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Mô tả:</strong>
+                        {{ $giatridosaubenh->LoaiSauBenh->loaisaubenh_mota }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Đơn vị:</strong>
+                        {{ $giatridosaubenh->LoaiSauBenh->loaisaubenh_donvi }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                         <strong>Giá trị:</strong>
+                        {{ $giatridosaubenh->giatridosaubenh_giatri }}
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
             </div>
-            <div>
-                <a class="btn btn-warning" href="{{ route('giatridotrongnhas.index') }}">Trở về</a>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 mr-2 ml-2">
+            <div class="form-group">
+                {{-- <strong>Hình ảnh:</strong> --}}
+                <div>
+                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giatridosaubenh->LoaiSauBenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100%"></td>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row mt-1 border border-3 border-success">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Giống:</strong>
-				<p>{{ $giatridotrongnha->ChiTieuTrongNha->Giong->giong_ten }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Gié C2:</strong>
-                <p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_giec2 }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Độ rụng hạt:</strong>
-				<p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_dorunghat }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Màu sắc vỏ trấu:</strong>
-                <p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_msvotrau }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Dạng thóc:</strong>
-				<p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_dangthoc }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Màu sắc gạo:</strong>
-                <p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_mausacgao }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Trọng lượng 1000 hạt:</strong>
-				<p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_tl1000hat }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Độ ẩm:</strong>
-                <p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_doam }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Thơm:</strong>
-				<p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_thom }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Đánh giá:</strong>
-                <p>{{ $giatridotrongnha->ChiTieuTrongNha->chitieutrongnha_danhgia }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Tên giá trị đo:</strong>
-				<p>{{ $giatridotrongnha->LoaiGiaTriDo->loaigiatrido_ten }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Đơn vị:</strong>
-                <p>{{ $giatridotrongnha->LoaiGiaTriDo->loaigiatrido_donvi }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Giá trị:</strong>
-                <p>{{ $giatridotrongnha->giatridotrongnha_giatri }}</p>
-            </div>
-        </div>
-    </div>
 @endsection

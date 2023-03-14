@@ -8,7 +8,7 @@
             <h3 class="m-0 font-weight-bold text-white">Chỉnh sửa</h3>
         </div>
         <div class="">
-            <a class="btn btn-light" href="{{ route('nhomgiongs.index') }}">Trở về</a>
+            <a class="btn btn-light" href="{{ route('chitieungoaidongs.index') }}">Trở về</a>
         </div>
     </div>
     <form action="{{ route('chitieungoaidongs.update',$chitieungoaidong->id) }}" method="POST" >
