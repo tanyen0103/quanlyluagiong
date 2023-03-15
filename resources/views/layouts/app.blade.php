@@ -197,6 +197,31 @@
                         <!-- Divider -->
                         <hr class="sidebar-divider d-none d-md-block">
                     @endrole
+                    @role('Supermanager')
+                        <!-- Heading -->
+                        <div class="sidebar-heading">
+                            Quản lí tài khoản
+                        </div>
+
+                        <!-- Nav Item - Quản lí tài khoản -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="true" aria-controls="collapsePages">
+                                <i class="fas fa-fw fa-user"></i>
+                                <span>Quản lí tài khoản</span>
+                            </a>
+                            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="{{ route('roles.index') }}"><i class="fa-solid fa-caret-right"></i> Phân quyền</a>
+                                    <hr>
+                                    <a class="collapse-item text-danger" href="">Quyền: Admin</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider d-none d-md-block">
+                    @endrole
 
 
                     <!-- Sidebar Toggler (Sidebar) -->
