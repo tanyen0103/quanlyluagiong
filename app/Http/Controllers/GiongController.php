@@ -33,7 +33,7 @@ class GiongController extends Controller
     {
         // $giongs = Giong::oldest()->paginate(4);
         $giongs = Giong::with('nhomgiong')
-            ->orderBy('nhomgiong_id', 'desc')
+            ->orderBy('nhomgiong_id', 'asc')
             ->paginate(4);
         return view('admin.giongs.index', ["title" => "Bảng giống"],
                     compact('giongs'))->with('i', (request()->input('page', 1) - 1) * 4);
