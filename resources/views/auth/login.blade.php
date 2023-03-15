@@ -42,7 +42,7 @@
                                             {{ __('ĐĂNG NHẬP') }}
                                         </button>
 
-                                        <div class="form-check d-flex justify-content-center">
+                                        {{-- <div class="form-check d-flex justify-content-center">
                                             <div>
                                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -50,7 +50,7 @@
                                                     {{ __('Remember Me') }}
                                                 </label>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                     </form>
                                     <hr>
@@ -58,12 +58,12 @@
                                     <div class="text-center">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
+                                                {{ __('Quên mật khẩu?') }}
                                             </a>
                                         @endif
                                     </div>
                                     <div class="text-center">
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <a href="mailto:tanyen0103@gmail.com" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Liên hệ với Gmail
                                         </a>
                                     </div>
