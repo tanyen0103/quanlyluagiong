@@ -7,9 +7,9 @@ use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use App\Models\LoaiSauBenh;
 use Illuminate\Http\Request;
-use App\Models\GiaTriDoNgoaiDong;
-use App\Models\GiaTriDoSauBenh;
-use App\Models\GiaTriDoTrongNha;
+// use App\Models\GiaTriDoNgoaiDong;
+// use App\Models\GiaTriDoSauBenh;
+// use App\Models\GiaTriDoTrongNha;
 
 class DashboardController extends Controller
 {
@@ -25,19 +25,20 @@ class DashboardController extends Controller
         $totalKieuHinhs = KieuHinh::count();
         $totalLoaiSauBenhs = LoaiSauBenh::count();
 
-        $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(4);
-        $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(4);
-        $giatridosaubenhs = GiaTriDoSauBenh::oldest()->paginate(4);
+        // $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(10);
+        // $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(10);
+        // $giatridosaubenhs = GiaTriDoSauBenh::oldest()->paginate(10);
         return view('dashboard', [
             'totalNhomGiongs' => $totalNhomGiongs,
             'totalGiongs' => $totalGiongs,
             'totalKieuHinhs' => $totalKieuHinhs,
             'totalLoaiSauBenhs' => $totalLoaiSauBenhs,
 
-            'giatridongoaidongs'=> $giatridongoaidongs,
-            'giatridotrongnhas'=> $giatridotrongnhas,
-            'giatridosaubenhs'=> $giatridosaubenhs,
-        ])->with('i', (request()->input('page', 1) - 1) * 4);
+            // 'giatridongoaidongs'=> $giatridongoaidongs,
+            // 'giatridotrongnhas'=> $giatridotrongnhas,
+            // 'giatridosaubenhs'=> $giatridosaubenhs,
+        ]);
+        // ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

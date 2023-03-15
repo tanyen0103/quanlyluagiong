@@ -2,7 +2,7 @@
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class=" flex items-center justify-between">
 
 
-        <div class="row hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+        <div class="row hidden sm:flex-1 sm:flex sm:items-center sm:justify-between  m-1">
             <div class="col ">
                 <p class="text-sm text-gray-700 leading-5">
                     {!! __('Showing') !!}

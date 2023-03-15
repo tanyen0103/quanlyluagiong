@@ -28,7 +28,10 @@ class GiaTriDoNgoaiDongController extends Controller
      */
     public function index()
     {
-        $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(4);
+        // $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(4);
+        $giatridongoaidongs = GiaTriDoNgoaiDong::with('chitieungoaidong')
+        ->orderBy('chitieungoaidong_id', 'asc')
+        ->paginate(4);
 
         return view('admin.giatridongoaidongs.index', ["title" => "Bảng giá trị đo ngoài đồng"],
                     compact('giatridongoaidongs'))->with('i', (request()->input('page', 1) - 1) * 4);

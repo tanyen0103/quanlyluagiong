@@ -6,6 +6,7 @@ use App\Models\MaPTN;
 use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use App\Models\MaNgoaiDong;
+use App\Models\ChiTieuSauBenh;
 use App\Models\ChiTieuTrongNha;
 use App\Models\ChiTieuNgoaiDong;
 use Illuminate\Database\Eloquent\Model;
@@ -39,6 +40,10 @@ class Giong extends Model
 
     public function ChiTieuTrongNha(){
         return $this->hasMany(ChiTieuTrongNha::class, 'giong_id', 'id');
+    }
+
+    public function ChiTieuSauBenh(){
+        return $this->hasMany(ChiTieuSauBenh::class, 'giong_id', 'id');
     }
 
     public function NhomGiong(){

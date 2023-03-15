@@ -31,8 +31,10 @@ class GiongController extends Controller
      */
     public function index()
     {
-        $giongs = Giong::oldest()->paginate(4);
-
+        // $giongs = Giong::oldest()->paginate(4);
+        $giongs = Giong::with('nhomgiong')
+            ->orderBy('nhomgiong_id', 'desc')
+            ->paginate(4);
         return view('admin.giongs.index', ["title" => "Bảng giống"],
                     compact('giongs'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
@@ -64,7 +66,7 @@ class GiongController extends Controller
             'kieuhinh_id' => ['required'],
             'giong_nguongoc' => [''],
             'giong_mota' => [''],
-            'giong_hinhanh' => ['mimes:jpeg,png,jpg,gif,svg','max:2048']
+            'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048']
         ]);
 
         $g = new Giong();

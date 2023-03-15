@@ -97,8 +97,7 @@
             </div>
         </div>
     </div>
-    <div class="card shadow mb-5 border-bottom-primary">
-        {{-- Card header --}}
+    {{-- <div class="card shadow mb-5 border-bottom-primary">
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
             <div class="">
                 <h3 class="m-0 font-weight-bold text-white">Bảng đo ngoài đồng</h3>
@@ -124,7 +123,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            {{-- <th>No</th> --}}
+                            <th>No</th>
                             <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Phiến lá</th>
@@ -147,7 +146,7 @@
                     @foreach ($giatridongoaidongs as $item)
                     <tbody>
                         <tr>
-                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ ++$i }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuNgoaiDong->chitieungoaidong_phienla }}</td>
@@ -175,7 +174,7 @@
         </div>
     </div>
     <div class="card shadow mb-5 border-bottom-primary">
-        {{-- Card header --}}
+
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
             <div class="">
                 <h3 class="m-0 font-weight-bold text-white">Bảng đo trong nhà</h3>
@@ -201,7 +200,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            {{-- <th>No</th> --}}
+                            <th>No</th>
                             <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Gié C2</th>
@@ -221,7 +220,7 @@
                     @foreach ($giatridotrongnhas as $item)
                     <tbody>
                         <tr>
-                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ ++$i }}</td>
                             <td>{{ $item->ChiTieuTrongNha->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuTrongNha->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuTrongNha->chitieutrongnha_giec2 }}</td>
@@ -245,9 +244,7 @@
             </div>
         </div>
     </div>
-
     <div class="card shadow mb-5 border-bottom-primary">
-        {{-- Card header --}}
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
             <div class="">
                 <h3 class="m-0 font-weight-bold text-white">Bảng đo sâu bệnh</h3>
@@ -273,7 +270,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            {{-- <th>No</th> --}}
+                            <th>No</th>
                             <th>Nhóm giống</th>
                             <th>Giống</th>
                             <th>Chọn lọc</th>
@@ -290,7 +287,7 @@
                     @foreach ($giatridosaubenhs as $item)
                     <tbody>
                         <tr>
-                            {{-- <td>{{ ++$i }}</td> --}}
+                            <td>{{ ++$i }}</td>
                             <td>{{ $item->ChiTieuSauBenh->Giong->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->ChiTieuSauBenh->Giong->giong_ten }}</td>
                             <td>{{ $item->ChiTieuSauBenh->chitieusaubenh_chonloc }}</td>
@@ -308,6 +305,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 @endsection
