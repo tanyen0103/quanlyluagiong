@@ -146,7 +146,14 @@
                             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                                 data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
-                                    <h6 class="collapse-header">Bảng dành cho User:</h6>
+                                    <h6 class="collapse-header">Manager:</h6>
+                                    <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fa-solid fa-caret-right"></i> Nhóm giống</a>
+                                    <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fa-solid fa-caret-right"></i> Kiểu hình</a>
+                                    <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fa-solid fa-caret-right"></i> Giống</a>
+                                    <hr>
+                                    <a class="collapse-item" href="{{ route('mangoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Mã ngoài đồng</a>
+                                    <a class="collapse-item" href="{{ route('maptns.index') }}"><i class="fa-solid fa-caret-right"></i> Mã PTN</a>
+                                    <hr>
                                     <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fa-solid fa-caret-right"></i> Loại GTD</a>
                                     <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ Tiêu NĐ</a>
                                     <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Ngoài đồng</a>

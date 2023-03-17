@@ -63,6 +63,9 @@
             </div>
         </div>
     </div>
-
+    <div class="container d-flex justify-content-center">
+        <a href="{{ route('users-export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+    </div>
 {!! $data->render() !!}
 @endsection

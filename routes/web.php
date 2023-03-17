@@ -41,7 +41,7 @@ use App\Http\Controllers\GiaiDoanTruongThanhController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -51,10 +51,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
 
     Route::resource('users', UserController::class);
+    Route::get('users-export', [UserController::class, 'fileExport'])->name('users-export');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('nhomgiongs', NhomGiongController::class);
+    Route::get('nhomgiongs-export', [NhomGiongController::class, 'fileExport'])->name('nhomgiongs-export');
+
 
     Route::resource('kieuhinhs', KieuHinhController::class);
 

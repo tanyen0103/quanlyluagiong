@@ -25,7 +25,7 @@
                         trò chính trong sản xuất lương thực. Việc quản lý lúa giống là một phần quan
                         trọng trong việc đảm bảo sự ổn định của sản xuất lúa.
                     </p>
-                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Tìm hiểu trang quản lý của chúng tôi &rarr;</a>
+                    <a target="_blank" rel="nofollow" href="{{ route('dashboard') }}">Chuyển sang <strong>bảng điều khiển</strong>  &rarr;</a>
                 </div>
             </div>
         </div>

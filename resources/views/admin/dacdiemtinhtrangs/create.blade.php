@@ -20,7 +20,7 @@
                     <select id="doituongtinhtrang_id" class="form-control custom-select @error('doituongtinhtrang_id') is-invalid @enderror" name="doituongtinhtrang_id" required autofocus>
                         <option value="">-- Chọn đối tượng tính trạng --</option>
                             @foreach($doituongtinhtrang as $item)
-                                <option value="{{ $item->id }}">{{ $item->doituongtt_ten }}</option>
+                                <option value="{{ $item->id }}">{{ $item->doituongtt_ten }}:{{ $item->doituongtt_mota }} - {{ $item->GiaiDoanTruongThanh->giaidoantt_ten }}</option>
                             @endforeach
                     </select>
                     @error('doituongtinhtrang_id')
@@ -30,7 +30,7 @@
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
-                    <label for="dacdiemtt_ten">Tên đặc điểm tính trạng <span class="text-danger font-weight-bold">*</span></label>
+                    <label for="dacdiemtt_ten">Đặc điểm tính trạng <span class="text-danger font-weight-bold">*</span></label>
                     <input id="dacdiemtt_ten" type="text" class="form-control @error('dacdiemtt_ten') is-invalid @enderror" name="dacdiemtt_ten" value="{{ old('dacdiemtt_ten') }}" required autocomplete="dacdiemtt_ten" />
                     @error('dacdiemtt_ten')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>

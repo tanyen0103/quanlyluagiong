@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<body class="bg-gradient-primary">
+<style>
+
+</style>
+<body>
     <div class="container">
         <!-- Outer Row -->
         <div class="row justify-content-center">

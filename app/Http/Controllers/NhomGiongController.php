@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\NhomGiong;
 use Illuminate\Http\Request;
+use App\Exports\NhomGiongsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class NhomGiongController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new NhomGiongsExport, 'nhomgiongs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -128,4 +137,5 @@ class NhomGiongController extends Controller
         return redirect()->route('nhomgiongs.index')
                         ->with('success','Nhóm giống xoá thành công');
     }
+
 }

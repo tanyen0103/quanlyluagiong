@@ -35,8 +35,8 @@
                         <tr>
                             <th>No</th>
                             <th>Tên đối tượng tính trạng</th>
-                            <th>Giai đoạn trưởng thành</th>
                             <th>Mô tả</th>
+                            <th>Giai đoạn trưởng thành</th>
                             <th width="280px">Action</th>
                         </tr>
                     </thead>
@@ -45,8 +45,8 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $item->doituongtt_ten }}</td>
-                            <td>{{ $item->GiaiDoanTruongThanh->giaidoantt_ten }}</td>
                             <td>{{ $item->doituongtt_mota }}</td>
+                            <td>{{ $item->GiaiDoanTruongThanh->giaidoantt_ten }}</td>
                             <td>
                                 <form action="{{ route('doituongtinhtrangs.destroy',$item->id) }}" method="POST">
 

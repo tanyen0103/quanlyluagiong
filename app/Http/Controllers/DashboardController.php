@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GiaTriTinhTrang;
 use App\Models\Giong;
 use App\Models\KieuHinh;
 use App\Models\NhomGiong;
@@ -25,6 +26,7 @@ class DashboardController extends Controller
         $totalKieuHinhs = KieuHinh::count();
         $totalLoaiSauBenhs = LoaiSauBenh::count();
 
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         // $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(10);
         // $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(10);
         // $giatridosaubenhs = GiaTriDoSauBenh::oldest()->paginate(10);
@@ -34,11 +36,12 @@ class DashboardController extends Controller
             'totalKieuHinhs' => $totalKieuHinhs,
             'totalLoaiSauBenhs' => $totalLoaiSauBenhs,
 
+            'giatritinhtrangs' => $giatritinhtrangs,
             // 'giatridongoaidongs'=> $giatridongoaidongs,
             // 'giatridotrongnhas'=> $giatridotrongnhas,
             // 'giatridosaubenhs'=> $giatridosaubenhs,
-        ]);
-        // ->with('i', (request()->input('page', 1) - 1) * 10);
+        ])
+        ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

@@ -34,8 +34,15 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Điểm</th>
+                            <th>Đối tượng tính trạng</th>
+                            <th>Mô tả</th>
+
+                            <th>Giai đoạn trưởng thành</th>
+
                             <th>Đặc điểm tính trạng</th>
+
+                            <th>Điểm</th>
+
                             <th width="280px">Action</th>
                         </tr>
                     </thead>
@@ -43,8 +50,14 @@
                     <tbody>
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $item->giatritt_diem }}</td>
+                            <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_ten}}</td>
+                            <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_mota}}</td>
+
+                            <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->GiaiDoanTruongThanh->giaidoantt_ten}}</td>
+
                             <td>{{ $item->DacDiemTinhTrang->dacdiemtt_ten}}</td>
+
+                            <td>{{ $item->giatritt_diem }}</td>
                             <td>
                                 <form action="{{ route('giatritinhtrangs.destroy',$item->id) }}" method="POST">
 

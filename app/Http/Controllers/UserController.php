@@ -5,14 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use Illuminate\Support\Arr;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new UsersExport, 'users-collection.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *
