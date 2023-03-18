@@ -10,7 +10,7 @@
         {{-- Card header --}}
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
             <div class="">
-                <h3 class="m-0 font-weight-bold text-white">Bảng chỉ tiêu ngoài đồng</h3>
+                <h3 class="m-0 font-weight-bold text-white">Bảng chỉ tiêu sâu bệnh</h3>
             </div>
             <div class="">
                 <a class="btn btn-light" href="{{ route('chitieusaubenhs.create') }}">Tạo mới</a>
@@ -37,7 +37,7 @@
                             <th>Giống</th>
                             <th>Chọn lọc</th>
                             <th>Đánh giá khác</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($chitieusaubenhs as $item)
@@ -50,14 +50,14 @@
                             <td>
                                 <form action="{{ route('chitieusaubenhs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('chitieusaubenhs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1" href="{{ route('chitieusaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary" href="{{ route('chitieusaubenhs.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1" href="{{ route('chitieusaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>

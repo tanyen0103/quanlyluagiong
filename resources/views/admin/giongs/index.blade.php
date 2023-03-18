@@ -7,7 +7,6 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
     <div class="card shadow mb-5 border-bottom-primary">
         {{-- Card header --}}
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
@@ -36,36 +35,51 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Tên</th>
                             <th>Nhóm</th>
+                            <th>Kiểu hình</th>
+                            <th>Mã ngoài đồng</th>
+                            <th>Mã phòng thí nghiệm</th>
                             <th>Tên</th>
                             <th>Nguồn gốc</th>
                             <th>Mô tả</th>
                             <th>Hình ảnh</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($giongs as $item)
                     <tbody>
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $item->giong_ten }}</td>
+                            {{-- BelongTo --}}
                             <td>{{ $item->NhomGiong->nhomgiong_code }}</td>
                             <td>{{ $item->KieuHinh->kieuhinh_ten}}</td>
+
+                            {{-- HasMany --}}
+                            <td>
+                                @foreach ($item->MaNgoaiDong as $field)
+                                    <div>{{ $field->field_code }}</div>
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach ($item->MaPTN as $ptn)
+                                    <div>{{ $ptn->ptn_code }}</div>
+                                @endforeach
+                            </td>
+                            <td>{{ $item->giong_ten }}</td>
                             <td>{{ $item->giong_nguongoc }}</td>
                             <td>{{ $item->giong_mota }}</td>
                             <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></td>
                             <td>
                                 <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('giongs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary" href="{{ route('giongs.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -73,44 +87,12 @@
                     @endforeach
                 </table>
             </div>
-        </div
-
-    {{-- <table class="table table-bordered">
-        <tr class="bg-success text-white">
-            <th>No</th>
-            <th>Tên</th>
-            <th>Nhóm</th>
-            <th>Tên</th>
-            <th>Nguồn gốc</th>
-            <th>Mô tả</th>
-            <th>Hình ảnh</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($giongs as $item)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $item->giong_ten }}</td>
-            <td>{{ $item->NhomGiong->nhomgiong_code }}</td>
-            <td>{{ $item->KieuHinh->kieuhinh_ten}}</td>
-            <td>{{ $item->giong_nguongoc }}</td>
-            <td>{{ $item->giong_mota }}</td>
-            <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></td>
-            <td>
-                <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
-
-                    <a class="btn btn-success" href="{{ route('giongs.show',$item->id) }}">Chi tiết</a>
-
-                    <a class="btn btn-warning" href="{{ route('giongs.edit',$item->id) }}">Sửa</a>
-
-                    @csrf
-                    @method('DELETE')
-
-                    <button type="submit" class="btn btn-outline-danger">Xoá</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table> --}}
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <a href="{{ route('giongs.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+            <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+    </div>
 
     {!! $giongs->links() !!}
 

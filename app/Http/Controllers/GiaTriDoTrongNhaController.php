@@ -5,10 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\LoaiGiaTriDo;
 use Illuminate\Http\Request;
 use App\Models\ChiTieuTrongNha;
+use App\Models\GiaTriTinhTrang;
 use App\Models\GiaTriDoTrongNha;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\GiaTriDoTrongNhasExport;
 
 class GiaTriDoTrongNhaController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new GiaTriDoTrongNhasExport, 'giatridotrongnhas-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,8 +38,6 @@ class GiaTriDoTrongNhaController extends Controller
      */
     public function index()
     {
-        // $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(4);
-
         $giatridotrongnhas = GiaTriDoTrongNha::with('chitieutrongnha')
         ->orderBy('chitieutrongnha_id', 'asc')
         ->paginate(4);
@@ -46,10 +54,12 @@ class GiaTriDoTrongNhaController extends Controller
      */
     public function create()
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieutrongnha = ChiTieuTrongNha::all();
         $loaigiatrido = LoaiGiaTriDo::all();
         $giatridotrongnha = GiaTriDoTrongNha::all();
-        return view('admin.giatridotrongnhas.create', ["title" => "Bảng giá trị đo trong nhà"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha'));
+        return view('admin.giatridotrongnhas.create', ["title" => "Bảng giá trị đo trong nhà"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha','giatritinhtrangs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -99,9 +109,11 @@ class GiaTriDoTrongNhaController extends Controller
      */
     public function edit(GiaTriDoTrongNha $giatridotrongnha)
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieutrongnha = ChiTieuTrongNha::all();
         $loaigiatrido = LoaiGiaTriDo::all();
-        return view('admin.giatridotrongnhas.edit', ["title" => "Bảng giá trị đo ngoài đồng"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha'));
+        return view('admin.giatridotrongnhas.edit', ["title" => "Bảng giá trị đo ngoài đồng"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha','giatritinhtrangs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ChiTieuSauBenh;
-use App\Models\GiaTriDoSauBenh;
 use App\Models\LoaiSauBenh;
 use Illuminate\Http\Request;
+use App\Models\ChiTieuSauBenh;
+use App\Models\GiaTriDoSauBenh;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\GiaTriDoSauBenhsExport;
 
 class GiaTriDoSauBenhController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new GiaTriDoSauBenhsExport, 'giatridosaubenhs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *

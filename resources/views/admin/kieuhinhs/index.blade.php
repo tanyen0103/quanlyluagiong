@@ -38,7 +38,7 @@
                             <th>No</th>
                             <th>Tên</th>
                             <th>Mô tả</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($kieuhinhs as $item)
@@ -48,16 +48,16 @@
                             <td>{{ $item->kieuhinh_ten }}</td>
                             <td>{{ $item->kieuhinh_mota }}</td>
                             <td>
-                                <form action="{{ route('kieuhinhs.destroy',$item->id) }}" method="POST">
+                                <form  action="{{ route('kieuhinhs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('kieuhinhs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary" href="{{ route('kieuhinhs.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -67,7 +67,10 @@
             </div>
         </div>
     </div>
-
+    <div class="container d-flex justify-content-center">
+        <a href="{{ route('kieuhinhs.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+            <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+    </div>
 
 
     {!! $kieuhinhs->links() !!}

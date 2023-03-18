@@ -36,7 +36,7 @@
                         <th>Tên</th>
                         <th>Email</th>
                         <th>Quyền</th>
-                        <th width="280px">Action</th>
+                        <th width="160px"></th>
                     </tr>
                     @foreach ($data as $key => $user)
                         <tr>
@@ -51,11 +51,11 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Chi tiết</a>
-                                <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Chỉnh sửa</a>
-                                    {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Xoá', ['class' => 'btn btn-danger']) !!}
-                                    {!! Form::close() !!}
+                                <a class="btn btn-info mt-1" href="{{ route('users.show',$user->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                <a class="btn btn-primary mt-1" href="{{ route('users.edit',$user->id) }}"><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                                {!! Form::button('<i class="fa-solid fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1']) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center">
-        <a href="{{ route('users-export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+        <a href="{{ route('users.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
     </div>
 {!! $data->render() !!}

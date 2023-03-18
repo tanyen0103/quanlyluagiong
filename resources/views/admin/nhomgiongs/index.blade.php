@@ -40,7 +40,7 @@
                             <th>Mô tả</th>
                             <th>Ngày ngâm</th>
                             <th>Ngày cấy</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($nhomgiongs as $item)
@@ -55,14 +55,14 @@
                             <td>
                                 <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('nhomgiongs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1" href="{{ route('nhomgiongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary" href="{{ route('nhomgiongs.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1" href="{{ route('nhomgiongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center">
-        <a href="{{ route('nhomgiongs-export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+        <a href="{{ route('nhomgiongs.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
             <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
     </div>
 

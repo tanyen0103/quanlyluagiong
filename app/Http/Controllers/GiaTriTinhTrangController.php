@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\GiaTriTinhTrangsExport;
 use Illuminate\Http\Request;
 use App\Models\GiaTriTinhTrang;
 use App\Models\DacDiemTinhTrang;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GiaTriTinhTrangController extends Controller
 {
+     /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new GiaTriTinhTrangsExport, 'giatritinhtrangs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *

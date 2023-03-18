@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\KieuHinhsExport;
 use App\Models\KieuHinh;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KieuHinhController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new KieuHinhsExport, 'kieuhinhs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *

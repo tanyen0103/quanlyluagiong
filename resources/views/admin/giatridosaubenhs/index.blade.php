@@ -46,7 +46,7 @@
                             <th>Đơn vị</th>
 
                             <th>Giá trị</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($giatridosaubenhs as $item)
@@ -66,14 +66,14 @@
                             <td>
                                 <form class="d-flex"  action="{{ route('giatridosaubenhs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info mr-1" href="{{ route('giatridosaubenhs.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1 mr-1" href="{{ route('giatridosaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary mr-1" href="{{ route('giatridosaubenhs.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1 mr-1" href="{{ route('giatridosaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -82,6 +82,10 @@
                 </table>
             </div>
         </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <a href="{{ route('giatridosaubenhs.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+            <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
     </div>
 
     {!! $giatridosaubenhs->links() !!}

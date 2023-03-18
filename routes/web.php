@@ -51,17 +51,18 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
 
     Route::resource('users', UserController::class);
-    Route::get('users-export', [UserController::class, 'fileExport'])->name('users-export');
+    Route::get('users-export', [UserController::class, 'fileExport'])->name('users.export');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('nhomgiongs', NhomGiongController::class);
-    Route::get('nhomgiongs-export', [NhomGiongController::class, 'fileExport'])->name('nhomgiongs-export');
+    Route::get('nhomgiongs-export', [NhomGiongController::class, 'fileExport'])->name('nhomgiongs.export');
 
-
+    Route::get('kieuhinhs-export', [KieuHinhController::class, 'fileExport'])->name('kieuhinhs.export');
     Route::resource('kieuhinhs', KieuHinhController::class);
 
     Route::resource('giongs', GiongController::class);
+    Route::get('giongs-export', [GiongController::class, 'fileExport'])->name('giongs.export');
 
     Route::resource('mangoaidongs', MaNgoaiDongController::class);
 
@@ -74,21 +75,27 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
 
     Route::resource('giatritinhtrangs', GiaTriTinhTrangController::class);
+    Route::get('giatritinhtrangs-export', [GiaTriTinhTrangController::class, 'fileExport'])->name('giatritinhtrangs.export');
 
     Route::resource('loaigiatridos', LoaiGiaTriDoController::class);
 
     Route::resource('chitieungoaidongs', ChiTieuNgoaiDongController::class);
 
     Route::resource('giatridongoaidongs', GiaTriDoNgoaiDongController::class);
+    Route::get('giatridongoaidongs-export', [GiaTriDoNgoaiDongController::class, 'fileExport'])->name('giatridongoaidongs.export');
 
     Route::resource('chitieutrongnhas', ChiTieuTrongNhaController::class);
 
     Route::resource('giatridotrongnhas', GiaTriDoTrongNhaController::class);
+    Route::get('giatridotrongnhas-export', [GiaTriDoTrongNhaController::class, 'fileExport'])->name('giatridotrongnhas.export');
+
 
     Route::resource('chitieusaubenhs', ChiTieuSauBenhController::class);
 
     Route::resource('loaisaubenhs', LoaiSauBenhController::class);
 
     Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);
+    Route::get('giatridosaubenhs-export', [GiaTriDoSauBenhController::class, 'fileExport'])->name('giatridosaubenhs.export');
+
 
 });

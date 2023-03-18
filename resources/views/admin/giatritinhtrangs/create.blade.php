@@ -20,7 +20,7 @@
                     <select id="dacdiemtinhtrang_id" class="form-control custom-select @error('dacdiemtinhtrang_id') is-invalid @enderror" name="dacdiemtinhtrang_id" required autofocus>
                         <option value="">-- Chọn đặc điểm tính trạng --</option>
                             @foreach($dacdiemtinhtrang as $item)
-                                <option value="{{ $item->id }}">{{ $item->dacdiemtt_ten }}</option>
+                                <option value="{{ $item->id }}">{{ $item->DoiTuongTinhTrang->doituongtt_ten }}: {{ $item->DoiTuongTinhTrang->doituongtt_mota }} - {{ $item->DoiTuongTinhTrang->GiaiDoanTruongThanh->giaidoantt_ten }} -{{ $item->dacdiemtt_ten }}</option>
                             @endforeach
                     </select>
                     @error('dacdiemtinhtrang_id')

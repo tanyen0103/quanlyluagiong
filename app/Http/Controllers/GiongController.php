@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\GiongsExport;
 use App\Models\Giong;
 use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class GiongController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new GiongsExport, 'giongs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *

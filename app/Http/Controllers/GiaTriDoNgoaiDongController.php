@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ChiTieuNgoaiDong;
-use App\Models\GiaTriDoNgoaiDong;
+use App\Exports\GiaTriDoNgoaiDongsExport;
 use App\Models\LoaiGiaTriDo;
 use Illuminate\Http\Request;
+use App\Models\GiaTriTinhTrang;
+use App\Models\ChiTieuNgoaiDong;
+use App\Models\GiaTriDoNgoaiDong;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GiaTriDoNgoaiDongController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new GiaTriDoNgoaiDongsExport, 'giatridongoaidongs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +38,6 @@ class GiaTriDoNgoaiDongController extends Controller
      */
     public function index()
     {
-        // $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(4);
         $giatridongoaidongs = GiaTriDoNgoaiDong::with('chitieungoaidong')
         ->orderBy('chitieungoaidong_id', 'asc')
         ->paginate(4);
@@ -44,10 +53,13 @@ class GiaTriDoNgoaiDongController extends Controller
      */
     public function create()
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieungoaidong = ChiTieuNgoaiDong::all();
         $loaigiatrido = LoaiGiaTriDo::all();
         $giatridongoaidong = GiaTriDoNgoaiDong::all();
-        return view('admin.giatridongoaidongs.create', ["title" => "Bảng giá trị đo ngoài đồng"], compact('chitieungoaidong', 'loaigiatrido', 'giatridongoaidong'));
+        return view('admin.giatridongoaidongs.create',
+            compact('chitieungoaidong', 'loaigiatrido', 'giatridongoaidong','giatritinhtrangs'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -97,9 +109,11 @@ class GiaTriDoNgoaiDongController extends Controller
      */
     public function edit(GiaTriDoNgoaiDong $giatridongoaidong)
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieungoaidong = ChiTieuNgoaiDong::all();
         $loaigiatrido = LoaiGiaTriDo::all();
-        return view('admin.giatridongoaidongs.edit', ["title" => "Bảng giá trị đo ngoài đồng"], compact('chitieungoaidong', 'loaigiatrido', 'giatridongoaidong'));
+        return view('admin.giatridongoaidongs.edit', ["title" => "Bảng giá trị đo ngoài đồng"], compact('chitieungoaidong', 'loaigiatrido', 'giatridongoaidong','giatritinhtrangs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
 

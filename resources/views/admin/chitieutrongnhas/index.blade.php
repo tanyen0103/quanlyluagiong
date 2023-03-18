@@ -44,7 +44,7 @@
                             <th>Độ ẩm</th>
                             <th>Thơm</th>
                             <th>Đánh giá</th>
-                            <th width="280px">Action</th>
+                            <th width='160px'></th>
                         </tr>
                     </thead>
                     @foreach ($chitieutrongnhas as $item)
@@ -64,14 +64,14 @@
                             <td>
                                 <form action="{{ route('chitieutrongnhas.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('chitieutrongnhas.show',$item->id) }}">Chi tiết</a>
+                                    <a class="btn btn-info mt-1" href="{{ route('chitieutrongnhas.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary" href="{{ route('chitieutrongnhas.edit',$item->id) }}">Chỉnh sửa</a>
+                                    <a class="btn btn-primary mt-1" href="{{ route('chitieutrongnhas.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Xoá</button>
+                                    <button type="submit" class="btn btn-danger mt-1"><i class="fa-solid fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>

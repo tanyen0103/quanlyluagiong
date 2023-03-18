@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Giong;
 use Illuminate\Http\Request;
+use App\Models\GiaTriTinhTrang;
 use App\Models\ChiTieuNgoaiDong;
 
 class ChiTieuNgoaiDongController extends Controller
@@ -40,9 +41,11 @@ class ChiTieuNgoaiDongController extends Controller
      */
     public function create()
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $giong = Giong::all();
         $chitieungoaidong = ChiTieuNgoaiDong::all();
-        return view('admin.chitieungoaidongs.create', ["title" => "Bảng chỉ tiêu ngoài đồng"], compact('giong' , 'chitieungoaidong'));
+        return view('admin.chitieungoaidongs.create',  compact('giong' , 'chitieungoaidong','giatritinhtrangs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -113,8 +116,10 @@ class ChiTieuNgoaiDongController extends Controller
      */
     public function edit(ChiTieuNgoaiDong $chitieungoaidong)
     {
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $giong = Giong::all();
-        return view('admin.chitieungoaidongs.edit', ["title" => "Bảng chỉ tiêu ngoài đồng"], compact('giong' , 'chitieungoaidong'));
+        return view('admin.chitieungoaidongs.edit', ["title" => "Bảng chỉ tiêu ngoài đồng"], compact('giong' , 'chitieungoaidong','giatritinhtrangs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
 

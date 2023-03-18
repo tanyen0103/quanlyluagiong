@@ -34,20 +34,23 @@
                 <tr>
                     <th>No</th>
                     <th>Name</th>
-                    <th width="280px">Action</th>
+                    <th width="160px"></th>
                 </tr>
                 @foreach ($roles as $key => $role)
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $role->name }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Chi tiết</a>
+                        <a class="btn btn-info mt-1" href="{{ route('roles.show',$role->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
                         @can('role-edit')
-                            <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Chỉnh sửa</a>
+                            <a class="btn btn-primary mt-1" href="{{ route('roles.edit',$role->id) }}"><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
                         @endcan
                         @can('role-delete')
+                            {{-- {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+                                {!! Form::submit('Xoá', ['class' => 'btn btn-danger mt-1']) !!}
+                            {!! Form::close() !!} --}}
                             {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Xoá', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::button('<i class="fa-solid fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1']) !!}
                             {!! Form::close() !!}
                         @endcan
                     </td>

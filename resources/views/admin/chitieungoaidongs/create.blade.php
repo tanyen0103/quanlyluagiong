@@ -8,7 +8,10 @@
             <h3 class="m-0 font-weight-bold text-white">Thêm mới</h3>
         </div>
         <div class="">
-            <a class="btn btn-light" href="{{ route('nhomgiongs.index') }}">Trở về</a>
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
+                Ghi chú
+              </button>
+            <a class="btn btn-light" href="{{ route('chitieungoaidongs.index') }}">Trở về</a>
         </div>
     </div>
     <form action="{{ route('chitieungoaidongs.store') }}" method="POST" class="needs-validation" novalidate>
@@ -143,5 +146,77 @@
     </form>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Ghi chú</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            {{-- BẢNG TÍNH TRẠNG --}}
+            <div class="card shadow mb-5 border-bottom-primary">
+                <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
+                    <div class="">
+                        <h3 class="m-0 font-weight-bold text-white">Bảng quy định tính trạng</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div class="row d-flex justify-content-center">
+                            <div class="input-group mb-2 col-5">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                                    aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" id="button-addon2">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Đối tượng tính trạng</th>
+                                    <th>Mô tả</th>
+
+                                    <th>Giai đoạn trưởng thành</th>
+
+                                    <th>Đặc điểm tính trạng</th>
+
+                                    <th>Điểm</th>
+                                </tr>
+                            </thead>
+                            @foreach ($giatritinhtrangs as $item)
+                            <tbody>
+                                <tr>
+                                    <td>{{ ++$i }}</td>
+                                    <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_ten}}</td>
+                                    <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_mota}}</td>
+
+                                    <td>{{ $item->DacDiemTinhTrang->DoiTuongTinhTrang->GiaiDoanTruongThanh->giaidoantt_ten}}</td>
+
+                                    <td>{{ $item->DacDiemTinhTrang->dacdiemtt_ten}}</td>
+
+                                    <td>{{ $item->giatritt_diem }}</td>
+                                </tr>
+                            </tbody>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+</div>
 
 @endsection
