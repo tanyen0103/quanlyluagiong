@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Nav Breadcrumb --}}
+    <div class="nav-breadcrumb bg-gray-100 text-lg">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb ">
+                <li class="breadcrumb-item"><a href="{{ route ('dashboard') }}" class="text-lg"><i class="fas fa-fw fa-house"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Giá trị đo ngoài đồng</li>
+            </ol>
+        </nav>
+    </div>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>

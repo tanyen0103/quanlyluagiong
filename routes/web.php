@@ -3,11 +3,13 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GiongController;
 use App\Http\Controllers\MaPTNController;
 use App\Http\Controllers\KieuHinhController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NhomGiongController;
 use App\Http\Controllers\LoaiSauBenhController;
 use App\Http\Controllers\MaNgoaiDongController;
@@ -18,7 +20,6 @@ use App\Http\Controllers\GiaTriDoSauBenhController;
 use App\Http\Controllers\GiaTriTinhTrangController;
 use App\Http\Controllers\ChiTieuNgoaiDongController;
 use App\Http\Controllers\DacDiemTinhTrangController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GiaTriDoTrongNhaController;
 use App\Http\Controllers\DoiTuongTinhTrangController;
 use App\Http\Controllers\GiaTriDoNgoaiDongController;
@@ -40,12 +41,10 @@ use App\Http\Controllers\GiaiDoanTruongThanhController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
