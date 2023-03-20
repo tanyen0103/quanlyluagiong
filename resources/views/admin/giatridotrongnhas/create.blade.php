@@ -19,8 +19,8 @@
         </div>
         <div class="">
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
-                Ghi chú
-              </button>
+                <i class="fa-regular fa-note-sticky"></i>
+            </button>
             <a class="btn btn-light" href="{{ route('giatridotrongnhas.index') }}">Trở về</a>
         </div>
     </div>
@@ -75,21 +75,16 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content ">
+      <div class="modal-content  border-bottom-primary ">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Ghi chú</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="exampleModalLongTitle">Bảng quy định tính trạng</h5>
+          <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             {{-- BẢNG TÍNH TRẠNG --}}
-            <div class="card shadow mb-5 border-bottom-primary">
-                <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
-                    <div class="">
-                        <h3 class="m-0 font-weight-bold text-white">Bảng quy định tính trạng</h3>
-                    </div>
-                </div>
+            <div class="card shadow">
                 <div class="card-body">
                     <div class="table-responsive">
                         <div class="row d-flex justify-content-center">
@@ -138,9 +133,9 @@
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
+        {{-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        </div>
+        </div> --}}
       </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Begin Page Content -->
-    <div class="container">
+    <div class="container" id="quanly">
         {{-- Nav Breadcrumb --}}
         <div class="nav-breadcrumb bg-gray-100 text-lg">
             <nav aria-label="breadcrumb">
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Content Row -->
-        <div class="row" >
+        <div  class="row" >
 
             <!-- Card NhomGiong -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -99,225 +99,46 @@
         </div>
 
         {{-- Stickey button --}}
-        <div class=" sticky-dashboard position-relative position-fixed d-none d-lg-block d-xl-block" style="left:97%; z-index: 5; transition: left 3s;
-        transition-delay: 1s;">
-            <a href="#quanly" class="btn btn-primary btn-circle mb-2">
+        {{-- <div class=" sticky-dashboard position-relative position-fixed d-none d-lg-block d-xl-block" style="left:97%; z-index: 5;">
+            <a href="#quanly" class="btn btn-primary btn-circle mb-2" title="Thông tin">
                 <span class="icon text-white-20">
-                    <i class="fas fa-folder"></i>
+                    <i class="fas fa-info" ></i>
                 </span>
             </a>
-            <a href="#chitieu" class="btn btn-info btn-circle mb-2">
+            <a href="{{ route("docs") }}" class="btn btn-info btn-circle mb-2" title="Hướng dẫn">
                 <span class="icon text-white-20">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-question"></i>
                 </span>
             </a>
-            <a href="#ghichu" class="btn btn-warning btn-circle mb-2">
+            <a href="#ghichu" class="btn btn-warning btn-circle mb-2"  title="Ghi chú">
                 <span class="icon text-white-20">
                     <i class="fa-regular fa-note-sticky"></i>
                 </span>
             </a>
-        </div>
+        </div> --}}
 
-        {{-- Hướng dẫn đo chỉ tiêu  --}}
-        <div class="row">
-            <div class="col-xl col-md-19">
-                {{-- Đo chỉ tiêu --}}
-                <div id="chitieu" class="card shadow mb-5 border-bottom-primary">
-                    {{-- Card header --}}
-                    <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
-                        <div class="">
-                            <h3 class="m-0 font-weight-bold text-white">HƯỚNG DẪN ĐO CHỈ TIÊU</h3>
+        {{-- Chart Pie  --}}
+        <div class="container-fluid">
+            <!-- Content Row -->
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Tổng quan</h6>
                         </div>
-                    </div>
-                    {{-- Card body --}}
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <ul class="nav nav-pills justify-content-center mb-3 text-center custom" id="pills-tab" role="tablist">
-                                    <div class="step-line"></div>
-                                    <li class="nav-item btn btn-sm">
-                                        <a class="nav-link active custom" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab"
-                                        aria-controls="pills-1" aria-selected="true">
-                                        {{-- <span class="icon"><i class="bi bi-person-circle"></i></span> --}}
-                                        <span class="text">Bước 1</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item btn btn-sm">
-                                        <a class="nav-link custom" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab"
-                                        aria-controls="pills-2" aria-selected="false">
-                                        {{-- <span class="icon"><i class="bi bi-card-checklist"></i></span> --}}
-                                        <span class="text">Bước 2</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item btn btn-sm">
-                                        <a class="nav-link custom" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab"
-                                        aria-controls="pills-3" aria-selected="false">
-                                        {{-- <span class="icon"><i class="bi bi-credit-card"></i></span> --}}
-                                        <span class="text">Bước 3</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content custom pt-4" id="pills-tabContent">
-                                    {{-- step1 --}}
-                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
-                                    <div class="card">
-                                        <div class="card-header">
-                                        Nhập loại giá trị đo
-                                        </div>
-                                        <div class="card-body">
-                                        <ul>
-                                            <li>Tên loại</li>
-                                            <li>Đơn vị đo</li>
-                                        </ul>
-                                        <a href="{{ route('loaigiatridos.index') }}" class="btn btn-primary">Đi đến loại giá trị đo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                    {{-- step2 --}}
-                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Nhập chỉ tiêu ngoài đồng - trong nhà
-                                        </div>
-                                        <div class="card-body">
-                                            <ul>
-                                                <li>Giống</li>
-                                                <li>Các giá trị cột mặc định</li>
-                                                <li><span class="text-danger font-weight-bold">Chỉ được tạo một chỉ tiêu cho một giống</span></li>
-                                            </ul>
-                                            <div class="dflex">
-                                                <a href="{{ route('chitieungoaidongs.index') }}" class="btn btn-primary mb-2">Đi đến chỉ tiêu ngoài đồng</a>
-                                                <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary mb-2">Đi đến chỉ tiêu trong nhà</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                    {{-- step3 --}}
-                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Nhập giá trị đo ngoài đồng - trong nhà
-                                            </div>
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li>Chọn - Giống tương ứng với bảng chỉ tiêu</li>
-                                                    <li>Chọn - Tên loại giá trị cần nhập</li>
-                                                    <li>Nhập giá trị theo loại</li>
-                                                    <li><span class="text-danger font-weight-bold">Không qui định số lần đo</span></li>
-                                                </ul>
-                                                <div class="dflex">
-                                                    <a href="{{ route('chitieungoaidongs.index') }}" class="btn btn-primary mb-2">Đi đến chỉ tiêu ngoài đồng</a>
-                                                    <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary mb-2">Đi đến chỉ tiêu trong nhà</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-pie pt-4" data-total-nhom-giongs="{{ $totalNhomGiongs }}" data-total-giongs="{{ $totalGiongs }}" data-total-kieu-hinhs="{{ $totalKieuHinhs }}" data-total-loai-sau-benhs="{{ $totalLoaiSauBenhs }}">
+                                <canvas id="giongChart"></canvas>
+                              </div>
                         </div>
                     </div>
                 </div>
-                {{-- Kết thúc đo chỉ tiêu --}}
-            </div>
-            <div class="col-xl col-md-19">
-                {{-- Đo sâu bệnh --}}
-                <div class="card shadow mb-5 border-bottom-primary">
-                    {{-- Card header --}}
-                    <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
-                        <div class="">
-                            <h3 class="m-0 font-weight-bold text-white">HƯỚNG DẪN ĐO SÂU BỆNH</h3>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <ul class="nav nav-pills justify-content-center mb-3 text-center custom" id="pills-tab" role="tablist">
-                                <div class="step-line"></div>
-                                <li class="nav-item btn btn-sm">
-                                    <a class="nav-link active custom" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab"
-                                    aria-controls="pills-4" aria-selected="true">
-                                    {{-- <span class="icon"><i class="bi bi-person-circle"></i></span> --}}
-                                    <span class="text">Bước 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item btn btn-sm">
-                                    <a class="nav-link custom" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab"
-                                    aria-controls="pills-5" aria-selected="false">
-                                    {{-- <span class="icon"><i class="bi bi-card-checklist"></i></span> --}}
-                                    <span class="text">Bước 2</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item btn btn-sm">
-                                    <a class="nav-link custom" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab"
-                                    aria-controls="pills-6" aria-selected="false">
-                                    {{-- <span class="icon"><i class="bi bi-credit-card"></i></span> --}}
-                                    <span class="text">Bước 3</span>
-                                    </a>
-                                </li>
-                                </ul>
-                                <div class="tab-content custom pt-4" id="pills-tabContent">
-                                    {{-- step1 --}}
-                                <div class="tab-pane fade show active" id="pills-4" role="tabpanel" aria-labelledby="pills-home-tab">
-                                    <div class="card">
-                                        <div class="card-header">
-                                        Nhập loại sâu bệnh đo
-                                        </div>
-                                        <div class="card-body">
-                                        <ul>
-                                            <li>Tên sâu bệnh</li>
-                                            <li>Đơn vị </li>
-                                            <li>Mô tả </li>
-                                            <li>Hình ảnh</li>
-                                        </ul>
-                                        <a href="{{ route('loaisaubenhs.index') }}" class="btn btn-primary">Đi đến loại sâu bệnh</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                    {{-- step2 --}}
-                                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                    <div class="card">
-                                        <div class="card-header">
-                                        Nhập chỉ tiêu sâu bênh
-                                        </div>
-                                        <div class="card-body">
-                                        <ul>
-                                            <li>Giống</li>
-                                            <li>Các giá trị cột mặc định</li>
-                                            <li><span class="text-danger font-weight-bold">Chỉ được tạo một chỉ tiêu cho một giống</span></li>
-                                        </ul>
-                                        <a href="{{ route('chitieusaubenhs.index') }}" class="btn btn-primary">Đi đến chỉ tiêu sâu bệnh</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                    {{-- step3 --}}
-                                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                            Nhập giá trị đo sâu bệnh
-                                            </div>
-                                            <div class="card-body">
-                                            <ul>
-                                                <li>Chọn - Giống tương ứng với bảng chỉ tiêu</li>
-                                                <li>Chọn - Tên loại sâu bệnh</li>
-                                                <li>Nhập giá trị sâu bệnh</li>
-                                                <li><span class="text-danger font-weight-bold">Không qui định số lần đo</span></li>
-                                            </ul>
-                                            <a href="{{ route('giatridongoaidongs.index') }}" class="btn btn-primary">Đi đến giá trị đo sâu bệnh</a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- Kết thúc đo sâu bệnh --}}
             </div>
         </div>
 
-        {{-- BẢNG TÍNH TRẠNG --}}
+        {{-- BẢNG TÍNH TRẠNG
         <div id="ghichu" class="card shadow mb-5 border-bottom-primary">
             <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
                 <div class="">
@@ -370,32 +191,48 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Sticky button
-    $(document).ready(function(){
-      $(".tab1").hoverSlide({
-        backgroundColor: "#2196F3"
-      });
+    {{-- Chart Pie  --}}
+    var totalNhomGiongs = document.querySelector('.chart-pie').dataset.totalNhomGiongs;
+    var totalGiongs = document.querySelector('.chart-pie').dataset.totalGiongs;
+    var totalKieuHinhs = document.querySelector('.chart-pie').dataset.totalKieuHinhs;
+    var totalLoaiSauBenhs = document.querySelector('.chart-pie').dataset.totalLoaiSauBenhs;
 
-      $(".tab2").hoverSlide({
-        top: 120,
-        backgroundColor: "#F1C40F"
-      });
+    var ctx = document.getElementById("giongChart");
+    var giongChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+        labels: ["Nhom Giongs (" + totalNhomGiongs + ")", "Giongs (" + totalGiongs + ")", "Kieu Hinhs (" + totalKieuHinhs + ")", "Loai Sau Benhs (" + totalLoaiSauBenhs + ")"],
+        datasets: [{
+        data: [totalNhomGiongs, totalGiongs, totalKieuHinhs, totalLoaiSauBenhs],
+        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
+        hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#e74a3b'],
+        hoverBorderColor: "rgba(234, 236, 244, 1)",
+        }],
+    },
+        options: {
+        maintainAspectRatio: false,
+        tooltips: {
+        backgroundColor: "rgb(255,255,255)",
+        bodyFontColor: "#858796",
+        borderColor: '#dddfeb',
+        borderWidth: 1,
+        xPadding: 15,
+        yPadding: 15,
+        displayColors: false,
+        caretPadding: 10,
+        },
+        legend: {
+            display: false
+        },
+        cutoutPercentage: 80,
+        },
+    });
 
-      $(".tab3").hoverSlide({
-        top: 180,
-        backgroundColor: "#f44336"
-      });
-
-      $(".tab4").hoverSlide({
-        top: 240,
-        backgroundColor: "#555"
-      });
-});
 </script>
 
 @endsection

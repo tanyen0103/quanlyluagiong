@@ -27,9 +27,14 @@ class DashboardController extends Controller
         $totalLoaiSauBenhs = LoaiSauBenh::count();
 
         $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
-        // $giatridongoaidongs = GiaTriDoNgoaiDong::oldest()->paginate(10);
-        // $giatridotrongnhas = GiaTriDoTrongNha::oldest()->paginate(10);
-        // $giatridosaubenhs = GiaTriDoSauBenh::oldest()->paginate(10);
+
+        // Create an array of labels with the new values
+        $labels = [
+            "Nhom Giongs ($totalNhomGiongs)",
+            "Giongs ($totalGiongs)",
+            "Kieu Hinhs ($totalKieuHinhs)",
+            "Loai Sau Benhs ($totalLoaiSauBenhs)"
+        ];
         return view('dashboard', [
             'totalNhomGiongs' => $totalNhomGiongs,
             'totalGiongs' => $totalGiongs,
@@ -37,9 +42,6 @@ class DashboardController extends Controller
             'totalLoaiSauBenhs' => $totalLoaiSauBenhs,
 
             'giatritinhtrangs' => $giatritinhtrangs,
-            // 'giatridongoaidongs'=> $giatridongoaidongs,
-            // 'giatridotrongnhas'=> $giatridotrongnhas,
-            // 'giatridosaubenhs'=> $giatridosaubenhs,
         ])
         ->with('i', (request()->input('page', 1) - 1) * 10);
     }

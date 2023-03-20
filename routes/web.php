@@ -43,6 +43,10 @@ Auth::routes();
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/docs', function () {
+    return view('docs');
+})->name('docs');
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
