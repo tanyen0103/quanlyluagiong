@@ -138,8 +138,8 @@
             </div>
         </div>
 
-        {{-- BẢNG TÍNH TRẠNG
-        <div id="ghichu" class="card shadow mb-5 border-bottom-primary">
+        {{-- BẢNG TÍNH TRẠNG --}}
+        {{-- <div id="ghichu" class="card shadow mb-5 border-bottom-primary">
             <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
                 <div class="">
                     <h3 class="m-0 font-weight-bold text-white">QUY ĐỊNH TÍNH TRẠNG</h3>
@@ -192,6 +192,307 @@
                 </div>
             </div>
         </div> --}}
+
+        {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
+        <div class="card shadow mb-5 border-bottom-primary">
+            {{-- Card header --}}
+            <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-around">
+
+                <h3 class="m-0 font-weight-bold text-white">BẢNG THỐNG KÊ CHI TIẾT</h3>
+
+                <div class="input-group mb-2 col-5">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                        aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="button-addon2">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th colspan="7">Giống lúa</th>
+                                <th colspan="15">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="12">Chỉ tiêu trong nhà</th>
+                                <th colspan="6">Chỉ tiêu sâu bệnh</th>
+                              </tr>
+                            <tr>
+                                <th>No</th>
+                                <th>Nhóm</th>
+                                <th>Kiểu hình</th>
+                                <th>Mã ngoài đồng</th>
+                                <th>Mã phòng thí nghiệm</th>
+                                <th>Tên</th>
+                                <th>Nguồn gốc</th>
+                                <th>Hình ảnh</th>
+
+                                <th>Phiến lá</th>
+                                <th>Tai lá</th>
+                                <th>Góc nhánh</th>
+                                <th>Bẹ lá</th>
+                                <th>Góc lá</th>
+                                <th>Màu sắc góc lá</th>
+                                <th>Góc lá đòng</th>
+                                <th>Thoát CB</th>
+                                <th>Màu sắc góc thân</th>
+                                <th>Dáng bông</th>
+                                <th>Cong trục bông</th>
+                                <th>Râu</th>
+                                <th>Tên giá trị đo</th>
+                                <th>Giá trị</th>
+                                <th>Đơn vị</th>
+
+                                <th>Gié C2</th>
+                                <th>Độ rụng hạt</th>
+                                <th>Màu sắc vỏ trấu</th>
+                                <th>Dạng thóc</th>
+                                <th>Màu sắc gạo</th>
+                                <th>Trọng lượng 1000 hạt</th>
+                                <th>Độ ẩm</th>
+                                <th>Thơm</th>
+                                <th>Đánh giá</th>
+                                <th>Tên giá trị đo</th>
+                                <th>Giá trị</th>
+                                <th>Đơn vị</th>
+
+                                <th>Chọn lọc</th>
+                                <th>Đánh giá khác</th>
+                                <th>Tên loại</th>
+                                <th>Hình ảnh</th>
+                                <th>Giá trị</th>
+                                <th>Đơn vị</th>
+
+                            </tr>
+                        </thead>
+                        @foreach ($giongs as $item)
+                        <tbody>
+                            <tr>
+                                <td>{{ ++$i }}</td>
+
+                                <td>{{ $item->NhomGiong->nhomgiong_code }}</td>
+                                <td>{{ $item->KieuHinh->kieuhinh_ten}}</td>
+                                <td>
+                                    @foreach ($item->MaNgoaiDong as $field)
+                                        <div>{{ $field->field_code }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->MaPTN as $ptn)
+                                        <div>{{ $ptn->ptn_code }}</div>
+                                    @endforeach
+                                </td>
+                                <td>{{ $item->giong_ten }}</td>
+                                <td>{{ $item->giong_nguongoc }}</td>
+                                <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></td>
+
+                                {{-- Chỉ tiêu ngoài đồng  --}}
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_phienla }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_taila }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_gocnhanh }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_bela }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_gocla }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_msgocla }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_gocladong }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_thoatcb }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_msgocthan }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_dangbong }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_congtrucbong }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                        <div>{{ $ctnd->chitieungoaidong_rau }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                <div>{{ $gtdnd->giatridongoaidong_giatri }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+
+                                {{-- Chỉ tiêu trong nhà  --}}
+                                 <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_giec2 }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_dorunghat }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_msvotrau }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_dangthoc }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_mausacgao }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_tl1000hat }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_doam }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_thom }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                        <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                <div>{{ $gtdtn->giatridotrongnha_giatri }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+
+
+                                {{-- CHỈ TIÊU SÂU BỆNH --}}
+
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                        <div>{{ $ctsb->chitieusaubenh_chonloc }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                        <div>{{ $ctsb->chitieusaubenh_danhgia }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_ten }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                <div><img class="d-block" src="{{ env('STORAGE_URL') . $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                <div>{{ $gtdsb->giatridosaubenh_giatri }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                            </tr>
+                        </tbody>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <a href="{{ route('giongs.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+        </div>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

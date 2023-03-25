@@ -49,7 +49,7 @@
 
                             <th>Tên loại</th>
                             <th>Mô tả</th>
-                            <th>Hình ảnh</th></th>
+                            <th>Hình ảnh</th>
                             <th>Đơn vị</th>
 
                             <th>Giá trị</th>

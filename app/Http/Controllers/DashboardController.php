@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $totalKieuHinhs = KieuHinh::count();
         $totalLoaiSauBenhs = LoaiSauBenh::count();
 
-        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
+        $giongs = Giong::oldest()->paginate(5);
 
         // Create an array of labels with the new values
         $labels = [
@@ -41,7 +41,7 @@ class DashboardController extends Controller
             'totalKieuHinhs' => $totalKieuHinhs,
             'totalLoaiSauBenhs' => $totalLoaiSauBenhs,
 
-            'giatritinhtrangs' => $giatritinhtrangs,
+            'giongs' => $giongs,
         ])
         ->with('i', (request()->input('page', 1) - 1) * 10);
     }

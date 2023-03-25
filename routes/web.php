@@ -16,6 +16,7 @@ use App\Http\Controllers\MaNgoaiDongController;
 use App\Http\Controllers\LoaiGiaTriDoController;
 use App\Http\Controllers\ChiTieuSauBenhController;
 use App\Http\Controllers\ChiTieuTrongNhaController;
+use App\Http\Controllers\GiaTriDoChiTietController;
 use App\Http\Controllers\GiaTriDoSauBenhController;
 use App\Http\Controllers\GiaTriTinhTrangController;
 use App\Http\Controllers\ChiTieuNgoaiDongController;
@@ -100,5 +101,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);
     Route::get('giatridosaubenhs-export', [GiaTriDoSauBenhController::class, 'fileExport'])->name('giatridosaubenhs.export');
 
+    Route::resource('giatridochitiets', GiaTriDoChiTietController::class);
 
 });
