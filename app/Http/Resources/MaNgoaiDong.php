@@ -16,9 +16,9 @@ class MaNgoaiDong extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Tên giống' => $this->Giong->giong_ten,
-            'Mã ngoài đồng' => $this->field_code,
-            'Mô tả' => $this->field_mota,
+            'giong_ten' => $this->Giong->giong_ten,
+            'field_code' => $this->field_code,
+            'field_mota' => $this->field_mota,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

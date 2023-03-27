@@ -16,8 +16,8 @@ class KieuHinh extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Tên kiểu hình' => $this->kieuhinh_ten,
-            'Mô tả kiểu hình' => $this->kieuhinh_mota,
+            'kieuhinh_ten' => $this->kieuhinh_ten,
+            'kieuhinh_mota' => $this->kieuhinh_mota,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

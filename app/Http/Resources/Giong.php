@@ -16,12 +16,12 @@ class Giong extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Tên giống' => $this->giong_ten,
-            'Nhóm giống' => $this->NhomGiong->nhomgiong_ten,
-            'Kiểu hình' => $this->KieuHinh->kieuhinh_ten,
-            'Nguồn gốc' => $this->giong_nguongoc,
-            'Mô tả' => $this->giong_mota,
-            'Hình ảnh' => $this->giong_hinhanh,
+            'giong_ten' => $this->giong_ten,
+            'nhomgiong_ten' => $this->NhomGiong->nhomgiong_ten,
+            'kieuhinh_ten' => $this->KieuHinh->kieuhinh_ten,
+            'giong_nguongoc' => $this->giong_nguongoc,
+            'giong_mota' => $this->giong_mota,
+            'giong_hinhanh' => $this->giong_hinhanh,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

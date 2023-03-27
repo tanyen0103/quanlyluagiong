@@ -91,9 +91,6 @@ class GiongController extends Controller
         $fileName = Str::slug($request->giong_ten) . '.' . $extension;
         $path = $request->file('giong_hinhanh')->storeAs('images', $fileName);
 
-
-
-
         $g->giong_ten = $request->giong_ten;
         $g->giong_ten_slug = Str::slug($request->giong_ten);
         $g->nhomgiong_id = $request->nhomgiong_id;

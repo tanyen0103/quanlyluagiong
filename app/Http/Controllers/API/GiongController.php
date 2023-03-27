@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Giong;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Resources\Giong as ResourcesGiong;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\Giong as ResourcesGiong;
 
 class GiongController extends Controller
 {
@@ -43,7 +45,46 @@ class GiongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $validator = Validator::make($input,[
+            'giong_ten' => ['required','max:255'],
+            'nhomgiong_id' => ['required'],
+            'kieuhinh_id' => ['required'],
+            'giong_nguongoc' => [''],
+            'giong_mota' => [''],
+            'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048']
+        ]);
+
+        if ($validator->fails()) {
+            $arr = [
+                'success' => false,
+                'message' => 'Lỗi kiểm tra dữ liệu',
+                'data' => $validator->errors()
+            ];
+            return response()->json($arr, 200);
+        }
+
+        if ($request->hasFile('giong_hinhanh')) {
+            $file = $request->file('giong_hinhanh');
+		    $path = $request->giong_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $request->giong_hinhanh->extension());
+
+        }
+
+        $g = new Giong($input);
+        $g->giong_ten = $request->giong_ten;
+        $g->giong_ten_slug = Str::slug($request->giong_ten);
+        $g->nhomgiong_id = $request->nhomgiong_id;
+        $g->kieuhinh_id = $request->kieuhinh_id;
+        $g->giong_nguongoc = $request->giong_nguongoc;
+        $g->giong_mota = $request->giong_mota;
+        $g->giong_hinhanh = $path;
+        $g->save($input);
+        $arr = [
+            'status' => true,
+            'message' => "Giống đã lưu thành công",
+            'data' => new ResourcesGiong($g)
+        ];
+        return response()->json($arr, 201);
     }
 
     /**

@@ -16,9 +16,9 @@ class MaPTN extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Tên giống' => $this->Giong->giong_ten,
-            'Mã phòng thí nghiệm' => $this->ptn_code,
-            'Mô tả' => $this->ptn_mota,
+            'giong_ten' => $this->Giong->giong_ten,
+            'ptn_code' => $this->ptn_code,
+            'ptn_mota' => $this->ptn_mota,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

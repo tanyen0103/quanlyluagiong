@@ -16,7 +16,8 @@ class GiaTriDoSauBenhsExport implements FromCollection, WithHeadings, WithCustom
     */
     public function collection()
     {
-        return GiaTriDoSauBenh::all();
+        return GiaTriDoSauBenh::with('chitieusaubenh')
+        ->orderBy('chitieusaubenh_id', 'asc')->get();
     }
 
     public function headings(): array

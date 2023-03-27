@@ -64,11 +64,11 @@ class LoaiSauBenhController extends Controller
 
         if ($request->hasFile('loaisaubenh_hinhanh')) {
             $file = $request->file('loaisaubenh_hinhanh');
-		    $path = $request->loaisaubenh_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) . '.' . $request->loaisaubenh_hinhanh->extension());
+		    $path = $request->loaisaubenh_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $request->loaisaubenh_hinhanh->extension());
 
         }
 
-         $loaisaubenh = new LoaiSauBenh();
+        $loaisaubenh = new LoaiSauBenh();
         $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
         $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);
         $loaisaubenh->loaisaubenh_mota = $request->loaisaubenh_mota;

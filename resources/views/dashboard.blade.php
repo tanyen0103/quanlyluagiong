@@ -355,6 +355,7 @@
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}</div>
+                                                <hr>
                                             @endforeach
                                     @endforeach
                                 </td>
@@ -362,6 +363,7 @@
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>{{ $gtdnd->giatridongoaidong_giatri }}</div>
+                                                <hr>
                                             @endforeach
                                     @endforeach
                                 </td>
@@ -369,6 +371,7 @@
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
+                                                <hr>
                                             @endforeach
                                     @endforeach
                                 </td>

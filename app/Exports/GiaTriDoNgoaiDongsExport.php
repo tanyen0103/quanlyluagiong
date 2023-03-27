@@ -16,7 +16,8 @@ class GiaTriDoNgoaiDongsExport implements FromCollection, WithHeadings, WithCust
     */
     public function collection()
     {
-        return GiaTriDoNgoaiDong::all();
+        return GiaTriDoNgoaiDong::with('chitieungoaidong')
+        ->orderBy('chitieungoaidong_id', 'asc')->get();
     }
 
     public function headings(): array

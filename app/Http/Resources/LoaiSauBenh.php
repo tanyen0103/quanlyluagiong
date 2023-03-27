@@ -16,10 +16,10 @@ class LoaiSauBenh extends JsonResource
     {
          return [
             'id' => $this->id,
-            'Tên loại sâu bệnh' => $this->loaisaubenh_ten,
-            'Đơn vị' => $this->loaisaubenh_donvi,
-            'Mô tả' => $this->loaisaubenh_mota,
-            'Hình ảnh' => $this->loaisaubenh_hinhanh,
+            'loaisaubenh_ten' => $this->loaisaubenh_ten,
+            'loaisaubenh_donvi' => $this->loaisaubenh_donvi,
+            'loaisaubenh_mota' => $this->loaisaubenh_mota,
+            'loaisaubenh_hinhanh' => $this->loaisaubenh_hinhanh,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

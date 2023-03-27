@@ -16,8 +16,8 @@ class DacDiemTinhTrang extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Đối tượng tính trạng' => $this->DoiTuongTinhTrang->doituongtt_ten,
-            'Tên đặc điểm tính trạng' => $this->dacdiemtt_ten,
+            'doituongtt_ten' => $this->DoiTuongTinhTrang->doituongtt_ten,
+            'dacdiemtt_ten' => $this->dacdiemtt_ten,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

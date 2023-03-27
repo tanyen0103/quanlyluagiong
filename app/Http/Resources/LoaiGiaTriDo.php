@@ -16,8 +16,8 @@ class LoaiGiaTriDo extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Loại giá trị đo' => $this->loaigiatrido_ten,
-            'Đơn vị' => $this->loaigiatrido_donvi,
+            'loaigiatrido_ten' => $this->loaigiatrido_ten,
+            'loaigiatrido_donvi' => $this->loaigiatrido_donvi,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

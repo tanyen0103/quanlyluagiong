@@ -16,8 +16,8 @@ class GiaiDoanTruongThanh extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Tên giai đoạn trưởng thành' => $this->giaidoantt_ten,
-            'Mô tả' => $this->giaidoantt_mota,
+            'giaidoantt_ten' => $this->giaidoantt_ten,
+            'giaidoantt_mota' => $this->giaidoantt_mota,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];

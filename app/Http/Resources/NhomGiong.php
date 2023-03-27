@@ -16,11 +16,11 @@ class NhomGiong extends JsonResource
     {
         return [
             'id' => $this->id,
-            'Mã nhóm giống' => $this->nhomgiong_code,
-            'Tên nhóm giống' => $this->nhomgiong_ten,
-            'Mô tả' => $this->nhomgiong_mota,
-            'Ngày cấy' => $this->nhomgiong_ngayngam,
-            'Ngày ngâm' => $this->nhomgiong_ngaycay,
+            'nhomgiong_code' => $this->nhomgiong_code,
+            'nhomgiong_ten' => $this->nhomgiong_ten,
+            'nhomgiong_mota' => $this->nhomgiong_mota,
+            'nhomgiong_ngayngam' => $this->nhomgiong_ngayngam,
+            'nhomgiong_ngaycay' => $this->nhomgiong_ngaycay,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
           ];
