@@ -42,8 +42,6 @@ use App\Http\Controllers\GiaiDoanTruongThanhController;
 
 Auth::routes();
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/docs', function () {
     return view('docs');
 })->name('docs');
@@ -52,6 +50,7 @@ Route::get('/docs', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('roles', RoleController::class);
 
     Route::resource('users', UserController::class);
