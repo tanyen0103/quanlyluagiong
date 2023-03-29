@@ -16,7 +16,9 @@ class GiongsExport implements FromCollection, WithHeadings, WithCustomStartCell,
     */
     public function collection()
     {
-        return Giong::all();
+        return Giong::with('nhomgiong')
+        ->orderBy('nhomgiong_id', 'asc')
+        ->get();
     }
 
     public function headings(): array

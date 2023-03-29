@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users-export', [UserController::class, 'fileExport'])->name('users.export');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboards-export', [DashboardController::class, 'fileExport'])->name('dashboards.export');
+
 
     Route::resource('nhomgiongs', NhomGiongController::class);
     Route::get('nhomgiongs-export', [NhomGiongController::class, 'fileExport'])->name('nhomgiongs.export');

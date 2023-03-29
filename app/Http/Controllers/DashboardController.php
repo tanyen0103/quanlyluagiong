@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GiaTriTinhTrang;
+use App\Exports\DashBoardsExport;
 use App\Models\Giong;
 use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use App\Models\LoaiSauBenh;
 use Illuminate\Http\Request;
+use App\Models\GiaTriTinhTrang;
+use Maatwebsite\Excel\Facades\Excel;
 // use App\Models\GiaTriDoNgoaiDong;
 // use App\Models\GiaTriDoSauBenh;
 // use App\Models\GiaTriDoTrongNha;
 
 class DashboardController extends Controller
 {
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport()
+    {
+        return Excel::download(new DashBoardsExport, 'giongs-danhsach.xlsx');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +35,9 @@ class DashboardController extends Controller
         $totalKieuHinhs = KieuHinh::count();
         $totalLoaiSauBenhs = LoaiSauBenh::count();
 
-        $giongs = Giong::oldest()->paginate(5);
+        $giongs = Giong::with('nhomgiong')
+        ->orderBy('nhomgiong_id', 'asc')
+        ->paginate(4);
 
         // Create an array of labels with the new values
         $labels = [
@@ -43,7 +54,7 @@ class DashboardController extends Controller
 
             'giongs' => $giongs,
         ])
-        ->with('i', (request()->input('page', 1) - 1) * 10);
+        ->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     /**
