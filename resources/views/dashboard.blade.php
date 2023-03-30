@@ -143,10 +143,10 @@
                             <tr>
                                 <th></th>
                                 <th colspan="7">Giống lúa</th>
-                                <th colspan="15">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="14">Chỉ tiêu ngoài đồng</th>
                                 <th colspan="12">Chỉ tiêu trong nhà</th>
                                 <th colspan="6">Chỉ tiêu sâu bệnh</th>
-                              </tr>
+                            </tr>
                             <tr>
                                 <th>No</th>
                                 <th>Nhóm</th>
@@ -169,9 +169,9 @@
                                 <th>Dáng bông</th>
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
-                                <th>Tên giá trị đo</th>
+                                <th width="260px">Tên giá trị đo</th>
                                 <th>Giá trị</th>
-                                <th>Đơn vị</th>
+                                {{-- <th>Đơn vị</th> --}}
 
                                 <th>Gié C2</th>
                                 <th>Độ rụng hạt</th>
@@ -277,10 +277,10 @@
                                         <div>{{ $ctnd->chitieungoaidong_rau }}</div>
                                     @endforeach
                                 </td>
-                                <td>
+                                <td >
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}</div>
+                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }})</div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
@@ -293,14 +293,14 @@
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
-                                </td>
+                                </td> --}}
 
                                 {{-- Chỉ tiêu trong nhà  --}}
                                  <td>

@@ -25,7 +25,7 @@
         <div class="row mt-1 d-flex justify-content-center">
             <div class="col-xs-10 col-sm-10 col-md-10">
                 <div class="form-group">
-                    <strong>Tên tài khoản:</strong>
+                    <strong>Họ tên:</strong>
                     {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
                 </div>
             </div>
@@ -45,6 +45,19 @@
                 <div class="form-group">
                     <strong>Xác nhận mật khẩu:</strong>
                     {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10">
+                <div class="form-group">
+                    <strong>Địa chỉ:</strong>
+                    {!! Form::textarea('address', null, array('placeholder' => 'Address','class' => 'form-control')) !!}
+                    {{-- {!! Textarea::make('address', null, array('placeholder' => 'Address','class' => 'form-control')) !!} --}}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10">
+                <div class="form-group">
+                    <strong>Điện thoại:</strong>
+                    {!! Form::text('phone', null, array('placeholder' => 'Phone','class' => 'form-control')) !!}
                 </div>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10">

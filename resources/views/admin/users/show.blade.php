@@ -28,6 +28,20 @@
         </div>
         <div class="col-xs-11 col-sm-11 col-md-11">
             <div class="form-group">
+                <strong>Địa chỉ:</strong>
+                {{ $user->address }}
+            </div>
+            <hr class="h-1 mt-0 bg-gradient-primary">
+        </div>
+        <div class="col-xs-11 col-sm-11 col-md-11">
+            <div class="form-group">
+                <strong>Điện thoại:</strong>
+                {{ $user->phone }}
+            </div>
+            <hr class="h-1 mt-0 bg-gradient-primary">
+        </div>
+        <div class="col-xs-11 col-sm-11 col-md-11">
+            <div class="form-group">
                 <strong>Quyền:</strong>
                 @if(!empty($user->getRoleNames()))
                     @foreach($user->getRoleNames() as $v)
