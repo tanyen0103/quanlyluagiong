@@ -27,11 +27,11 @@ class Giong extends Model
     ];
 
     public function MaNgoaiDong(){
-        return $this->hasOne(MaNgoaiDong::class, 'giong_id', 'id');
+        return $this->hasMany(MaNgoaiDong::class, 'giong_id', 'id');
     }
 
     public function MaPTN(){
-        return $this->hasOne(MaPTN::class, 'giong_id', 'id');
+        return $this->hasMany(MaPTN::class, 'giong_id', 'id');
     }
 
     public function ChiTieuNgoaiDong(){
