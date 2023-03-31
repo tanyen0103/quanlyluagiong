@@ -54,8 +54,8 @@ class MaPTNController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ptn_code' => ['required','max:50'],
-            'giong_id' => ['required'],
+            'ptn_code' => ['required','unique:maptn','max:50'],
+            'giong_id' => ['required','unique:maptn'],
             'ptn_mota' => ['']
         ]);
 

@@ -55,7 +55,7 @@ class MaNgoaiDongController extends Controller
     {
         $request->validate([
             'field_code' => ['required','unique:mangoaidong','max:50'],
-            'giong_id' => ['required'],
+            'giong_id' => ['required','unique:mangoaidong'],
             'field_mota' => ['']
         ]);
 
