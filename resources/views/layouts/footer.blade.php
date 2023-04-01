@@ -50,6 +50,14 @@
     }
     setInterval(updateTime, 1000);
 
+    function confirmDelete() {
+    if (confirm('Bạn có chắc chắn muốn xóa?')) {
+        document.querySelector('form').submit();
+    } else {
+        return false;
+    }
+}
+
 </script>
 
 

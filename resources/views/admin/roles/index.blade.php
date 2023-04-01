@@ -50,7 +50,7 @@
                                 {!! Form::submit('Xoá', ['class' => 'btn btn-danger mt-1']) !!}
                             {!! Form::close() !!} --}}
                             {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                            {!! Form::button('<i class="fa-solid fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1']) !!}
+                            {!! Form::button('<i class="fa-solid fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1', 'onclick' => "return confirmDelete()"]) !!}
                             {!! Form::close() !!}
                         @endcan
                     </td>

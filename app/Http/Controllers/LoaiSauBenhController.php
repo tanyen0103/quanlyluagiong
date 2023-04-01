@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\LoaiSauBenh;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class LoaiSauBenhController extends Controller
@@ -60,28 +61,64 @@ class LoaiSauBenhController extends Controller
 
         ]);
         $loaisaubenh = new LoaiSauBenh();
-
-        // Xóa ảnh cũ (nếu có)
-        if ($loaisaubenh->loaisaubenh_hinhanh) {
-            Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
-        }
-
-         // Upload tập tin
-        $originalName = $request->file('loaisaubenh_hinhanh')->getClientOriginalName();
-        $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
-        $fileName = Str::slug($request->loaisaubenh_ten) . '.' . $extension;
-        $path = $request->file('loaisaubenh_hinhanh')->storeAs('images', $fileName);
-
-
         $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
         $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);
         $loaisaubenh->loaisaubenh_mota = $request->loaisaubenh_mota;
         $loaisaubenh->loaisaubenh_donvi = $request->loaisaubenh_donvi;
-        $loaisaubenh->loaisaubenh_hinhanh = $path;
+
+        // Check if directory exists and create it if necessary
+        if (!File::isDirectory($loaisaubenh->loaisaubenh_ten_slug)) {
+            Storage::makeDirectory($loaisaubenh->loaisaubenh_ten_slug, 0775);
+        }
+
+        if ($request->hasFile('loaisaubenh_hinhanh')) {
+            // Delete old image (if any)
+            if ($loaisaubenh->loaisaubenh_hinhanh) {
+                Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+            }
+
+            // Save new image
+            $originalName = $request->file('loaisaubenh_hinhanh')->getClientOriginalName();
+            $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
+            $fileName = Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $extension;
+            $path = $request->file('loaisaubenh_hinhanh')->storeAs($loaisaubenh->loaisaubenh_ten_slug, $fileName);
+            $loaisaubenh->loaisaubenh_hinhanh = $path;
+        }
+
         $loaisaubenh->save();
 
         return redirect()->route('loaisaubenhs.index')
-                        ->with('success','Loại sâu bệnh được tạo thành công.');
+                        ->with('success', 'Loại sâu bệnh được tạo thành công.');
+        // $loaisaubenh = new LoaiSauBenh();
+
+        // // Xóa ảnh cũ (nếu có)
+        // if ($loaisaubenh->loaisaubenh_hinhanh) {
+        //     Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+        // }
+
+        // // Tạo file lưu trữ ảnh
+        // if (!File::isDirectory($loaisaubenh->loaisaubenh_ten_slug)) {
+        //     Storage::makeDirectory($loaisaubenh->loaisaubenh_ten_slug, 0775);
+        // }
+
+        // // Lưu ảnh
+        // if ($request->hasFile('loaisaubenh_hinhanh')) {
+        //     $originalName = $request->file('loaisaubenh_hinhanh')->getClientOriginalName();
+        //     $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
+        //     $fileName = Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $extension;
+        //     $path = $request->file('loaisaubenh_hinhanh')->storeAs('images', $fileName);
+        // }
+
+
+        // $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
+        // $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);
+        // $loaisaubenh->loaisaubenh_mota = $request->loaisaubenh_mota;
+        // $loaisaubenh->loaisaubenh_donvi = $request->loaisaubenh_donvi;
+        // $loaisaubenh->loaisaubenh_hinhanh = $path;
+        // $loaisaubenh->save();
+
+        // return redirect()->route('loaisaubenhs.index')
+        //                 ->with('success','Loại sâu bệnh được tạo thành công.');
     }
 
     /**
@@ -133,7 +170,7 @@ class LoaiSauBenhController extends Controller
             Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
 
             $extension = $request->file('loaisaubenh_hinhanh')->extension();
-            $newfilename = Str::slug($request->loaisaubenh_ten, '-') . '.' . $extension;
+            $newfilename = Str::slug($request->loaisaubenh_ten, '-') .'_'. time(). '.' . $extension;
 
             $path = Storage::putFileAs($loaisaubenh->loaisaubenh_ten_slug, $request->file('loaisaubenh_hinhanh'), $newfilename);
 

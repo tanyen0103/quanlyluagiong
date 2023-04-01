@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\GiongsExport;
 use App\Models\Giong;
 use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Exports\GiongsExport;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
@@ -79,25 +80,46 @@ class GiongController extends Controller
         ]);
 
         $g = new Giong();
-
-        // Xóa ảnh cũ (nếu có)
-        if ($g->giong_hinhanh) {
-            Storage::delete($g->giong_hinhanh);
-        }
-
-        // Tải ảnh mới lên
-        $originalName = $request->file('giong_hinhanh')->getClientOriginalName();
-        $extension = $request->file('giong_hinhanh')->getClientOriginalExtension();
-        $fileName = Str::slug($request->giong_ten) . '.' . $extension;
-        $path = $request->file('giong_hinhanh')->storeAs('images', $fileName);
-
         $g->giong_ten = $request->giong_ten;
         $g->giong_ten_slug = Str::slug($request->giong_ten);
         $g->nhomgiong_id = $request->nhomgiong_id;
         $g->kieuhinh_id = $request->kieuhinh_id;
         $g->giong_nguongoc = $request->giong_nguongoc;
         $g->giong_mota = $request->giong_mota;
-        $g->giong_hinhanh = $path;
+
+        // Check if directory exists and create it if necessary
+        if (!File::isDirectory($g->giong_ten)) {
+            Storage::makeDirectory($g->giong_ten_slug, 0775);
+        }
+
+        if ($request->hasFile('giong_hinhanh')) {
+            // Delete old image (if any)
+            if ($g->giong_hinhanh) {
+                Storage::delete($g->giong_hinhanh);
+            }
+
+            // Save new image
+            $originalName = $request->file('giong_hinhanh')->getClientOriginalName();
+            $extension = $request->file('giong_hinhanh')->getClientOriginalExtension();
+            $fileName = Str::slug($request->giong_ten) .'_'. time() . '.' . $extension;
+            $path = $request->file('giong_hinhanh')->storeAs($g->giong_ten_slug, $fileName);
+            $g->giong_hinhanh = $path;
+        }
+        // Xóa ảnh cũ (nếu có)
+        // if ($g->giong_hinhanh) {
+        //     Storage::delete($g->giong_hinhanh);
+        // }
+
+        // Tải ảnh mới lên
+        // $originalName = $request->file('giong_hinhanh')->getClientOriginalName();
+        // $extension = $request->file('giong_hinhanh')->getClientOriginalExtension();
+        // $fileName = Str::slug($request->giong_ten) .'_'. time(). '.' . $extension;
+        // $path = $request->file('giong_hinhanh')->storeAs('images', $fileName);
+
+
+        // $g->giong_hinhanh = $path;
+
+
         $g->save();
 
         return redirect()->route('giongs.index')
@@ -156,7 +178,7 @@ class GiongController extends Controller
             Storage::delete($giong->giong_hinhanh);
 
             $extension = $request->file('giong_hinhanh')->extension();
-            $newfilename = Str::slug($request->giong_ten, '-') . '.' . $extension;
+            $newfilename = Str::slug($request->giong_ten, '-').'_'. time(). '.' . $extension;
 
             $path = Storage::putFileAs($giong->giong_ten_slug, $request->file('giong_hinhanh'), $newfilename);
 
