@@ -31,7 +31,7 @@
         </div>
         <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
             <div class="form-group">
-                <strong>Code Mã Ngoài Đồng:</strong>
+                <strong>Code Mã phòng thí nghiệm:</strong>
                 <p>{{ $maptn->ptn_code }}</p>
             </div>
             <hr class="h-1 mt-0 bg-gradient-primary">

@@ -317,7 +317,7 @@
                         <!-- Divider -->
                         <hr class="sidebar-divider d-none d-md-block">
                     @endrole
-                    @role('Supermanager')
+                    {{-- @role('Supermanager')
                         <!-- Heading -->
                         <div class="sidebar-heading">
                             Quản lí tài khoản
@@ -339,9 +339,20 @@
 
                         <!-- Divider -->
                         <hr class="sidebar-divider d-none d-md-block">
-                    @endrole
+                    @endrole --}}
 
-
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocs"
+                                aria-expanded="true" aria-controls="collapseDocs">
+                                <i class="fas fa-fw fa-file"></i>
+                                <span> Tài liệu</span>
+                            </a>
+                        <div id="collapseDocs" class="collapse" aria-labelledby="headingDocs" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="{{ route("docs") }}"><i class="fa-solid fa-caret-right"></i> Hướng dẫn</a>
+                            </div>
+                        </div>
+                    </li>
                     <!-- Sidebar Toggler (Sidebar) -->
                     <div class="text-center d-none d-md-inline">
                         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -380,7 +391,6 @@
                             @endif
 
                             @else
-
                                 <div class="topbar-divider d-none d-sm-block"></div>
 
                                 <!-- Nav Item - User Information -->
@@ -433,7 +443,7 @@
             <footer class="sticky-footer bg-white p-3" >
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Quan li giong lua 2023</span>
+                        <span>Copyright &copy; Quan ly giong lua 2023</span>
                     </div>
                 </div>
             </footer>

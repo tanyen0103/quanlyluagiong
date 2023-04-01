@@ -18,7 +18,7 @@
             <h3 class="m-0 font-weight-bold text-white">Thêm mới</h3>
         </div>
         <div class="">
-            <a class="btn btn-light" href="{{ route('nhomgiongs.index') }}">Trở về</a>
+            <a class="btn btn-light" href="{{ route('users.index') }}">Trở về</a>
         </div>
     </div>
     {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
