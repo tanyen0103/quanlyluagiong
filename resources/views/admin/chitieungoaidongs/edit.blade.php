@@ -19,7 +19,7 @@
         </div>
         <div class="">
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
-                Ghi chú
+                <i class="fa-regular fa-note-sticky"></i>
             </button>
             <a class="btn btn-light" href="{{ route('chitieungoaidongs.index') }}">Trở về</a>
         </div>

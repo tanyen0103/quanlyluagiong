@@ -32,7 +32,7 @@
             <input type="hidden" id="id" name="id" value="{{ $giatridotrongnha->id }}" />
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
-                    <label for="chitieutrongnha_id">Giống chỉ tiêu ngoài đồng <span class="text-danger font-weight-bold">*</span></label>
+                    <label for="chitieutrongnha_id">Giống chỉ tiêu trong nhà <span class="text-danger font-weight-bold">*</span></label>
                     <select id="chitieutrongnha_id" class="form-control custom-select @error('chitieutrongnha_id') is-invalid @enderror" name="chitieutrongnha_id" required autofocus>
                         <option value="">-- Chọn giống --</option>
                         @foreach($chitieutrongnha as $item)
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
-                    <button type="submit" class="btn btn-warning">Cập nhật</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>
         </div>
     </form>
