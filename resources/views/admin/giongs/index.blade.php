@@ -76,7 +76,11 @@
                             <td>{{ $item->giong_ten }}</td>
                             <td>{{ $item->giong_nguongoc }}</td>
                             <td>{{ $item->giong_mota }}</td>
-                            <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></td>
+                            <td>
+                                <img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100">
+                                {{-- <img class="d-block" src="{{ Storage::url($item->giong_hinhanh) }}" alt="Ảnh giống" width="100" height="100"> --}}
+
+                            </td>
                             <td>
                                 <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 

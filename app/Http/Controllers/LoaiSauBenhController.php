@@ -71,6 +71,8 @@ class LoaiSauBenhController extends Controller
             Storage::makeDirectory($loaisaubenh->loaisaubenh_ten_slug, 0775);
         }
 
+        $path = "";
+
         if ($request->hasFile('loaisaubenh_hinhanh')) {
             // Delete old image (if any)
             if ($loaisaubenh->loaisaubenh_hinhanh) {
@@ -82,43 +84,20 @@ class LoaiSauBenhController extends Controller
             $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
             $fileName = Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $extension;
             $path = $request->file('loaisaubenh_hinhanh')->storeAs($loaisaubenh->loaisaubenh_ten_slug, $fileName);
-            $loaisaubenh->loaisaubenh_hinhanh = $path;
+
         }
 
+        if(empty($path) || !file_exists($path))
+        {
+            $path = "images/default/image_default.jpg";
+        }
+
+        $loaisaubenh->loaisaubenh_hinhanh = $path;
         $loaisaubenh->save();
 
         return redirect()->route('loaisaubenhs.index')
                         ->with('success', 'Loại sâu bệnh được tạo thành công.');
-        // $loaisaubenh = new LoaiSauBenh();
 
-        // // Xóa ảnh cũ (nếu có)
-        // if ($loaisaubenh->loaisaubenh_hinhanh) {
-        //     Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
-        // }
-
-        // // Tạo file lưu trữ ảnh
-        // if (!File::isDirectory($loaisaubenh->loaisaubenh_ten_slug)) {
-        //     Storage::makeDirectory($loaisaubenh->loaisaubenh_ten_slug, 0775);
-        // }
-
-        // // Lưu ảnh
-        // if ($request->hasFile('loaisaubenh_hinhanh')) {
-        //     $originalName = $request->file('loaisaubenh_hinhanh')->getClientOriginalName();
-        //     $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
-        //     $fileName = Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $extension;
-        //     $path = $request->file('loaisaubenh_hinhanh')->storeAs('images', $fileName);
-        // }
-
-
-        // $loaisaubenh->loaisaubenh_ten = $request->loaisaubenh_ten;
-        // $loaisaubenh->loaisaubenh_ten_slug = Str::slug($request->loaisaubenh_ten);
-        // $loaisaubenh->loaisaubenh_mota = $request->loaisaubenh_mota;
-        // $loaisaubenh->loaisaubenh_donvi = $request->loaisaubenh_donvi;
-        // $loaisaubenh->loaisaubenh_hinhanh = $path;
-        // $loaisaubenh->save();
-
-        // return redirect()->route('loaisaubenhs.index')
-        //                 ->with('success','Loại sâu bệnh được tạo thành công.');
     }
 
     /**
@@ -166,8 +145,10 @@ class LoaiSauBenhController extends Controller
         // Upload tập tin nếu có
 		if($request->hasFile('loaisaubenh_hinhanh'))
 		{
-            // Xóa tệp ảnh cũ
-            Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+            if ($loaisaubenh->loaisaubenh_hinhanh && $loaisaubenh->loaisaubenh_hinhanh !== 'images/default/image_default.jpg') {
+                // Xóa tệp ảnh cũ
+                Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+            }
 
             $extension = $request->file('loaisaubenh_hinhanh')->extension();
             $newfilename = Str::slug($request->loaisaubenh_ten, '-') .'_'. time(). '.' . $extension;

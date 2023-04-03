@@ -57,7 +57,10 @@
                             <td>{{ $item->loaisaubenh_ten }}</td>
                             <td>{{ $item->loaisaubenh_donvi }}</td>
                             <td>{{ $item->loaisaubenh_mota }}</td>
-                            <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->loaisaubenh_hinhanh }}" alt="Ảnh sâu bệnh"  width="100" height="100"></td>
+                            <td>
+                                {{-- <img class="d-block" src="{{ env('STORAGE_URL') . $item->loaisaubenh_hinhanh }}" alt="Ảnh sâu bệnh"  width="100" height="100"> --}}
+                                <img class="d-block" src="{{ env('STORAGE_URL') . $item->loaisaubenh_hinhanh }}" alt="Ảnh sâu bệnh"  width="100" height="100">
+                            </td>
 
                             <td>
                                 <form action="{{ route('loaisaubenhs.destroy',$item->id) }}" method="POST">
