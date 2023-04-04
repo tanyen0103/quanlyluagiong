@@ -84,10 +84,9 @@ class LoaiSauBenhController extends Controller
             $extension = $request->file('loaisaubenh_hinhanh')->getClientOriginalExtension();
             $fileName = Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $extension;
             $path = $request->file('loaisaubenh_hinhanh')->storeAs($loaisaubenh->loaisaubenh_ten_slug, $fileName);
-
         }
 
-        if(empty($path) || !file_exists($path))
+        if(!$path)
         {
             $path = "images/default/image_default.jpg";
         }
@@ -180,8 +179,10 @@ class LoaiSauBenhController extends Controller
         // Delete the record from the database
         $loaisaubenh->delete();
 
-        // Delete the associated image file from the disk
-        Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+        if ($loaisaubenh->loaisaubenh_hinhanh && $loaisaubenh->loaisaubenh_hinhanh !== 'images/default/image_default.jpg') {
+            // Delete the associated image file from the disk
+            Storage::delete($loaisaubenh->loaisaubenh_hinhanh);
+        }
 
         // Redirect the user back to the index page with a success message
         return redirect()->route('loaisaubenhs.index')->with('success','Loại sâu bệnh xoá thành công');

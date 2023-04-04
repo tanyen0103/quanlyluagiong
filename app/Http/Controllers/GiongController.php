@@ -157,7 +157,7 @@ class GiongController extends Controller
 
     }
 
-    if(empty($path) || !file_exists($path))
+    if(!$path)
     {
         $path = "images/default/image_default.jpg";
     }
@@ -254,8 +254,10 @@ class GiongController extends Controller
         // Delete the record from the database
         $giong->delete();
 
-        // Delete the associated image file from the disk
-        Storage::delete($giong->giong_hinhanh);
+        if ($giong->giong_hinhanh && $giong->giong_hinhanh !== 'images/default/image_default.jpg') {
+            // Delete the associated image file from the disk
+            Storage::delete($giong->giong_hinhanh);
+        }
 
         // Redirect the user back to the index page with a success message
         return redirect()->route('giongs.index')->with('success','Giống xoá thành công');
