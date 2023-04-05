@@ -144,7 +144,7 @@
                                 <th></th>
                                 <th colspan="7">Giống lúa</th>
                                 <th colspan="14">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="12">Chỉ tiêu trong nhà</th>
+                                <th colspan="11">Chỉ tiêu trong nhà</th>
                                 <th colspan="6">Chỉ tiêu sâu bệnh</th>
                             </tr>
                             <tr>
@@ -169,7 +169,7 @@
                                 <th>Dáng bông</th>
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
-                                <th width="260px">Tên giá trị đo</th>
+                                <th>Tên giá trị đo</th>
                                 <th>Giá trị</th>
                                 {{-- <th>Đơn vị</th> --}}
 
@@ -184,7 +184,7 @@
                                 <th>Đánh giá</th>
                                 <th>Tên giá trị đo</th>
                                 <th>Giá trị</th>
-                                <th>Đơn vị</th>
+                                {{-- <th>Đơn vị</th> --}}
 
                                 <th>Chọn lọc</th>
                                 <th>Đánh giá khác</th>
@@ -277,22 +277,22 @@
                                         <div>{{ $ctnd->chitieungoaidong_rau }}</div>
                                     @endforeach
                                 </td>
-                                <td >
+                                <td colspan="2">
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }})</div>
+                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) = {{ $gtdnd->giatridongoaidong_giatri }} </div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>{{ $gtdnd->giatridongoaidong_giatri }}</div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
-                                </td>
+                                </td> --}}
                                 {{-- <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
@@ -348,14 +348,14 @@
                                         <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                             @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }}</div>
+                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}) = {{ $gtdtn->giatridotrongnha_giatri }}</div>
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                             @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
                                                 <div>{{ $gtdtn->giatridotrongnha_giatri }}</div>
@@ -368,7 +368,7 @@
                                                 <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
                                             @endforeach
                                     @endforeach
-                                </td>
+                                </td> --}}
 
 
                                 {{-- CHỈ TIÊU SÂU BỆNH --}}
@@ -397,20 +397,20 @@
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->giatridosaubenh_giatri }}</div>
+                                                <div>{{ $gtdsb->giatridosaubenh_giatri }} ({{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }})</div>
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
                                             @endforeach
                                     @endforeach
-                                </td>
+                                </td> --}}
                             </tr>
                         </tbody>
                         @endforeach
