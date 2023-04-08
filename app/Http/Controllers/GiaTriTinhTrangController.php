@@ -63,7 +63,7 @@ class GiaTriTinhTrangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giatritt_diem' => ['required', 'unique:giatritinhtrang', 'max:10'],
+            'giatritt_diem' => ['required', 'max:10'],
             'dacdiemtinhtrang_id' => ['required']
         ]);
 

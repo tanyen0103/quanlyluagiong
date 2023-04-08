@@ -27,7 +27,7 @@ class DacDiemTinhTrangController extends Controller
      */
     public function index()
     {
-        $dacdiemtinhtrangs = DacDiemTinhTrang::oldest()->paginate(4);
+        $dacdiemtinhtrangs = DacDiemTinhTrang::with('doituongtinhtrang')->orderBy('doituongtinhtrang_id', 'asc')->paginate(4);
 
         return view('admin.dacdiemtinhtrangs.index', ["title" => "Bảng đặc điểm tính trạng"],
                     compact('dacdiemtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 4);

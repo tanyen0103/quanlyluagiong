@@ -27,7 +27,7 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function index()
     {
-        $doituongtinhtrangs = DoiTuongTinhTrang::oldest()->paginate(4);
+        $doituongtinhtrangs = DoiTuongTinhTrang::orderBy('doituongtt_ten', 'asc')->paginate(4);
 
         return view('admin.doituongtinhtrangs.index', ["title" => "Bảng đối tượng tính trạng"],
                     compact('doituongtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 4);
@@ -54,7 +54,7 @@ class DoiTuongTinhTrangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'doituongtt_ten' => ['required','unique:doituongtinhtrang','max:255'],
+            'doituongtt_ten' => ['required','max:255'],
             'giaidoantruongthanh_id' => ['required'],
             'doituongtt_mota' => ['']
         ]);

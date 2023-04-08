@@ -26,7 +26,7 @@ class GiaiDoanTruongThanhController extends Controller
      */
     public function index()
     {
-        $giaidoantruongthanhs = GiaiDoanTruongThanh::oldest()->paginate(4);
+        $giaidoantruongthanhs = GiaiDoanTruongThanh::orderBy('giaidoantt_ten', 'asc')->paginate(4);
 
         return view('admin.giaidoantruongthanhs.index', ["title" => "Bảng giai đoạn trưởng thành"],
                     compact('giaidoantruongthanhs'))->with('i', (request()->input('page', 1) - 1) * 4);
