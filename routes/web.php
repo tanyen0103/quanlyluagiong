@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -103,5 +104,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('giatridosaubenhs-export', [GiaTriDoSauBenhController::class, 'fileExport'])->name('giatridosaubenhs.export');
 
     Route::resource('giatridochitiets', GiaTriDoChiTietController::class);
+
+    // Backup
+    Route::get('/backup/run', function () {
+        Artisan::call('backup:run');
+        return redirect()->back()->with('success', 'Backup has been run successfully!');
+    })->name('backup.run');
 
 });

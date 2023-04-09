@@ -317,29 +317,7 @@
                         <!-- Divider -->
                         <hr class="sidebar-divider d-none d-md-block">
                     @endrole
-                    {{-- @role('Supermanager')
-                        <!-- Heading -->
-                        <div class="sidebar-heading">
-                            Quản lí tài khoản
-                        </div>
 
-                        <!-- Nav Item - Quản lí tài khoản -->
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                                aria-expanded="true" aria-controls="collapsePages">
-                                <i class="fas fa-fw fa-user"></i>
-                                <span>Quản lí tài khoản</span>
-                            </a>
-                            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                    <a class="collapse-item" href="{{ route('users.index') }}"><i class="fa-solid fa-caret-right"></i> Tài khoản</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider d-none d-md-block">
-                    @endrole --}}
 
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocs"
@@ -353,6 +331,26 @@
                             </div>
                         </div>
                     </li>
+                    @role('Admin')
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBacks"
+                                    aria-expanded="true" aria-controls="collapseBacks">
+                                    <i class="fa-solid fa-folder"></i>
+                                    <span> Back up</span>
+                                </a>
+                            <div id="collapseBacks" class="collapse" aria-labelledby="headingBacks" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="{{ route('backup.run') }}"> Run Backup</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        @if(session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
+                    @endrole
                     <!-- Sidebar Toggler (Sidebar) -->
                     <div class="text-center d-none d-md-inline">
                         <button class="rounded-circle border-0" id="sidebarToggle"></button>
