@@ -8,11 +8,7 @@ use App\Models\KieuHinh;
 use App\Models\NhomGiong;
 use App\Models\LoaiSauBenh;
 use Illuminate\Http\Request;
-use App\Models\GiaTriTinhTrang;
 use Maatwebsite\Excel\Facades\Excel;
-// use App\Models\GiaTriDoNgoaiDong;
-// use App\Models\GiaTriDoSauBenh;
-// use App\Models\GiaTriDoTrongNha;
 
 class DashboardController extends Controller
 {

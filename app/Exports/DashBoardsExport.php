@@ -45,9 +45,9 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             'Dáng bông',
             'Cong trục bông',
             'Râu',
-            // 'Tên giá trị đo',
-            // 'Giá trị',
-            // 'Đơn vị',
+            'Tên giá trị đo',
+            'Giá trị',
+            'Đơn vị',
 
             'Gié C2',
             'Độ rụng hạt',
@@ -58,18 +58,19 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             'Độ ẩm',
             'Thơm',
             'Đánh giá',
-            // 'Tên giá trị đo',
-            // 'Giá trị',
-            // 'Đơn vị',
+            'Tên giá trị đo',
+            'Giá trị',
+            'Đơn vị',
 
             'Chọn lọc',
             'Đánh giá khác',
-            // 'Tên loại',
-            // 'Hình ảnh',
-            // 'Giá trị',
-            // 'Đơn vị',
+            'Tên loại',
+            'Hình ảnh',
+            'Giá trị',
+            'Đơn vị',
         ];
     }
+
     public function map($row): array
     {
         // HasMany
@@ -89,9 +90,22 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $chitieungoaidong_congtrucbong = $row->ChiTieuNgoaiDong->pluck('chitieungoaidong_congtrucbong')->implode(', ');
         $chitieungoaidong_rau = $row->ChiTieuNgoaiDong->pluck('chitieungoaidong_rau')->implode(', ');
 
-        // $loaigiatridond_ten = $row->ChiTieuNgoaiDong->GiaTriDoNgoaiDong->LoaiGiaTriDo->pluck('loaigiatrido_ten')->implode(', ');
-        // $giatridongoaidong_giatri = $row->ChiTieuNgoaiDong->GiaTriDoNgoaiDong->pluck('giatridongoaidong_giatri')->implode(', ');
-        // $loaigiatridond_donvi = $row->ChiTieuNgoaiDong->GiaTriDoNgoaiDong->LoaiGiaTriDo->pluck('loaigiatrido_donvi')->implode(', ');
+        $loaigiatridond_ten = '';
+        $loaigiatridond_donvi = '';
+
+        foreach ($row->ChiTieuNgoaiDong as $ctnd) {
+            foreach ($ctnd -> GiaTriDoNgoaiDong as $gtdnd){
+                $loaigiatridond_ten .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_ten')->implode(', ');
+                $loaigiatridond_donvi .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_donvi')->implode(', ');
+            }
+        }
+
+        $giatridongoaidong_giatri = '';
+        foreach ($row->ChiTieuNgoaiDong as $ctnd) {
+            $giatridongoaidong_giatri .= $ctnd->GiaTriDoNgoaiDong->pluck('giatridongoaidong_giatri')->implode(', ');
+        }
+
+
 
         $chitieutrongnha_giec2 = $row->ChiTieuTrongNha->pluck('chitieutrongnha_giec2')->implode(', ');
         $chitieutrongnha_dorunghat = $row->ChiTieuTrongNha->pluck('chitieutrongnha_dorunghat')->implode(', ');
@@ -103,16 +117,36 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $chitieutrongnha_thom = $row->ChiTieuTrongNha->pluck('chitieutrongnha_thom')->implode(', ');
         $chitieutrongnha_danhgia = $row->ChiTieuTrongNha->pluck('chitieutrongnha_danhgia')->implode(', ');
 
-        // $loaigiatridotn_ten = $row->ChiTieuTrongNha->GiaTriDoTrongNha->LoaiGiaTriDo->pluck('loaigiatridotn_ten')->implode(', ');
-        // $giatridotrongnha_giatri = $row->ChiTieuTrongNha->GiaTriDoTrongNha->pluck('giatridotrongnha_giatri')->implode(', ');
-        // $loaigiatridotn_donvi = $row->ChiTieuTrongNha->GiaTriDoTrongNha->LoaiGiaTriDo->pluck('loaigiatridotn_donvi')->implode(', ');
+        $loaigiatridotn_donvi = '';
+        $loaigiatridotn_ten = '';
+        foreach ($row->ChiTieuTrongNha as $cttn) {
+            foreach ($cttn -> GiaTriDoTrongNha as $gtdnd)
+                $loaigiatridotn_donvi .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_donvi')->implode(', ');
+                $loaigiatridotn_ten .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_ten')->implode(', ');
+        }
+
+        $giatridotrongnha_giatri = '';
+        foreach ($row->ChiTieuTrongNha as $cttn) {
+            $giatridotrongnha_giatri .= $cttn->GiaTriDoTrongNha->pluck('giatridotrongnha_giatri')->implode(', ');
+        }
 
         $chitieusaubenh_chonloc = $row->ChiTieuSauBenh->pluck('chitieusaubenh_chonloc')->implode(', ');
         $chitieusaubenh_danhgia = $row->ChiTieuSauBenh->pluck('chitieusaubenh_danhgia')->implode(', ');
-        // $loaisaubenh_ten = $row->ChiTieuSauBenh->GiaTriDoSauBenh->LoaiSauBenh->pluck('loaisaubenh_ten')->implode(', ');
-        // $loaisaubenh_hinhanh = $row->ChiTieuSauBenh->GiaTriDoSauBenh->LoaiSauBenh->pluck('loaisaubenh_hinhanh')->implode(', ');
-        // $giatridosaubenh_giatri = $row->ChiTieuSauBenh->GiaTriDoSauBenh->pluck('giatridosaubenh_giatri')->implode(', ');
-        // $loaisaubenh_donvi = $row->ChiTieuSauBenh->GiaTriDoSauBenh->LoaiSauBenh->pluck('loaisaubenh_donvi')->implode(', ');
+
+        $loaisaubenh_ten = '';
+        $loaisaubenh_hinhanh = '';
+        $loaisaubenh_donvi = '';
+        foreach ($row->ChiTieuSauBenh as $ctsb) {
+            foreach ($ctsb -> GiaTriDoSauBenh as $gtdsb)
+                $loaisaubenh_hinhanh .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_hinhanh')->implode(', ');
+                $loaisaubenh_donvi .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_donvi')->implode(', ');
+                $loaisaubenh_ten .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_ten')->implode(', ');
+        }
+
+        $giatridosaubenh_giatri = '';
+        foreach ($row->ChiTieuSauBenh as $ctsb) {
+            $giatridosaubenh_giatri .= $ctsb->GiaTriDoSauBenh->pluck('giatridosaubenh_giatri')->implode(', ');
+        }
 
 
         return [
@@ -142,9 +176,10 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             $chitieungoaidong_dangbong,
             $chitieungoaidong_congtrucbong,
             $chitieungoaidong_rau,
-            // $loaigiatridond_ten,
-            // $giatridongoaidong_giatri,
-            // $loaigiatridond_donvi,
+            $loaigiatridond_ten,
+            $giatridongoaidong_giatri,
+            $loaigiatridond_donvi,
+
 
             //Chỉ tiêu trong nhà
             $chitieutrongnha_giec2,
@@ -156,17 +191,17 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             $chitieutrongnha_doam,
             $chitieutrongnha_thom,
             $chitieutrongnha_danhgia,
-            // $loaigiatridotn_ten,
-            // $giatridotrongnha_giatri,
-            // $loaigiatridotn_donvi,
+            $loaigiatridotn_ten,
+            $giatridotrongnha_giatri,
+            $loaigiatridotn_donvi,
 
             //Chỉ tiêu sâu bệnh
             $chitieusaubenh_chonloc,
             $chitieusaubenh_danhgia,
-            // $loaisaubenh_ten,
-            // $loaisaubenh_hinhanh,
-            // $giatridosaubenh_giatri,
-            // $loaisaubenh_donvi,
+            $loaisaubenh_ten,
+            $loaisaubenh_hinhanh,
+            $giatridosaubenh_giatri,
+            $loaisaubenh_donvi,
 
         ];
     }

@@ -45,7 +45,6 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
                             </div>
                             <div class="col-auto">
-                                {{-- <i class="fas fa-wheat fa-2x text-gray-300"></i> --}}
                                 <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
                             </div>
                         </div>
@@ -69,7 +68,6 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                {{-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> --}}
                                 <i class="fa-sharp fa-solid fa-eye fa-3x text-info"></i>
                             </div>
                         </div>
@@ -89,7 +87,6 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
                             </div>
                             <div class="col-auto">
-                                {{-- <i class="fas fa-comments fa-2x text-gray-300"></i> --}}
                                 <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
                             </div>
                         </div>
@@ -171,7 +168,6 @@
                                 <th>Râu</th>
                                 <th>Tên giá trị đo</th>
                                 <th>Giá trị</th>
-                                {{-- <th>Đơn vị</th> --}}
 
                                 <th>Gié C2</th>
                                 <th>Độ rụng hạt</th>
@@ -184,7 +180,6 @@
                                 <th>Đánh giá</th>
                                 <th>Tên giá trị đo</th>
                                 <th>Giá trị</th>
-                                {{-- <th>Đơn vị</th> --}}
 
                                 <th>Chọn lọc</th>
                                 <th>Đánh giá khác</th>
@@ -280,7 +275,10 @@
                                 <td colspan="2">
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) = {{ $gtdnd->giatridongoaidong_giatri }} </div>
+                                                <div>
+                                                    {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}
+                                                    ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) =
+                                                    {{ $gtdnd->giatridongoaidong_giatri }} </div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
@@ -423,6 +421,8 @@
                 <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
         </div> --}}
     </div>
+
+    {!! $giongs->links() !!}
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
