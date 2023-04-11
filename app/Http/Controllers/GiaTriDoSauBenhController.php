@@ -37,8 +37,10 @@ class GiaTriDoSauBenhController extends Controller
      */
     public function index()
     {
-        $giatridosaubenhs = GiaTriDoSauBenh::with('chitieusaubenh')
-        ->orderBy('chitieusaubenh_id', 'asc')->paginate(4);
+        $giatridosaubenhs = GiaTriDoSauBenh::with('ChiTieuSauBenh', 'LoaiSauBenh')
+        ->orderBy('chitieusaubenh_id', 'asc')
+        ->orderBy('loaisaubenh_id', 'asc')
+        ->paginate(4);
 
         return view('admin.giatridosaubenhs.index', ["title" => "Bảng giá trị đo sâu bệnh"],
                     compact('giatridosaubenhs'))->with('i', (request()->input('page', 1) - 1) * 4);

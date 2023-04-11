@@ -5,17 +5,17 @@
         <div class="row hidden sm:flex-1 sm:flex sm:items-center sm:justify-between  m-1">
             <div class="col ">
                 <p class="text-sm text-gray-700 leading-5">
-                    {!! __('Showing') !!}
+                    {!! __('Hiển thị') !!}
                     @if ($paginator->firstItem())
                         <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                        {!! __('to') !!}
+                        {!! __('đến') !!}
                         <span class="font-medium">{{ $paginator->lastItem() }}</span>
                     @else
                         {{ $paginator->count() }}
                     @endif
-                    {!! __('of') !!}
+                    {!! __('trong') !!}
                     <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('results') !!}
+                    {!! __('kết quả') !!}
                 </p>
             </div>
             <div class="col d-flex justify-content-end flex-1 sm:hidden">

@@ -15,7 +15,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <div class="card shadow mb-5 border-bottom-primary">
+    <div class="card shadow mb-3 border-bottom-primary">
         {{-- Card header --}}
         <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-between">
             <div class="">
@@ -43,7 +43,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Code</th>
+                            <th>Mã ngoài đồng</th>
                             <th>Giống</th>
                             <th>Mô tả</th>
                             <th width='160px'></th>

@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('dashboards-export', [DashboardController::class, 'fileExport'])->name('dashboards.export');
+    Route::get('thongkes-export', [DashboardController::class, 'fileExportThongKe'])->name('thongkes.export');
 
 
     Route::resource('nhomgiongs', NhomGiongController::class);

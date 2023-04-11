@@ -28,6 +28,12 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <div class="d-flex justify-content-start">
+                            <a href="{{ route('giatridotrongnhas.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+                        </div>
+                    </div>
                     <div class="input-group mb-2 col-5">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
                             aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
@@ -38,7 +44,6 @@
                         </div>
                     </div>
                 </div>
-
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -97,10 +102,6 @@
                 </table>
             </div>
         </div>
-    </div>
-    <div class="container d-flex justify-content-center">
-        <a href="{{ route('giatridotrongnhas.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-            <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
     </div>
     {!! $giatridotrongnhas->links() !!}
 

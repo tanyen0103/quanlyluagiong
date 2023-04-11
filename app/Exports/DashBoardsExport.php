@@ -30,8 +30,6 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             'Mã ngoài đồng',
             'Mã phòng thí nghiệm',
             'Tên',
-            'Nguồn gốc',
-            'Hình ảnh',
 
             'Phiến lá',
             'Tai lá',
@@ -65,7 +63,6 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             'Chọn lọc',
             'Đánh giá khác',
             'Tên loại',
-            'Hình ảnh',
             'Giá trị',
             'Đơn vị',
         ];
@@ -140,13 +137,11 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $chitieusaubenh_danhgia = $row->ChiTieuSauBenh->pluck('chitieusaubenh_danhgia')->implode(', ');
 
         $loaisaubenh_ten = '';
-        $loaisaubenh_hinhanh = '';
         $loaisaubenh_donvi = '';
 
         foreach ($row->ChiTieuSauBenh as $ctsb) {
             foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                 if($gtdsb->chitieusaubenh_id == $ctsb->id){
-                    $loaisaubenh_hinhanh .= $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh;
                     $loaisaubenh_donvi .= $gtdsb->LoaiSauBenh->loaisaubenh_donvi;
                     $loaisaubenh_ten .= $gtdsb->LoaiSauBenh->loaisaubenh_ten;
                 }
@@ -169,8 +164,6 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             $ptn_code,
 
             $row->giong_ten,
-            $row->giong_nguongoc,
-            $row->giong_hinhanh,
 
             // Chi tieu ngoai dong
             $chitieungoaidong_phienla,
@@ -208,7 +201,6 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             $chitieusaubenh_chonloc,
             $chitieusaubenh_danhgia,
             $loaisaubenh_ten,
-            $loaisaubenh_hinhanh,
             $giatridosaubenh_giatri,
             $loaisaubenh_donvi,
 

@@ -16,11 +16,6 @@
             background-repeat: no-repeat;
             background-size: 256px 556px;
         }
-
-        #content-wrapper{
-            height: 700px;
-            overflow: auto;
-        }
     </style>
 </head>
 <body id="page-top">
