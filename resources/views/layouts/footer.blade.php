@@ -51,12 +51,18 @@
     setInterval(updateTime, 1000);
 
     function confirmDelete() {
-    if (confirm('Bạn có chắc chắn muốn xóa?')) {
-        document.querySelector('form').submit();
-    } else {
-        return false;
+        if (confirm('Bạn có chắc chắn muốn xóa?')) {
+            document.querySelector('form').submit();
+        } else {
+            return false;
+        }
     }
-}
+
+
+    // window.addEventListener('load', function() {
+    //     document.querySelector('body').classList.add('spinner-grow');
+    // });
+
 
 </script>
 

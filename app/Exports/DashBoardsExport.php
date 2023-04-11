@@ -94,9 +94,11 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $loaigiatridond_donvi = '';
 
         foreach ($row->ChiTieuNgoaiDong as $ctnd) {
-            foreach ($ctnd -> GiaTriDoNgoaiDong as $gtdnd){
-                $loaigiatridond_ten .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_ten')->implode(', ');
-                $loaigiatridond_donvi .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_donvi')->implode(', ');
+            foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd){
+                if($gtdnd->chitieungoaidong_id == $ctnd->id){
+                    $loaigiatridond_ten .= $gtdnd->LoaiGiaTriDo->loaigiatrido_ten;
+                    $loaigiatridond_donvi .= $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi;
+                }
             }
         }
 
@@ -119,10 +121,14 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
 
         $loaigiatridotn_donvi = '';
         $loaigiatridotn_ten = '';
+
         foreach ($row->ChiTieuTrongNha as $cttn) {
-            foreach ($cttn -> GiaTriDoTrongNha as $gtdnd)
-                $loaigiatridotn_donvi .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_donvi')->implode(', ');
-                $loaigiatridotn_ten .= $gtdnd->LoaiGiaTriDo->pluck('loaigiatrido_ten')->implode(', ');
+            foreach ($cttn->GiaTriDoTrongNha as $gtdtn){
+                if($gtdtn->chitieutrongnha_id == $cttn->id){
+                    $loaigiatridotn_donvi .= $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi;
+                    $loaigiatridotn_ten .= $gtdtn->LoaiGiaTriDo->loaigiatrido_ten;
+                }
+            }
         }
 
         $giatridotrongnha_giatri = '';
@@ -136,11 +142,14 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $loaisaubenh_ten = '';
         $loaisaubenh_hinhanh = '';
         $loaisaubenh_donvi = '';
+
         foreach ($row->ChiTieuSauBenh as $ctsb) {
-            foreach ($ctsb -> GiaTriDoSauBenh as $gtdsb)
-                $loaisaubenh_hinhanh .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_hinhanh')->implode(', ');
-                $loaisaubenh_donvi .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_donvi')->implode(', ');
-                $loaisaubenh_ten .= $gtdsb->LoaiSauBenh->pluck('loaisaubenh_ten')->implode(', ');
+            foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                if($gtdsb->chitieusaubenh_id == $ctsb->id){
+                    $loaisaubenh_hinhanh .= $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh;
+                    $loaisaubenh_donvi .= $gtdsb->LoaiSauBenh->loaisaubenh_donvi;
+                    $loaisaubenh_ten .= $gtdsb->LoaiSauBenh->loaisaubenh_ten;
+                }
         }
 
         $giatridosaubenh_giatri = '';

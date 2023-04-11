@@ -12,7 +12,7 @@
             </nav>
         </div>
 
-        <!-- Content Row -->
+        <!-- Card Row -->
         <div  class="row" >
 
             <!-- Card NhomGiong -->
@@ -94,6 +94,7 @@
                 </div>
             </div>
         </div>
+        <!-- End Card Row -->
 
         {{-- Chart Pie  --}}
         <div class="container-fluid">
@@ -115,6 +116,7 @@
                 </div>
             </div>
         </div>
+        {{-- End Chart Pie  --}}
 
         {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
         <div class="card shadow mb-5 border-bottom-primary">
@@ -138,11 +140,16 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                @php
+                                    $numColumnnds = 5;
+                                    $numColumntns = 5;
+                                    $numColumnsbs = 5;
+                                @endphp
                                 <th></th>
-                                <th colspan="7">Giống lúa</th>
-                                <th colspan="14">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="11">Chỉ tiêu trong nhà</th>
-                                <th colspan="6">Chỉ tiêu sâu bệnh</th>
+                                <th colspan="5">Giống lúa</th>
+                                <th colspan="{{ 12 + $numColumnnds }}">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="{{ 9 + $numColumntns }}">Chỉ tiêu trong nhà</th>
+                                <th colspan="{{ 2 + $numColumnsbs }}">Chỉ tiêu sâu bệnh</th>
                             </tr>
                             <tr>
                                 <th>No</th>
@@ -150,9 +157,7 @@
                                 <th>Kiểu hình</th>
                                 <th>Mã ngoài đồng</th>
                                 <th>Mã phòng thí nghiệm</th>
-                                <th>Tên</th>
-                                <th>Nguồn gốc</th>
-                                <th>Hình ảnh</th>
+                                <th>Giống</th>
 
                                 <th>Phiến lá</th>
                                 <th>Tai lá</th>
@@ -166,8 +171,8 @@
                                 <th>Dáng bông</th>
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
-                                <th>Tên giá trị đo</th>
-                                <th>Giá trị</th>
+                                <th colspan="{{ $numColumnnds }}">Loại giá trị đo</th>
+
 
                                 <th>Gié C2</th>
                                 <th>Độ rụng hạt</th>
@@ -178,15 +183,11 @@
                                 <th>Độ ẩm</th>
                                 <th>Thơm</th>
                                 <th>Đánh giá</th>
-                                <th>Tên giá trị đo</th>
-                                <th>Giá trị</th>
+                                <th colspan="{{ $numColumntns }}">Loại giá trị đo</th>
 
                                 <th>Chọn lọc</th>
                                 <th>Đánh giá khác</th>
-                                <th>Tên loại</th>
-                                <th>Hình ảnh</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th>
+                                <th colspan="{{ $numColumnsbs }}">Loại sâu bệnh</th>
 
                             </tr>
                         </thead>
@@ -208,8 +209,6 @@
                                     @endforeach
                                 </td>
                                 <td>{{ $item->giong_ten }}</td>
-                                <td>{{ $item->giong_nguongoc }}</td>
-                                <td><img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></td>
 
                                 {{-- Chỉ tiêu ngoài đồng  --}}
                                 <td>
@@ -272,29 +271,16 @@
                                         <div>{{ $ctnd->chitieungoaidong_rau }}</div>
                                     @endforeach
                                 </td>
-                                <td colspan="2">
+                                @for ($i = 1; $i <= $numColumnnds; $i++)
+                                    <td></td>
+                                @endfor
+                                {{-- <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                 <div>
                                                     {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}
                                                     ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) =
                                                     {{ $gtdnd->giatridongoaidong_giatri }} </div>
-                                                <hr>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
-                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>{{ $gtdnd->giatridongoaidong_giatri }}</div>
-                                                <hr>
-                                            @endforeach
-                                    @endforeach
-                                </td> --}}
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
-                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>{{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
                                                 <hr>
                                             @endforeach
                                     @endforeach
@@ -346,28 +332,16 @@
                                         <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                <td colspan="2">
+                                {{-- <td colspan="2">
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                             @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
                                                 <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}) = {{ $gtdtn->giatridotrongnha_giatri }}</div>
                                             @endforeach
                                     @endforeach
-                                </td>
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuTrongNha as $cttn)
-                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>{{ $gtdtn->giatridotrongnha_giatri }}</div>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                <td>
-                                    @foreach ($item->ChiTieuTrongNha as $cttn)
-                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}</div>
-                                            @endforeach
-                                    @endforeach
                                 </td> --}}
-
+                                @for ($i = 1; $i <= $numColumntns; $i++)
+                                    <td> </td>
+                                @endfor
 
                                 {{-- CHỈ TIÊU SÂU BỆNH --}}
 
@@ -381,7 +355,7 @@
                                         <div>{{ $ctsb->chitieusaubenh_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_ten }}</div>
@@ -394,21 +368,17 @@
                                                 <div><img class="d-block" src="{{ env('STORAGE_URL') . $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></div>
                                             @endforeach
                                     @endforeach
-                                </td>
-                                <td colspan="2">
+                                </td> --}}
+                                {{-- <td colspan="2">
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->giatridosaubenh_giatri }} ({{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }})</div>
                                             @endforeach
                                     @endforeach
-                                </td>
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
-                                            @endforeach
-                                    @endforeach
                                 </td> --}}
+                                @for ($i = 1; $i <= $numColumnsbs; $i++)
+                                    <td> </td>
+                                @endfor
                             </tr>
                         </tbody>
                         @endforeach
@@ -416,10 +386,10 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center">
             <a href="{{ route('dashboards.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                 <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
-        </div> --}}
+        </div>
     </div>
 
     {!! $giongs->links() !!}
