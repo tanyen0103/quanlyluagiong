@@ -46,7 +46,7 @@ class ChiTieuSauBenhController extends Controller
     {
         $input = $request->all();
         $validator = Validator::make($input,[
-            'giong_id' => ['required'],
+            'giong_id' => ['required', 'unique:chitieusaubenh,giong_id'],
             'chitieusaubenh_chonloc' => ['max:255'],
             'chitieusaubenh_danhgia' => [''],
 
