@@ -11,112 +11,87 @@
                 </ol>
             </nav>
         </div>
-
-        <!-- Card Row -->
         <div  class="row" >
-
-            <!-- Card NhomGiong -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
+            <div class="col-xl-8 col-md-12">
+                {{-- Chart Pie  --}}
+                <!-- Content Row -->
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tổng quan</h6>
+                    </div>
+                    <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;">
-                                    Nhóm giống</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
-                            </div>
-                            <div class="col-auto">
-                                {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
-                                <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
-                            </div>
+                        <div class="chart-pie pt-4" data-total-nhom-giongs="{{ $totalNhomGiongs }}" data-total-giongs="{{ $totalGiongs }}" data-total-kieu-hinhs="{{ $totalKieuHinhs }}" data-total-loai-sau-benhs="{{ $totalLoaiSauBenhs }}">
+                            <canvas id="giongChart"></canvas>
                         </div>
                     </div>
                 </div>
+                {{-- End Chart Pie  --}}
             </div>
-
-            <!-- Card Giong -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 16px;">
-                                    Giống</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card KieuHinh -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1" style="font-size: 16px;">
-                                    Kiểu hình
-                                </div>
+            <div class="col-xl-4 col-md-12">
+                <!-- Card Row -->
+                <div class="row" >
+                    <!-- Card NhomGiong -->
+                    <div class="col-12 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
                                 <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;">
+                                            Nhóm giống</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
+                                    </div>
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $totalKieuHinhs }}</div>
+                                        {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
+                                        <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <i class="fa-sharp fa-solid fa-eye fa-3x text-info"></i>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Card LoaiSauBenh -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="font-size: 16px;">
-                                    Loại sâu bệnh
+                    <!-- Card Giong -->
+                    <div class="col-12 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 16px;">
+                                            Giống</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
+                                    </div>
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Card Row -->
-
-        {{-- Chart Pie  --}}
-        <div class="container-fluid">
-            <!-- Content Row -->
-            <div class="row">
-                <div class="col">
-                    <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tổng quan</h6>
-                        </div>
-                        <!-- Card Body -->
+                    <!-- Card LoaiSauBenh -->
+                    <div class="col-12 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
                         <div class="card-body">
-                            <div class="chart-pie pt-4" data-total-nhom-giongs="{{ $totalNhomGiongs }}" data-total-giongs="{{ $totalGiongs }}" data-total-kieu-hinhs="{{ $totalKieuHinhs }}" data-total-loai-sau-benhs="{{ $totalLoaiSauBenhs }}">
-                                <canvas id="giongChart"></canvas>
-                              </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="font-size: 16px;">
+                                        Loại sâu bệnh
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- End Card Row -->
             </div>
         </div>
-        {{-- End Chart Pie  --}}
+
+    </div>
+
+
 
         {{-- Thống kê giống lúa --}}
         <div class="card shadow mb-3 border-bottom-primary">
@@ -394,6 +369,7 @@
         </div>
 
     {!! $giongs->links() !!}
+
 
         {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
         <div class="card shadow mb-3 border-bottom-primary">

@@ -3,39 +3,43 @@
 
 
         <div class="row hidden sm:flex-1 sm:flex sm:items-center sm:justify-between  m-1">
-            <div class="col ">
+            <div class="col d-none d-sm-block">
                 <p class="text-sm text-gray-700 leading-5">
-                    {!! __('Hiển thị') !!}
+                    {!! __('Từ') !!}
                     @if ($paginator->firstItem())
                         <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                        {!! __('đến') !!}
+                        {!! __('-') !!}
                         <span class="font-medium">{{ $paginator->lastItem() }}</span>
                     @else
                         {{ $paginator->count() }}
                     @endif
                     {!! __('trong') !!}
                     <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('kết quả') !!}
+                    {{-- {!! __('kết qu') !!} --}}
                 </p>
             </div>
             <div class="col d-flex justify-content-end flex-1 sm:hidden">
                 @if ($paginator->onFirstPage())
                     <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border rounded border-gray-300 cursor-default leading-5 rounded-md">
-                        {!! __('pagination.previous') !!}
+                        {{-- {!! __('pagination.previous') !!} --}}
+                        <i class="fa-solid fa-chevron-left"></i>
                     </span>
                 @else
                     <a href="{{ $paginator->previousPageUrl() }}" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border rounded border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 bg-primary text-light">
-                        {!! __('pagination.previous') !!}
+                        {{-- {!! __('pagination.previous') !!} --}}
+                        <i class="fa-solid fa-chevron-left"></i>
                     </a>
                 @endif
 
                 @if ($paginator->hasMorePages())
                     <a href="{{ $paginator->nextPageUrl() }}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border rounded border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 bg-primary text-light">
-                        {!! __('pagination.next') !!}
+                        {{-- {!! __('pagination.next') !!} --}}
+                        <i class="fa-solid fa-chevron-right"></i>
                     </a>
                 @else
                     <span class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-500 bg-white border rounded border-gray-300 cursor-default leading-5 rounded-md">
-                        {!! __('pagination.next') !!}
+                        {{-- {!! __('pagination.next') !!} --}}
+                        <i class="fa-solid fa-chevron-right"></i>
                     </span>
                 @endif
             </div>

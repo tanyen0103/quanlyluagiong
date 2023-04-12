@@ -12,13 +12,37 @@
     <style>
         .navbar-nav{
             background-image: url("//www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png");
-            background-position: left 0 bottom 0;
-            background-repeat: no-repeat;
-            background-size: 256px 556px;
+            background-position: left 10 bottom 0;
+            background-repeat: repeat-y;
+            background-size: 256px 600px;
         }
+
+        .spinner-wrapper{
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        .spinner-border{
+            height: 60px;
+            width: 60px;
+        }
+
     </style>
 </head>
 <body id="page-top">
+    <div class="spinner-wrapper">
+        <div class="spinner-grow text-light" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+    </div>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -377,7 +401,7 @@
                         @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
                             </li>
                         @endif
 
