@@ -48,7 +48,7 @@ class GiaTriDoTrongNhaController extends Controller
         $validator = Validator::make($input,[
             'giatridotrongnha_giatri' => ['required','numeric'],
             'loaigiatrido_id' => ['required'],
-            'chitieungoaidong_id' => ['required'],
+            'chitieutrongnha_id' => ['required'],
 
         ]);
         if ($validator->fails()) {
@@ -62,7 +62,7 @@ class GiaTriDoTrongNhaController extends Controller
         $giatridotrongnha = new GiaTriDoTrongNha();
         $giatridotrongnha->giatridotrongnha_giatri = $request->giatridotrongnha_giatri;
         $giatridotrongnha->loaigiatrido_id = $request->loaigiatrido_id;
-        $giatridotrongnha->chitieungoaidong_id = $request->chitieungoaidong_id;
+        $giatridotrongnha->chitieutrongnha_id = $request->chitieutrongnha_id;
 
         $giatridotrongnha->save($input);
         $arr = [
@@ -122,7 +122,7 @@ class GiaTriDoTrongNhaController extends Controller
         $validator = Validator::make($input,[
             'giatridotrongnha_giatri' => ['required','numeric'],
             'loaigiatrido_id' => ['required'],
-            'chitieungoaidong_id' => ['required'],
+            'chitieutrongnha_id' => ['required'],
 
         ]);
         if ($validator->fails()) {
@@ -136,7 +136,7 @@ class GiaTriDoTrongNhaController extends Controller
 
         $giatridotrongnha->giatridotrongnha_giatri = $request->giatridotrongnha_giatri;
         $giatridotrongnha->loaigiatrido_id = $request->loaigiatrido_id;
-        $giatridotrongnha->chitieungoaidong_id = $request->chitieungoaidong_id;
+        $giatridotrongnha->chitieutrongnha_id = $request->chitieutrongnha_id;
 
         $giatridotrongnha->save();
         $arr = [
