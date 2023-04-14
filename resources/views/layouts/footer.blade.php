@@ -17,6 +17,7 @@
 <script src="{{ asset('public/teamplates/js/demo/chart-pie-demo.js') }}"></script>
 
 
+
 {{-- Model Search table --}}
 <script>
     // Function fomr search

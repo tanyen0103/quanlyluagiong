@@ -1,8 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .features-icons .features-icons-item .features-icons-icon {
+            height: 4rem;
+        }
+
+        .features-icons .features-icons-item .features-icons-icon i {
+            font-size: 3rem;
+        }
+
+        .features-icons i::before{
+            margin-bottom: 30px;
+        }
+
+        .bg-soluong{
+            background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
+            background-repeat: no-repeat;
+            background-size: 100% 100rem;
+            background-color: #4e73df;
+        }
+
+    </style>
     <!-- Begin Page Content -->
-    <div class="container" id="quanly">
+    <div class="container pr-0 pl-0" id="quanly">
         {{-- Nav Breadcrumb --}}
         <div class="nav-breadcrumb bg-gray-100 text-lg">
             <nav aria-label="breadcrumb">
@@ -11,89 +32,141 @@
                 </ol>
             </nav>
         </div>
-        <div  class="row" >
-            <div class="col-xl-8 col-md-12">
-                {{-- Chart Pie  --}}
-                <!-- Content Row -->
-                <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tổng quan</h6>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="chart-pie pt-4" data-total-nhom-giongs="{{ $totalNhomGiongs }}" data-total-giongs="{{ $totalGiongs }}" data-total-kieu-hinhs="{{ $totalKieuHinhs }}" data-total-loai-sau-benhs="{{ $totalLoaiSauBenhs }}">
-                            <canvas id="giongChart"></canvas>
+    </div>
+    <!-- Icons Grid-->
+    <div class="container bg-soluong shadow mb-3 rounded features-icons text-center text-dark pb-3 pt-4 pr-0 pl-0">
+        <div class="container mb-3 ">
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="card-body shadow bg-light">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex justify-content-center text-warning">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                                <h3 class="text-uppercase">Ngoài đồng</h3>
+                                <p class="lead mb-0">Giá trị đo ngoài đồng</p>
+                                <p class="lead mb-0"><b>{{ $totalGiaTriDoNgoaiDongs }}</b></p>
                         </div>
                     </div>
                 </div>
-                {{-- End Chart Pie  --}}
-            </div>
-            <div class="col-xl-4 col-md-12">
-                <!-- Card Row -->
-                <div class="row" >
-                    <!-- Card NhomGiong -->
-                    <div class="col-12 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;">
-                                            Nhóm giống</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
-                                        <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
-                                    </div>
-                                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="card-body shadow bg-light">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex justify-content-center text-primary">
+                                <i class="fa-solid fa-house"></i>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Card Giong -->
-                    <div class="col-12 mb-4">
-                        <div class="card border-left-success shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 16px;">
-                                            Giống</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card LoaiSauBenh -->
-                    <div class="col-12 mb-4">
-                    <div class="card border-left-warning shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="font-size: 16px;">
-                                        Loại sâu bệnh
-                                    </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
-                                </div>
-                            </div>
+                            <h3 class="text-uppercase">Trong nhà</h3>
+                            <p class="lead mb-0">Giá trị đo trong nhà</p>
+                            <p class="lead mb-0"><b>{{ $totalGiaTriDoTrongNhas }}</b></p>
                         </div>
                     </div>
                 </div>
-                <!-- End Card Row -->
+                <div class="col-lg-4 mb-3">
+                    <div class="card-body shadow bg-light">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex justify-content-center text-danger">
+                                <i class="fa-solid fa-bug"></i>
+                            </div>
+                            <h3 class="text-uppercase">Sâu bệnh</h3>
+                            <p class="lead mb-0">Giá trị đo sâu bệnh</p>
+                            <p class="lead mb-0"><b>{{ $totalGiaTriDoSauBenhs }}</b></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="container">
+            <div  class="row" >
+                <div class="col-xl-8 col-md-12">
+                    {{-- Chart Pie  --}}
+                    <!-- Content Row -->
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Tổng quan</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-pie pt-4" data-total-nhom-giongs="{{ $totalNhomGiongs }}" data-total-giongs="{{ $totalGiongs }}" data-total-kieu-hinhs="{{ $totalKieuHinhs }}" data-total-loai-sau-benhs="{{ $totalLoaiSauBenhs }}">
+                                <canvas id="giongChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End Chart Pie  --}}
+                </div>
+                <div class="col-xl-4 col-md-12">
+                    <!-- Card Row -->
+                    <div class="row" >
+                        <!-- Card NhomGiong -->
+                        <div class="col-12 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;">
+                                                Nhóm giống</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
+                                            <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Giong -->
+                        <div class="col-12 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 16px;">
+                                                Giống</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card LoaiSauBenh -->
+                        <div class="col-12 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="font-size: 16px;">
+                                                Loại sâu bệnh
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Xuất tổng số lượng --}}
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('thongkes.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                    <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
+            </div>
+        </div>
     </div>
-
-
-
-        {{-- Thống kê giống lúa --}}
+    {{-- Thống kê giống lúa --}}
+    <div class="container pr-0 pl-0">
         <div class="card shadow mb-3 border-bottom-primary">
             {{-- Card header --}}
             <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
@@ -277,7 +350,7 @@
                                 </td>
 
                                 {{-- Chỉ tiêu trong nhà  --}}
-                                 <td>
+                                    <td>
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                         <div>{{ $cttn->chitieutrongnha_giec2 }}</div>
                                     @endforeach
@@ -379,72 +452,68 @@
                 </div>
             </div>
         </div>
-
-    {!! $giongs->links() !!}
-
-
-        {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
-        <div class="card shadow mb-3 border-bottom-primary">
-            {{-- Card header --}}
-            <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
-                <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ SỐ LƯỢNG</h3>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col mb-2">
-                            <div class="d-flex justify-content-start">
-                                <a href="{{ route('thongkes.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                                    <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
-                            </div>
+        {!! $giongs->links() !!}
+    </div>
+    {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
+    {{-- <div class="card shadow mb-3 border-bottom-primary">
+        <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
+            <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ SỐ LƯỢNG</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="row d-flex justify-content-center">
+                    <div class="col mb-2">
+                        <div class="d-flex justify-content-start">
+                            <a href="{{ route('thongkes.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
                         </div>
                     </div>
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Tên</th>
-                                <th>Nhóm giống</th>
-                                <th>Giống</th>
-                                <th>Loại sâu bệnh</th>
-                                <th>Đo sâu bệnh</th>
-                                <th>Đo ngoài đồng</th>
-                                <th>Đo trong nhà</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tổng</td>
-                                <td>{{ $totalNhomGiongs }}</td>
-                                <td>{{ $totalGiongs }}</td>
-                                <td>{{ $totalLoaiSauBenhs }}</td>
-                                <td>{{ $totalGiaTriDoSauBenhs }}</td>
-                                <td>{{ $totalGiaTriDoNgoaiDongs }}</td>
-                                <td>{{ $totalGiaTriDoTrongNhas }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Nhóm giống</th>
+                            <th>Giống</th>
+                            <th>Loại sâu bệnh</th>
+                            <th>Đo sâu bệnh</th>
+                            <th>Đo ngoài đồng</th>
+                            <th>Đo trong nhà</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tổng</td>
+                            <td>{{ $totalNhomGiongs }}</td>
+                            <td>{{ $totalGiongs }}</td>
+                            <td>{{ $totalLoaiSauBenhs }}</td>
+                            <td>{{ $totalGiaTriDoSauBenhs }}</td>
+                            <td>{{ $totalGiaTriDoNgoaiDongs }}</td>
+                            <td>{{ $totalGiaTriDoTrongNhas }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     {{-- Chart Pie  --}}
     var totalNhomGiongs = document.querySelector('.chart-pie').dataset.totalNhomGiongs;
     var totalGiongs = document.querySelector('.chart-pie').dataset.totalGiongs;
-    var totalKieuHinhs = document.querySelector('.chart-pie').dataset.totalKieuHinhs;
+    // var totalKieuHinhs = document.querySelector('.chart-pie').dataset.totalKieuHinhs;
     var totalLoaiSauBenhs = document.querySelector('.chart-pie').dataset.totalLoaiSauBenhs;
 
     var ctx = document.getElementById("giongChart");
     var giongChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-        labels: ["Nhom Giongs (" + totalNhomGiongs + ")", "Giongs (" + totalGiongs + ")", "Kieu Hinhs (" + totalKieuHinhs + ")", "Loai Sau Benhs (" + totalLoaiSauBenhs + ")"],
+        labels: ["Nhom Giongs (" + totalNhomGiongs + ")", "Giongs (" + totalGiongs + ")",  "Loai Sau Benhs (" + totalLoaiSauBenhs + ")"],
         datasets: [{
-        data: [totalNhomGiongs, totalGiongs, totalKieuHinhs, totalLoaiSauBenhs],
-        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
-        hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#e74a3b'],
+        data: [totalNhomGiongs, totalGiongs, totalLoaiSauBenhs],
+        backgroundColor: ['#4e73df', '#1cc88a', '#f6c23e'],
+        hoverBackgroundColor: ['#2e59d9', '#17a673', '#e74a3b'],
         hoverBorderColor: "rgba(234, 236, 244, 1)",
         }],
     },

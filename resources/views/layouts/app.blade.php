@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @include('layouts.header')
     <style>
-        .navbar-nav{
+        .slide-nav{
             background-image: url("//www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png");
             background-position: left 10 bottom 0;
             background-repeat: repeat-y;
@@ -46,7 +46,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav slide-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon ">
@@ -72,7 +72,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    DANH MỤC
+                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -105,7 +105,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    QUẢN LÍ CÁC CHỈ TIÊU
+                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -166,7 +166,7 @@
             @role('Supermanager')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    DANH MỤC
+                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -199,7 +199,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    QUẢN LÍ CÁC CHỈ TIÊU
+                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -260,7 +260,7 @@
             @role('Manager')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    DANH MỤC
+                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người dùng -->
                 <li class="nav-item">
@@ -288,7 +288,7 @@
                 </li>
 
                 <div class="sidebar-heading">
-                    QUẢN LÍ CÁC CHỈ TIÊU
+                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
