@@ -16,6 +16,9 @@
 <script src="{{ asset('public/teamplates/js/demo/chart-area-demo.js') }}"></script>
 <script src="{{ asset('public/teamplates/js/demo/chart-pie-demo.js') }}"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 
 {{-- Model Search table --}}

@@ -4,19 +4,6 @@
     h2, p {
         text-shadow: 0px 0px 1.5px #000;
     }
-    .p{
-      opacity: 1;
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: .5s ease;
-      /* backface-visibility: hidden; */
-    }
-    .img-bg-danhmuc{
-        width: 100%;
-        height: 20rem;
-        object-fit: cover
-    }
 
     .card-danhmuc{
         /* width: 10rem; */
@@ -32,21 +19,29 @@
     }
 
     .middle {
-      transition: .5s ease;
-      opacity: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      text-align: center;
+
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
     }
 
-    /* .card:hover .card-danhmuc {
-      opacity: 1;
-    } */
+    .middle a{
+        color: #fff;
+        width: 14rem;
+        height: 8rem;
+        border-radius: 3px;
+    }
 
-    .card:hover .middle {
+    .middle a i{
+        font-size: 4rem;
+    }
+
+    .card:hover .middle{
       opacity: 1;
     }
 
@@ -54,20 +49,6 @@
       opacity: 0;
     }
 
-    .btn.middle{
-        width: 14rem;
-        height: 8rem;
-        border-radius: 3px;
-    }
-
-    .middle.btn-primary:hover {
-        background-color: rgba(255, 255, 255, 0);
-        border-color: rgba(255, 255, 255, 0);
-    }
-
-    .btn-primary i{
-        font-size: 5rem;
-    }
     </style>
     {{-- Nav Breadcrumb --}}
     <div class="container">
@@ -81,13 +62,15 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-sun"></i> Ngoài đồng</h2>
+        <div class="d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-sun"></i></h2>
+        </div>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu ngoài đồng</p>
                     <div class="middle">
-                        <a href="{{ route('chitieungoaidongs.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('chitieungoaidongs.index') }}" class= "d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
@@ -97,22 +80,26 @@
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
-                        <a href="{{ route('giatridongoaidongs.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('giatridongoaidongs.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        <hr class="bg-gradient-primary h-0_5r">
     </div>
+
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-house"></i> Trong nhà</h2>
+        <div class="d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-house"></i></h2>
+        </div>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu trong nhà</p>
                     <div class="middle">
-                        <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('chitieutrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
@@ -122,22 +109,27 @@
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
-                        <a href="{{ route('giatridotrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('giatridotrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        <hr class="bg-gradient-primary h-0_5r">
     </div>
+
+
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-bug"></i> Sâu bệnh</h2>
+        <div class="d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-bug"></i></h2>
+        </div>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu sâu bệnh</p>
                     <div class="middle">
-                        <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('chitieutrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
@@ -147,12 +139,14 @@
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo sâu bệnh</p>
                     <div class="middle">
-                        <a href="{{ route('giatridotrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('giatridotrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        <hr class="bg-gradient-primary h-0_5r">
     </div>
+
 @endsection

@@ -4,19 +4,6 @@
     h2, p {
         text-shadow: 0px 0px 1.5px #000;
     }
-    .p{
-      opacity: 1;
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: .5s ease;
-      /* backface-visibility: hidden; */
-    }
-    .img-bg-danhmuc{
-        width: 100%;
-        height: 20rem;
-        object-fit: cover
-    }
 
     .card-danhmuc{
         /* width: 10rem; */
@@ -42,9 +29,16 @@
       text-align: center;
     }
 
-    /* .card:hover .card-danhmuc {
-      opacity: 1;
-    } */
+    .middle a{
+        color: #fff;
+        width: 14rem;
+        height: 8rem;
+        border-radius: 3px;
+    }
+
+    .middle a i{
+        font-size: 4rem;
+    }
 
     .card:hover .middle {
       opacity: 1;
@@ -54,20 +48,6 @@
       opacity: 0;
     }
 
-    .btn.middle{
-        width: 14rem;
-        height: 8rem;
-        border-radius: 3px;
-    }
-
-    .middle.btn-primary:hover {
-        background-color: rgba(255, 255, 255, 0);
-        border-color: rgba(255, 255, 255, 0);
-    }
-
-    .btn-primary i{
-        font-size: 5rem;
-    }
     </style>
     {{-- Nav Breadcrumb --}}
     <div class="container">
@@ -81,13 +61,15 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-regular fa-memo-circle-info"></i> Quản lý tài khoản</h2>
+        <div class="d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-user"></i></h2>
+        </div>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Tài khoản</p>
                     <div class="middle">
-                        <a href="{{ route('users.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('users.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
@@ -97,7 +79,7 @@
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Quyền</p>
                     <div class="middle">
-                        <a href="{{ route('roles.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
+                        <a href="{{ route('roles.index') }}" class=" d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-users"></i>
                         </a>
                     </div>

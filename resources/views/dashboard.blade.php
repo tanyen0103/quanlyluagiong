@@ -40,9 +40,9 @@
                 <div class="col-lg-4 mb-3">
                     <div class="card-body shadow bg-light">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex justify-content-center text-warning">
+                            {{-- <div class="features-icons-icon d-flex justify-content-center text-warning">
                                 <i class="fa-solid fa-sun"></i>
-                            </div>
+                            </div> --}}
                                 <h3 class="text-uppercase">Ngoài đồng</h3>
                                 <p class="lead mb-0">Giá trị đo ngoài đồng</p>
                                 <p class="lead mb-0"><b>{{ $totalGiaTriDoNgoaiDongs }}</b></p>
@@ -53,9 +53,9 @@
                 <div class="col-lg-4 mb-3">
                     <div class="card-body shadow bg-light">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex justify-content-center text-primary">
+                            {{-- <div class="features-icons-icon d-flex justify-content-center text-primary">
                                 <i class="fa-solid fa-house"></i>
-                            </div>
+                            </div> --}}
                             <h3 class="text-uppercase">Trong nhà</h3>
                             <p class="lead mb-0">Giá trị đo trong nhà</p>
                             <p class="lead mb-0"><b>{{ $totalGiaTriDoTrongNhas }}</b></p>
@@ -65,9 +65,9 @@
                 <div class="col-lg-4 mb-3">
                     <div class="card-body shadow bg-light">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex justify-content-center text-danger">
+                            {{-- <div class="features-icons-icon d-flex justify-content-center text-danger">
                                 <i class="fa-solid fa-bug"></i>
-                            </div>
+                            </div> --}}
                             <h3 class="text-uppercase">Sâu bệnh</h3>
                             <p class="lead mb-0">Giá trị đo sâu bệnh</p>
                             <p class="lead mb-0"><b>{{ $totalGiaTriDoSauBenhs }}</b></p>
@@ -167,7 +167,7 @@
     </div>
     {{-- Thống kê giống lúa --}}
     <div class="container pr-0 pl-0">
-        <div class="card shadow mb-3 border-bottom-primary">
+        <div id="giongs-list" class="card shadow mb-3 border-bottom-primary">
             {{-- Card header --}}
             <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
                 <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ GIỐNG LÚA</h3>
@@ -457,6 +457,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
     {{-- Chart Pie  --}}
     var totalNhomGiongs = document.querySelector('.chart-pie').dataset.totalNhomGiongs;
@@ -493,6 +494,21 @@
         },
         cutoutPercentage: 80,
         },
+    });
+
+     // Phân trang tại dòng
+     $(document).on('click', '.pagination a', function (e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        var page = $(this).attr('href').split('page=')[1];
+        $.ajax({
+            url: url,
+            data: {page: page},
+            success: function (data) {
+                $('#giongs-list').html(data);
+                $('html, body').animate({ scrollTop: $('#dataTable').offset().top }, 'slow');
+            }
+        });
     });
 
 </script>

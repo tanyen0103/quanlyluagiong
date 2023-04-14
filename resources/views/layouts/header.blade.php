@@ -1,7 +1,7 @@
 {{-- Template --}}
 
     <!-- Custom fonts for this template-->
-    <link href="{{asset('public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    {{-- <link href="{{asset('public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css"> --}}
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +19,35 @@
         a:hover{
             text-decoration: none;
         }
-
         .btn{
             border-radius: 2px;
         }
         .card-header:first-child {
             border-radius: 0px;
+        }
+
+        .h-0_5r{
+            height: 0.5rem;
+        }
+
+        .h-1r{
+            height: 1rem;
+        }
+
+        .h-2r{
+            height: 2rem;
+        }
+
+        .h-3r{
+            height: 3rem;
+        }
+
+        .h-4r{
+            height: 4rem;
+        }
+
+        .h-5r{
+            height: 5rem;
         }
 
         /* breadcrumb  */

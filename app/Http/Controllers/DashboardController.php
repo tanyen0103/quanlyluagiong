@@ -69,9 +69,8 @@ class DashboardController extends Controller
             'totalGiaTriDoNgoaiDongs' => $totalGiaTriDoNgoaiDongs,
             'totalGiaTriDoTrongNhas' => $totalGiaTriDoTrongNhas,
 
-            'giongs' => $giongs,
-        ])
-        ->with('i', (request()->input('page', 1) - 1) * 4);
+            'giongs' => $giongs
+        ])->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**
