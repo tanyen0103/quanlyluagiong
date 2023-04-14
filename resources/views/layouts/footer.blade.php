@@ -37,6 +37,34 @@
         });
     });
 
+
+    $(document).ready(function(){
+        $("#button-addon2").click(function(){
+            var searchValue = $("#searchInput").val().toLowerCase();
+            var resultsFound = false;
+
+            $("table tbody tr").each(function(){
+                var rowText = $(this).text().toLowerCase();
+                if(rowText.indexOf(searchValue) == -1){
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    resultsFound = true;
+                }
+            });
+
+            if (!resultsFound) {
+                $("#noResults").show();
+                $("#searchInput").val("Không có kết quả bạn tìm"); // Thay đổi nội dung của ô nhập liệu
+            } else {
+                $("#noResults").hide();
+                $("#searchInput").val(searchValue); // Giữ nguyên nội dung của ô nhập liệu
+            }
+        });
+    });
+
+
+
     // Function auto update time
     function updateTime() {
         var now = new Date();

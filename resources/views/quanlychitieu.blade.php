@@ -54,13 +54,13 @@
       opacity: 0;
     }
 
-    .btn{
+    .btn.middle{
         width: 14rem;
         height: 8rem;
         border-radius: 3px;
     }
 
-    .btn-primary:hover {
+    .middle.btn-primary:hover {
         background-color: rgba(255, 255, 255, 0);
         border-color: rgba(255, 255, 255, 0);
     }

@@ -454,48 +454,7 @@
         </div>
         {!! $giongs->links() !!}
     </div>
-    {{-- BẢNG GIÁ TRỊ CHI TIẾT --}}
-    {{-- <div class="card shadow mb-3 border-bottom-primary">
-        <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
-            <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ SỐ LƯỢNG</h3>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <div class="row d-flex justify-content-center">
-                    <div class="col mb-2">
-                        <div class="d-flex justify-content-start">
-                            <a href="{{ route('thongkes.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                                <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
-                        </div>
-                    </div>
-                </div>
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Tên</th>
-                            <th>Nhóm giống</th>
-                            <th>Giống</th>
-                            <th>Loại sâu bệnh</th>
-                            <th>Đo sâu bệnh</th>
-                            <th>Đo ngoài đồng</th>
-                            <th>Đo trong nhà</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tổng</td>
-                            <td>{{ $totalNhomGiongs }}</td>
-                            <td>{{ $totalGiongs }}</td>
-                            <td>{{ $totalLoaiSauBenhs }}</td>
-                            <td>{{ $totalGiaTriDoSauBenhs }}</td>
-                            <td>{{ $totalGiaTriDoNgoaiDongs }}</td>
-                            <td>{{ $totalGiaTriDoTrongNhas }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div> --}}
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

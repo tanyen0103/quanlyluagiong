@@ -33,6 +33,7 @@
             background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
             background-size: 100% auto;
             background-color: #4e73df;
+            color: #fff;
         }
 
         .breadcrumb-item.active {
@@ -64,6 +65,9 @@
 
         .table-responsive::-webkit-scrollbar-thumb:hover {
             background-color: #555;
+        }
+        #noResults {
+            color: red;
         }
     </style>
 

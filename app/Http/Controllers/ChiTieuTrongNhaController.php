@@ -28,7 +28,9 @@ class ChiTieuTrongNhaController extends Controller
      */
     public function index()
     {
-        $chitieutrongnhas = ChiTieuTrongNha::oldest()->paginate(4);
+        $chitieutrongnhas = ChiTieuTrongNha::with('giong')
+        ->orderBy('giong_id', 'asc')
+        ->paginate(4);
 
         return view('admin.chitieutrongnhas.index', ["title" => "Bảng chỉ tiêu trong nhà"],
                     compact('chitieutrongnhas'))->with('i', (request()->input('page', 1) - 1) * 4);

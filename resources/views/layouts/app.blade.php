@@ -403,8 +403,8 @@
                     <ul class="navbar-nav ml-auto">
                         @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                            <li class="nav-item no-arrow">
+                                <a class="nav-link text-primary" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
                             </li>
                         @endif
 
@@ -434,7 +434,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-modal').style.display='block'">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        {{ __('Logout') }}
+                                        {{ __('Đăng xuất') }}
                                     </a>
                                 </div>
                             </li>

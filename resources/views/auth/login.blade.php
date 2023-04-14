@@ -2,20 +2,25 @@
 
 @section('content')
 <style>
-
+    .bg-login{
+            background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
+            background-repeat: no-repeat;
+            background-size: 100% 100rem;
+            background-color: #4e73df;
+        }
 </style>
 <body>
     <div class="container">
         <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card bg-login o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                             <div class="">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">{{ __('Vui lòng đăng nhập') }}</h1>
+                                        <h1 class="h4 text-light mb-4">{{ __('ĐĂNG NHẬP') }}</h1>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -41,26 +46,18 @@
                                                 @enderror
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            {{ __('ĐĂNG NHẬP') }}
-                                        </button>
-
-                                        {{-- <div class="form-check d-flex justify-content-center">
-                                            <div>
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                                <label class="form-check-label" for="remember">
-                                                    {{ __('Remember Me') }}
-                                                </label>
-                                            </div>
-                                        </div> --}}
+                                        <div class="d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-light btn-user">
+                                                {{ __('ĐĂNG NHẬP') }}
+                                            </button>
+                                        </div>
 
                                     </form>
                                     <hr>
 
                                     <div class="text-center">
                                         @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            <a class="btn btn-link text-light" href="{{ route('password.request') }}">
                                                 {{ __('Quên mật khẩu?') }}
                                             </a>
                                         @endif
