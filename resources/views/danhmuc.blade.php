@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark">Thông tin giống lúa</h2>
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-seedling"></i> Thông tin giống lúa </h2>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
@@ -140,7 +140,7 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark">Thiết lập đo giá trị</h2>
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-ruler"></i> Thiết lập đo giá trị </h2>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">

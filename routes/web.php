@@ -47,14 +47,6 @@ Route::get('/docs', function () {
     return view('docs');
 })->name('docs');
 
-Route::get('/danhmuc', function () {
-    return view('danhmuc');
-})->name('danhmuc');
-
-Route::get('/chitieu', function () {
-    return view('quanlychitieu');
-})->name('chitieu');
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
@@ -68,6 +60,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/chitieu', function () {
         return view('quanlychitieu');
     })->name('chitieu');
+
+    Route::get('/quanlytaikhoan', function () {
+        return view('quanlytaikhoan');
+    })->name('quanlytaikhoan');
 
     Route::resource('users', UserController::class);
     Route::get('users-export', [UserController::class, 'fileExport'])->name('users.export');

@@ -348,7 +348,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    Quản lí tài khoản
+                    <a class="text-light" href="{{ route('quanlytaikhoan') }}">QUẢN LÝ TÀI KHOẢN</a>
                 </div>
 
                 <!-- Nav Item - Quản lí tài khoản -->
@@ -396,6 +396,9 @@
                         <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fa-solid fa-fire"></i></p>
                     </div>
 
+                    <div class="container">
+                        <div id="ww_0728d62b4eb35" v='1.3' loc='id' a='{"t":"ticker","lang":"vi","sl_lpl":1,"ids":["wl5510"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather for the Following Location: <a href="https://2ua.org/de/vnm/an_giang/karte/" id="ww_0728d62b4eb35_u" target="_blank">karte von An Giang, Vietnam</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_0728d62b4eb35"></script>
+                    </div>
                     <!-- Topbar Navbar Login Avatar -->
                     <ul class="navbar-nav ml-auto">
                         @guest
@@ -424,13 +427,16 @@
 
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">
+                                        <i class="fa-solid fa-circle-info mr-2 text-gray-400"></i>
+                                        {{ __('Thông tin') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-modal').style.display='block'">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         {{ __('Logout') }}
                                     </a>
                                 </div>
-
                             </li>
                         @endguest
                     </ul>

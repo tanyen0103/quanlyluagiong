@@ -81,14 +81,14 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark">Ngoài đồng</h2>
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-sun"></i> Ngoài đồng</h2>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('chitieungoaidongs.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('giatridongoaidongs.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -106,14 +106,14 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark">Trong nhà</h2>
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-house"></i> Trong nhà</h2>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu trong nhà</p>
                     <div class="middle">
                         <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('giatridotrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -131,14 +131,14 @@
         </div>
     </div>
     <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-dark">Sâu bệnh</h2>
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-bug"></i> Sâu bệnh</h2>
         <div class="row">
             <div class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu sâu bệnh</p>
                     <div class="middle">
                         <a href="{{ route('chitieutrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                     <p class="text-light">Giá trị đo sâu bệnh</p>
                     <div class="middle">
                         <a href="{{ route('giatridotrongnhas.index') }}" class="btn btn-primary d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </a>
                     </div>
                 </div>

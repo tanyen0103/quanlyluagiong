@@ -21,7 +21,7 @@
         }
 
         .btn{
-            border-radius: 0px;
+            border-radius: 2px;
         }
         .card-header:first-child {
             border-radius: 0px;
