@@ -11,6 +11,6 @@ return [
 	| these language lines according to your application's requirements.
 	|
 	*/
-	'failed' => 'Thông tin tài khoản không tồn tại.',
+	'failed' => 'Thông tin tài khoản sai hoặc không tồn tại.',
 	'throttle' => 'Đăng nhập sai quá nhiều lần. Vui lòng thử lại sau :seconds giây.',
 ];

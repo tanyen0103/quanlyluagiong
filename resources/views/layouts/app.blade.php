@@ -17,7 +17,7 @@
             background-size: 256px 600px;
         }
 
-        .spinner-wrapper{
+        /* .spinner-wrapper{
             background-color: #0aa6ee;
             position: fixed;
             top: 0;
@@ -33,16 +33,55 @@
         .spinner-border{
             height: 60px;
             width: 60px;
+        } */
+
+        .animated {
+            -webkit-animation-duration: 20s;
+            animation-duration: 20s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .yt-loader {
+            -webkit-animation-name: horizontalProgressBar;
+            animation-name: horizontalProgressBar;
+            -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+            background: rgb(255, 255, 255);
+            height: 3px;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 0%;
+            z-index: 9999;
+        }
+
+        @keyframes horizontalProgressBar
+        {
+            0%   {width: 0%;}
+            25%  {width: 22%;}
+            50%  {width: 55%;}
+            75%  {width: 83%;}
+            100% {width:100%;}
+        }
+
+        @-webkit-keyframes horizontalProgressBar /* Safari and Chrome */
+        {
+            0%   {width: 0%;}
+            25%  {width: 22%;}
+            50%  {width: 55%;}
+            75%  {width: 83%;}
+            100% {width:100%;}
         }
 
     </style>
 </head>
 <body id="page-top">
-    <div class="spinner-wrapper">
-        <div class="spinner-grow text-light" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-    </div>
+        <div class="animated yt-loader bg-gray"></div>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -52,7 +91,7 @@
                 <div class="sidebar-brand-icon ">
                     <img src="{{ asset('public/home/logo/AGU.png') }}" alt="" width="50" srcset="">
                 </div>
-                <div class="sidebar-brand-text mx-3">Quản Lý Giống Lúa</div>
+                <div class="sidebar-brand-text mx-3">{{ __('Quản Lý Giống Lúa') }}</div>
             </a>
 
             <!-- Divider -->
@@ -72,7 +111,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -104,7 +143,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -165,7 +204,7 @@
             @role('Supermanager')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -198,7 +237,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -259,7 +298,7 @@
             @role('Manager')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}">DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người dùng -->
                 <li class="nav-item">
@@ -287,7 +326,7 @@
                 </li>
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}">QUẢN LÝ CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -347,7 +386,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('quanlytaikhoan') }}">QUẢN LÝ TÀI KHOẢN</a>
+                    <a class="text-light" href="{{ route('quanlytaikhoan') }}"><i class="fa-solid fa-eye"></i>  TÀI KHOẢN</a>
                 </div>
 
                 <!-- Nav Item - Quản lí tài khoản -->
@@ -430,8 +469,7 @@
                                         <i class="fa-solid fa-circle-info mr-2 text-gray-400"></i>
                                         {{ __('Thông tin') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-modal').style.display='block'">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         {{ __('Đăng xuất') }}
                                     </a>
@@ -468,25 +506,26 @@
     </a>
 
     <!-- Logout Modal-->
-    <div id="logout-modal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bạn có chắc chắn muốn đăng xuất?</h5>
-                    {{-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
-                </div>
-                <div class="modal-body">
-                    <p>Bấm "Đăng xuất" để đăng xuất khỏi tài khoản của bạn.</p>
-                    <p>Hoặc load lại trang để huỷ</p>
-                </div>
-                <div class="modal-footer">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Đăng xuất</button>
-                    </form>
-                    {{-- <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button> --}}
-                </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">Bạn có chắc chắn muốn đăng xuất?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             </div>
+            <div class="modal-body">
+                <p>Bấm "Đăng xuất" để đăng xuất khỏi tài khoản của bạn.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-primary">Đăng xuất</button>
+            </form>
+            </div>
+        </div>
         </div>
     </div>
 

@@ -60,13 +60,13 @@
             </nav>
         </div>
     </div>
-
-    <h2 class="font-weight-bold text-uppercase text-primary "><i class="fa-solid fa-seedling "></i></h2>
-    <hr class="bg-gradient-primary h-0_5r mt-0">
+    <div class="d-flex justify-content-center">
+        <h2 class="font-weight-bold text-dark"><i class="fa-solid fa-seedling "></i></h2>
+    </div>
     <div data-aos="fade-right">
         <div class="container mb-3">
             <div class="row">
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Nhóm giống</p>
                         <div class="middle">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Kiểu hình</p>
                         <div class="middle">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Giống</p>
                         <div class="middle">
@@ -100,7 +100,7 @@
         </div>
         <div class="container mb-3">
             <div class="row">
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Mã ngoài đồng</p>
                         <div class="middle">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Mã phòng thí nghiệm</p>
                         <div class="middle">
@@ -123,13 +123,14 @@
             </div>
         </div>
     </div>
-
-    <h2 class="font-weight-bold text-uppercase text-primary"><i class="fa-solid fa-ruler"></i></h2>
     <hr class="bg-gradient-primary h-0_5r mt-0">
+    <div class="d-flex justify-content-center">
+        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-ruler"></i></h2>
+    </div>
     <div data-aos="fade-left">
         <div class="container mb-3">
             <div class="row">
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Loại giá trị đo</p>
                         <div class="middle">
@@ -139,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">Loại sâu bệnh</p>
                         <div class="middle">
@@ -153,7 +154,7 @@
         </div>
         <div class="container mb-3">
             <div class="row tinhtrang-font">
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">GĐ trưởng thành</p>
                         <div class="middle">
@@ -163,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">ĐT tính trạng</p>
                         <div class="middle">
@@ -173,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">ĐĐ tính trạng</p>
                         <div class="middle">
@@ -183,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-11">
+                <div class="col-lg col-md-11 mb-1">
                     <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                         <p class="text-light">GT tính trạng</p>
                         <div class="middle">

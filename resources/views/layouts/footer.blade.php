@@ -106,7 +106,7 @@
     }
 
 
-    const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+    const spinnerWrapperEl = document.querySelector('.yt-loader');
     window.addEventListener('load', () => {
         spinnerWrapperEl.style.opacity = '0';
 
@@ -118,6 +118,7 @@
     $('.alert .close').on('click', function () {
         $(this).parent().fadeOut();
     });
+
 
 </script>
 
