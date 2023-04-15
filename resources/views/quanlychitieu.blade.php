@@ -66,7 +66,7 @@
             <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-sun"></i></h2>
         </div>
         <div class="row">
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-right" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu ngoài đồng</p>
                     <div class="middle">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-left" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
@@ -95,7 +95,7 @@
             <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-house"></i></h2>
         </div>
         <div class="row">
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-right" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu trong nhà</p>
                     <div class="middle">
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-left" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
@@ -125,7 +125,7 @@
             <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-bug"></i></h2>
         </div>
         <div class="row">
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-right" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu sâu bệnh</p>
                     <div class="middle">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-md-11">
+            <div data-aos="fade-left" class="col-lg col-md-11">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo sâu bệnh</p>
                     <div class="middle">

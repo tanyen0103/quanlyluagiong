@@ -35,51 +35,52 @@
     </div>
     <!-- Icons Grid-->
     <div class="container bg-soluong shadow mb-3 rounded features-icons text-center text-dark pb-3 pt-4 pr-0 pl-0">
-        <div class="container mb-3 ">
-            <div class="row">
-                <div class="col-lg-4 mb-3">
-                    <div class="card-body shadow bg-light">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            {{-- <div class="features-icons-icon d-flex justify-content-center text-warning">
-                                <i class="fa-solid fa-sun"></i>
-                            </div> --}}
-                                <h3 class="text-uppercase">Ngoài đồng</h3>
-                                <p class="lead mb-0">Giá trị đo ngoài đồng</p>
-                                <p class="lead mb-0"><b>{{ $totalGiaTriDoNgoaiDongs }}</b></p>
+        <div data-aos="fade-up">
+            <div class="container mb-3 ">
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <div class="card-body shadow bg-light">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                {{-- <div class="features-icons-icon d-flex justify-content-center text-warning">
+                                    <i class="fa-solid fa-sun"></i>
+                                </div> --}}
+                                    <h3 class="text-uppercase">Ngoài đồng</h3>
+                                    <p class="lead mb-0">Giá trị đo ngoài đồng</p>
+                                    <p class="lead mb-0"><b>{{ $totalGiaTriDoNgoaiDongs }}</b></p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 mb-3">
-                    <div class="card-body shadow bg-light">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            {{-- <div class="features-icons-icon d-flex justify-content-center text-primary">
-                                <i class="fa-solid fa-house"></i>
-                            </div> --}}
-                            <h3 class="text-uppercase">Trong nhà</h3>
-                            <p class="lead mb-0">Giá trị đo trong nhà</p>
-                            <p class="lead mb-0"><b>{{ $totalGiaTriDoTrongNhas }}</b></p>
+                    <div class="col-lg-4 mb-3">
+                        <div class="card-body shadow bg-light">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                {{-- <div class="features-icons-icon d-flex justify-content-center text-primary">
+                                    <i class="fa-solid fa-house"></i>
+                                </div> --}}
+                                <h3 class="text-uppercase">Trong nhà</h3>
+                                <p class="lead mb-0">Giá trị đo trong nhà</p>
+                                <p class="lead mb-0"><b>{{ $totalGiaTriDoTrongNhas }}</b></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <div class="card-body shadow bg-light">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            {{-- <div class="features-icons-icon d-flex justify-content-center text-danger">
-                                <i class="fa-solid fa-bug"></i>
-                            </div> --}}
-                            <h3 class="text-uppercase">Sâu bệnh</h3>
-                            <p class="lead mb-0">Giá trị đo sâu bệnh</p>
-                            <p class="lead mb-0"><b>{{ $totalGiaTriDoSauBenhs }}</b></p>
+                    <div class="col-lg-4 mb-3">
+                        <div class="card-body shadow bg-light">
+                            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                                {{-- <div class="features-icons-icon d-flex justify-content-center text-danger">
+                                    <i class="fa-solid fa-bug"></i>
+                                </div> --}}
+                                <h3 class="text-uppercase">Sâu bệnh</h3>
+                                <p class="lead mb-0">Giá trị đo sâu bệnh</p>
+                                <p class="lead mb-0"><b>{{ $totalGiaTriDoSauBenhs }}</b></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div  class="row" >
-                <div class="col-xl-8 col-md-12">
+                <div data-aos="fade-right" class="col-xl-8 col-md-12">
                     {{-- Chart Pie  --}}
                     <!-- Content Row -->
                     <div class="card shadow mb-4">
@@ -96,7 +97,7 @@
                     </div>
                     {{-- End Chart Pie  --}}
                 </div>
-                <div class="col-xl-4 col-md-12">
+                <div data-aos="fade-left" class="col-xl-4 col-md-12">
                     <!-- Card Row -->
                     <div class="row" >
                         <!-- Card NhomGiong -->
@@ -110,7 +111,6 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
                                         </div>
                                         <div class="col-auto">
-                                            {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
                                             <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
                                         </div>
                                     </div>
@@ -173,24 +173,24 @@
                 <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ GIỐNG LÚA</h3>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col">
-                            <div class="d-flex justify-content-start">
-                                <a href="{{ route('dashboards.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                                    <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
-                            </div>
-                        </div>
-                        <div class="input-group mb-2 col">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
-                                aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" id="button-addon2">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <div class="d-flex justify-content-start">
+                            <a href="{{ route('dashboards.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                <i class="fas fa-download fa-sm text-white-50"></i> Xuất Excel</a>
                         </div>
                     </div>
+                    <div class="input-group mb-2 col">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                            aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="button-addon2">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
@@ -204,9 +204,9 @@
                                 {{-- <th colspan="{{ 12 + $numColumnnds }}">Chỉ tiêu ngoài đồng</th>
                                 <th colspan="{{ 9 + $numColumntns }}">Chỉ tiêu trong nhà</th>
                                 <th colspan="{{ 2 + $numColumnsbs }}">Chỉ tiêu sâu bệnh</th> --}}
-                                <th colspan="14">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="11">Chỉ tiêu trong nhà</th>
-                                <th colspan="4">Chỉ tiêu sâu bệnh</th>
+                                <th colspan="15">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="12">Chỉ tiêu trong nhà</th>
+                                <th colspan="5">Chỉ tiêu sâu bệnh</th>
                             </tr>
                             <tr>
                                 <th>No</th>
@@ -229,8 +229,9 @@
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
                                 {{-- <th colspan="{{ $numColumnnds }}">Loại giá trị đo</th> --}}
-                                <th>Giá trị đo</th>
+                                <th>Loại giá trị đo</th>
                                 <th>Giá trị</th>
+                                <th>Đơn vị</th>
 
 
                                 <th>Gié C2</th>
@@ -243,14 +244,16 @@
                                 <th>Thơm</th>
                                 <th>Đánh giá</th>
                                 {{-- <th colspan="{{ $numColumntns }}">Loại giá trị đo</th> --}}
-                                <th>Giá trị đo</th>
+                                <th>Loại giá trị đo</th>
                                 <th>Giá trị</th>
+                                <th>Đơn vị</th>
 
                                 <th>Chọn lọc</th>
                                 <th>Đánh giá khác</th>
                                 {{-- <th colspan="{{ $numColumnsbs }}">Loại sâu bệnh</th> --}}
-                                <th>Giá trị sâu bệnh</th>
+                                <th>Loại sâu bệnh</th>
                                 <th>Giá trị</th>
+                                <th>Đơn vị</th>
 
                             </tr>
                         </thead>
@@ -337,14 +340,33 @@
                                 {{-- @for ($i = 1; $i <= $numColumnnds; $i++)
                                     <td></td>
                                 @endfor --}}
-                                <td colspan="2">
+                                <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                <div>
-                                                    {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}
-                                                    ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) =
-                                                    {{ $gtdnd->giatridongoaidong_giatri }} </div>
-                                                <hr>
+                                                    <div>
+                                                        {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }}
+                                                    </div>
+                                                    <br>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                    <div>
+                                                        {{ $gtdnd->giatridongoaidong_giatri }}
+                                                    </div>
+                                                    <br>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                    <div>
+                                                        {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}
+                                                    </div>
+                                                    <br>
                                             @endforeach
                                     @endforeach
                                 </td>
@@ -395,13 +417,33 @@
                                         <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                <td colspan="2">
+                                <td >
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                             @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>{{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }}
-                                                    ({{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}) =
-                                                    {{ $gtdtn->giatridotrongnha_giatri }}</div>
-                                                    <hr>
+                                                <div>
+                                                    {{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }}
+                                                </div>
+                                                <br>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td >
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                <div>
+                                                    {{ $gtdtn->giatridotrongnha_giatri }}
+                                                </div>
+                                                <br>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td >
+                                    @foreach ($item->ChiTieuTrongNha as $cttn)
+                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                <div>
+                                                    {{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}
+                                                </div>
+                                                <br>
                                             @endforeach
                                     @endforeach
                                 </td>
@@ -421,24 +463,32 @@
                                         <div>{{ $ctsb->chitieusaubenh_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                {{-- <td>
+                                <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_ten }}</div>
                                             @endforeach
                                     @endforeach
                                 </td>
-                                <td>
+
+                                {{-- <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div><img class="d-block" src="{{ env('STORAGE_URL') . $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></div>
                                             @endforeach
                                     @endforeach
                                 </td> --}}
-                                <td colspan="2">
+                                <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->giatridosaubenh_giatri }} ({{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }})</div>
+                                                <div>{{ $gtdsb->giatridosaubenh_giatri }} </div>
+                                            @endforeach
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
                                             @endforeach
                                     @endforeach
                                 </td>

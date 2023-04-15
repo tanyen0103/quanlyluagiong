@@ -59,7 +59,7 @@ class ChiTieuNgoaiDongController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giong_id' => ['required'],
+            'giong_id' => ['required', 'unique:chitieungoaidong,giong_id'],
             'chitieungoaidong_phienla' => ['max:255'],
             'chitieungoaidong_taila' => ['max:255'],
             'chitieungoaidong_gocnhanh' => ['max:255'],

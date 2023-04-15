@@ -3,6 +3,18 @@
 <script src="{{ asset('public/teamplates/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('public/teamplates/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+{{-- font awsome --}}
+<script src="https://kit.fontawesome.com/5470c24891.js" crossorigin="anonymous"></script>
+
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('public/teamplates/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
@@ -18,7 +30,10 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 
 {{-- Model Search table --}}
@@ -98,6 +113,10 @@
         setTimeout(() => {
             spinnerWrapperEl.style.display = 'none';
         }, 200);
+    });
+
+    $('.alert .close').on('click', function () {
+        $(this).parent().fadeOut();
     });
 
 </script>

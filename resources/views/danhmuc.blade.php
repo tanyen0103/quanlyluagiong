@@ -60,135 +60,142 @@
             </nav>
         </div>
     </div>
-    <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-success "><i class="fa-solid fa-seedling "></i></h2>
-        <hr class="bg-gradient-primary h-0_5r mt-0">
-        <div class="row">
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Nhóm giống</p>
-                    <div class="middle">
-                        <a href="{{ route('nhomgiongs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
+
+    <h2 class="font-weight-bold text-uppercase text-primary "><i class="fa-solid fa-seedling "></i></h2>
+    <hr class="bg-gradient-primary h-0_5r mt-0">
+    <div data-aos="fade-right">
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Nhóm giống</p>
+                        <div class="middle">
+                            <a href="{{ route('nhomgiongs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Kiểu hình</p>
+                        <div class="middle">
+                            <a href="{{ route('kieuhinhs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Giống</p>
+                        <div class="middle">
+                            <a href="{{ route('giongs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Kiểu hình</p>
-                    <div class="middle">
-                        <a href="{{ route('kieuhinhs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
+        </div>
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Mã ngoài đồng</p>
+                        <div class="middle">
+                            <a href="{{ route('mangoaidongs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Giống</p>
-                    <div class="middle">
-                        <a href="{{ route('giongs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Mã phòng thí nghiệm</p>
+                        <div class="middle">
+                            <a href="{{ route('maptns.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mb-3">
-        <div class="row">
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Mã ngoài đồng</p>
-                    <div class="middle">
-                        <a href="{{ route('mangoaidongs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
+
+    <h2 class="font-weight-bold text-uppercase text-primary"><i class="fa-solid fa-ruler"></i></h2>
+    <hr class="bg-gradient-primary h-0_5r mt-0">
+    <div data-aos="fade-left">
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Loại giá trị đo</p>
+                        <div class="middle">
+                            <a href="{{ route('loaigiatridos.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">Loại sâu bệnh</p>
+                        <div class="middle">
+                            <a href="{{ route('loaisaubenhs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Mã phòng thí nghiệm</p>
-                    <div class="middle">
-                        <a href="{{ route('maptns.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
+        </div>
+        <div class="container mb-3">
+            <div class="row tinhtrang-font">
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">GĐ trưởng thành</p>
+                        <div class="middle">
+                            <a href="{{ route('giaidoantruongthanhs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">ĐT tính trạng</p>
+                        <div class="middle">
+                            <a href="{{ route('doituongtinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">ĐĐ tính trạng</p>
+                        <div class="middle">
+                            <a href="{{ route('dacdiemtinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md-11">
+                    <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                        <p class="text-light">GT tính trạng</p>
+                        <div class="middle">
+                            <a href="{{ route('giatritinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mb-3">
-        <h2 class="font-weight-bold text-uppercase text-warning"><i class="fa-solid fa-ruler"></i></h2>
-        <hr class="bg-gradient-primary h-0_5r mt-0">
-        <div class="row">
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Loại giá trị đo</p>
-                    <div class="middle">
-                        <a href="{{ route('loaigiatridos.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Loại sâu bệnh</p>
-                    <div class="middle">
-                        <a href="{{ route('loaisaubenhs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container mb-3">
-        <div class="row tinhtrang-font">
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">GĐ trưởng thành</p>
-                    <div class="middle">
-                        <a href="{{ route('giaidoantruongthanhs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">ĐT tính trạng</p>
-                    <div class="middle">
-                        <a href="{{ route('doituongtinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">ĐĐ tính trạng</p>
-                    <div class="middle">
-                        <a href="{{ route('dacdiemtinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-md-11">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">GT tính trạng</p>
-                    <div class="middle">
-                        <a href="{{ route('giatritinhtrangs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-wrench"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 @endsection

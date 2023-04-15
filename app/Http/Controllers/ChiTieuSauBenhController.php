@@ -54,7 +54,7 @@ class ChiTieuSauBenhController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giong_id' => ['required'],
+            'giong_id' => ['required', 'unique:chitieusaubenh,giong_id'],
             'chitieusaubenh_chonloc' => ['max:255'],
             'chitieusaubenh_danhgia' => ['']
 

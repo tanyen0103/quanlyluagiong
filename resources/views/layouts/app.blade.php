@@ -18,7 +18,7 @@
         }
 
         .spinner-wrapper{
-            background-color: #000;
+            background-color: #0aa6ee;
             position: fixed;
             top: 0;
             left: 0;
@@ -422,7 +422,7 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                        <i class="fa-sharp fa-solid fa-circle-user fa-2x text-primary"></i>
+                                        <i class="fa-sharp fa-solid fa-circle-user fa-2x " style="color: #2c407d;"></i>
                                 </a>
 
                                 <!-- Dropdown - User Information -->
