@@ -58,12 +58,17 @@
             <div class="form-group">
                 {{-- <strong>Hình ảnh:</strong> --}}
                 <div>
-                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="Ảnh giống"  width="100%">
+                    <img onclick="openModal(this);" class="d-block rounded" src="{{ env('STORAGE_URL') . $giong->giong_hinhanh }}" alt="{{ $giong->giong_ten }}"  width="100%">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
 
 @endsection

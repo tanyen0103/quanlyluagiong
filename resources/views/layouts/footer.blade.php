@@ -55,7 +55,7 @@
         });
     });
 
-
+    // Search table
     $(document).ready(function(){
         $("#button-addon2").click(function(){
             var searchValue = $("#searchInput").val().toLowerCase();
@@ -105,7 +105,7 @@
         }
     }
 
-
+    // Spinner loading
     const spinnerWrapperEl = document.querySelector('.yt-loader');
     window.addEventListener('load', () => {
         spinnerWrapperEl.style.opacity = '0';
@@ -119,6 +119,29 @@
         $(this).parent().fadeOut();
     });
 
+    // Modal Show Images
+    // Open the Modal
+    function openModal(img) {
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the modal image and set it to the clicked image
+    var modalImg = document.getElementById("img01");
+    modalImg.src = img.src;
+
+    // Get the caption element and set its text
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = img.alt;
+
+    // Show the modal
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    }
 
 </script>
 

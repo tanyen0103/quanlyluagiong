@@ -84,9 +84,7 @@
                             <td>{{ $item->giong_nguongoc }}</td>
                             <td>{{ $item->giong_mota }}</td>
                             <td>
-                                <img class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100">
-                                {{-- <img class="d-block" src="{{ Storage::url($item->giong_hinhanh) }}" alt="Ảnh giống" width="100" height="100"> --}}
-
+                                <img onclick="openModal(this);" class="d-block" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="Ảnh giống"  width="100" height="100">
                             </td>
                             <td>
                                 <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
@@ -109,5 +107,10 @@
         </div>
     </div>
     {!! $giongs->links() !!}
-
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 @endsection

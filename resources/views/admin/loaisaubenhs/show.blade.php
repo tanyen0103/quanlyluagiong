@@ -18,7 +18,7 @@
             <h3 class="m-0 font-weight-bold text-white">Chi tiết</h3>
         </div>
         <div class="">
-            <a class="btn btn-light" href="{{ route('giongs.index') }}">Trở về</a>
+            <a class="btn btn-light" href="{{ route('loaisaubenhs.index') }}">Trở về</a>
         </div>
     </div>
     <div class="row mt-1 d-flex justify-content-center">
@@ -51,11 +51,17 @@
             <div class="form-group">
                 {{-- <strong>Hình ảnh:</strong> --}}
                 <div>
-                    <img class="d-block rounded" src="{{ env('STORAGE_URL') . $loaisaubenh->loaisaubenh_hinhanh }}" alt="Ảnh sâu bệnh"  width="100%">
+                    <img onclick="openModal(this);" class="d-block rounded" src="{{ env('STORAGE_URL') . $loaisaubenh->loaisaubenh_hinhanh }}" alt="{{  $loaisaubenh->loaisaubenh_ten }}"  width="100%">
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
 </div>
 
 @endsection
