@@ -61,8 +61,9 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <h2 class="font-weight-bold text-dark"><i class="fa-solid fa-seedling "></i></h2>
+        <h2 class="font-weight-bold text-dark">DANH MỤC GIỐNG LÚA</h2>
     </div>
+    <hr class="bg-gradient-primary h-0_5r mt-0">
     <div data-aos="fade-right">
         <div class="container mb-3">
             <div class="row">
@@ -123,11 +124,12 @@
             </div>
         </div>
     </div>
-    <hr class="bg-gradient-primary h-0_5r mt-0">
+
     <div class="d-flex justify-content-center">
-        <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-ruler"></i></h2>
+        <h2 class="font-weight-bold text-uppercase text-dark">DANH MỤC QUY ĐỊNH</h2>
     </div>
-    <div data-aos="fade-left">
+    <hr class="bg-gradient-primary h-0_5r mt-0">
+    <div >
         <div class="container mb-3">
             <div class="row">
                 <div class="col-lg col-md-11 mb-1">
