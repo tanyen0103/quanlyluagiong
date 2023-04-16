@@ -132,7 +132,7 @@ class GiaiDoanTruongThanhController extends Controller
             'message' => 'Giai đoạn trưởng thành đã cập nhật thành công',
             'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
         ];
-        return response() ->json($arr, 200);
+        return response() ->json($arr, 201);
     }
 
     /**

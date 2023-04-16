@@ -139,7 +139,7 @@ class DoiTuongTinhTrangController extends Controller
             'message' => 'Đối tượng tính trạng đã cập nhật thành công',
             'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
         ];
-        return response() ->json($arr, 200);
+        return response() ->json($arr, 201);
     }
 
     /**
