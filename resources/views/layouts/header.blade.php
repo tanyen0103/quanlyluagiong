@@ -2,7 +2,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital@1&display=swap" rel="stylesheet">
@@ -14,6 +14,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
     <style>
+        @font-face{
+            font-family: 'UTM AVO';
+            src: url("{{ asset('public/home/font/UTM_AVO.TTF') }}") format('truetype');
+        }
+
+        @font-face{
+            font-family: 'UTM AVO BOLD';
+            src: url("{{ asset('public/home/font/UTM_AVOBOLD.TTF') }}") format('truetype');
+        }
+
+        @font-face{
+            font-family: 'UTM AVO BOLD ITALIC';
+            src: url("{{ asset('public/home/font/UTM_AVOBOLD_ITALIC.TTF') }}") format('truetype');
+        }
+
+        @font-face{
+            font-family: 'UTM AVO ITALIC';
+            src: url("{{ asset('public/home/font/UTM_AVO_ITALIC.TTF') }}") format('truetype');
+        }
+
+        body{
+            font-family: 'UTM AVO';
+        }
+
         a, a:hover{
             text-decoration: none;
         }

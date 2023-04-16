@@ -14,8 +14,8 @@
     .card-danhmuc p{
         font-weight: 1000;
         font-size: 1.5rem;
-        font-family: 'Bebas Neue', cursive;
-        font-family: 'Roboto', sans-serif;
+        /* font-family: 'Bebas Neue', cursive;
+        font-family: 'Roboto', sans-serif; */
     }
 
     .middle {
