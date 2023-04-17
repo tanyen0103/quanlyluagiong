@@ -8,10 +8,10 @@ use App\Models\NhomGiong;
 use App\Models\LoaiSauBenh;
 use Illuminate\Http\Request;
 use App\Exports\ThongKesExport;
-use App\Models\GiaTriDoSauBenh;
-use App\Models\GiaTriDoTrongNha;
+use App\Models\ChiTieuSauBenh;
+use App\Models\ChiTieuTrongNha;
 use App\Exports\DashBoardsExport;
-use App\Models\GiaTriDoNgoaiDong;
+use App\Models\ChiTieuNgoaiDong;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardController extends Controller
@@ -40,37 +40,34 @@ class DashboardController extends Controller
     {
         $totalNhomGiongs = NhomGiong::count();
         $totalGiongs = Giong::count();
-        $totalKieuHinhs = KieuHinh::count();
         $totalLoaiSauBenhs = LoaiSauBenh::count();
-        $totalGiaTriDoSauBenhs = GiaTriDoSauBenh::count();
-        $totalGiaTriDoNgoaiDongs = GiaTriDoNgoaiDong::count();
-        $totalGiaTriDoTrongNhas = GiaTriDoTrongNha::count();
+        $totalChiTieuSauBenhs = ChiTieuSauBenh::count();
+        $totalChiTieuNgoaiDongs = ChiTieuNgoaiDong::count();
+        $totalChiTieuTrongNhas = ChiTieuTrongNha::count();
 
         $giongs = Giong::with('nhomgiong')
         ->orderBy('nhomgiong_id', 'asc')
-        ->paginate(4);
+        ->paginate(5);
 
         // Create an array of labels with the new values
         $labels = [
             "Nhom Giongs ($totalNhomGiongs)",
             "Giongs ($totalGiongs)",
-            "Kieu Hinhs ($totalKieuHinhs)",
             "Loai Sau Benhs ($totalLoaiSauBenhs)",
-            "Gia Tri Do Sau Benhs ($totalGiaTriDoSauBenhs)",
-            "Gia Tri Do Ngoai Dongs ($totalGiaTriDoNgoaiDongs)",
-            "Gia Tri Do Trong Nhas ($totalGiaTriDoTrongNhas)"
+            "Gia Tri Do Sau Benhs ($totalChiTieuSauBenhs)",
+            "Gia Tri Do Ngoai Dongs ($totalChiTieuNgoaiDongs)",
+            "Gia Tri Do Trong Nhas ($totalChiTieuTrongNhas)"
         ];
         return view('dashboard', [
             'totalNhomGiongs' => $totalNhomGiongs,
             'totalGiongs' => $totalGiongs,
-            'totalKieuHinhs' => $totalKieuHinhs,
             'totalLoaiSauBenhs' => $totalLoaiSauBenhs,
-            'totalGiaTriDoSauBenhs' => $totalGiaTriDoSauBenhs,
-            'totalGiaTriDoNgoaiDongs' => $totalGiaTriDoNgoaiDongs,
-            'totalGiaTriDoTrongNhas' => $totalGiaTriDoTrongNhas,
+            'totalChiTieuSauBenhs' => $totalChiTieuSauBenhs,
+            'totalChiTieuNgoaiDongs' => $totalChiTieuNgoaiDongs,
+            'totalChiTieuTrongNhas' => $totalChiTieuTrongNhas,
 
             'giongs' => $giongs
-        ])->with('i', (request()->input('page', 1) - 1) * 100);
+        ])->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

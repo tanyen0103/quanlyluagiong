@@ -30,10 +30,10 @@ class ChiTieuTrongNhaController extends Controller
     {
         $chitieutrongnhas = ChiTieuTrongNha::with('giong')
         ->orderBy('giong_id', 'asc')
-        ->paginate(4);
+        ->paginate(100);
 
         return view('admin.chitieutrongnhas.index', ["title" => "Bảng chỉ tiêu trong nhà"],
-                    compact('chitieutrongnhas'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('chitieutrongnhas'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

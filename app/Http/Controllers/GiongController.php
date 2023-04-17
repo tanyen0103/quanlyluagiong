@@ -120,7 +120,7 @@ class GiongController extends Controller
     public function store(Request $request)
 {
     $request->validate([
-        'giong_ten' => ['required','max:255'],
+        'giong_ten' => ['required','unique:giong','max:255'],
         'nhomgiong_id' => ['required'],
         'kieuhinh_id' => ['required'],
         'giong_nguongoc' => [''],
