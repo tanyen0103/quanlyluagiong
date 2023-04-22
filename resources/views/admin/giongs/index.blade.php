@@ -107,6 +107,13 @@
         </div>
     </div>
     {!! $giongs->links() !!}
+
+    {{-- Trả dữ liệu truy vấn  --}}
+    {{-- @php
+        echo'<pre>';
+            dd($giongs);
+        echo' </pre>';
+    @endphp --}}
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
