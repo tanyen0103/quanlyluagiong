@@ -28,8 +28,7 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="{{ asset('public/home/images/web.svg') }}" alt="...">
+                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 10rem;" src="{{ asset('/public/home/images/qlgl-logo-black-01.png') }}" alt="">
                     </div>
                     <p>Lúa là một trong những loại cây trồng quan trọng nhất trên thế giới, đóng vai
                         trò chính trong sản xuất lương thực. Việc quản lý lúa giống là một phần quan

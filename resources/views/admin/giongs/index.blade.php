@@ -108,7 +108,7 @@
     </div>
     {!! $giongs->links() !!}
 
-    {{-- Trả dữ liệu truy vấn  --}}
+    {{-- Trả dữ liệu truy vấn - kiểu dữ liệu Object--}}
     {{-- @php
         echo'<pre>';
             dd($giongs);
