@@ -41,10 +41,10 @@ class NhomGiongController extends Controller
     public function index()
     {
         // $nhomgiongs = NhomGiong::oldest()->paginate(4);
-        $nhomgiongs = NhomGiong::orderBy('nhomgiong_code', 'asc')->paginate(4);
+        $nhomgiongs = NhomGiong::orderBy('nhomgiong_code', 'asc')->paginate();
 
         return view('admin.nhomgiongs.index', ["title" => "Bảng nhóm giống"],
-                    compact('nhomgiongs'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('nhomgiongs'))->with('i', (request()->input('page', 1) - 1));
     }
 
     /**

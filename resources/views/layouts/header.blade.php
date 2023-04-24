@@ -85,8 +85,17 @@
         .breadcrumb,
         .bg-gradient-primary{
             background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
-            background-size: 100% auto;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             background-color: #4e73df;
+            color: #fff;
+        }
+
+        .bg-card{
+            background-image: url("//www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png");
+            background-size: 100% 100%;
+            background-color: #4e73df;
+            background-repeat: no-repeat;
             color: #fff;
         }
 
@@ -187,6 +196,25 @@
         color: #bbb;
         text-decoration: none;
         cursor: pointer;
+        }
+
+        .card-hover{
+            width: 207px;
+            height: 155px;
+            padding-top: 12px;
+            padding-right: 6px;
+            padding-left: 6px;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card-hover img{
+            transition: 0.5s;
+        }
+        .card-hover img:hover{
+            scale: 1.5;
+            transition: 0.5s;
         }
     </style>
 

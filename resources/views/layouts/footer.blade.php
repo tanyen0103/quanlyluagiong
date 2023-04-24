@@ -82,6 +82,58 @@
     });
 
 
+    $(document).ready(function(){
+        // Search table
+        $("#button-addon2").click(function(){
+            var searchValue = $("#searchInput").val().toLowerCase();
+            var resultsFound = false;
+
+            $("table tbody tr").each(function(){
+                var rowText = $(this).text().toLowerCase();
+                if(rowText.indexOf(searchValue) == -1){
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    resultsFound = true;
+                }
+            });
+
+            if (!resultsFound) {
+                $("#noResults").show();
+                $("#searchInput").val("Không có kết quả bạn tìm"); // Thay đổi nội dung của ô nhập liệu
+            } else {
+                $("#noResults").hide();
+                $("#searchInput").val(searchValue); // Giữ nguyên nội dung của ô nhập liệu
+            }
+        });
+
+        // Search card
+        $("#button-addon2-card").click(function(){
+            var searchValue = $("#searchInputCard").val().toLowerCase();
+            var resultsFound = false;
+
+            $("h5.card-title").each(function(){
+                var titleText = $(this).text().toLowerCase();
+                if(titleText.indexOf(searchValue) == -1){
+                    $(this).closest(".card").hide();
+                } else {
+                    $(this).closest(".card").show();
+                    resultsFound = true;
+                }
+            });
+
+            if (!resultsFound) {
+                $("#noResults").show();
+                $("#searchInputCard").val("Không có kết quả bạn tìm");
+            } else {
+                $("#noResults").hide();
+                $("#searchInputCard").val(searchValue);
+            }
+        });
+    });
+
+
+
 
     // Function auto update time
     function updateTime() {

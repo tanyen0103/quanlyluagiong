@@ -26,6 +26,13 @@
             <div class="row mt-1 d-flex justify-content-center">
                 <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
+                        <strong>Nhóm giống</strong>:</strong>
+                        <p>{{ $giong->NhomGiong->nhomgiong_ten }}</p>
+                        <hr class="h-1 mt-0 bg-gradient-primary">
+                    </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
                         <strong>Kiểu hình</strong>:</strong>
                         <p>{{ $giong->kieuhinh->kieuhinh_ten }}</p>
                         <hr class="h-1 mt-0 bg-gradient-primary">
