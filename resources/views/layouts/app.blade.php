@@ -87,7 +87,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav slide-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('trangchu') }}">
                 <div class="sidebar-brand-icon ">
                     <img src="{{ asset('public/home/logo/AGU.png') }}" alt="" width="50" srcset="">
                 </div>

@@ -4,7 +4,7 @@
     <link rel="shortcut icon" href="{{ asset('/public/home/images/qlgl-logo-white-01-01.png') }}" type="image/x-icon">
     <!-- Custom fonts for this template-->
     <link href="{{asset('public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> --}}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital@1&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
 
     <style>
         @font-face{
@@ -88,6 +89,11 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-color: #4e73df;
+            color: #fff;
+        }
+
+        .bg-orange{
+            background-color:  #ED9900;
             color: #fff;
         }
 

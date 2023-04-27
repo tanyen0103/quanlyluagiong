@@ -53,6 +53,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('roles', RoleController::class);
 
+    Route::get('/trangchu', function () {
+        return view('trangchu');
+    })->name('trangchu');
+
     Route::get('/danhmuc', function () {
         return view('danhmuc');
     })->name('danhmuc');

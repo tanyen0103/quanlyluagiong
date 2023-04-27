@@ -150,11 +150,13 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
         $giatridosaubenh_giatri = '';
         foreach ($row->ChiTieuSauBenh as $ctsb) {
             $giatridosaubenh_giatri .= $ctsb->GiaTriDoSauBenh->pluck('giatridosaubenh_giatri')->implode(', ');
+
         }
 
 
+
         return [
-            $row->id,
+            //$i,
             // BelongTo
             $row->NhomGiong->nhomgiong_code,
             $row->KieuHinh->kieuhinh_ten,

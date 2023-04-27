@@ -214,10 +214,10 @@
                     </div>
                 </div>
                 <div class="input-group mb-2 col">
-                    <input type="text" class="form-control bg-light small" placeholder="Tìm kiếm giống lúa"
-                        aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInputCard">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                        aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="button-addon2-card">
+                        <button class="btn btn-primary" type="button" id="button-addon2">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
@@ -240,8 +240,8 @@
 
                             {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
 
-                            @csrf
-                            @method('DELETE')
+                            {{-- @csrf
+                            @method('DELETE') --}}
 
                             {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
                         </form>
