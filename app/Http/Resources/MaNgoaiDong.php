@@ -16,7 +16,7 @@ class MaNgoaiDong extends JsonResource
     {
         return [
             'id' => $this->id,
-            'giong_ten' => $this->Giong->giong_ten,
+            'giong_id' => $this->Giong->id,
             'field_code' => $this->field_code,
             'field_mota' => $this->field_mota,
             'created_at' => $this->created_at->format('d/m/Y'),

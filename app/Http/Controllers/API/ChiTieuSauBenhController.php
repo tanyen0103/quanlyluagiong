@@ -67,7 +67,7 @@ class ChiTieuSauBenhController extends Controller
         $chitieusaubenh->save($input);
         $arr = [
             'status' => true,
-            'message' => "chỉ tiêu ngoài đồng đã lưu thành công",
+            'message' => "chỉ tiêu sâu bệnh đã lưu thành công",
             'data' => new ResourcesChiTieuSauBenh($chitieusaubenh)
         ];
         return response()->json($arr, 201);

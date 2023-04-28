@@ -16,7 +16,7 @@ class GiaTriDoSauBenh extends JsonResource
     {
         return [
             'id' => $this->id,
-            'giong_ten'=> $this->ChiTieuSauBenh->Giong->giong_ten ,
+            'giong_id'=> $this->ChiTieuSauBenh->Giong->id ,
             'chitieusaubenh_chonloc'=> $this->ChiTieuSauBenh->chitieusaubenh_chonloc ,
             'chitieusaubenh_danhgia'=> $this->ChiTieuSauBenh->chitieusaubenh_danhgia ,
 

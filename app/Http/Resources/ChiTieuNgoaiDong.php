@@ -16,7 +16,7 @@ class ChiTieuNgoaiDong extends JsonResource
     {
         return [
             'id' => $this->id,
-            'giong_ten' => $this->Giong->giong_ten,
+            'giong_id' => $this->Giong->id,
             'chitieungoaidong_phienla' => $this->chitieungoaidong_phienla,
             'chitieungoaidong_taila'=> $this->chitieungoaidong_taila,
             'chitieungoaidong_gocnhanh'=> $this->chitieungoaidong_gocnhanh,

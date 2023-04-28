@@ -105,7 +105,7 @@ class ChiTieuTrongNhaController extends Controller
         }
         $arr = [
             'status' => true,
-            'message' => 'Chi tiết chỉ tiêu ngoài đồng',
+            'message' => 'Chi tiết chỉ tiêu trong nhà',
             'data' => new ResourcesChiTieuTrongNha($chitieutrongnha)
         ];
         return response()->json($arr, 201);
