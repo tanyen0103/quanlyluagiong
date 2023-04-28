@@ -214,10 +214,10 @@
                     </div>
                 </div>
                 <div class="input-group mb-2 col">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
-                        aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInput">
+                    <input type="text" class="form-control bg-light small" placeholder="Tìm kiếm giống"
+                        aria-label="Tìm kiếm" aria-describedby="button-addon2" id="searchInputCard">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="button-addon2">
+                        <button class="btn btn-primary" type="button" id="button-addon2-card">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
@@ -226,32 +226,30 @@
         </div>
         <div class="container d-flex justify-content-center flex-wrap">
             @foreach ($giongs as $item)
-                <div class="card bg-card m-1 d-flex justify-content-center border border-secondary" style="width: 13rem; box-shadow: 0 0 1px #000;">
+                <div class="card bg-card border-0 m-1" style="width: 13rem; box-shadow: 0 0 1px #000;">
                     <div class="card-img-top card-hover ">
                         <img onclick="openModal(this);" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="{{ $item->giong_ten }}"  width="100%">
                     </div>
                     <div class="card-body">
-                    <h5 class="card-title text-center bg-light pt-1 pb-1 text-primary rounded-bottom">{{ $item->giong_ten }}</h5>
-                    <p class="card-text text-center">{{ $item->giong_mota }}</p>
-                    <div class="d-flex justify-content-center">
-                        <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
+                        <h5 class="card-title text-center bg-light pt-1 pb-1 text-primary rounded-bottom">{{ $item->giong_ten}}</h5>
+                        <div class="d-flex justify-content-center">
+                            <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                            <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                            {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
+                                {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
 
-                            {{-- @csrf
-                            @method('DELETE') --}}
+                                {{-- @csrf
+                                @method('DELETE') --}}
 
-                            {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
-                        </form>
-                    </div>
+                                {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
+                            </form>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
     @endrole
-
 
     {{-- Trả dữ liệu truy vấn - kiểu dữ liệu Object--}}
     {{-- @php

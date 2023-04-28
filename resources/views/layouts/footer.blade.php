@@ -112,12 +112,12 @@
             var searchValue = $("#searchInputCard").val().toLowerCase();
             var resultsFound = false;
 
-            $("h5.card-title").each(function(){
-                var titleText = $(this).text().toLowerCase();
-                if(titleText.indexOf(searchValue) == -1){
-                    $(this).closest(".card").hide();
+            $(".card").each(function(){
+                var cardText = $(this).text().toLowerCase();
+                if(cardText.indexOf(searchValue) == -1){
+                    $(this).hide();
                 } else {
-                    $(this).closest(".card").show();
+                    $(this).show();
                     resultsFound = true;
                 }
             });

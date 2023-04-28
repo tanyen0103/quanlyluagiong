@@ -190,21 +190,21 @@
             @foreach ($nhomgiongs as $item)
                 <div class="card bg-card border-0 m-1" style="width: 13rem; box-shadow: 0 0 1px #000;">
                     <div class="card-body">
-                    <h5 class="card-title text-center bg-light pt-1 pb-1 text-primary rounded-bottom">{{ $item->nhomgiong_code}}</h5>
-                    <p class="card-text text-center">{{ $item->nhomgiong_ten }}</p>
-                    <div class="d-flex justify-content-center">
-                        <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
+                        <h5 class="card-title text-center bg-light pt-1 pb-1 text-primary rounded-bottom">{{ $item->nhomgiong_code}}</h5>
+                        <p class="card-text text-center">{{ $item->nhomgiong_ten }}</p>
+                        <div class="d-flex justify-content-center">
+                            <form action="{{ route('nhomgiongs.destroy',$item->id) }}" method="POST">
 
-                            <a class="btn btn-info mt-1" href="{{ route('nhomgiongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                <a class="btn btn-info mt-1" href="{{ route('nhomgiongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                            {{-- <a class="btn btn-primary mt-1" href="{{ route('nhomgiongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
+                                {{-- <a class="btn btn-primary mt-1" href="{{ route('nhomgiongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
 
-                            {{-- @csrf
-                            @method('DELETE') --}}
+                                {{-- @csrf
+                                @method('DELETE') --}}
 
-                            {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
-                        </form>
-                    </div>
+                                {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
+                            </form>
+                        </div>
                     </div>
                 </div>
             @endforeach
