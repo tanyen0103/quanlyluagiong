@@ -61,19 +61,44 @@
                             <td>
                                 <img onclick="openModal(this);" class="d-block" src="{{ env('STORAGE_URL') . $item->loaisaubenh_hinhanh }}" alt="{{ $item->loaisaubenh_ten }}"  width="100" height="100">
                             </td>
-                            <td>
-                                <form action="{{ route('loaisaubenhs.destroy',$item->id) }}" method="POST">
+                            @role('Admin')
+                                <td>
+                                    <form action="{{ route('loaisaubenhs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info mt-1" href="{{ route('loaisaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('loaisaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary mt-1" href="{{ route('loaisaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('loaisaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
-                                    @csrf
-                                    @method('DELETE')
+                                        @csrf
+                                        @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
-                                </form>
-                            </td>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                    </form>
+                                </td>
+                            @endrole
+                            @role('Supermanager')
+                                <td>
+                                    <form action="{{ route('loaisaubenhs.destroy',$item->id) }}" method="POST">
+
+                                        <a class="btn btn-info mt-1" href="{{ route('loaisaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+
+                                        <a class="btn btn-primary mt-1" href="{{ route('loaisaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                    </form>
+                                </td>
+                            @endrole
+                            @role('Staff')
+                                <td>
+                                    <form action="{{ route('loaisaubenhs.destroy',$item->id) }}" method="POST">
+
+                                        <a class="btn btn-info mt-1" href="{{ route('loaisaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                    </form>
+                                </td>
+                            @endrole
                         </tr>
                     </tbody>
                     @endforeach

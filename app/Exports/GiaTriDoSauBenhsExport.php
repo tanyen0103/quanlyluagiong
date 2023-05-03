@@ -25,7 +25,7 @@ class GiaTriDoSauBenhsExport implements FromCollection, WithHeadings, WithCustom
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
 
             'Nhóm giống',
             'Giống',
@@ -42,8 +42,11 @@ class GiaTriDoSauBenhsExport implements FromCollection, WithHeadings, WithCustom
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
+
         return [
-            $row->id,
+            $i,
 
             $row->ChiTieuSauBenh->Giong->NhomGiong->nhomgiong_code,
             $row->ChiTieuSauBenh->Giong->giong_ten,

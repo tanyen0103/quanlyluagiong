@@ -110,9 +110,9 @@
                                                 Nhóm giống</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNhomGiongs }}</div>
                                         </div>
-                                        <div class="col-auto">
+                                        {{-- <div class="col-auto">
                                             <i class="fa-sharp fa-solid fa-layer-group fa-3x text-primary"></i>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -127,9 +127,9 @@
                                                 Giống</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalGiongs }}</div>
                                         </div>
-                                        <div class="col-auto">
+                                        {{-- <div class="col-auto">
                                             <i class="fa-sharp fa-solid fa-seedling fa-3x text-success"></i>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -145,9 +145,9 @@
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalLoaiSauBenhs }}</div>
                                         </div>
-                                        <div class="col-auto">
+                                        {{-- <div class="col-auto">
                                             <i class="fa-sharp fa-solid fa-mosquito fa-3x text-warning"></i>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
         <div id="giongs-list" class="card shadow mb-3 border-bottom-primary">
             {{-- Card header --}}
             <div class=" card-header bg-gradient-primary py-3 d-flex justify-content-center">
-                <h3 class="m-0 font-weight-bold text-white">THỐNG KÊ GIỐNG LÚA</h3>
+                <h3 class="m-0 font-weight-bold text-white">DỮ LIỆU GIỐNG LÚA</h3>
             </div>
             <div class="card-body">
                 <div class="row d-flex justify-content-center">
@@ -204,9 +204,9 @@
                                 {{-- <th colspan="{{ 12 + $numColumnnds }}">Chỉ tiêu ngoài đồng</th>
                                 <th colspan="{{ 9 + $numColumntns }}">Chỉ tiêu trong nhà</th>
                                 <th colspan="{{ 2 + $numColumnsbs }}">Chỉ tiêu sâu bệnh</th> --}}
-                                <th colspan="64" class="text-center">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="63" class="text-center">Chỉ tiêu trong nhà</th>
-                                <th colspan="80" class="text-center">Chỉ tiêu sâu bệnh</th>
+                                <th colspan="15" class="text-center">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="12" class="text-center">Chỉ tiêu trong nhà</th>
+                                <th colspan="5" class="text-center">Chỉ tiêu sâu bệnh</th>
                             </tr>
                             <tr>
                                 <th>No</th>
@@ -228,7 +228,12 @@
                                 <th>Dáng bông</th>
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
-                                <th colspan="10">Cao cây</th>
+
+                                <th>Loại giá trị đo</th>
+                                <th>Giá trị</th>
+                                <th>Đơn vị</th>
+
+                                {{-- <th colspan="10">Cao cây</th>
                                 <th>TB</th>
                                 <th>SD</th>
                                 <th>M&plusmn;SD</th>
@@ -246,11 +251,10 @@
                                 <th colspan="10">Rộng lá</th>
                                 <th>TB</th>
                                 <th>SD</th>
-                                <th>M&plusmn;SD</th>
+                                <th>M&plusmn;SD</th> --}}
+
                                 {{-- <th colspan="{{ $numColumnnds }}">Loại giá trị đo</th> --}}
-                                {{-- <th>Loại giá trị đo</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th> --}}
+
 
 
                                 <th>Gié C2</th>
@@ -259,7 +263,16 @@
                                 <th>Dạng thóc</th>
                                 <th>Màu sắc gạo</th>
 
-                                <th colspan="5">D Gạo</th>
+                                <th>Trọng lượng 1000 hạt</th>
+                                <th>Độ ẩm</th>
+                                <th>Thơm</th>
+                                <th>Đánh giá</th>
+
+                                <th>Loại giá trị đo</th>
+                                <th>Giá trị</th>
+                                <th>Đơn vị</th>
+
+                                {{-- <th colspan="5">D Gạo</th>
                                 <th colspan="5">G Gạo</th>
 
                                 <th colspan="10">Dài bông (cm)</th>
@@ -275,35 +288,29 @@
                                 <th colspan="10">Số hạt lép</th>
                                 <th>TB</th>
                                 <th>SD</th>
-                                <th>M&plusmn;SD</th>
+                                <th>M&plusmn;SD</th> --}}
 
-                                <th>Trọng lượng 1000 hạt</th>
-                                <th>Độ ẩm</th>
-                                <th>Thơm</th>
-                                <th>Đánh giá</th>
+
                                 {{-- <th colspan="{{ $numColumntns }}">Loại giá trị đo</th> --}}
-                                {{-- <th>Loại giá trị đo</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th> --}}
+
 
                                 {{-- Sau Benh  --}}
-                                <th colspan="10">1. Bệnh đạo ôn hại lá Pyricularia oryzae</th>
+                                {{-- <th colspan="10">1. Bệnh đạo ôn hại lá Pyricularia oryzae</th>
                                 <th colspan="10">2. Bệnh đạo ôn cổ bông Pyricularia oryzae</th>
                                 <th colspan="10">3. Bệnh bạc lá Xanthomonas oryzae pv. Oryzal</th>
                                 <th colspan="10">4. Bệnh khô vằn  Rhizoctonia solani</th>
                                 <th colspan="10">5. Sâu đục thân</th>
                                 <th colspan="10">6. Sâu cuốn lá Cnaphalocrosis</th>
                                 <th colspan="10">7. Rầy nâu (Ninaparvata lugens)</th>
-                                <th colspan="10">8. Mũi hành Orseolia oryzae</th>
-                                {{-- <th>Chọn lọc</th>
-                                <th>Đánh giá khác</th> --}}
+                                <th colspan="10">8. Mũi hành Orseolia oryzae</th> --}}
+
                                 {{-- <th colspan="{{ $numColumnsbs }}">Loại sâu bệnh</th> --}}
-                                {{-- <th>Loại sâu bệnh</th>
+
+                                <th>Loại sâu bệnh</th>
                                 <th>Giá trị</th>
-                                <th>Đơn vị</th> --}}
-
-
-
+                                <th>Đơn vị</th>
+                                <th>Chọn lọc</th>
+                                <th>Đánh giá khác</th>
                             </tr>
                         </thead>
                         @foreach ($giongs as $item)
@@ -386,7 +393,7 @@
                                         <div>{{ $ctnd->chitieungoaidong_rau }}</div>
                                     @endforeach
                                 </td>
-                                {{-- <td>
+                                <td>
                                     @foreach ($item->ChiTieuNgoaiDong as $ctnd)
                                             @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
                                                     <div>
@@ -415,9 +422,9 @@
                                                     <br>
                                             @endforeach
                                     @endforeach
-                                </td> --}}
+                                </td>
                                 {{-- Cao cay  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -430,10 +437,10 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                 {{-- So choi  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -446,10 +453,10 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                 {{-- Dai la  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -462,10 +469,10 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                 {{-- Rong la  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -478,7 +485,7 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                 {{-- Chỉ tiêu trong nhà  --}}
                                     <td>
@@ -508,21 +515,21 @@
                                 </td>
 
                                 {{-- D Gao  --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                  {{-- G Gao  --}}
+                                 {{-- <td></td>
                                  <td></td>
                                  <td></td>
                                  <td></td>
-                                 <td></td>
-                                 <td></td>
+                                 <td></td> --}}
 
                                  {{-- Dai bong  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -535,10 +542,10 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                  {{-- So hat chac  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -551,10 +558,10 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
 
                                 {{-- So hat lep  --}}
-                                <td></td>
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -567,7 +574,7 @@
 
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 <td>
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                         <div>{{ $cttn->chitieutrongnha_tl1000hat }}</div>
@@ -588,7 +595,7 @@
                                         <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                {{-- <td >
+                                <td >
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                             @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
                                                 <div>
@@ -617,10 +624,11 @@
                                                 <br>
                                             @endforeach
                                     @endforeach
-                                </td> --}}
+                                </td>
 
                                 {{-- CHỈ TIÊU SÂU BỆNH --}}
                                 {{-- 1. Bệnh đạo ôn hại lá Pyricularia oryzae --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -629,9 +637,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 2. Bệnh đạo ôn cổ bông Pyricularia oryzae --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -640,9 +648,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 3. Bệnh bạc lá Xanthomonas oryzae pv. Oryzal --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -651,9 +659,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 4. Bệnh khô vằn  Rhizoctonia solani --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -662,9 +670,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 5. Sâu đục thân --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -673,9 +681,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 6. Sâu cuốn lá Cnaphalocrosis --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -684,9 +692,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 7. Rầy nâu (Ninaparvata lugens) --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -695,9 +703,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> --}}
                                 {{-- 8. Mũi hành Orseolia oryzae --}}
+                                {{-- <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -706,26 +714,15 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                        <div>{{ $ctsb->chitieusaubenh_chonloc }}</div>
-                                    @endforeach
-                                </td>
-                                <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                        <div>{{ $ctsb->chitieusaubenh_danhgia }}</div>
-                                    @endforeach
-                                </td> --}}
+                                <td></td> --}}
 
-                                {{-- <td>
+                                <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_ten }}</div>
                                             @endforeach
                                     @endforeach
-                                </td> --}}
+                                </td>
 
                                 {{-- <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
@@ -734,7 +731,7 @@
                                             @endforeach
                                     @endforeach
                                 </td> --}}
-                                {{-- <td>
+                                <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                             @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
                                                 <div>{{ $gtdsb->giatridosaubenh_giatri }} </div>
@@ -747,7 +744,17 @@
                                                 <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
                                             @endforeach
                                     @endforeach
-                                </td> --}}
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                        <div>{{ $ctsb->chitieusaubenh_chonloc }}</div>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                        <div>{{ $ctsb->chitieusaubenh_danhgia }}</div>
+                                    @endforeach
+                                </td>
                                 {{-- @for ($i = 1; $i <= $numColumnsbs; $i++)
                                     <td> </td>
                                 @endfor --}}

@@ -31,10 +31,10 @@ class RoleController extends Controller
     public function index()
     {
 
-        $roles = Role::oldest()->paginate(4);
+        $roles = Role::oldest()->paginate(100);
 
         return view('admin.roles.index', ["title" => "Bảng quyền"],
-                        compact('roles'))->with('i', (request()->input('page', 1) - 1) * 4);
+                        compact('roles'))->with('i', (request()->input('page', 1) - 1) * 100);
 
     }
 

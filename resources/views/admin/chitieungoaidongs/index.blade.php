@@ -63,7 +63,7 @@
                     @foreach ($chitieungoaidongs as $item)
                     <tbody>
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            <td>{{ $item->i }}</td>
                             <td>{{ $item->Giong->giong_ten }}</td>
                             <td>{{ $item->chitieungoaidong_phienla }}</td>
                             <td>{{ $item->chitieungoaidong_taila }}</td>
@@ -97,7 +97,6 @@
             </div>
         </div>
     </div>
-
     {!! $chitieungoaidongs->links() !!}
 
 @endsection

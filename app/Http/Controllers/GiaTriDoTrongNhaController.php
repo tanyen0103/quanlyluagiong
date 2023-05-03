@@ -40,10 +40,10 @@ class GiaTriDoTrongNhaController extends Controller
     {
         $giatridotrongnhas = GiaTriDoTrongNha::with('chitieutrongnha')
         ->orderBy('chitieutrongnha_id', 'asc')
-        ->paginate(4);
+        ->paginate(100);
 
         return view('admin.giatridotrongnhas.index', ["title" => "Bảng giá trị đo trong nhà"],
-                    compact('giatridotrongnhas'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('giatridotrongnhas'))->with('i', (request()->input('page', 1) - 1) * 100);
 
     }
 

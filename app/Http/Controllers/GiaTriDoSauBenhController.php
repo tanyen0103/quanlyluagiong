@@ -40,10 +40,10 @@ class GiaTriDoSauBenhController extends Controller
         $giatridosaubenhs = GiaTriDoSauBenh::with('ChiTieuSauBenh', 'LoaiSauBenh')
         ->orderBy('chitieusaubenh_id', 'asc')
         ->orderBy('loaisaubenh_id', 'asc')
-        ->paginate(4);
+        ->paginate(100);
 
         return view('admin.giatridosaubenhs.index', ["title" => "Bảng giá trị đo sâu bệnh"],
-                    compact('giatridosaubenhs'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('giatridosaubenhs'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

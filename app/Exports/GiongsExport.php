@@ -24,7 +24,7 @@ class GiongsExport implements FromCollection, WithHeadings, WithCustomStartCell,
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Nhóm giống',
             'Tên kiểu hình',
             'Mã ngoài đồng',
@@ -37,12 +37,14 @@ class GiongsExport implements FromCollection, WithHeadings, WithCustomStartCell,
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
         // HasMany
         $mangoaidong_code = $row->MaNgoaiDong->pluck('field_code')->implode(', ');
         $ptn_code = $row->MaPTN->pluck('ptn_code')->implode(', ');
 
         return [
-            $row->id,
+            $i,
             // BelongTo
             $row->NhomGiong->nhomgiong_code,
             $row->KieuHinh->kieuhinh_ten,

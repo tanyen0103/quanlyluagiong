@@ -36,10 +36,10 @@ class GiaTriTinhTrangController extends Controller
      */
     public function index()
     {
-        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(4);
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(100);
 
         return view('admin.giatritinhtrangs.index', ["title" => "Bảng giá trị tính trạng"],
-                    compact('giatritinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('giatritinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

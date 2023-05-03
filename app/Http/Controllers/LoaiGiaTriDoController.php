@@ -26,10 +26,10 @@ class LoaiGiaTriDoController extends Controller
      */
     public function index()
     {
-        $loaigiatridos = LoaiGiaTriDo::oldest()->paginate(4);
+        $loaigiatridos = LoaiGiaTriDo::oldest()->paginate(100);
 
         return view('admin.loaigiatridos.index', ["title" => "Bảng loại giá trị đo"],
-                    compact('loaigiatridos'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('loaigiatridos'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

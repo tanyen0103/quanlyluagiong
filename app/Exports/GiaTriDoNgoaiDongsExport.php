@@ -23,7 +23,7 @@ class GiaTriDoNgoaiDongsExport implements FromCollection, WithHeadings, WithCust
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Nhóm giống',
             'Mã ngoài đồng',
             'Giống',
@@ -46,10 +46,13 @@ class GiaTriDoNgoaiDongsExport implements FromCollection, WithHeadings, WithCust
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
+
         $mangoaidong_code = $row->ChiTieuNgoaiDong->Giong->MaNgoaiDong->pluck('field_code')->implode(', ');
 
         return [
-            $row->id,
+            $i,
             $row->ChiTieuNgoaiDong->Giong->NhomGiong->nhomgiong_code,
             $mangoaidong_code,
             $row->ChiTieuNgoaiDong->Giong->giong_ten,

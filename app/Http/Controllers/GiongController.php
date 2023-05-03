@@ -44,9 +44,9 @@ class GiongController extends Controller
         // $giongs = Giong::oldest()->paginate(4);
         $giongs = Giong::with('nhomgiong')
             ->orderBy('nhomgiong_id', 'asc')
-            ->paginate();
+            ->paginate(100);
         return view('admin.giongs.index', ["title" => "Bảng giống"],
-                    compact('giongs'))->with('i', (request()->input('page', 1) - 1));
+                    compact('giongs'))->with('i', (request()->input('page', 1) - 1)*100);
     }
 
     /**

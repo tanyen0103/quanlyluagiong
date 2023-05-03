@@ -47,7 +47,7 @@ class DashboardController extends Controller
 
         $giongs = Giong::with('nhomgiong')
         ->orderBy('nhomgiong_id', 'asc')
-        ->paginate(5);
+        ->paginate(100);
 
         // Create an array of labels with the new values
         $labels = [
@@ -67,7 +67,7 @@ class DashboardController extends Controller
             'totalChiTieuTrongNhas' => $totalChiTieuTrongNhas,
 
             'giongs' => $giongs
-        ])->with('i', (request()->input('page', 1) - 1) * 5);
+        ])->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

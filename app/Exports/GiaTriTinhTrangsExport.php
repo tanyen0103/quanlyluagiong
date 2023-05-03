@@ -22,7 +22,7 @@ class GiaTriTinhTrangsExport implements FromCollection, WithHeadings, WithCustom
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Đối tượng tính trạng',
             'Mô tả',
 
@@ -35,9 +35,11 @@ class GiaTriTinhTrangsExport implements FromCollection, WithHeadings, WithCustom
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
 
         return [
-            $row->id,
+            $i,
 
             $row->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_ten,
             $row->DacDiemTinhTrang->DoiTuongTinhTrang->doituongtt_mota,

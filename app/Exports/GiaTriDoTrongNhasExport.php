@@ -22,7 +22,7 @@ class GiaTriDoTrongNhasExport implements FromCollection, WithHeadings, WithCusto
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Nhóm giống',
             'Mã phòng thí nghiệm',
             'Giống',
@@ -42,9 +42,12 @@ class GiaTriDoTrongNhasExport implements FromCollection, WithHeadings, WithCusto
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
+
         $ptn_code = $row->ChiTieuTrongNha->Giong->MaPTN->pluck('ptn_code')->implode(', ');
         return [
-            $row->id,
+            $i,
             $row->ChiTieuTrongNha->Giong->NhomGiong->nhomgiong_code,
             $ptn_code,
             $row->ChiTieuTrongNha->Giong->giong_ten ,

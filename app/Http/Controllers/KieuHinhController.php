@@ -35,10 +35,10 @@ class KieuHinhController extends Controller
      */
     public function index()
     {
-        $kieuhinhs = KieuHinh::oldest()->paginate(4);
+        $kieuhinhs = KieuHinh::oldest()->paginate(100);
 
         return view('admin.kieuhinhs.index', ["title" => "Bảng kiểu hình"],
-                    compact('kieuhinhs'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('kieuhinhs'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

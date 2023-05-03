@@ -22,7 +22,7 @@ class NhomGiongsExport implements FromCollection, WithHeadings, WithCustomStartC
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Mã nhóm',
             'Tên nhóm',
             'Mô tả',
@@ -32,8 +32,11 @@ class NhomGiongsExport implements FromCollection, WithHeadings, WithCustomStartC
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
+
         return [
-            $row->id,
+            $i,
             $row->nhomgiong_code,
             $row->nhomgiong_ten,
             $row->nhomgiong_mota,

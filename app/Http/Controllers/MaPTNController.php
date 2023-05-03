@@ -27,10 +27,10 @@ class MaPTNController extends Controller
      */
     public function index()
     {
-        $maptns = MaPTN::oldest()->paginate(4);
+        $maptns = MaPTN::oldest()->paginate(100);
 
         return view('admin.maptns.index', ["title" => "Bảng mã phòng thí nghiệm"],
-                    compact('maptns'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('maptns'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

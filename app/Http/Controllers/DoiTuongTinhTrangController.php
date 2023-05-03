@@ -27,10 +27,10 @@ class DoiTuongTinhTrangController extends Controller
      */
     public function index()
     {
-        $doituongtinhtrangs = DoiTuongTinhTrang::orderBy('doituongtt_ten', 'asc')->paginate(4);
+        $doituongtinhtrangs = DoiTuongTinhTrang::orderBy('doituongtt_ten', 'asc')->paginate(100);
 
         return view('admin.doituongtinhtrangs.index', ["title" => "Bảng đối tượng tính trạng"],
-                    compact('doituongtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('doituongtinhtrangs'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

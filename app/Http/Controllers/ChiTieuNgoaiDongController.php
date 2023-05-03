@@ -33,7 +33,7 @@ class ChiTieuNgoaiDongController extends Controller
         ->paginate(100);
 
         return view('admin.chitieungoaidongs.index', ["title" => "Bảng chỉ tiêu ngoài đồng"],
-                    compact('chitieungoaidongs'))->with('i', (request()->input('page', 1) - 1) * 100);
+                    compact('chitieungoaidongs'))->with('i', (request()->input('page', 1) - 1)*100);
     }
 
     /**

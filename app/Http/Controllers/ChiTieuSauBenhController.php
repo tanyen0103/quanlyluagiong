@@ -28,7 +28,8 @@ class ChiTieuSauBenhController extends Controller
     public function index()
     {
         $chitieusaubenhs = ChiTieuSauBenh::with('giong')
-        ->orderBy('giong_id', 'asc')->paginate(100);
+        ->orderBy('giong_id', 'asc')
+        ->paginate(100);
 
         return view('admin.chitieusaubenhs.index', ["title" => "Bảng chỉ tiêu sâu bệnh"],
                     compact('chitieusaubenhs'))->with('i', (request()->input('page', 1) - 1) * 100);

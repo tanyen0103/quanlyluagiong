@@ -24,7 +24,7 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
     public function headings(): array
     {
         return [
-            'No',
+            'STT',
             'Nhóm',
             'Kiểu hình',
             'Mã ngoài đồng',
@@ -70,6 +70,8 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
 
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
         // HasMany
         $mangoaidong_code = $row->MaNgoaiDong->pluck('field_code')->implode(', ');
         $ptn_code = $row->MaPTN->pluck('ptn_code')->implode(', ');
@@ -156,7 +158,8 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
 
 
         return [
-            //$i,
+            $i,
+
             // BelongTo
             $row->NhomGiong->nhomgiong_code,
             $row->KieuHinh->kieuhinh_ten,

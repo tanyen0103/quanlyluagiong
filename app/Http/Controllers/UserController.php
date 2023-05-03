@@ -41,10 +41,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::oldest()->paginate(4);
+        $data = User::oldest()->paginate(100);
 
         return view('admin.users.index', ["title" => "Bảng tài khoản"],
-                    compact('data'))->with('i', (request()->input('page', 1) - 1) * 4);
+                    compact('data'))->with('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**

@@ -22,15 +22,18 @@ class KieuHinhsExport implements FromCollection, WithHeadings, WithCustomStartCe
     public function headings(): array
     {
         return [
-            'stt',
+            'STT',
             'Tên kiểu hình',
             'Mô tả',
         ];
     }
     public function map($row): array
     {
+        static $i = 0;
+        $i++;
+
         return [
-            $row->id,
+            $i,
             $row->kieuhinh_ten,
             $row->kieuhinh_mota,
         ];

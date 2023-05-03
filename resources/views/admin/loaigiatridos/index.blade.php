@@ -46,7 +46,12 @@
                             <th>No</th>
                             <th>Tên</th>
                             <th>Đơn vị</th>
-                            <th width='160px'></th>
+                            @role('Admin')
+                                <th width='160px'></th>
+                            @endrole
+                            @role('Supermanager')
+                                <th width='160px'></th>
+                            @endrole
                         </tr>
                     </thead>
                     @foreach ($loaigiatridos as $item)
@@ -55,19 +60,37 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $item->loaigiatrido_ten }}</td>
                             <td>{{ $item->loaigiatrido_donvi }}</td>
-                            <td>
-                                <form action="{{ route('loaigiatridos.destroy',$item->id) }}" method="POST">
+                            @role('Admin')
+                                <td>
+                                    <form action="{{ route('loaigiatridos.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info mt-1" href="{{ route('loaigiatridos.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('loaigiatridos.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary mt-1" href="{{ route('loaigiatridos.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('loaigiatridos.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
 
-                                    @csrf
-                                    @method('DELETE')
+                                        @csrf
+                                        @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
-                                </form>
-                            </td>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                    </form>
+                                </td>
+                            @endrole
+                            @role('Supermanager')
+                                <td>
+                                    <form action="{{ route('loaigiatridos.destroy',$item->id) }}" method="POST">
+
+                                        <a class="btn btn-info mt-1" href="{{ route('loaigiatridos.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+
+                                        <a class="btn btn-primary mt-1" href="{{ route('loaigiatridos.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                    </form>
+                                </td>
+                            @endrole
+
                         </tr>
                     </tbody>
                     @endforeach

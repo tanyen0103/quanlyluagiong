@@ -111,7 +111,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -143,7 +143,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -200,11 +200,11 @@
                 <hr class="sidebar-divider">
             @endrole
 
-            {{-- Supermanager  --}}
-            @role('Supermanager')
+            {{-- SuperStaff  --}}
+            @role('SuperStaff')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người quản lí -->
                 <li class="nav-item">
@@ -237,7 +237,7 @@
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -294,11 +294,11 @@
                 <hr class="sidebar-divider">
             @endrole
 
-            {{-- Manager --}}
-            @role('Manager')
+            {{-- Staff --}}
+            @role('Staff')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('danhmuc') }}"><i class="fa-solid fa-eye"></i> DANH MỤC</a>
+                    <a class="text-light" href="{{ route('danhmuc') }}"> DANH MỤC</a>
                 </div>
                 <!-- Nav Item - Người dùng -->
                 <li class="nav-item">
@@ -320,13 +320,13 @@
                             <hr>
                             <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> GT Tính trạng</a>
                             <hr>
-                            <a class="collapse-item text-danger" href="">Quyền: Manager</a>
+                            <a class="collapse-item text-danger" href="">Quyền: Staff</a>
                         </div>
                     </div>
                 </li>
 
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('chitieu') }}"><i class="fa-solid fa-eye"></i> CHỈ TIÊU</a>
+                    <a class="text-light" href="{{ route('chitieu') }}"> CHỈ TIÊU</a>
                 </div>
                 <!-- Nav Item - Ngoài đồng -->
                 <li class="nav-item">
@@ -386,7 +386,7 @@
             @role('Admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    <a class="text-light" href="{{ route('quanlytaikhoan') }}"><i class="fa-solid fa-eye"></i>  TÀI KHOẢN</a>
+                    <a class="text-light" href="{{ route('quanlytaikhoan') }}">  TÀI KHOẢN</a>
                 </div>
 
                 <!-- Nav Item - Quản lí tài khoản -->
@@ -431,7 +431,8 @@
 
                     <!-- Topbar Time -->
                     <div class="text-danger mt-3 d-none d-lg-inline">
-                        <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fa-solid fa-fire"></i></p>
+                        {{-- <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fa-solid fa-fire"></i></p> --}}
+                        <p id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</p>
                     </div>
 
                     <div class="container">
