@@ -40,6 +40,20 @@
                 </div>
                 <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
                     <div class="form-group">
+                        <strong>Ngày trổ bông:</strong>
+                        {{  $giong->giong_ngaytrobong }}
+                    </div>
+                    <hr class="h-1 mt-0 bg-gradient-primary">
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
+                        <strong>Ngày chín:</strong>
+                        {{  $giong->giong_ngaychin }}
+                    </div>
+                    <hr class="h-1 mt-0 bg-gradient-primary">
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 mr-2 ml-2">
+                    <div class="form-group">
                         <strong>Giống:</strong>
                         <p>{{ $giong->giong_ten }}</p>
                         <hr class="h-1 mt-0 bg-gradient-primary">

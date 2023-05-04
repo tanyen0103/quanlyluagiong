@@ -24,6 +24,7 @@ use App\Http\Controllers\ChiTieuNgoaiDongController;
 use App\Http\Controllers\DacDiemTinhTrangController;
 use App\Http\Controllers\GiaTriDoTrongNhaController;
 use App\Http\Controllers\DoiTuongTinhTrangController;
+use App\Http\Controllers\DuLieuGiongLuaController;
 use App\Http\Controllers\GiaTriDoNgoaiDongController;
 use App\Http\Controllers\GiaiDoanTruongThanhController;
 
@@ -73,8 +74,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users-export', [UserController::class, 'fileExport'])->name('users.export');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('dashboards-export', [DashboardController::class, 'fileExport'])->name('dashboards.export');
     Route::get('thongkes-export', [DashboardController::class, 'fileExportThongKe'])->name('thongkes.export');
+
+    Route::get('dulieu', [DuLieuGiongLuaController::class, 'index'])->name('dulieu');
+    Route::get('dashboards-export', [DuLieuGiongLuaController::class, 'fileExport'])->name('dashboards.export');
 
 
     Route::resource('nhomgiongs', NhomGiongController::class);

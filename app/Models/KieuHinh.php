@@ -20,6 +20,6 @@ class KieuHinh extends Model
 
     public function Giong()
     {
-    return $this->hasMany(Giong::class, 'kieuhinh_id', 'id');
+    return $this->hasOne(Giong::class, 'kieuhinh_id', 'id');
     }
 }

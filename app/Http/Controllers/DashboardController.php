@@ -10,19 +10,12 @@ use Illuminate\Http\Request;
 use App\Exports\ThongKesExport;
 use App\Models\ChiTieuSauBenh;
 use App\Models\ChiTieuTrongNha;
-use App\Exports\DashBoardsExport;
 use App\Models\ChiTieuNgoaiDong;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardController extends Controller
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function fileExport()
-    {
-        return Excel::download(new DashBoardsExport, 'giongs-danhsach.xlsx');
-    }
+
 
     /**
     * @return \Illuminate\Support\Collection

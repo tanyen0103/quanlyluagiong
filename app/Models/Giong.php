@@ -24,6 +24,9 @@ class Giong extends Model
         'giong_nguongoc',
         'giong_mota',
         'giong_hinhanh',
+
+        'giong_ngaytrobong',
+        'giong_ngaychin',
     ];
 
     public function MaNgoaiDong(){

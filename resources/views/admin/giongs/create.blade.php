@@ -54,6 +54,24 @@
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
+                    <strong>Ngày trổ bông:</strong>
+                    <input type="date" value="{{old('giong_ngaytrobong')}}" name="giong_ngaytrobong" @error('giong_ngaytrobong') is-invalid @enderror class="form-control" >
+                    @error('giong_ngaytrobong')
+                        <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
+                <div class="form-group">
+                    <strong>Ngày chín:</strong>
+                    <input type="date" value="{{old('giong_ngaychin')}}" name="giong_ngaychin" @error('giong_ngaychin') is-invalid @enderror" class="form-control" >
+                    @error('giong_ngaychin')
+                        <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
+                <div class="form-group">
                     <label for="giong_ten">Tên giống <span class="text-danger font-weight-bold">*</span></label>
                     <input id="giong_ten" type="text" class="form-control @error('giong_ten') is-invalid @enderror" name="giong_ten" value="{{ old('giong_ten') }}" required autocomplete="giong_ten" />
                     @error('giong_ten')

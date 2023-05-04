@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('giong_hinhanh', 255)->nullable();
             $table->foreignId('nhomgiong_id')->constrained('nhomgiong');
             $table->foreignId('kieuhinh_id')->constrained('kieuhinh');
+            $table->date('giong_ngaytrobong')->nullable();
+            $table->date('giong_ngaychin')->nullable();
 
             $table->timestamps();
             $table->engine = 'InnoDB';

@@ -68,55 +68,6 @@ class GiongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'giong_ten' => ['required','max:255'],
-    //         'nhomgiong_id' => ['required'],
-    //         'kieuhinh_id' => ['required'],
-    //         'giong_nguongoc' => [''],
-    //         'giong_mota' => [''],
-    //         'giong_hinhanh' => ['mimes:jpeg,png,jpg,gif,svg','max:2048']
-    //     ]);
-
-    //     $g = new Giong();
-    //     $g->giong_ten = $request->giong_ten;
-    //     $g->giong_ten_slug = Str::slug($request->giong_ten);
-    //     $g->nhomgiong_id = $request->nhomgiong_id;
-    //     $g->kieuhinh_id = $request->kieuhinh_id;
-    //     $g->giong_nguongoc = $request->giong_nguongoc;
-    //     $g->giong_mota = $request->giong_mota;
-
-    //     // Check if directory exists and create it if necessary
-    //     if (!File::isDirectory($g->giong_ten)) {
-    //         Storage::makeDirectory($g->giong_ten_slug, 0775);
-    //     }
-
-    //     if ($request->hasFile('giong_hinhanh')) {
-    //         // Delete old image (if any)
-    //         if ($g->giong_hinhanh) {
-    //             Storage::delete($g->giong_hinhanh);
-    //         }
-
-    //         // Save new image
-    //         $originalName = $request->file('giong_hinhanh')->getClientOriginalName();
-    //         $extension = $request->file('giong_hinhanh')->getClientOriginalExtension();
-    //         $fileName = Str::slug($request->giong_ten) .'_'. time() . '.' . $extension;
-    //         $path = $request->file('giong_hinhanh')->storeAs($g->giong_ten_slug, $fileName);
-
-    //     }
-
-    //     if(!file_exists($path->giong_hinhanh))
-    //     {
-    //         $path = "storage/app/images/default/image_default.jpg";
-    //     }
-
-    //     $g->giong_hinhanh = $path;
-    //     $g->save();
-
-    //     return redirect()->route('giongs.index')
-    //                     ->with('success','Giống được tạo thành công.');
-    // }
     public function store(Request $request)
 {
     $request->validate([
@@ -125,7 +76,9 @@ class GiongController extends Controller
         'kieuhinh_id' => ['required'],
         'giong_nguongoc' => [''],
         'giong_mota' => [''],
-        'giong_hinhanh' => ['mimes:jpeg,png,jpg,gif,svg','max:2048']
+        'giong_hinhanh' => ['mimes:jpeg,png,jpg,gif,svg','max:2048'],
+        'giong_ngaytrobong'=> [''],
+        'giong_ngaychin'=> [''],
     ]);
 
     $g = new Giong();
@@ -135,6 +88,8 @@ class GiongController extends Controller
     $g->kieuhinh_id = $request->kieuhinh_id;
     $g->giong_nguongoc = $request->giong_nguongoc;
     $g->giong_mota = $request->giong_mota;
+    $g->giong_ngaytrobong = $request->giong_ngaytrobong;
+    $g->giong_ngaychin = $request->giong_ngaychin;
 
     // Check if directory exists and create it if necessary
     if (!File::isDirectory($g->giong_ten)) {
@@ -210,7 +165,9 @@ class GiongController extends Controller
             'kieuhinh_id' => ['required'],
             'giong_nguongoc' => [''],
             'giong_mota' => [''],
-            'giong_hinhanh' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048']
+            'giong_hinhanh' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048'],
+            'giong_ngaytrobong'=> [''],
+            'giong_ngaychin'=> [''],
         ]);
 
 
@@ -235,6 +192,8 @@ class GiongController extends Controller
         $giong->kieuhinh_id = $request->kieuhinh_id;
         $giong->giong_nguongoc = $request->giong_nguongoc;
         $giong->giong_mota = $request->giong_mota;
+        $giong->giong_ngaytrobong = $request->giong_ngaytrobong;
+        $giong->giong_ngaychin = $request->giong_ngaychin;
         if($request->hasFile('giong_hinhanh'))
             $giong->giong_hinhanh = $path;
         $giong->save();

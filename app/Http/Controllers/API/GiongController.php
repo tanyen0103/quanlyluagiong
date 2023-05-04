@@ -52,7 +52,9 @@ class GiongController extends Controller
             'kieuhinh_id' => ['required'],
             'giong_nguongoc' => [''],
             'giong_mota' => [''],
-            'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048']
+            'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048'],
+            'giong_ngaytrobong' => [''],
+            'giong_ngaychin' => [''],
         ]);
 
         if ($validator->fails()) {
@@ -77,6 +79,8 @@ class GiongController extends Controller
         $g->kieuhinh_id = $request->kieuhinh_id;
         $g->giong_nguongoc = $request->giong_nguongoc;
         $g->giong_mota = $request->giong_mota;
+        $g->giong_ngaytrobong = $request->giong_ngaytrobong;
+        $g->giong_ngaychin = $request->giong_ngaychin;
         $g->giong_hinhanh = $path;
         $g->save($input);
         $arr = [

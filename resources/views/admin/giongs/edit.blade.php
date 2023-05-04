@@ -57,6 +57,18 @@
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
+                    <strong>Ngày trổ bông:</strong>
+                    <input type="date" value="{{ $giong->giong_ngaytrobong }}" name="giong_ngaytrobong" @error('giong_ngaytrobong') is-invalid @enderror class="form-control" >
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
+                <div class="form-group">
+                    <strong>Ngày chín:</strong>
+                    <input type="date" value="{{ $giong->giong_ngaychin }}" name="giong_ngaychin" @error('giong_ngaychin') is-invalid @enderror class="form-control" >
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
+                <div class="form-group">
                     <label for="giong_ten">Tên giống<span class="text-danger font-weight-bold">*</span></label>
                     <input type="text" value="{{ $giong->giong_ten }}" @error('giong_ten') is-invalid @enderror name="giong_ten" class="form-control" placeholder="Tên giống">
                     @error('giong_ten')

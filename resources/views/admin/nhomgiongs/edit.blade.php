@@ -59,7 +59,7 @@
                     <div class="form-group">
                         <strong>Ngày cấy:</strong>
                         <input type="date" value="{{ $nhomgiong->nhomgiong_ngaycay }}" name="nhomgiong_ngaycay" @error('nhomgiong_ngaycay') is-invalid @enderror class="form-control" >
-                </div>
+                    </div>
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                         <button type="submit" class="btn btn-primary">Cập nhật</button>

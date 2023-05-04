@@ -51,9 +51,9 @@
                             <th>Dạng thóc</th>
                             <th>Màu sắc gạo</th>
                             <th>Trọng lượng 1000 hạt</th>
-                            <th>Độ ẩm</th>
+                            <th>H% ẩm độ</th>
                             <th>Thơm</th>
-                            <th>Đánh giá</th>
+                            <th>Ghi chú</th>
                             <th width='160px'></th>
                         </tr>
                     </thead>

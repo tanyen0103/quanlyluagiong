@@ -63,7 +63,7 @@
                     @foreach ($chitieungoaidongs as $item)
                     <tbody>
                         <tr>
-                            <td>{{ $item->i }}</td>
+                            <td>{{ ++$i }}</td>
                             <td>{{ $item->Giong->giong_ten }}</td>
                             <td>{{ $item->chitieungoaidong_phienla }}</td>
                             <td>{{ $item->chitieungoaidong_taila }}</td>

@@ -17,6 +17,8 @@ class Giong extends JsonResource
         return [
             'id' => $this->id,
             'giong_ten' => $this->giong_ten,
+            'giong_ngaytrobong'=> $this->giong_ngaytrobong,
+            'giong_ngaychin'=> $this->giong_ngaychin,
             'nhomgiong_id' => $this->NhomGiong->id,
             'kieuhinh_id' => $this->KieuHinh->id,
             'giong_nguongoc' => $this->giong_nguongoc,

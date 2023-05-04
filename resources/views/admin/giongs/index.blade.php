@@ -53,6 +53,8 @@
                                 <th>No</th>
                                 <th>Nhóm</th>
                                 <th>Kiểu hình</th>
+                                <th>Ngày trổ bông</th>
+                                <th>Ngày chín</th>
                                 <th>Mã ngoài đồng</th>
                                 <th>Mã phòng thí nghiệm</th>
                                 <th>Tên</th>
@@ -70,6 +72,8 @@
                                 <td>{{ $item->NhomGiong->nhomgiong_code }}</td>
                                 <td>{{ $item->KieuHinh->kieuhinh_ten}}</td>
 
+                                <td>{{ $item->giong_ngaytrobong }}</td>
+                                <td>{{ $item->giong_ngaychin }}</td>
                                 {{-- HasMany --}}
                                 <td>
                                     @foreach ($item->MaNgoaiDong as $field)
@@ -81,6 +85,7 @@
                                         <div>{{ $ptn->ptn_code }}</div>
                                     @endforeach
                                 </td>
+
                                 <td>{{ $item->giong_ten }}</td>
                                 <td>{{ $item->giong_nguongoc }}</td>
                                 <td>{{ $item->giong_mota }}</td>
