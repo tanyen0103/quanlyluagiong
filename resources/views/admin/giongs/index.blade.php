@@ -95,14 +95,14 @@
                                 <td>
                                     <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                                        <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                        <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a>
 
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -152,6 +152,8 @@
                                 <th>No</th>
                                 <th>Nhóm</th>
                                 <th>Kiểu hình</th>
+                                <th>Ngày trổ bông</th>
+                                <th>Ngày chín</th>
                                 <th>Mã ngoài đồng</th>
                                 <th>Mã phòng thí nghiệm</th>
                                 <th>Tên</th>
@@ -169,6 +171,8 @@
                                 <td>{{ $item->NhomGiong->nhomgiong_code }}</td>
                                 <td>{{ $item->KieuHinh->kieuhinh_ten}}</td>
 
+                                <td>{{ $item->giong_ngaytrobong }}</td>
+                                <td>{{ $item->giong_ngaychin }}</td>
                                 {{-- HasMany --}}
                                 <td>
                                     @foreach ($item->MaNgoaiDong as $field)
@@ -180,6 +184,7 @@
                                         <div>{{ $ptn->ptn_code }}</div>
                                     @endforeach
                                 </td>
+
                                 <td>{{ $item->giong_ten }}</td>
                                 <td>{{ $item->giong_nguongoc }}</td>
                                 <td>{{ $item->giong_mota }}</td>
@@ -189,14 +194,14 @@
                                 <td>
                                     <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                                        <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                        <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a>
 
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -240,14 +245,14 @@
                         <div class="d-flex justify-content-center">
                             <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                                <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
+                                {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a> --}}
 
                                 {{-- @csrf
                                 @method('DELETE') --}}
 
-                                {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
+                                {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button> --}}
                             </form>
                         </div>
                     </div>

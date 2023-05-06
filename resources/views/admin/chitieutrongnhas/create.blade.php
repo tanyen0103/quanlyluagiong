@@ -18,7 +18,7 @@
             <h3 class="m-0 font-weight-bold text-white">Thêm mới</h3>
         </div>
         <div class="">
-            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-lg">
                 <i class="fa-regular fa-note-sticky"></i>
               </button>
             <a class="btn btn-light" href="{{ route('chitieutrongnhas.index') }}">Trở về</a>
@@ -131,8 +131,8 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content ">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Ghi chú</h5>

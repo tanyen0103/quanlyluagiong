@@ -80,14 +80,14 @@
                             <td>
                                 <form class="d-flex"  action="{{ route('giatridosaubenhs.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info mt-1 mr-1" href="{{ route('giatridosaubenhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                    <a class="btn btn-info mt-1 mr-1" href="{{ route('giatridosaubenhs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                    <a class="btn btn-primary mt-1 mr-1" href="{{ route('giatridosaubenhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                    <a class="btn btn-primary mt-1 mr-1" href="{{ route('giatridosaubenhs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                    <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button>
                                 </form>
                             </td>
                         </tr>

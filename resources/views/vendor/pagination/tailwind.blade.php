@@ -22,24 +22,24 @@
                 @if ($paginator->onFirstPage())
                     <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-dark bg-white border rounded border-gray-300 cursor-default leading-5 rounded-md">
                         {{-- {!! __('pagination.previous') !!} --}}
-                        <i class="fa-solid fa-chevron-left"></i>
+                        <i class="fas fa-chevron-left"></i>
                     </span>
                 @else
                     <a href="{{ $paginator->previousPageUrl() }}" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-dark bg-white border rounded border-gray-300 leading-5 rounded-md hover:text-dark focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-dark transition ease-in-out duration-150 bg-primary text-light">
                         {{-- {!! __('pagination.previous') !!} --}}
-                        <i class="fa-solid fa-chevron-left"></i>
+                        <i class="fas fa-chevron-left"></i>
                     </a>
                 @endif
 
                 @if ($paginator->hasMorePages())
                     <a href="{{ $paginator->nextPageUrl() }}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-dark bg-white border rounded border-gray-300 leading-5 rounded-md hover:text-dark focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-dark transition ease-in-out duration-150 bg-primary text-light">
                         {{-- {!! __('pagination.next') !!} --}}
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right"></i>
                     </a>
                 @else
                     <span class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-dark bg-white border rounded border-gray-300 cursor-default leading-5 rounded-md">
                         {{-- {!! __('pagination.next') !!} --}}
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right"></i>
                     </span>
                 @endif
             </div>

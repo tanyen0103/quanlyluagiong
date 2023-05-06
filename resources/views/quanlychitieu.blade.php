@@ -63,90 +63,90 @@
     </div>
     <div class="container mb-3">
         <div class="d-flex justify-content-center">
-            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-sun"></i></h2>
+            <h2 class="font-weight-bold text-dark">NGOÀI ĐỒNG</h2>
         </div>
         <div class="row">
-            <div data-aos="fade-right" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+            <div data-aos="fade-right" class="col-lg col-md-12 mb-1">
+                <div class="bg-success card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('chitieungoaidongs.index') }}" class= "d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-left" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+            <div data-aos="fade-left" class="col-lg col-md-12 mb-1">
+                <div class="bg-success card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('giatridongoaidongs.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <hr class="bg-gradient-primary h-0_5r">
+        {{-- <hr class="bg-gradient-primary h-0_5r"> --}}
     </div>
 
     <div class="container mb-3">
         <div class="d-flex justify-content-center">
-            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-house"></i></h2>
+            <h2 class="font-weight-bold text-dark">TRONG NHÀ</h2>
         </div>
         <div class="row">
-            <div data-aos="fade-right" class="col-lg col-md-11 mb-1">
+            <div data-aos="fade-right" class="col-lg col-md-12 mb-1">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu trong nhà</p>
                     <div class="middle">
                         <a href="{{ route('chitieutrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-left" class="col-lg col-md-11 mb-1">
+            <div data-aos="fade-left" class="col-lg col-md-12 mb-1">
                 <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo ngoài đồng</p>
                     <div class="middle">
                         <a href="{{ route('giatridotrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <hr class="bg-gradient-primary h-0_5r">
+        {{-- <hr class="bg-gradient-primary h-0_5r"> --}}
     </div>
 
 
     <div class="container mb-3">
         <div class="d-flex justify-content-center">
-            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-bug"></i></h2>
+            <h2 class="font-weight-bold text-dark">SÂU BỆNH</h2>
         </div>
         <div class="row">
-            <div data-aos="fade-right" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+            <div data-aos="fade-right" class="col-lg col-md-12 mb-1">
+                <div class="bg-warning card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Chỉ tiêu sâu bệnh</p>
                     <div class="middle">
                         <a href="{{ route('chitieutrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-left" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
+            <div data-aos="fade-left" class="col-lg col-md-12 mb-1">
+                <div class="bg-warning card card-danhmuc d-flex justify-content-center align-items-center shadow">
                     <p class="text-light">Giá trị đo sâu bệnh</p>
                     <div class="middle">
                         <a href="{{ route('giatridotrongnhas.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <hr class="bg-gradient-primary h-0_5r">
+        {{-- <hr class="bg-gradient-primary h-0_5r"> --}}
     </div>
 
 @endsection

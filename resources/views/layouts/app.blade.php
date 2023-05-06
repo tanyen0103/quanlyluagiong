@@ -122,20 +122,20 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             {{-- <h6 class="collapse-header text-danger">Quản lý thông tin:</h6> --}}
-                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fa-solid fa-caret-right"></i> Nhóm giống</a>
-                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fa-solid fa-caret-right"></i> Kiểu hình</a>
-                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fa-solid fa-caret-right"></i> Giống</a>
+                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Nhóm giống</a>
+                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Kiểu hình</a>
+                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Giống</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('mangoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Mã ngoài đồng</a>
-                            <a class="collapse-item" href="{{ route('maptns.index') }}"><i class="fa-solid fa-caret-right"></i> Mã PTN</a>
+                            <a class="collapse-item" href="{{ route('mangoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Mã ngoài đồng</a>
+                            <a class="collapse-item" href="{{ route('maptns.index') }}"><i class="fas fa-fw fa-caret-right"></i> Mã PTN</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fa-solid fa-caret-right"></i> Loại GTD</a>
-                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Loại SB</a>
+                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại GTD</a>
+                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại SB</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}"><i class="fa-solid fa-caret-right"></i> GĐ Trưởng thành</a>
-                            <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> ĐT Tính trạng</a>
-                            <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> ĐĐ Tính trạng</a>
-                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> GT Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GĐ Trưởng thành</a>
+                            <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐT Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐĐ Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
                         </div>
                     </div>
                 </li>
@@ -156,8 +156,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu ngoài đồng:</h6>
-                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ Tiêu NĐ</a>
-                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Ngoài đồng</a>
+                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ Tiêu NĐ</a>
+                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Ngoài đồng</a>
                         </div>
                     </div>
                 </li>
@@ -173,8 +173,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu trong nhà:</h6>
-                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu TN</a>
-                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Trong nhà</a>
+                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu TN</a>
+                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Trong nhà</a>
                         </div>
                     </div>
                 </li>
@@ -190,8 +190,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu sâu bệnh:</h6>
-                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu SB</a>
-                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Sâu bệnh</a>
+                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu SB</a>
+                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Sâu bệnh</a>
                         </div>
                     </div>
                 </li>
@@ -201,7 +201,7 @@
             @endrole
 
             {{-- SuperStaff  --}}
-            @role('SuperStaff')
+            @role('Supermanager')
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     <a class="text-light" href="{{ route('danhmuc') }}"> DANH MỤC</a>
@@ -216,20 +216,20 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             {{-- <h6 class="collapse-header text-danger">Quản lý thông tin:</h6> --}}
-                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fa-solid fa-caret-right"></i> Nhóm giống</a>
-                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fa-solid fa-caret-right"></i> Kiểu hình</a>
-                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fa-solid fa-caret-right"></i> Giống</a>
+                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Nhóm giống</a>
+                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Kiểu hình</a>
+                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Giống</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('mangoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Mã ngoài đồng</a>
-                            <a class="collapse-item" href="{{ route('maptns.index') }}"><i class="fa-solid fa-caret-right"></i> Mã PTN</a>
+                            <a class="collapse-item" href="{{ route('mangoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Mã ngoài đồng</a>
+                            <a class="collapse-item" href="{{ route('maptns.index') }}"><i class="fas fa-fw fa-caret-right"></i> Mã PTN</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fa-solid fa-caret-right"></i> Loại GTD</a>
-                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Loại SB</a>
+                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại GTD</a>
+                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại SB</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}"><i class="fa-solid fa-caret-right"></i> GĐ Trưởng thành</a>
-                            <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> ĐT Tính trạng</a>
-                            <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> ĐĐ Tính trạng</a>
-                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> GT Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('giaidoantruongthanhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GĐ Trưởng thành</a>
+                            <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐT Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐĐ Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
                         </div>
                     </div>
                 </li>
@@ -250,8 +250,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu ngoài đồng:</h6>
-                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ Tiêu NĐ</a>
-                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Ngoài đồng</a>
+                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ Tiêu NĐ</a>
+                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Ngoài đồng</a>
                         </div>
                     </div>
                 </li>
@@ -267,8 +267,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu trong nhà:</h6>
-                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu TN</a>
-                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Trong nhà</a>
+                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu TN</a>
+                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Trong nhà</a>
                         </div>
                     </div>
                 </li>
@@ -284,8 +284,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu sâu bệnh:</h6>
-                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu SB</a>
-                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Sâu bệnh</a>
+                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu SB</a>
+                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Sâu bệnh</a>
                         </div>
                     </div>
                 </li>
@@ -311,14 +311,14 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             {{-- <h6 class="collapse-header">Manager:</h6> --}}
-                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fa-solid fa-caret-right"></i> Nhóm giống</a>
-                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fa-solid fa-caret-right"></i> Kiểu hình</a>
-                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fa-solid fa-caret-right"></i> Giống</a>
+                            <a class="collapse-item" href="{{ route('nhomgiongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Nhóm giống</a>
+                            <a class="collapse-item" href="{{ route('kieuhinhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Kiểu hình</a>
+                            <a class="collapse-item" href="{{ route('giongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Giống</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fa-solid fa-caret-right"></i> Loại GTD</a>
-                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Loại SB</a>
+                            <a class="collapse-item" href="{{ route('loaigiatridos.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại GTD</a>
+                            <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại SB</a>
                             <hr>
-                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fa-solid fa-caret-right"></i> GT Tính trạng</a>
+                            <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
                             <hr>
                             <a class="collapse-item text-danger" href="">Quyền: Staff</a>
                         </div>
@@ -339,8 +339,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu ngoài đồng:</h6>
-                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ Tiêu NĐ</a>
-                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Ngoài đồng</a>
+                            <a class="collapse-item" href="{{ route('chitieungoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ Tiêu NĐ</a>
+                            <a class="collapse-item" href="{{ route('giatridongoaidongs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Ngoài đồng</a>
                         </div>
                     </div>
                 </li>
@@ -355,8 +355,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu trong nhà:</h6>
-                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu TN</a>
-                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Trong nhà</a>
+                            <a class="collapse-item" href="{{ route('chitieutrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu TN</a>
+                            <a class="collapse-item" href="{{ route('giatridotrongnhas.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Trong nhà</a>
                         </div>
                     </div>
                 </li>
@@ -372,8 +372,8 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header text-danger">Chỉ tiêu sâu bệnh:</h6>
-                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> Chỉ tiêu SB</a>
-                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fa-solid fa-caret-right"></i> GTĐ Sâu bệnh</a>
+                            <a class="collapse-item" href="{{ route('chitieusaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Chỉ tiêu SB</a>
+                            <a class="collapse-item" href="{{ route('giatridosaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GTĐ Sâu bệnh</a>
                         </div>
                     </div>
                 </li>
@@ -398,8 +398,8 @@
                     </a>
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('users.index') }}"><i class="fa-solid fa-caret-right"></i> Tài khoản</a>
-                            <a class="collapse-item" href="{{ route('roles.index') }}"><i class="fa-solid fa-caret-right"></i> Phân quyền</a>
+                            <a class="collapse-item" href="{{ route('users.index') }}"><i class="fas fa-fw fa-caret-right"></i> Tài khoản</a>
+                            <a class="collapse-item" href="{{ route('roles.index') }}"><i class="fas fa-fw fa-caret-right"></i> Phân quyền</a>
                         </div>
                     </div>
                 </li>
@@ -431,7 +431,7 @@
 
                     <!-- Topbar Time -->
                     <div class="text-danger mt-3 d-none d-lg-inline">
-                        {{-- <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fa-solid fa-fire"></i></p> --}}
+                        {{-- <p> <span id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</span> <i class="fas fa-fw fa-fire"></i></p> --}}
                         <p id="current-time">{{ now(new DateTimeZone('Asia/Ho_Chi_Minh'))->format('d-m-Y H:i:s') }}</p>
                     </div>
 
@@ -451,7 +451,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="{{ route("docs") }}" class="btn btn-info btn-circle mb-2" title="Hướng dẫn">
                                     <span class="icon text-white-20">
-                                        <i class="fas fa-fw fa-file"></i>
+                                        <i class="fas fa-fw fa-file" style="font-size:1.5rem;"></i>
                                     </span>
                                 </a>
                             </li>
@@ -461,13 +461,13 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                        <i class="fa-sharp fa-solid fa-circle-user fa-2x " style="color: #2c407d;"></i>
+                                        <i class="fas fa-fw fa-user text-gray-400" style="font-size:1.5rem;"></i>
                                 </a>
 
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">
-                                        <i class="fa-solid fa-circle-info mr-2 text-gray-400"></i>
+                                        <i class="fas fa-fw fa-info mr-2 text-gray-400"></i>
                                         {{ __('Thông tin') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">
@@ -503,7 +503,7 @@
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
+        <i class="fas fa-angle-up" style="font-size: 1.5rem;"></i>
     </a>
 
     <!-- Logout Modal-->

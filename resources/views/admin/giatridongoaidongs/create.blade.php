@@ -22,9 +22,9 @@
 
         </div>
         <div class="">
-            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
+            {{-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fa-regular fa-note-sticky"></i>
-            </button>
+            </button> --}}
             <a class="btn btn-light" href="{{ route('giatridongoaidongs.index') }}">Trở về</a>
         </div>
     </div>

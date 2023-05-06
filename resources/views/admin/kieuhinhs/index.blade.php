@@ -65,14 +65,14 @@
                                 <td>
                                     <form  action="{{ route('kieuhinhs.destroy',$item->id) }}" method="POST">
 
-                                        <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                        <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a>
 
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -133,14 +133,14 @@
                                 <td>
                                     <form  action="{{ route('kieuhinhs.destroy',$item->id) }}" method="POST">
 
-                                        <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                                        <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                                        <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                        <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a>
 
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button>
+                                        <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -181,14 +181,14 @@
                     <div class="d-flex justify-content-center">
                         <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
 
-                            <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
+                            <a class="btn btn-info mt-1" href="{{ route('kieuhinhs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
 
-                            {{-- <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
+                            {{-- <a class="btn btn-primary mt-1" href="{{ route('kieuhinhs.edit',$item->id) }}" ><i class="fas fa-pen-to-square" title="chỉnh sửa"></i></a> --}}
 
                             {{-- @csrf
                             @method('DELETE') --}}
 
-                            {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fa-solid fa-trash" title="xoá"></i></button> --}}
+                            {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button> --}}
                         </form>
                     </div>
                     </div>

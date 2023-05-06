@@ -30,7 +30,7 @@
     }
 
     .middle a{
-        color: #fff;
+        color: #000000;
         width: 14rem;
         height: 8rem;
         border-radius: 3px;
@@ -48,9 +48,16 @@
       opacity: 0;
     }
 
+    .bg-taikhoan{
+            background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
+            background-repeat: no-repeat;
+            background-size: 100% 100rem;
+            background-color: #4e73df;
+    }
+
     </style>
     {{-- Nav Breadcrumb --}}
-    <div class="container">
+    <div class="container p-0">
         <div class="nav-breadcrumb bg-gray-100 text-lg">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb ">
@@ -60,27 +67,24 @@
             </nav>
         </div>
     </div>
-    <div class="container mb-3">
-        <div class="d-flex justify-content-center">
-            <h2 class="font-weight-bold text-uppercase text-dark"><i class="fa-solid fa-user"></i></h2>
-        </div>
+    <div class="container bg-taikhoan p-3 mb-3">
         <div class="row">
-            <div data-aos="fade-right" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Tài khoản</p>
+            <div data-aos="fade-right" class="col-lg col-md-12 mb-1">
+                <div class="bg-light card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                    <p class="text-dark">Tài khoản</p>
                     <div class="middle">
                         <a href="{{ route('users.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fas fa-user"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-left" class="col-lg col-md-11 mb-1">
-                <div class="bg-primary card card-danhmuc d-flex justify-content-center align-items-center shadow">
-                    <p class="text-light">Quyền</p>
+            <div data-aos="fade-left" class="col-lg col-md-12 mb-1">
+                <div class="bg-light card card-danhmuc d-flex justify-content-center align-items-center shadow">
+                    <p class="text-dark">Quyền</p>
                     <div class="middle">
                         <a href="{{ route('roles.index') }}" class=" d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-users"></i>
+                            <i class="fas fa-users"></i>
                         </a>
                     </div>
                 </div>

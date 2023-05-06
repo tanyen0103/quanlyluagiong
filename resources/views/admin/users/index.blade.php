@@ -52,10 +52,10 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-info mt-1" href="{{ route('users.show',$user->id) }}"><i class="fa-regular fa-eye" title="chi tiết"></i></a>
-                                <a class="btn btn-primary mt-1" href="{{ route('users.edit',$user->id) }}"><i class="fa-solid fa-pen-to-square" title="chỉnh sửa"></i></a>
+                                <a class="btn btn-info mt-1" href="{{ route('users.show',$user->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
+                                <a class="btn btn-primary mt-1" href="{{ route('users.edit',$user->id) }}"><i class="fas fa-pen" title="chỉnh sửa"></i></a>
                                 {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                {!! Form::button('<i class="fa-solid fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1', 'onclick' => "return confirmDelete()"]) !!}
+                                {!! Form::button('<i class="fas fa-trash" title="xoá"></i>', ['type' => 'submit', 'class' => 'btn btn-danger mt-1', 'onclick' => "return confirmDelete()"]) !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>
