@@ -14,16 +14,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $user = User::all();
-        $arr = [
-            'status' => true,
-            'message' => "Danh sách tài khoản",
-            'data'=>ResourcesUser::collection($user)
-        ];
-        return response()->json($arr, 200);
-    }
+    // public function index()
+    // {
+    //     $user = User::all();
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => "Danh sách tài khoản",
+    //         'data'=>ResourcesUser::collection($user)
+    //     ];
+    //     return response()->json($arr, 200);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -52,24 +52,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $user = User::find($id);
-        if(is_null($user)){
-            $arr = [
-                'success' => false,
-                'message' => 'Không có tài khoản này',
-                'data' => []
-            ];
-            return response()->json($arr, 200);
-        }
-        $arr = [
-            'status' => true,
-            'message' => 'Chi tiết tài khoản',
-            'data' => new ResourcesUser($user)
-        ];
-        return response()->json($arr, 201);
-    }
+    // public function show($id)
+    // {
+    //     $user = User::find($id);
+    //     if(is_null($user)){
+    //         $arr = [
+    //             'success' => false,
+    //             'message' => 'Không có tài khoản này',
+    //             'data' => []
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => 'Chi tiết tài khoản',
+    //         'data' => new ResourcesUser($user)
+    //     ];
+    //     return response()->json($arr, 201);
+    // }
 
     /**
      * Show the form for editing the specified resource.

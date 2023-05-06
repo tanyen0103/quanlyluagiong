@@ -43,53 +43,53 @@ class GiongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $input = $request->all();
-        $validator = Validator::make($input,[
-            'giong_ten' => ['required','unique:giong','max:255'],
-            'nhomgiong_id' => ['required'],
-            'kieuhinh_id' => ['required'],
-            'giong_nguongoc' => [''],
-            'giong_mota' => [''],
-            'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048'],
-            'giong_ngaytrobong' => [''],
-            'giong_ngaychin' => [''],
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $input = $request->all();
+    //     $validator = Validator::make($input,[
+    //         'giong_ten' => ['required','unique:giong','max:255'],
+    //         'nhomgiong_id' => ['required'],
+    //         'kieuhinh_id' => ['required'],
+    //         'giong_nguongoc' => [''],
+    //         'giong_mota' => [''],
+    //         'giong_hinhanh' => ['required','mimes:jpeg,png,jpg,gif,svg','max:2048'],
+    //         'giong_ngaytrobong' => [''],
+    //         'giong_ngaychin' => [''],
+    //     ]);
 
-        if ($validator->fails()) {
-            $arr = [
-                'success' => false,
-                'message' => 'Lỗi kiểm tra dữ liệu',
-                'data' => $validator->errors()
-            ];
-            return response()->json($arr, 200);
-        }
+    //     if ($validator->fails()) {
+    //         $arr = [
+    //             'success' => false,
+    //             'message' => 'Lỗi kiểm tra dữ liệu',
+    //             'data' => $validator->errors()
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
 
-        if ($request->hasFile('giong_hinhanh')) {
-            $file = $request->file('giong_hinhanh');
-		    $path = $request->giong_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $request->giong_hinhanh->extension());
+    //     if ($request->hasFile('giong_hinhanh')) {
+    //         $file = $request->file('giong_hinhanh');
+	// 	    $path = $request->giong_hinhanh->storeAs('images', Str::slug($request->loaisaubenh_ten) .'_'. time() . '.' . $request->giong_hinhanh->extension());
 
-        }
+    //     }
 
-        $g = new Giong($input);
-        $g->giong_ten = $request->giong_ten;
-        $g->giong_ten_slug = Str::slug($request->giong_ten);
-        $g->nhomgiong_id = $request->nhomgiong_id;
-        $g->kieuhinh_id = $request->kieuhinh_id;
-        $g->giong_nguongoc = $request->giong_nguongoc;
-        $g->giong_mota = $request->giong_mota;
-        $g->giong_ngaytrobong = $request->giong_ngaytrobong;
-        $g->giong_ngaychin = $request->giong_ngaychin;
-        $g->giong_hinhanh = $path;
-        $g->save($input);
-        $arr = [
-            'status' => true,
-            'message' => "Giống đã lưu thành công",
-            'data' => new ResourcesGiong($g)
-        ];
-        return response()->json($arr, 201);
-    }
+    //     $g = new Giong($input);
+    //     $g->giong_ten = $request->giong_ten;
+    //     $g->giong_ten_slug = Str::slug($request->giong_ten);
+    //     $g->nhomgiong_id = $request->nhomgiong_id;
+    //     $g->kieuhinh_id = $request->kieuhinh_id;
+    //     $g->giong_nguongoc = $request->giong_nguongoc;
+    //     $g->giong_mota = $request->giong_mota;
+    //     $g->giong_ngaytrobong = $request->giong_ngaytrobong;
+    //     $g->giong_ngaychin = $request->giong_ngaychin;
+    //     $g->giong_hinhanh = $path;
+    //     $g->save($input);
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => "Giống đã lưu thành công",
+    //         'data' => new ResourcesGiong($g)
+    //     ];
+    //     return response()->json($arr, 201);
+    // }
 
     /**
      * Display the specified resource.

@@ -42,7 +42,7 @@ Route::group([
     'prefix' => 'auth'
 ], function () {
     Route::post('login', [AuthController::class, 'login']);
-    Route::post('register', [AuthController::class, 'register']);
+    // Route::post('register', [AuthController::class, 'register']);
     Route::group([
         'middleware' => 'auth:api'
     ], function() {
@@ -57,19 +57,21 @@ Route::resource('kieuhinhs', KieuHinhController::class);
 
 Route::resource('giongs', GiongController::class);
 
-Route::resource('mangoaidongs', MaNgoaiDongController::class);
+// Route::resource('mangoaidongs', MaNgoaiDongController::class);
 
-Route::resource('maptns', MaPTNController::class);
+// Route::resource('maptns', MaPTNController::class);
 
-Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
+// Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
 
-Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
+// Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
 
-Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
+// Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
 
 Route::resource('giatritinhtrangs', GiaTriTinhTrangController::class);
 
 Route::resource('loaigiatridos', LoaiGiaTriDoController::class);
+
+Route::resource('loaisaubenhs', LoaiSauBenhController::class);
 
 Route::resource('chitieungoaidongs', ChiTieuNgoaiDongController::class);
 
@@ -81,11 +83,9 @@ Route::resource('giatridotrongnhas', GiaTriDoTrongNhaController::class);
 
 Route::resource('chitieusaubenhs', ChiTieuSauBenhController::class);
 
-Route::resource('loaisaubenhs', LoaiSauBenhController::class);
-
 Route::resource('giatridosaubenhs', GiaTriDoSauBenhController::class);
 
-Route::resource('users', UserController::class);
+// Route::resource('users', UserController::class);
 
 
 

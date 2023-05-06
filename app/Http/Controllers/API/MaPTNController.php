@@ -14,16 +14,16 @@ class MaPTNController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $maptn = MaPTN::all();
-        $arr = [
-        'status' => true,
-        'message' => "Danh sách mã phòng thí nghiệm",
-        'data'=>ResourcesMaPTN::collection($maptn)
-        ];
-        return response()->json($arr, 200);
-    }
+    // public function index()
+    // {
+    //     $maptn = MaPTN::all();
+    //     $arr = [
+    //     'status' => true,
+    //     'message' => "Danh sách mã phòng thí nghiệm",
+    //     'data'=>ResourcesMaPTN::collection($maptn)
+    //     ];
+    //     return response()->json($arr, 200);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -52,24 +52,24 @@ class MaPTNController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $maptn = MaPTN::find($id);
-        if(is_null($maptn)){
-            $arr = [
-                'success' => false,
-                'message' => 'Không có mã phòng thí nghiệm này',
-                'data' => []
-            ];
-            return response()->json($arr, 200);
-        }
-        $arr = [
-            'status' => true,
-            'message' => 'Chi tiết mã phòng thí nghiệm',
-            'data' => new ResourcesMaPTN($maptn)
-        ];
-        return response()->json($arr, 201);
-    }
+    // public function show($id)
+    // {
+    //     $maptn = MaPTN::find($id);
+    //     if(is_null($maptn)){
+    //         $arr = [
+    //             'success' => false,
+    //             'message' => 'Không có mã phòng thí nghiệm này',
+    //             'data' => []
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => 'Chi tiết mã phòng thí nghiệm',
+    //         'data' => new ResourcesMaPTN($maptn)
+    //     ];
+    //     return response()->json($arr, 201);
+    // }
 
     /**
      * Show the form for editing the specified resource.

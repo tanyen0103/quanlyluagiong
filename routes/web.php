@@ -48,6 +48,10 @@ Route::get('/docs', function () {
     return view('docs');
 })->name('docs');
 
+Route::get('/apidocs', function () {
+    return view('apidocs');
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {

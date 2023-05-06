@@ -15,16 +15,16 @@ class GiaiDoanTruongThanhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $giaidoantruongthanh = GiaiDoanTruongThanh::all();
-        $arr = [
-        'status' => true,
-        'message' => "Danh sách giai đoạn trưởng thành",
-        'data'=>ResourcesGiaiDoanTruongThanh::collection($giaidoantruongthanh)
-        ];
-        return response()->json($arr, 200);
-    }
+    // public function index()
+    // {
+    //     $giaidoantruongthanh = GiaiDoanTruongThanh::all();
+    //     $arr = [
+    //     'status' => true,
+    //     'message' => "Danh sách giai đoạn trưởng thành",
+    //     'data'=>ResourcesGiaiDoanTruongThanh::collection($giaidoantruongthanh)
+    //     ];
+    //     return response()->json($arr, 200);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -42,29 +42,29 @@ class GiaiDoanTruongThanhController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $input = $request->all();
-        $validator = Validator::make($input,[
-            'giaidoantt_ten' =>'required|max:255',
-            'giaidoantt_mota' => ''
-        ]);
-        if ($validator->fails()) {
-            $arr = [
-                'success' => false,
-                'message' => 'Lỗi kiểm tra dữ liệu',
-                'data' => $validator->errors()
-            ];
-            return response()->json($arr, 200);
-        }
-        $giaidoantruongthanh = GiaiDoanTruongThanh::create($input);
-        $arr = [
-            'status' => true,
-            'message' => "Giai đoạn trưởng thành đã lưu thành công",
-            'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
-        ];
-        return response()->json($arr, 201);
-    }
+    // public function store(Request $request)
+    // {
+    //     $input = $request->all();
+    //     $validator = Validator::make($input,[
+    //         'giaidoantt_ten' =>'required|max:255',
+    //         'giaidoantt_mota' => ''
+    //     ]);
+    //     if ($validator->fails()) {
+    //         $arr = [
+    //             'success' => false,
+    //             'message' => 'Lỗi kiểm tra dữ liệu',
+    //             'data' => $validator->errors()
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
+    //     $giaidoantruongthanh = GiaiDoanTruongThanh::create($input);
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => "Giai đoạn trưởng thành đã lưu thành công",
+    //         'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
+    //     ];
+    //     return response()->json($arr, 201);
+    // }
 
     /**
      * Display the specified resource.
@@ -72,24 +72,24 @@ class GiaiDoanTruongThanhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $giaidoantruongthanh = GiaiDoanTruongThanh::find($id);
-        if(is_null($giaidoantruongthanh)){
-            $arr = [
-                'success' => false,
-                'message' => 'Không có giai đoạn trưởng thành này',
-                'data' => []
-            ];
-            return response()->json($arr, 200);
-        }
-        $arr = [
-            'status' => true,
-            'message' => 'Chi tiết giai đoạn trưởng thành',
-            'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
-        ];
-        return response()->json($arr, 201);
-    }
+    // public function show($id)
+    // {
+    //     $giaidoantruongthanh = GiaiDoanTruongThanh::find($id);
+    //     if(is_null($giaidoantruongthanh)){
+    //         $arr = [
+    //             'success' => false,
+    //             'message' => 'Không có giai đoạn trưởng thành này',
+    //             'data' => []
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => 'Chi tiết giai đoạn trưởng thành',
+    //         'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
+    //     ];
+    //     return response()->json($arr, 201);
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,31 +109,31 @@ class GiaiDoanTruongThanhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GiaiDoanTruongThanh $giaidoantruongthanh)
-    {
-        $input = $request->all();
-        $validator = Validator::make($input,[
-            'giaidoantt_ten' =>'required|max:255',
-            'giaidoantt_mota' => ''
-        ]);
-        if ($validator->fails()) {
-            $arr = [
-                'success' =>false,
-                'message' => 'Lỗi kiểm tra dữ liệu',
-                'data' => $validator->errors()
-            ];
-            return response()->json($arr, 200);
-        }
-        $giaidoantruongthanh->giaidoantt_ten = $input['giaidoantt_ten'];
-        $giaidoantruongthanh->giaidoantt_mota = $input['giaidoantt_mota'];
-        $giaidoantruongthanh->save();
-        $arr = [
-            'status' => true,
-            'message' => 'Giai đoạn trưởng thành đã cập nhật thành công',
-            'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
-        ];
-        return response() ->json($arr, 201);
-    }
+    // public function update(Request $request, GiaiDoanTruongThanh $giaidoantruongthanh)
+    // {
+    //     $input = $request->all();
+    //     $validator = Validator::make($input,[
+    //         'giaidoantt_ten' =>'required|max:255',
+    //         'giaidoantt_mota' => ''
+    //     ]);
+    //     if ($validator->fails()) {
+    //         $arr = [
+    //             'success' =>false,
+    //             'message' => 'Lỗi kiểm tra dữ liệu',
+    //             'data' => $validator->errors()
+    //         ];
+    //         return response()->json($arr, 200);
+    //     }
+    //     $giaidoantruongthanh->giaidoantt_ten = $input['giaidoantt_ten'];
+    //     $giaidoantruongthanh->giaidoantt_mota = $input['giaidoantt_mota'];
+    //     $giaidoantruongthanh->save();
+    //     $arr = [
+    //         'status' => true,
+    //         'message' => 'Giai đoạn trưởng thành đã cập nhật thành công',
+    //         'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
+    //     ];
+    //     return response() ->json($arr, 201);
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -141,14 +141,14 @@ class GiaiDoanTruongThanhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GiaiDoanTruongThanh $giaidoantruongthanh)
-    {
-        $giaidoantruongthanh->delete();
-        $arr = [
-            'status' => true,
-            'message' =>'Giai đoạn trưởng thành đã được xoá',
-            'data' => [],
-        ];
-        return response()->json($arr, 200);
-    }
+    // public function destroy(GiaiDoanTruongThanh $giaidoantruongthanh)
+    // {
+    //     $giaidoantruongthanh->delete();
+    //     $arr = [
+    //         'status' => true,
+    //         'message' =>'Giai đoạn trưởng thành đã được xoá',
+    //         'data' => [],
+    //     ];
+    //     return response()->json($arr, 200);
+    // }
 }
