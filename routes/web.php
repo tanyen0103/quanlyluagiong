@@ -56,7 +56,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('roles', RoleController::class);
 
     Route::get('/trangchu', function () {
         return view('trangchu');
@@ -76,6 +75,8 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('users', UserController::class);
     Route::get('users-export', [UserController::class, 'fileExport'])->name('users.export');
+
+    Route::resource('roles', RoleController::class);
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('thongkes-export', [DashboardController::class, 'fileExportThongKe'])->name('thongkes.export');
@@ -127,11 +128,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('giatridosaubenhs-export', [GiaTriDoSauBenhController::class, 'fileExport'])->name('giatridosaubenhs.export');
 
     Route::resource('giatridochitiets', GiaTriDoChiTietController::class);
-
-    // Backup
-    Route::get('/backup/run', function () {
-        Artisan::call('backup:run');
-        return redirect()->back()->with('success', 'Backup has been run successfully!');
-    })->name('backup.run');
 
 });
