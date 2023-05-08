@@ -15,16 +15,16 @@ class DacDiemTinhTrangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $dacdiemtinhtrang = DacDiemTinhTrang::all();
-    //     $arr = [
-    //     'status' => true,
-    //     'message' => "Danh sách đặc điểm tính trạng",
-    //     'data'=>ResourcesDacDiemTinhTrang::collection($dacdiemtinhtrang)
-    //     ];
-    //     return response()->json($arr, 200);
-    // }
+    public function index()
+    {
+        $dacdiemtinhtrang = DacDiemTinhTrang::all();
+        $arr = [
+        'status' => true,
+        'message' => "Danh sách đặc điểm tính trạng",
+        'data'=>ResourcesDacDiemTinhTrang::collection($dacdiemtinhtrang)
+        ];
+        return response()->json($arr, 200);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -76,25 +76,25 @@ class DacDiemTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
+    public function show($id)
+    {
 
-    //     $dacdiemtinhtrang = DacDiemTinhTrang::find($id);
-    //     if(is_null($dacdiemtinhtrang)){
-    //         $arr = [
-    //             'success' => false,
-    //             'message' => 'Không có đặc điểm tính trạng này',
-    //             'data' => []
-    //         ];
-    //         return response()->json($arr, 200);
-    //     }
-    //     $arr = [
-    //         'status' => true,
-    //         'message' => 'Chi tiết đặc điểm tính trạng',
-    //         'data' => new ResourcesDacDiemTinhTrang($dacdiemtinhtrang)
-    //     ];
-    //     return response()->json($arr, 201);
-    // }
+        $dacdiemtinhtrang = DacDiemTinhTrang::find($id);
+        if(is_null($dacdiemtinhtrang)){
+            $arr = [
+                'success' => false,
+                'message' => 'Không có đặc điểm tính trạng này',
+                'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => true,
+            'message' => 'Chi tiết đặc điểm tính trạng',
+            'data' => new ResourcesDacDiemTinhTrang($dacdiemtinhtrang)
+        ];
+        return response()->json($arr, 201);
+    }
 
     /**
      * Show the form for editing the specified resource.

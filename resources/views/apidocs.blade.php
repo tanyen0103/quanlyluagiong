@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital@1&display=swap" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        .bg-gray-100{
+            background-color: #f3eded96;
+        }
+    </style>
 </head>
 <body>
     <header class="container-fluid card mb-4">
@@ -65,7 +70,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/nhomgiongs/{id}</td>
-                        <td>Lấy nhóm giống phù hợp</td>
+                        <td>Lấy nhóm giống có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -89,7 +94,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/kieuhinhs/{id}</td>
-                        <td>Lấy kiểu hình phù hợp</td>
+                        <td>Lấy kiểu hình có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -113,7 +118,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/giongs/{id}</td>
-                        <td>Lấy giống phù hợp</td>
+                        <td>Lấy giống có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -137,7 +142,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/loaigiatridos/{id}</td>
-                        <td>Lấy loại giá trị đo phù hợp</td>
+                        <td>Lấy loại giá trị đo có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -161,16 +166,17 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/loaisaubenhs/{id}</td>
-                        <td>Lấy loại sâu bệnh phù hợp</td>
+                        <td>Lấy loại sâu bệnh có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
+
         {{-- GiaTriTinhTrang API  --}}
         <section class="mb-5">
-            <h2>giatritinhtrangs</h2>
-            <p>Giá trị tính trạng</p>
+            <h2>Các tính trạng</h2>
+            <p>Tính trạng giống lúa</p>
             <table class="table border">
                 <thead class="thead-light">
                     <tr class="text-bold">
@@ -180,12 +186,39 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td> <span class="badge badge-primary">GET</span> api/giaidoantruongthanhs</td>
+                        <td>Lấy tất cả giai đoạn trưởng thành</td>
+                    </tr>
+                    <tr >
+                        <td> <span class="badge badge-primary">GET</span> api/giaidoantruongthanhs/{id}</td>
+                        <td>Lấy giai đoạn trưởng thành có id phù hợp</td>
+                    </tr>
+                    {{-- ----------------------------- --}}
+                    <tr class="bg-gray-100">
+                        <td> <span class="badge badge-primary">GET</span> api/doituongtinhtrangs</td>
+                        <td>Lấy tất cả đối tượng tính trạng</td>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <td> <span class="badge badge-primary">GET</span> api/doituongtinhtrangs/{id}</td>
+                        <td>Lấy đối tượng tính trạng có id phù hợp</td>
+                    </tr>
+                    {{-- ----------------------------- --}}
+                    <tr>
+                        <td> <span class="badge badge-primary">GET</span> api/dacdiemtinhtrangs</td>
+                        <td>Lấy tất cả đặc điểm tính trạng</td>
+                    </tr>
+                    <tr >
+                        <td> <span class="badge badge-primary">GET</span> api/dacdiemtinhtrangs/{id}</td>
+                        <td>Lấy đặc điểm tính trạng có id phù hợp</td>
+                    </tr>
+                    {{-- ----------------------------- --}}
+                    <tr class="bg-gray-100">
                         <td> <span class="badge badge-primary">GET</span> api/giatritinhtrangs</td>
                         <td>Lấy tất cả giá trị tính trạng</td>
                     </tr>
-                    <tr>
+                    <tr class="bg-gray-100">
                         <td> <span class="badge badge-primary">GET</span> api/giatritinhtrangs/{id}</td>
-                        <td>Lấy giá trị tính trạng phù hợp</td>
+                        <td>Lấy giá trị tính trạng có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -209,7 +242,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/chitieungoaidongs/{id}</td>
-                        <td>Lấy giá trị chỉ tiêu ngoài đồng phù hợp</td>
+                        <td>Lấy giá trị chỉ tiêu ngoài đồng có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/chitieungoaidongs</td>
@@ -217,11 +250,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/chitieungoaidongs/{id}</td>
-                        <td>Sửa một chỉ tiêu ngoài đồng phù hợp</td>
+                        <td>Sửa một chỉ tiêu ngoài đồng có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/chitieungoaidongs/{id}</td>
-                        <td>Xóa chỉ tiêu ngoài đồng phù hợp</td>
+                        <td>Xóa chỉ tiêu ngoài đồng có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -245,7 +278,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/giatridongoaidongs/{id}</td>
-                        <td>Lấy giá trị giá trị đo ngoài đồng phù hợp</td>
+                        <td>Lấy giá trị giá trị đo ngoài đồng có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/giatridongoaidongs</td>
@@ -253,11 +286,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/giatridongoaidongs/{id}</td>
-                        <td>Sửa một giá trị đo ngoài đồng phù hợp</td>
+                        <td>Sửa một giá trị đo ngoài đồng có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/giatridongoaidongs/{id}</td>
-                        <td>Xóa giá trị đo ngoài đồng phù hợp</td>
+                        <td>Xóa giá trị đo ngoài đồng có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -281,7 +314,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/chitieutrongnhas/{id}</td>
-                        <td>Lấy giá trị chỉ tiêu trong nhà phù hợp</td>
+                        <td>Lấy giá trị chỉ tiêu trong nhà có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/chitieutrongnhas</td>
@@ -289,11 +322,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/chitieutrongnhas/{id}</td>
-                        <td>Sửa một chỉ tiêu trong nhà phù hợp</td>
+                        <td>Sửa một chỉ tiêu trong nhà có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/chitieutrongnhas/{id}</td>
-                        <td>Xóa chỉ tiêu trong nhà phù hợp</td>
+                        <td>Xóa chỉ tiêu trong nhà có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -317,7 +350,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/giatridotrongnhas/{id}</td>
-                        <td>Lấy giá trị giá trị đo trong nhà phù hợp</td>
+                        <td>Lấy giá trị giá trị đo trong nhà có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/giatridotrongnhas</td>
@@ -325,11 +358,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/giatridotrongnhas/{id}</td>
-                        <td>Sửa một giá trị đo trong nhà phù hợp</td>
+                        <td>Sửa một giá trị đo trong nhà có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/giatridotrongnhas/{id}</td>
-                        <td>Xóa giá trị đo trong nhà phù hợp</td>
+                        <td>Xóa giá trị đo trong nhà có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -353,7 +386,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/chitieusaubenhs/{id}</td>
-                        <td>Lấy giá trị chỉ tiêu sâu bệnh phù hợp</td>
+                        <td>Lấy giá trị chỉ tiêu sâu bệnh có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/chitieusaubenhs</td>
@@ -361,11 +394,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/chitieusaubenhs/{id}</td>
-                        <td>Sửa một chỉ tiêu sâu bệnh phù hợp</td>
+                        <td>Sửa một chỉ tiêu sâu bệnh có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/chitieusaubenhs/{id}</td>
-                        <td>Xóa chỉ tiêu sâu bệnh phù hợp</td>
+                        <td>Xóa chỉ tiêu sâu bệnh có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>
@@ -389,7 +422,7 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-primary">GET</span> api/giatridosaubenhs/{id}</td>
-                        <td>Lấy giá trị giá trị đo sâu bệnh phù hợp</td>
+                        <td>Lấy giá trị giá trị đo sâu bệnh có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-success">POST</span> api/giatridosaubenhs</td>
@@ -397,11 +430,11 @@
                     </tr>
                     <tr>
                         <td> <span class="badge badge-warning">PUT</span> api/giatridosaubenhs/{id}</td>
-                        <td>Sửa một giá trị đo sâu bệnh phù hợp</td>
+                        <td>Sửa một giá trị đo sâu bệnh có id phù hợp</td>
                     </tr>
                     <tr>
                         <td> <span class="badge badge-danger">DELETE</span> api/giatridosaubenhs/{id}</td>
-                        <td>Xóa giá trị đo sâu bệnh phù hợp</td>
+                        <td>Xóa giá trị đo sâu bệnh có id phù hợp</td>
                     </tr>
                 </tbody>
             </table>

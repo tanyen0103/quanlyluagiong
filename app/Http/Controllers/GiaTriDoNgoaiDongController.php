@@ -55,7 +55,7 @@ class GiaTriDoNgoaiDongController extends Controller
     {
         $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieungoaidong = ChiTieuNgoaiDong::all();
-        $loaigiatrido = LoaiGiaTriDo::all();
+        $loaigiatrido = LoaiGiaTriDo::where('phanloai', 1)->get();
         $giatridongoaidong = GiaTriDoNgoaiDong::all();
         return view('admin.giatridongoaidongs.create',
             compact('chitieungoaidong', 'loaigiatrido', 'giatridongoaidong','giatritinhtrangs'))

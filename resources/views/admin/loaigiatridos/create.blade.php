@@ -43,6 +43,19 @@
                     @enderror
                 </div>
             </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
+                <div class="form-group">
+                    <label for="phanloai">Phân loại <span class="text-danger font-weight-bold">*</span></label>
+                    <select class="form-control" name="phanloai" id="phanloai" @error('phanloai') is-invalid @enderror>
+                        <option value=""></option>
+                        <option value="1">Ngoài đồng</option>
+                        <option value="2">Trong nhà</option>
+                    </select>
+                    @error('phanloai')
+                        <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
+                </div>
+            </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
                     <button type="submit" class="btn btn-primary">Tạo mới</button>
             </div>

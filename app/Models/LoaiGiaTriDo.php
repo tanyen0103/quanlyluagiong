@@ -15,7 +15,8 @@ class LoaiGiaTriDo extends Model
 
     protected $fillable = [
         'loaigiatrido_ten',
-        'loaigiatrido_donvi'
+        'loaigiatrido_donvi',
+        'phanloai'
     ];
 
     public function GiaTriDoNgoaiDong(){

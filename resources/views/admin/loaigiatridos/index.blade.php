@@ -46,6 +46,7 @@
                             <th>No</th>
                             <th>Tên</th>
                             <th>Đơn vị</th>
+                            <th>Phân loại</th>
                             @role('Admin')
                                 <th width='160px'></th>
                             @endrole
@@ -60,6 +61,7 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $item->loaigiatrido_ten }}</td>
                             <td>{{ $item->loaigiatrido_donvi }}</td>
+                            <td>{{ $item->phanloai == 1 ? "Ngoài đồng" : "Trong nhà" }}</td>
                             @role('Admin')
                                 <td>
                                     <form action="{{ route('loaigiatridos.destroy',$item->id) }}" method="POST">

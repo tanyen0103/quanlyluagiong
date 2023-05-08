@@ -15,16 +15,16 @@ class DoiTuongTinhTrangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $doituongtinhtrang = DoiTuongTinhTrang::all();
-    //     $arr = [
-    //     'status' => true,
-    //     'message' => "Danh sách đối tượng tính trạng",
-    //     'data'=>ResourcesDoiTuongTinhTrang::collection($doituongtinhtrang)
-    //     ];
-    //     return response()->json($arr, 200);
-    // }
+    public function index()
+    {
+        $doituongtinhtrang = DoiTuongTinhTrang::all();
+        $arr = [
+        'status' => true,
+        'message' => "Danh sách đối tượng tính trạng",
+        'data'=>ResourcesDoiTuongTinhTrang::collection($doituongtinhtrang)
+        ];
+        return response()->json($arr, 200);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -78,24 +78,24 @@ class DoiTuongTinhTrangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //     $doituongtinhtrang = DoiTuongTinhTrang::find($id);
-    //     if(is_null($doituongtinhtrang)){
-    //         $arr = [
-    //             'success' => false,
-    //             'message' => 'Không có đối tượng tính trạng này',
-    //             'data' => []
-    //         ];
-    //         return response()->json($arr, 200);
-    //     }
-    //     $arr = [
-    //         'status' => true,
-    //         'message' => 'Chi tiết đối tượng tính trạng',
-    //         'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
-    //     ];
-    //     return response()->json($arr, 201);
-    // }
+    public function show($id)
+    {
+        $doituongtinhtrang = DoiTuongTinhTrang::find($id);
+        if(is_null($doituongtinhtrang)){
+            $arr = [
+                'success' => false,
+                'message' => 'Không có đối tượng tính trạng này',
+                'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => true,
+            'message' => 'Chi tiết đối tượng tính trạng',
+            'data' => new ResourcesDoiTuongTinhTrang($doituongtinhtrang)
+        ];
+        return response()->json($arr, 201);
+    }
 
     /**
      * Show the form for editing the specified resource.

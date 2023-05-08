@@ -73,9 +73,9 @@
                                 {{-- <th colspan="{{ 12 + $numColumnnds }}">Chỉ tiêu ngoài đồng</th>
                                 <th colspan="{{ 9 + $numColumntns }}">Chỉ tiêu trong nhà</th>
                                 <th colspan="{{ 2 + $numColumnsbs }}">Chỉ tiêu sâu bệnh</th> --}}
-                                <th colspan="15" class="text-center">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="12" class="text-center">Chỉ tiêu trong nhà</th>
-                                <th colspan="5" class="text-center">Chỉ tiêu sâu bệnh</th>
+                                <th colspan="{{ $loaigiatridos_nd->count() + 12 }}" class="text-center">Chỉ tiêu ngoài đồng</th>
+                                <th colspan="{{ $loaigiatridos_tn->count() + 9 }}" class="text-center">Chỉ tiêu trong nhà</th>
+                                <th colspan="{{ $loaisaubenhs->count() + 2 }}" class="text-center">Chỉ tiêu sâu bệnh</th>
                             </tr>
                             <tr>
                                 <th>No</th>
@@ -98,9 +98,9 @@
                                 <th>Cong trục bông</th>
                                 <th>Râu</th>
 
-                                <th>Loại giá trị đo</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th>
+                                @foreach ($loaigiatridos_nd as $lgtd)
+                                    <th>{{ $lgtd->loaigiatrido_ten }}</th>
+                                @endforeach
 
                                 {{-- <th colspan="10">Cao cây</th>
                                 <th>TB</th>
@@ -132,14 +132,15 @@
                                 <th>Dạng thóc</th>
                                 <th>Màu sắc gạo</th>
 
+
+                                @foreach ($loaigiatridos_tn as $lgtd)
+                                    <th>{{ $lgtd->loaigiatrido_ten }}</th>
+                                @endforeach
+
                                 <th>Trọng lượng 1000 hạt</th>
                                 <th>Độ ẩm</th>
                                 <th>Thơm</th>
                                 <th>Đánh giá</th>
-
-                                <th>Loại giá trị đo</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th>
 
                                 {{-- <th colspan="5">D Gạo</th>
                                 <th colspan="5">G Gạo</th>
@@ -175,9 +176,10 @@
 
                                 {{-- <th colspan="{{ $numColumnsbs }}">Loại sâu bệnh</th> --}}
 
-                                <th>Loại sâu bệnh</th>
-                                <th>Giá trị</th>
-                                <th>Đơn vị</th>
+                                @foreach ($loaisaubenhs as $lsb)
+                                    <th>{{ $lsb->loaisaubenh_ten }}</th>
+                                @endforeach
+
                                 <th>Chọn lọc</th>
                                 <th>Đánh giá khác</th>
                             </tr>
@@ -262,102 +264,26 @@
                                         <div>{{ $ctnd->chitieungoaidong_rau }}</div>
                                     @endforeach
                                 </td>
-                                <td colspan="3">
-                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
-                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                    <div>
-                                                        {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_ten }} ({{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}) =  {{ $gtdnd->giatridongoaidong_giatri }}
-                                                    </div>
-                                                    <br>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
-                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                    <div>
-                                                        {{ $gtdnd->giatridongoaidong_giatri }}
-                                                    </div>
-                                                    <br>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                <td>
-                                    @foreach ($item->ChiTieuNgoaiDong as $ctnd)
-                                            @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
-                                                    <div>
-                                                        {{ $gtdnd->LoaiGiaTriDo->loaigiatrido_donvi }}
-                                                    </div>
-                                                    <br>
-                                            @endforeach
-                                    @endforeach
-                                </td> --}}
-                                {{-- Cao cay  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
 
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
+                                @foreach ($loaigiatridos_nd as $lgtd)
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                @foreach ($item->ChiTieuNgoaiDong as $ctnd)
+                                                    @foreach ($ctnd->GiaTriDoNgoaiDong as $gtdnd)
+                                                            @if($gtdnd->loaigiatrido_id == $lgtd->id)
+                                                                <td>{{ $gtdnd->giatridongoaidong_giatri }}</td>
+                                                            @endif
+                                                    @endforeach
+                                                @endforeach
+                                            </tr>
+                                        </table>
+                                    </td>
+                                @endforeach
 
-                                {{-- So choi  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-
-                                {{-- Dai la  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-
-                                {{-- Rong la  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
 
                                 {{-- Chỉ tiêu trong nhà  --}}
-                                    <td>
+                                <td>
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                         <div>{{ $cttn->chitieutrongnha_giec2 }}</div>
                                     @endforeach
@@ -383,67 +309,23 @@
                                     @endforeach
                                 </td>
 
-                                {{-- D Gao  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
+                                @foreach ($loaigiatridos_tn as $lgtd)
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                @foreach ($item->ChiTieuTrongNha as $cttn)
+                                                    @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
+                                                            @if($gtdtn->loaigiatrido_id == $lgtd->id)
+                                                                <td>{{ $gtdtn->giatridotrongnha_giatri }}</td>
+                                                            @endif
+                                                    @endforeach
+                                                @endforeach
+                                            </tr>
+                                        </table>
+                                    </td>
+                                @endforeach
 
-                                 {{-- G Gao  --}}
-                                 {{-- <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td> --}}
 
-                                 {{-- Dai bong  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-
-                                 {{-- So hat chac  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-
-                                {{-- So hat lep  --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
                                 <td>
                                     @foreach ($item->ChiTieuTrongNha as $cttn)
                                         <div>{{ $cttn->chitieutrongnha_tl1000hat }}</div>
@@ -464,156 +346,24 @@
                                         <div>{{ $cttn->chitieutrongnha_danhgia }}</div>
                                     @endforeach
                                 </td>
-                                <td colspan="3">
-                                    @foreach ($item->ChiTieuTrongNha as $cttn)
-                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>
-                                                    {{ $gtdtn->LoaiGiaTriDo->loaigiatrido_ten }}({{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}) =  {{ $gtdtn->giatridotrongnha_giatri }}
-                                                </div>
-                                                <br>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                {{-- <td >
-                                    @foreach ($item->ChiTieuTrongNha as $cttn)
-                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>
-                                                    {{ $gtdtn->giatridotrongnha_giatri }}
-                                                </div>
-                                                <br>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                <td >
-                                    @foreach ($item->ChiTieuTrongNha as $cttn)
-                                            @foreach ($cttn->GiaTriDoTrongNha as $gtdtn)
-                                                <div>
-                                                    {{ $gtdtn->LoaiGiaTriDo->loaigiatrido_donvi }}
-                                                </div>
-                                                <br>
-                                            @endforeach
-                                    @endforeach
-                                </td> --}}
 
-                                {{-- CHỈ TIÊU SÂU BỆNH --}}
-                                {{-- 1. Bệnh đạo ôn hại lá Pyricularia oryzae --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 2. Bệnh đạo ôn cổ bông Pyricularia oryzae --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 3. Bệnh bạc lá Xanthomonas oryzae pv. Oryzal --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 4. Bệnh khô vằn  Rhizoctonia solani --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 5. Sâu đục thân --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 6. Sâu cuốn lá Cnaphalocrosis --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 7. Rầy nâu (Ninaparvata lugens) --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
-                                {{-- 8. Mũi hành Orseolia oryzae --}}
-                                {{-- <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td> --}}
+                                @foreach ($loaisaubenhs as $lsb)
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                @foreach ($item->ChiTieuSauBenh as $ctsb)
+                                                    @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
+                                                            @if($gtdsb->loaisaubenh_id == $lsb->id)
+                                                                <td>{{ $gtdsb->giatridosaubenh_giatri }}</td>
+                                                            @endif
+                                                    @endforeach
+                                                @endforeach
+                                            </tr>
+                                        </table>
+                                    </td>
+                                @endforeach
 
-                                <td colspan="3">
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_ten }} ({{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}) = {{ $gtdsb->giatridosaubenh_giatri }}</div>
-                                            @endforeach
-                                    @endforeach
-                                </td>
 
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div><img class="d-block" src="{{ env('STORAGE_URL') . $gtdsb->LoaiSauBenh->loaisaubenh_hinhanh }}" alt="Ảnh giống"  width="100" height="100"></div>
-                                            @endforeach
-                                    @endforeach
-                                </td> --}}
-                                {{-- <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->giatridosaubenh_giatri }} </div>
-                                            @endforeach
-                                    @endforeach
-                                </td>
-                                <td>
-                                    @foreach ($item->ChiTieuSauBenh as $ctsb)
-                                            @foreach ($ctsb->GiaTriDoSauBenh as $gtdsb)
-                                                <div>{{ $gtdsb->LoaiSauBenh->loaisaubenh_donvi }}</div>
-                                            @endforeach
-                                    @endforeach
-                                </td> --}}
                                 <td>
                                     @foreach ($item->ChiTieuSauBenh as $ctsb)
                                         <div>{{ $ctsb->chitieusaubenh_chonloc }}</div>

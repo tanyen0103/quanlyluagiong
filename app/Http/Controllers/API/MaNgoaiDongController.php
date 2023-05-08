@@ -14,16 +14,16 @@ class MaNgoaiDongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $mangoaidong = MaNgoaiDong::all();
-    //     $arr = [
-    //     'status' => true,
-    //     'message' => "Danh sách mã ngoài đồng",
-    //     'data'=>ResourcesMaNgoaiDong::collection($mangoaidong)
-    //     ];
-    //     return response()->json($arr, 200);
-    // }
+    public function index()
+    {
+        $mangoaidong = MaNgoaiDong::all();
+        $arr = [
+        'status' => true,
+        'message' => "Danh sách mã ngoài đồng",
+        'data'=>ResourcesMaNgoaiDong::collection($mangoaidong)
+        ];
+        return response()->json($arr, 200);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,24 +52,24 @@ class MaNgoaiDongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //     $mangoaidong = MaNgoaiDong::find($id);
-    //     if(is_null($mangoaidong)){
-    //         $arr = [
-    //             'success' => false,
-    //             'message' => 'Không có  mã ngoài đồng này',
-    //             'data' => []
-    //         ];
-    //         return response()->json($arr, 200);
-    //     }
-    //     $arr = [
-    //         'status' => true,
-    //         'message' => 'Chi tiết mã ngoài đồng',
-    //         'data' => new ResourcesMaNgoaiDong($mangoaidong)
-    //     ];
-    //     return response()->json($arr, 201);
-    // }
+    public function show($id)
+    {
+        $mangoaidong = MaNgoaiDong::find($id);
+        if(is_null($mangoaidong)){
+            $arr = [
+                'success' => false,
+                'message' => 'Không có  mã ngoài đồng này',
+                'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => true,
+            'message' => 'Chi tiết mã ngoài đồng',
+            'data' => new ResourcesMaNgoaiDong($mangoaidong)
+        ];
+        return response()->json($arr, 201);
+    }
 
     /**
      * Show the form for editing the specified resource.

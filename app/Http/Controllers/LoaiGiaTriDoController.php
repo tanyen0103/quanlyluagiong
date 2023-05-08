@@ -53,6 +53,7 @@ class LoaiGiaTriDoController extends Controller
         $request->validate([
             'loaigiatrido_ten' => ['required','unique:loaigiatrido','max:100'],
             'loaigiatrido_donvi' => ['required','max:100'],
+            'phanloai' => ['required','numeric'],
         ]);
 
         LoaiGiaTriDo::create($request->all());
@@ -96,7 +97,7 @@ class LoaiGiaTriDoController extends Controller
         $request->validate([
             'loaigiatrido_ten' => ['required','max:100'],
             'loaigiatrido_donvi' => ['required','max:100'],
-
+            'phanloai' => ['required', 'numeric'],
         ]);
 
         $loaigiatrido->update($request->all());

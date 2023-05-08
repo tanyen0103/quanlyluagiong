@@ -56,7 +56,7 @@ class GiaTriDoTrongNhaController extends Controller
     {
         $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
         $chitieutrongnha = ChiTieuTrongNha::all();
-        $loaigiatrido = LoaiGiaTriDo::all();
+        $loaigiatrido = LoaiGiaTriDo::where('phanloai', 2)->get();
         $giatridotrongnha = GiaTriDoTrongNha::all();
         return view('admin.giatridotrongnhas.create', ["title" => "Bảng giá trị đo trong nhà"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha','giatritinhtrangs'))
         ->with('i', (request()->input('page', 1) - 1) * 5);

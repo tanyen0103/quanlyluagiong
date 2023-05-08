@@ -15,16 +15,16 @@ class GiaiDoanTruongThanhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $giaidoantruongthanh = GiaiDoanTruongThanh::all();
-    //     $arr = [
-    //     'status' => true,
-    //     'message' => "Danh sách giai đoạn trưởng thành",
-    //     'data'=>ResourcesGiaiDoanTruongThanh::collection($giaidoantruongthanh)
-    //     ];
-    //     return response()->json($arr, 200);
-    // }
+    public function index()
+    {
+        $giaidoantruongthanh = GiaiDoanTruongThanh::all();
+        $arr = [
+        'status' => true,
+        'message' => "Danh sách giai đoạn trưởng thành",
+        'data'=>ResourcesGiaiDoanTruongThanh::collection($giaidoantruongthanh)
+        ];
+        return response()->json($arr, 200);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -72,24 +72,24 @@ class GiaiDoanTruongThanhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //     $giaidoantruongthanh = GiaiDoanTruongThanh::find($id);
-    //     if(is_null($giaidoantruongthanh)){
-    //         $arr = [
-    //             'success' => false,
-    //             'message' => 'Không có giai đoạn trưởng thành này',
-    //             'data' => []
-    //         ];
-    //         return response()->json($arr, 200);
-    //     }
-    //     $arr = [
-    //         'status' => true,
-    //         'message' => 'Chi tiết giai đoạn trưởng thành',
-    //         'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
-    //     ];
-    //     return response()->json($arr, 201);
-    // }
+    public function show($id)
+    {
+        $giaidoantruongthanh = GiaiDoanTruongThanh::find($id);
+        if(is_null($giaidoantruongthanh)){
+            $arr = [
+                'success' => false,
+                'message' => 'Không có giai đoạn trưởng thành này',
+                'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => true,
+            'message' => 'Chi tiết giai đoạn trưởng thành',
+            'data' => new ResourcesGiaiDoanTruongThanh($giaidoantruongthanh)
+        ];
+        return response()->json($arr, 201);
+    }
 
     /**
      * Show the form for editing the specified resource.

@@ -57,15 +57,15 @@ Route::resource('kieuhinhs', KieuHinhController::class);
 
 Route::resource('giongs', GiongController::class);
 
-// Route::resource('mangoaidongs', MaNgoaiDongController::class);
+Route::resource('mangoaidongs', MaNgoaiDongController::class);
 
-// Route::resource('maptns', MaPTNController::class);
+Route::resource('maptns', MaPTNController::class);
 
-// Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
+Route::resource('giaidoantruongthanhs', GiaiDoanTruongThanhController::class);
 
-// Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
+Route::resource('doituongtinhtrangs', DoiTuongTinhTrangController::class);
 
-// Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
+Route::resource('dacdiemtinhtrangs', DacDiemTinhTrangController::class);
 
 Route::resource('giatritinhtrangs', GiaTriTinhTrangController::class);
 
