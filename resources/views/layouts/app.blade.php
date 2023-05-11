@@ -136,6 +136,8 @@
                             <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐT Tính trạng</a>
                             <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐĐ Tính trạng</a>
                             <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
+                            <hr>
+                            <a class="collapse-item" href="{{ route('dulieu')}}"><i class="fas fa-fw fa-caret-right"></i> Dữ liệu chi tiết</a>
                         </div>
                     </div>
                 </li>
@@ -230,6 +232,8 @@
                             <a class="collapse-item" href="{{ route('doituongtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐT Tính trạng</a>
                             <a class="collapse-item" href="{{ route('dacdiemtinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> ĐĐ Tính trạng</a>
                             <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
+                            <hr>
+                            <a class="collapse-item" href="{{ route('dulieu')}}"><i class="fas fa-fw fa-caret-right"></i> Dữ liệu chi tiết</a>
                         </div>
                     </div>
                 </li>
@@ -319,6 +323,8 @@
                             <a class="collapse-item" href="{{ route('loaisaubenhs.index') }}"><i class="fas fa-fw fa-caret-right"></i> Loại SB</a>
                             <hr>
                             <a class="collapse-item" href="{{ route('giatritinhtrangs.index') }}"><i class="fas fa-fw fa-caret-right"></i> GT Tính trạng</a>
+                            <hr>
+                            <a class="collapse-item" href="{{ route('dulieu')}}"><i class="fas fa-fw fa-caret-right"></i> Dữ liệu chi tiết</a>
                             <hr>
                             <a class="collapse-item text-danger" href="">Quyền: Staff</a>
                         </div>

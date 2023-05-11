@@ -63,16 +63,8 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                {{-- @php
-                                    $numColumnnds = 5;
-                                    $numColumntns = 5;
-                                    $numColumnsbs = 5;
-                                @endphp --}}
                                 <th></th>
                                 <th colspan="5">Giống lúa</th>
-                                {{-- <th colspan="{{ 12 + $numColumnnds }}">Chỉ tiêu ngoài đồng</th>
-                                <th colspan="{{ 9 + $numColumntns }}">Chỉ tiêu trong nhà</th>
-                                <th colspan="{{ 2 + $numColumnsbs }}">Chỉ tiêu sâu bệnh</th> --}}
                                 <th colspan="{{ $loaigiatridos_nd->count() + 12 }}" class="text-center">Chỉ tiêu ngoài đồng</th>
                                 <th colspan="{{ $loaigiatridos_tn->count() + 9 }}" class="text-center">Chỉ tiêu trong nhà</th>
                                 <th colspan="{{ $loaisaubenhs->count() + 2 }}" class="text-center">Chỉ tiêu sâu bệnh</th>
@@ -102,29 +94,6 @@
                                     <th>{{ $lgtd->loaigiatrido_ten }}</th>
                                 @endforeach
 
-                                {{-- <th colspan="10">Cao cây</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th>
-
-                                <th colspan="10">Số chồi</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th>
-
-                                <th colspan="10">Dài lá (cm)</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th>
-
-                                <th colspan="10">Rộng lá</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th> --}}
-
-                                {{-- <th colspan="{{ $numColumnnds }}">Loại giá trị đo</th> --}}
-
-
 
                                 <th>Gié C2</th>
                                 <th>Độ rụng hạt</th>
@@ -142,39 +111,6 @@
                                 <th>Thơm</th>
                                 <th>Đánh giá</th>
 
-                                {{-- <th colspan="5">D Gạo</th>
-                                <th colspan="5">G Gạo</th>
-
-                                <th colspan="10">Dài bông (cm)</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th>
-
-                                <th colspan="10">Số hạt chắc</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th>
-
-                                <th colspan="10">Số hạt lép</th>
-                                <th>TB</th>
-                                <th>SD</th>
-                                <th>M&plusmn;SD</th> --}}
-
-
-                                {{-- <th colspan="{{ $numColumntns }}">Loại giá trị đo</th> --}}
-
-
-                                {{-- Sau Benh  --}}
-                                {{-- <th colspan="10">1. Bệnh đạo ôn hại lá Pyricularia oryzae</th>
-                                <th colspan="10">2. Bệnh đạo ôn cổ bông Pyricularia oryzae</th>
-                                <th colspan="10">3. Bệnh bạc lá Xanthomonas oryzae pv. Oryzal</th>
-                                <th colspan="10">4. Bệnh khô vằn  Rhizoctonia solani</th>
-                                <th colspan="10">5. Sâu đục thân</th>
-                                <th colspan="10">6. Sâu cuốn lá Cnaphalocrosis</th>
-                                <th colspan="10">7. Rầy nâu (Ninaparvata lugens)</th>
-                                <th colspan="10">8. Mũi hành Orseolia oryzae</th> --}}
-
-                                {{-- <th colspan="{{ $numColumnsbs }}">Loại sâu bệnh</th> --}}
 
                                 @foreach ($loaisaubenhs as $lsb)
                                     <th>{{ $lsb->loaisaubenh_ten }}</th>

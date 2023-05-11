@@ -3,6 +3,8 @@
 namespace App\Exports;
 
 use App\Models\Giong;
+use App\Models\LoaiGiaTriDo;
+use App\Models\LoaiSauBenh;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -16,9 +18,19 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
     */
     public function collection()
     {
+        $loaisaubenhs = LoaiSauBenh::all();
+        $loaigiatridos_nd = LoaiGiaTriDo::where('phanloai', 1)->get();
+        $loaigiatridos_tn = LoaiGiaTriDo::where('phanloai', 2)->get();
+
         return Giong::with('nhomgiong')
         ->orderBy('nhomgiong_id', 'asc')
-        ->get();
+        ->get()
+        ->map(function ($item) use ($loaisaubenhs, $loaigiatridos_tn, $loaigiatridos_nd) {
+            $item->loaisaubenhs = $loaisaubenhs;
+            $item->loaigiatridos_tn = $loaigiatridos_tn;
+            $item->loaigiatridos_nd = $loaigiatridos_nd;
+            return $item;
+        });
     }
 
     public function headings(): array
@@ -154,8 +166,6 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
             $giatridosaubenh_giatri .= $ctsb->GiaTriDoSauBenh->pluck('giatridosaubenh_giatri')->implode(', ');
 
         }
-
-
 
         return [
             $i,

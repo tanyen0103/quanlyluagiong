@@ -18,8 +18,9 @@ class LoaiGiaTriDo extends JsonResource
             'id' => $this->id,
             'loaigiatrido_ten' => $this->loaigiatrido_ten,
             'loaigiatrido_donvi' => $this->loaigiatrido_donvi,
-            'created_at' => $this->created_at->format('d/m/Y'),
-            'updated_at' => $this->updated_at->format('d/m/Y'),
+            'phanloai' => $this->phanloai,
+            'created_at' => $this->created_at ? $this->created_at->format('d/m/Y') : null,
+            'updated_at' => $this->updated_at ? $this->updated_at->format('d/m/Y') : null,
           ];
     }
 }
