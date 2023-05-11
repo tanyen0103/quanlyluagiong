@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     {{-- Nav Breadcrumb --}}
     <div class="nav-breadcrumb bg-gray-100 text-lg">
         <nav aria-label="breadcrumb">
@@ -234,29 +235,23 @@
                 </div>
             </div>
         </div>
-        <div class="container d-flex justify-content-center flex-wrap">
+        <div class="container-fluid p-0 d-flex justify-content-center flex-wrap">
             @foreach ($giongs as $item)
-                <div class="card bg-card border-0 m-1" style="width: 13rem; box-shadow: 0 0 1px #000;">
-                    <div class="card-img-top card-hover ">
-                        <img onclick="openModal(this);" src="{{ env('STORAGE_URL') . $item->giong_hinhanh }}" alt="{{ $item->giong_ten }}"  width="100%">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center bg-light pt-1 pb-1 text-primary rounded-bottom">{{ $item->giong_ten}}</h5>
-                        <div class="d-flex justify-content-center">
-                            <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
-
-                                <a class="btn btn-info mt-1" href="{{ route('giongs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
-
-                                {{-- <a class="btn btn-primary mt-1" href="{{ route('giongs.edit',$item->id) }}" ><i class="fas fa-pen" title="chỉnh sửa"></i></a> --}}
-
-                                {{-- @csrf
-                                @method('DELETE') --}}
-
-                                {{-- <button type="submit" class="btn btn-danger mt-1" onclick="return confirmDelete()"><i class="fas fa-trash" title="xoá"></i></button> --}}
-                            </form>
+                    <div class="card card-h bg-card border-0 m-1 " style="width: 100%; box-shadow: 0 0 2px #000;">
+                        <div class="card-body pt-3 pb-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <a class="text-dark" href="{{ route('giongs.show',$item->id) }}">
+                                    <h5 class="card-title font-weight-bold mb-0">{{ $item->giong_ten}}</h5>
+                                </a>
+                            </div>
+                            <p class="card-text mb-0 d-none d-md-block">{{ $item->giong_ngaytrobong }} - {{ $item->giong_ngaychin }}</p>
+                            <div class="d-flex justify-content-center">
+                                <form action="{{ route('giongs.destroy',$item->id) }}" method="POST">
+                                    <a class="text-dark" href="{{ route('giongs.show',$item->id) }}"><i class="fas fa-eye" title="chi tiết"></i></a>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
             @endforeach
         </div>
     @endrole

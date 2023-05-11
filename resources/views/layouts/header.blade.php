@@ -98,11 +98,13 @@
         }
 
         .bg-card{
-            background-image: url("//www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png");
-            background-size: 100% 100%;
-            background-color: #4e73df;
-            background-repeat: no-repeat;
-            color: #fff;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .card-h:hover {
+                background: rgb(232, 237, 248);
+                transition: 0.5s;
         }
 
         .breadcrumb-item.active {
