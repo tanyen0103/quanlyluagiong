@@ -74,7 +74,7 @@ class DashBoardsExport implements FromCollection, WithHeadings, WithCustomStartC
 
             'Chọn lọc',
             'Đánh giá khác',
-            'Tên loại',
+            'Tên loại sâu bệnh',
             'Giá trị',
             'Đơn vị',
         ];

@@ -467,7 +467,7 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                        <i class="fas fa-fw fa-user text-gray-400" style="font-size:1.5rem;"></i>
+                                        <i class="fas fa-fw fa-user " style="font-size:1.5rem; color: #2c407d;"></i>
                                 </a>
 
                                 <!-- Dropdown - User Information -->

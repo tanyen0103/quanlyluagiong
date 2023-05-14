@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .docs{
+        }
+    </style>
     {{-- Nav Breadcrumb --}}
     <div class="nav-breadcrumb bg-gray-100 text-lg">
         <nav aria-label="breadcrumb">
@@ -201,5 +205,31 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="docs mb-5 p-2 shadow">
+        <h2 class="text-primary">TÀI LIỆU THAM KHẢO</h2>
+        <ul>
+            <li>
+                <p>2006 - MARD - Phuc trang giong lua - Conventional Rice-Technical Procedure for Seed Production
+                    <a href="{{ asset('/public/document/2006 - MARD - Phuc trang giong lua - Conventional Rice-Technical Procedure for Seed Production.pdf') }}">Xem tài liệu</a>
+                </p>
+            </li>
+            <li>
+                <p>2013 – IRRI - Standard Evaluation System (SES) for Rice
+                    <a href="{{ asset('/public/document/2013 – IRRI - Standard Evaluation System (SES) for Rice.pdf') }}">Xem tài liệu</a>
+                </p>
+            </li>
+            <li>
+                <p>2022 - 5.Data Bo giong LM Noi 22&23
+                    <a href="{{ asset('/public/document/2022 - 5.Data Bo giong LM Noi 22&23.xlsx') }}">Xem tài liệu</a>
+                </p>
+            </li>
+            <li>
+                <p>2022 LMN - Mo ta hinh thai rice
+                    <a href="{{ asset('/public/document/2022 LMN - Mo ta hinh thai rice.docx') }}">Xem tài liệu</a>
+                </p>
+            </li>
+        </ul>
     </div>
 @endsection
