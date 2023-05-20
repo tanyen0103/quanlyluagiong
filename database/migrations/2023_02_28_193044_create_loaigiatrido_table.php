@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('loaigiatrido_ten', 100);
             $table->string('loaigiatrido_donvi', 100);
-            $table->tinyInteger('phanloai', 1);
+            $table->tinyInteger('phanloai')->unsigned();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
