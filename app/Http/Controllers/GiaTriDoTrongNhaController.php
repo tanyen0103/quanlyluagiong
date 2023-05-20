@@ -58,7 +58,12 @@ class GiaTriDoTrongNhaController extends Controller
         $chitieutrongnha = ChiTieuTrongNha::all();
         $loaigiatrido = LoaiGiaTriDo::where('phanloai', 2)->get();
         $giatridotrongnha = GiaTriDoTrongNha::all();
-        return view('admin.giatridotrongnhas.create', ["title" => "Bảng giá trị đo trong nhà"], compact('chitieutrongnha', 'loaigiatrido', 'giatridotrongnha','giatritinhtrangs'))
+        return view('admin.giatridotrongnhas.create', [
+            "title" => "Bảng giá trị đo trong nhà"],
+            compact('chitieutrongnha',
+                    'loaigiatrido',
+                    'giatridotrongnha',
+                    'giatritinhtrangs'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -71,18 +76,19 @@ class GiaTriDoTrongNhaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giatridotrongnha_giatri' => ['required','numeric'],
+            'giatridotrongnha_giatri.*' => ['required','numeric'],
             'loaigiatrido_id' => ['required'],
             'chitieutrongnha_id' => ['required'],
         ]);
 
+        foreach ($request->giatridotrongnha_giatri as $giatri){
+            $giatridotrongnha = new GiaTriDoTrongNha();
+            $giatridotrongnha->giatridotrongnha_giatri =$giatri;
+            $giatridotrongnha->loaigiatrido_id = $request->loaigiatrido_id;
+            $giatridotrongnha->chitieutrongnha_id = $request->chitieutrongnha_id;
+            $giatridotrongnha->save();
+        }
 
-        $giatridotrongnha = new GiaTriDoTrongNha();
-        $giatridotrongnha->giatridotrongnha_giatri = $request->giatridotrongnha_giatri;
-        $giatridotrongnha->loaigiatrido_id = $request->loaigiatrido_id;
-        $giatridotrongnha->chitieutrongnha_id = $request->chitieutrongnha_id;
-
-        $giatridotrongnha->save();
 
         return redirect()->route('giatridotrongnhas.index')
                         ->with('success','Giá trị đo trong nhà được tạo thành công.');

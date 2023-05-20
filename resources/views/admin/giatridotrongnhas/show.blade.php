@@ -18,7 +18,7 @@
             <h3 class="m-0 font-weight-bold text-white">Chi tiết</h3>
         </div>
         <div class="">
-            <a class="btn btn-light" href="{{ route('nhomgiongs.index') }}">Trở về</a>
+            <a class="btn btn-light" href="{{ route('giatridotrongnhas.index') }}">Trở về</a>
         </div>
     </div>
     <div class="row mt-1 d-flex justify-content-center">

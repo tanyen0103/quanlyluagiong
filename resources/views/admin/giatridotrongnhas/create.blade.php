@@ -56,12 +56,19 @@
                 </div>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="giatridotrongnha_giatri">Giá trị đo trong nhà <span class="text-danger font-weight-bold">*</span></label>
                     <input id="giatridotrongnha_giatri" type="text" class="form-control @error('giatridotrongnha_giatri') is-invalid @enderror" name="giatridotrongnha_giatri" value="{{ old('giatridotrongnha_giatri') }}" required autocomplete="giatridotrongnha_giatri" />
                     @error('giatridotrongnha_giatri')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
+                </div> --}}
+                <div class="form-group">
+                    <label for="giatridotrongnha_giatri">Giá trị đo trong nhà <span class="text-danger font-weight-bold"></span></label>
+                    <div id="dynamic-inputs">
+
+                    </div>
+                    <button type="button" id="add-input" class="btn btn-primary mt-2">+</button>
                 </div>
             </div>
 
@@ -139,6 +146,21 @@
       {{-- </div>
     </div>
 </div> --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var addInputButton = document.getElementById('add-input');
+        var dynamicInputs = document.getElementById('dynamic-inputs');
+        var inputCounter = 1;
 
+        addInputButton.addEventListener('click', function() {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'text');
+            input.setAttribute('class', 'form-control mt-2');
+            input.setAttribute('name', 'giatridotrongnha_giatri[]');
+            dynamicInputs.appendChild(input);
+            inputCounter++;
+        });
+    });
+</script>
 
 @endsection

@@ -68,18 +68,19 @@ class GiaTriDoSauBenhController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giatridosaubenh_giatri' => ['required','numeric'],
+            'giatridosaubenh_giatri.*' => ['required','numeric'],
             'loaisaubenh_id' => ['required'],
             'chitieusaubenh_id' => ['required'],
         ]);
 
+        foreach ($request->giatridosaubenh_giatri as $giatri){
+            $giatridosaubenh = new GiaTriDoSauBenh();
+            $giatridosaubenh->giatridosaubenh_giatri = $giatri;
+            $giatridosaubenh->loaisaubenh_id = $request->loaisaubenh_id;
+            $giatridosaubenh->chitieusaubenh_id = $request->chitieusaubenh_id;
+            $giatridosaubenh->save();
+        }
 
-        $giatridosaubenh = new GiaTriDoSauBenh();
-        $giatridosaubenh->giatridosaubenh_giatri = $request->giatridosaubenh_giatri;
-        $giatridosaubenh->loaisaubenh_id = $request->loaisaubenh_id;
-        $giatridosaubenh->chitieusaubenh_id = $request->chitieusaubenh_id;
-
-        $giatridosaubenh->save();
 
         return redirect()->route('giatridosaubenhs.index')
                         ->with('success','Giá trị đo sâu bệnh được tạo thành công.');

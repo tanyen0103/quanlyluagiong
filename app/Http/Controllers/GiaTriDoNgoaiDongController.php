@@ -71,19 +71,18 @@ class GiaTriDoNgoaiDongController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'giatridongoaidong_giatri' => ['required','numeric'],
+            'giatridongoaidong_giatri*' => ['required','numeric'],
             'loaigiatrido_id' => ['required'],
             'chitieungoaidong_id' => ['required'],
         ]);
 
-
-        $giatridongoaidong = new GiaTriDoNgoaiDong();
-        $giatridongoaidong->giatridongoaidong_giatri = $request->giatridongoaidong_giatri;
-        $giatridongoaidong->loaigiatrido_id = $request->loaigiatrido_id;
-        $giatridongoaidong->chitieungoaidong_id = $request->chitieungoaidong_id;
-
-        $giatridongoaidong->save();
-
+        foreach ($request->giatridongoaidong_giatri as $giatri){
+            $giatridongoaidong = new GiaTriDoNgoaiDong();
+            $giatridongoaidong->giatridongoaidong_giatri = $giatri;
+            $giatridongoaidong->loaigiatrido_id = $request->loaigiatrido_id;
+            $giatridongoaidong->chitieungoaidong_id = $request->chitieungoaidong_id;
+            $giatridongoaidong->save();
+        }
         return redirect()->route('giatridongoaidongs.index')
                         ->with('success','Giá trị đo ngoài đồng được tạo thành công.');
     }

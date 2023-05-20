@@ -62,10 +62,14 @@
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
                     <label for="giatridongoaidong_giatri">Giá trị đo ngoài đồng <span class="text-danger font-weight-bold">*</span></label>
-                    <input id="giatridongoaidong_giatri" type="text" class="form-control @error('giatridongoaidong_giatri') is-invalid @enderror" name="giatridongoaidong_giatri" value="{{ old('giatridongoaidong_giatri') }}" required autocomplete="giatridongoaidong_giatri" />
+                    {{-- <input id="giatridongoaidong_giatri" type="text" class="form-control @error('giatridongoaidong_giatri') is-invalid @enderror" name="giatridongoaidong_giatri" value="{{ old('giatridongoaidong_giatri') }}" required autocomplete="giatridongoaidong_giatri" />
                     @error('giatridongoaidong_giatri')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
+                    @enderror --}}
+                    <div id="dynamic-inputs">
+
+                    </div>
+                    <button type="button" id="add-input" class="btn btn-primary mt-2">+</button>
                 </div>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2 text-center m-2">
@@ -76,7 +80,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+{{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content  border-bottom-primary ">
         <div class="modal-header">
@@ -87,7 +91,7 @@
         </div>
         <div class="modal-body">
             {{-- BẢNG TÍNH TRẠNG --}}
-            <div class="card shadow">
+            {{-- <div class="card shadow">
                 <div class="card-body">
                     <div class="table-responsive">
                         <div class="row d-flex justify-content-center">
@@ -135,12 +139,28 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
         </div> --}}
-      </div>
+      {{--</div>
     </div>
-</div>
+</div> --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var addInputButton = document.getElementById('add-input');
+        var dynamicInputs = document.getElementById('dynamic-inputs');
+        var inputCounter = 1;
+
+        addInputButton.addEventListener('click', function() {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'text');
+            input.setAttribute('class', 'form-control mt-2');
+            input.setAttribute('name', 'giatridongoaidong_giatri[]');
+            dynamicInputs.appendChild(input);
+            inputCounter++;
+        });
+    });
+</script>
 
 @endsection

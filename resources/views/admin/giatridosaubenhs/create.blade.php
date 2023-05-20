@@ -54,11 +54,14 @@
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 mr-2 ml-2">
                 <div class="form-group">
-                    <label for="giatridosaubenh_giatri">Giá trị đo sâu bệnh <span class="text-danger font-weight-bold">*</span></label>
-                    <input id="giatridosaubenh_giatri" type="text" class="form-control @error('giatridosaubenh_giatri') is-invalid @enderror" name="giatridosaubenh_giatri" value="{{ old('giatridosaubenh_giatri') }}" required autocomplete="giatridosaubenh_giatri" />
+                    <label for="giatridosaubenh_giatri">Giá trị đo sâu bệnh <span class="text-danger font-weight-bold"></span></label>
+                    <div id="dynamic-inputs">
+
+                    </div>
                     @error('giatridosaubenh_giatri')
                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
+                    <button type="button" id="add-input" class="btn btn-primary mt-2">+</button>
                 </div>
             </div>
 
@@ -69,5 +72,20 @@
     </form>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var addInputButton = document.getElementById('add-input');
+        var dynamicInputs = document.getElementById('dynamic-inputs');
+        var inputCounter = 1;
 
+        addInputButton.addEventListener('click', function() {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'text');
+            input.setAttribute('class', 'form-control mt-2  @error('giatridosaubenh_giatri') is-invalid @enderror');
+            input.setAttribute('name', 'giatridosaubenh_giatri[]');
+            dynamicInputs.appendChild(input);
+            inputCounter++;
+        });
+    });
+</script>
 @endsection

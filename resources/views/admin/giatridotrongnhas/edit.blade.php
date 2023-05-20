@@ -21,7 +21,7 @@
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fa-regular fa-note-sticky"></i>
             </button>
-            <a class="btn btn-light" href="{{ route('giatridongoaidongs.index') }}">Trở về</a>
+            <a class="btn btn-light" href="{{ route('giatridotrongnhas.index') }}">Trở về</a>
         </div>
     </div>
     <form action="{{ route('giatridotrongnhas.update',$giatridotrongnha->id) }}" method="POST" enctype="multipart/form-data">
