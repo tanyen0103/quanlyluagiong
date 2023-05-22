@@ -1,15 +1,19 @@
 {{-- Template --}}
 
     {{-- favion  --}}
-    <link rel="shortcut icon" href="{{ asset('/public/home/images/qlgl-logo-white-01-01.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('./public/home/images/qlgl-logo-white-01-01.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('./home/images/qlgl-logo-white-01-01.png') }}" type="image/x-icon">
     <!-- Custom fonts for this template-->
-    <link href="{{asset('public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('./public/teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('teamplates/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital@1&display=swap" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="{{asset('public/teamplates/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('./public/teamplates/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('teamplates/css/sb-admin-2.min.css')}}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Latest compiled and minified CSS -->
@@ -19,22 +23,26 @@
     <style>
         @font-face{
             font-family: 'UTM AVO';
-            src: url("{{ asset('public/home/font/UTM_AVO.TTF') }}") format('truetype');
+            src: url("{{ asset('./public/home/font/UTM_AVO.TTF') }}") format('truetype');
+            src: url("{{ asset('./home/font/UTM_AVO.TTF') }}") format('truetype');
         }
 
         @font-face{
             font-family: 'UTM AVO BOLD';
-            src: url("{{ asset('public/home/font/UTM_AVOBOLD.TTF') }}") format('truetype');
+            src: url("{{ asset('./public/home/font/UTM_AVOBOLD.TTF') }}") format('truetype');
+            src: url("{{ asset('./home/font/UTM_AVOBOLD.TTF') }}") format('truetype');
         }
 
         @font-face{
             font-family: 'UTM AVO BOLD ITALIC';
-            src: url("{{ asset('public/home/font/UTM_AVOBOLD_ITALIC.TTF') }}") format('truetype');
+            src: url("{{ asset('./public/home/font/UTM_AVOBOLD_ITALIC.TTF') }}") format('truetype');
+            src: url("{{ asset('./home/font/UTM_AVOBOLD_ITALIC.TTF') }}") format('truetype');
         }
 
         @font-face{
             font-family: 'UTM AVO ITALIC';
-            src: url("{{ asset('public/home/font/UTM_AVO_ITALIC.TTF') }}") format('truetype');
+            src: url("{{ asset('./public/home/font/UTM_AVO_ITALIC.TTF') }}") format('truetype');
+            src: url("{{ asset('./home/font/UTM_AVO_ITALIC.TTF') }}") format('truetype');
         }
 
         body{
@@ -85,7 +93,8 @@
         /* breadcrumb  */
         .breadcrumb,
         .bg-gradient-primary{
-            background-image: url("{{ asset('public/home/images/bg-creadcrum-01-01.png') }}");
+            background-image: url("{{ asset('./public/home/images/bg-creadcrum-01-01.png') }}");
+            /* background-image: url("{{ asset('./home/images/bg-creadcrum-01-01.png') }}"); */
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-color: #4e73df;
