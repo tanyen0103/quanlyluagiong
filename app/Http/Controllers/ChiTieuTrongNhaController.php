@@ -43,7 +43,7 @@ class ChiTieuTrongNhaController extends Controller
      */
     public function create()
     {
-        $giatritinhtrangs = GiaTriTinhTrang::oldest()->paginate(5);
+        $giatritinhtrangs = GiaTriTinhTrang::oldest()->get();
         $giong = Giong::all();
         $chitieutrongnha = ChiTieuTrongNha::all();
         return view('admin.chitieutrongnhas.create', compact('giong' , 'chitieutrongnha','giatritinhtrangs'))
